@@ -5,4 +5,8 @@ import chisel3.experimental.MultiIOModule
 
 class GeneratorStateDecoder extends MultiIOModule {
 
+  val io = IO(
+    new Bundle {
+    }
+  )
 }

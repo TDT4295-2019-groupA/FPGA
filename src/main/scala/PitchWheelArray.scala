@@ -5,4 +5,9 @@ import chisel3.experimental.MultiIOModule
 
 class PitchWheelArray extends MultiIOModule {
 
+  val io = IO(
+    new Bundle {
+    }
+  )
+
 }

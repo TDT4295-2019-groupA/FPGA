@@ -5,4 +5,10 @@ import chisel3.experimental.MultiIOModule
 
 class Envelope extends MultiIOModule {
 
+  val io = IO(
+    new Bundle {
+    }
+  )
+
+
 }

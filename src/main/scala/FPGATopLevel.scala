@@ -21,8 +21,6 @@ class FPGATopLevel() extends MultiIOModule {
   /**
     * Your code here
     */
-  val demuxSPI = Module(new Demultiplexer)
-  val demuxGeneratorState = Module(new Demultiplexer)
 
   val volumeReg = RegInit(UInt(8.W), 0.U)
   val envelopeReg = Module(new Envelope)
@@ -30,6 +28,18 @@ class FPGATopLevel() extends MultiIOModule {
 
   val generatorStateDecoder = Module(new GeneratorStateDecoder())
   val globalStateDecoder = Module(new GlobalStateDecoder())
+
+  when(io.spiPacketIn(7, 0) === 1.U) {
+    generatorStateDecoder :=
+  } otherwise {
+    generatorStateDecoder.io
+  }
+
+  when (io.spiPacketIn(7, 0) === 2.U) {
+    globalStateDecoder.io.packetIn := io.spiPacketIn(256, 8)
+  } otherwise {
+    globalStateDecoder.io.packetIn := 0.U
+  }
 
 
 }
