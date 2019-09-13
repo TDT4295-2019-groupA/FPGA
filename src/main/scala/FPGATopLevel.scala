@@ -28,8 +28,8 @@ class FPGATopLevel() extends MultiIOModule {
   val envelopeReg = Module(new Envelope)
   val pitchWheelReg = Module(new PitchWheelArray)
 
-  val generatorStateDecoder = Module(new generatorStateDecoder())
-  val globalStateDecoder = Module(new globalStateDecoder())
+  val generatorStateDecoder = Module(new GeneratorStateDecoder())
+  val globalStateDecoder = Module(new GlobalStateDecoder())
 
 
 }
