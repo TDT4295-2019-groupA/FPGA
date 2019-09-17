@@ -7,17 +7,23 @@ class GlobalStateDecoder extends MultiIOModule {
 
   val io = IO(
     new Bundle {
-      val packetIn = Input(UInt())
+      val packetIn = Input(UInt(248.W))
 
-      val resetNoteOut = Output(Bool())
-      val controlOut = Output(UInt())
-      val generatorOut = Output(UInt())
+      val volumeOut = Output(UInt(8.W))
+      val EnvelopeOut = Output(new Envelope)
+      val PitchWheelOut = Output(new PitchWheelArray)
     }
   )
 
-  io.resetNoteOut := io.packetIn(0)
-  io.controlOut := io.packetIn(2, 1)
-  io.generatorOut := io.packetIn(10, 3)
+  val VolumeReg = RegInit(UInt(8.W), 0.U)
+  val EnvelopeReg = RegInit(new Envelope, Envelope.DEFAULT)
+  val PitchWheelReg = RegInit(new PitchWheelArray, 0.U)
 
+  VolumeReg := io.packetIn(7, 0)
+  EnvelopeReg := io.packetIn(119, 8).asTypeOf(new Envelope)
+  PitchWheelReg := io.packetIn(247, 120).asTypeOf(new PitchWheelArray)
 
+  io.volumeOut := VolumeReg
+  io.EnvelopeOut := EnvelopeReg
+  io.PitchWheelOut := PitchWheelReg
 }

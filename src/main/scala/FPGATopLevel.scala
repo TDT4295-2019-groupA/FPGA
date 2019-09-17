@@ -17,29 +17,22 @@ class FPGATopLevel() extends MultiIOModule {
     }
   )
 
-
-  /**
-    * Your code here
-    */
-
-  val volumeReg = RegInit(UInt(8.W), 0.U)
-  val envelopeReg = Module(new Envelope)
-  val pitchWheelReg = Module(new PitchWheelArray)
-
-  val generatorStateDecoder = Module(new GeneratorStateDecoder())
-  val globalStateDecoder = Module(new GlobalStateDecoder())
+  val GlobalStateDecoder = Module(new GlobalStateDecoder())
+  val GeneratorStateDecoder = Module(new GeneratorStateDecoder())
 
   when(io.spiPacketIn(7, 0) === 1.U) {
-    generatorStateDecoder :=
+    GlobalStateDecoder.io.packetIn := io.spiPacketIn(255, 8)
   } otherwise {
-    generatorStateDecoder.io
+    GlobalStateDecoder.io := 0.U
   }
 
   when (io.spiPacketIn(7, 0) === 2.U) {
-    globalStateDecoder.io.packetIn := io.spiPacketIn(256, 8)
+    GeneratorStateDecoder.io.packetIn := io.spiPacketIn(95, 8)
   } otherwise {
-    globalStateDecoder.io.packetIn := 0.U
+    GeneratorStateDecoder.io.packetIn := 0.U
   }
+
+
 
 
 }
