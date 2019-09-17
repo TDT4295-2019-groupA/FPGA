@@ -1,4 +1,4 @@
-package FPGA
+package state
 
 import chisel3._
 import chisel3.experimental.MultiIOModule

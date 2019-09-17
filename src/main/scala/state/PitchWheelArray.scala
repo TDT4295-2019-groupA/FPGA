@@ -1,11 +1,14 @@
-package FPGA
+package state
 
 import chisel3._
-import chisel3.experimental.MultiIOModule
 
 class PitchWheelArray extends Bundle {
 
   val pitchWheelArray = UInt(128.W)
+
+  def getPitchWheel(wheelNum: Int) = {
+    pitchWheelArray(wheelNum+7, wheelNum*8)
+  }
 
   val pitchWheelSelect = Array (
     0 -> pitchWheelArray(7, 0),

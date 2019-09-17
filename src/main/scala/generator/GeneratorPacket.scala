@@ -1,4 +1,4 @@
-package FPGA
+package generator
 
 import chisel3._
 

@@ -1,7 +1,9 @@
-package FPGA
+package generator
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
+import generator.GeneratorStateDecoder
+import state.GlobalStateDecoder
 
 class FPGATopLevel() extends MultiIOModule {
 
@@ -32,7 +34,16 @@ class FPGATopLevel() extends MultiIOModule {
     GeneratorStateDecoder.io.packetIn := 0.U
   }
 
+  for (i <- 0 to 16) {
+    val GeneratorNumber = new Generator()
+    GeneratorNumber.io.pitchWheelArrayIn := GlobalStateDecoder.io.PitchWheelOut
+    GeneratorNumber.io.envelopeIn := GlobalStateDecoder.io.EnvelopeOut
 
-
+    when(GeneratorStateDecoder.io.indexOut === i.U) {
+      GeneratorNumber.io.generatorPacketIn := GeneratorStateDecoder.io.GeneratorPacketOut
+    } otherwise {
+      GeneratorNumber.io.generatorPacketIn := 0.U
+    }
+  }
 
 }
