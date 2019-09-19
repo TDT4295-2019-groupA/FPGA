@@ -1,5 +1,10 @@
 ### Project Specific stuff
 test_run_dir/*
+
+vivado.cache
+vivado.runs
+
+
 ### XilinxISE template
 # intermediate build files
 *.bgn
