@@ -2,6 +2,7 @@ package generator
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
+import chisel3.util.Counter
 import generator.GeneratorStateDecoder
 import output.Adder
 import state.GlobalStateDecoder
