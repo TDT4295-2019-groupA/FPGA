@@ -15,8 +15,11 @@ object main {
   }
 
   // Uncomment to dump .fir file
-  // val f = new File("MatMul.fir")
-  // chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new MatMul(5, 4)), Option(f))
+  // val f = new File("synthesizer/FPGATopLevel.fir")
+  // chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new FPGATopLevel()), Option(f))
+
+  val f = new File("synthesizer/VivadoTest.fir")
+  chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new VivadoTest()), Option(f))
 
 }
 

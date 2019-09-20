@@ -1,8 +1,13 @@
 ### Project Specific stuff
 test_run_dir/*
 
+# vivado and yosys
 vivado.cache
 vivado.runs
+*.edif
+usage_statistics_webtalk.xml
+*.jou
+
 
 
 ### XilinxISE template
