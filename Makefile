@@ -30,7 +30,8 @@ synthesizer/%.v: synthesizer/%.fir
 
 .PHONY: clean
 clean:
-	rm -r synthesizer/.Xil    \
+	rm -v -r \
+		synthesizer/.Xil      \
 		synthesizer/*.bit     \
 		synthesizer/*.edif    \
 		synthesizer/*.fir     \

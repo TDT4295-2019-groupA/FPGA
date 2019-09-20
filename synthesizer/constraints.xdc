@@ -18,7 +18,7 @@ set_property -dict {PACKAGE_PIN T9  IOSTANDARD LVCMOS33} [get_ports {io_led[2]}]
 set_property -dict {PACKAGE_PIN T10 IOSTANDARD LVCMOS33} [get_ports {io_led[3]}];
 
 ## Buttons
-set_property -dict {PACKAGE_PIN D9  IOSTANDARD LVCMOS33} [get_ports {io_btn[0]}];z
+set_property -dict {PACKAGE_PIN D9  IOSTANDARD LVCMOS33} [get_ports {io_btn[0]}];
 set_property -dict {PACKAGE_PIN C9  IOSTANDARD LVCMOS33} [get_ports {io_btn[1]}];
 set_property -dict {PACKAGE_PIN B9  IOSTANDARD LVCMOS33} [get_ports {io_btn[2]}];
 set_property -dict {PACKAGE_PIN B8  IOSTANDARD LVCMOS33} [get_ports {io_btn[3]}];
