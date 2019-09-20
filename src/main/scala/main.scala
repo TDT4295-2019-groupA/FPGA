@@ -1,5 +1,6 @@
 package Ex0
 import chisel3._
+import generator._
 import java.io.File
 
 object main {

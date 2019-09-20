@@ -60,23 +60,23 @@ class Generator extends MultiIOModule{
 
   val wavelength: UInt = lookupTable(note_index)
 
-  switch(io.generatorPacketIn.instrument) {
-    is(InstrumentEnum.SQUARE) {
-      when (((noteLife * 2.U) / wavelength) % 2.U === 1.U) {
-        saved_sample := - SAMPLE_MAX
-      } otherwise {
-        saved_sample := SAMPLE_MAX
-      }
+  // todo: make this back to a switch when we get it to compile
+  val inst = io.generatorPacketIn.instrument // shortname
+  when(inst === InstrumentEnum.SQUARE) {
+    when (((noteLife * 2.U) / wavelength) % 2.U === 1.U) {
+      saved_sample := - SAMPLE_MAX
+    } otherwise {
+      saved_sample := SAMPLE_MAX
     }
-    is(InstrumentEnum.TRIANGLE) {
-      saved_sample := 0.U
-    }
-    is(InstrumentEnum.SAWTOOTH) {
-      saved_sample := ((((noteLife % wavelength) * 2.U) - wavelength) * SAMPLE_MAX) / wavelength
-    }
-    is(InstrumentEnum.SINE) {
-      saved_sample := 0.U
-    }
+  }
+  when(inst === InstrumentEnum.TRIANGLE) {
+    saved_sample := 0.U
+  }
+  when(inst === InstrumentEnum.SAWTOOTH) {
+    saved_sample := ((((noteLife % wavelength) * 2.U) - wavelength) * SAMPLE_MAX) / wavelength
+  }
+  when(inst === InstrumentEnum.SINE) {
+    saved_sample := 0.U
   }
 
   when(enabled) {
