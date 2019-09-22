@@ -22,8 +22,12 @@ diagrams:
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
 
-synthesizer/$(TOP_MODULE).bit: $(VERILOG_TARGETS) synthesizer/constraints.xdc synthesizer/config.sh synthesizer/$(TOP_MODULE).fir synthesizer/$(TOP_MODULE).v
+synthesizer/$(TOP_MODULE).bit: $(VERILOG_TARGETS) synthesizer/constraints-$(XILINX_PART).xdc synthesizer/$(TOP_MODULE).fir synthesizer/$(TOP_MODULE).v
+ifdef FAST
+	cd synthesizer; ./synth_verilog.sh FAST
+else
 	cd synthesizer; ./synth_verilog.sh
+endif
 
 synthesizer/%.v: synthesizer/%.fir
 	firrtl -i $< -o $@ --info-mode=ignore

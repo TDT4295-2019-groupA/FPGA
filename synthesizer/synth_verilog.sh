@@ -1,5 +1,8 @@
-#!/bin/bash
-set -ex
+#!/usr/bin/env bash
+if [ "$1" = "FAST" ]; then
+	IS_FAST="#"
+fi
+set -ex # enable verbose output and exit-on-error
 
 # read config
 source config.sh
@@ -21,7 +24,7 @@ $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 	link_design -part $XILINX_PART -top $TOP_MODULE
 
 	# Optimizer: deduce a more optimal design
-	opt_design
+	${IS_FAST}opt_design
 
 	# Placer: Physical placement of cells from netlist, minimizing total wire length and routing congestions
 	place_design
