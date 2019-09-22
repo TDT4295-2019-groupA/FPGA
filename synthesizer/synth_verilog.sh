@@ -13,6 +13,7 @@ yosys - <<- EOT
 	synth_xilinx -top $TOP_MODULE -edif $TOP_MODULE.edif
 EOT
 
+
 # run vivado to convert to a bitfile for our FPGA
 $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 
@@ -39,3 +40,13 @@ $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 	write_bitstream -force $TOP_MODULE.bit
 
 EOT
+
+# set proper return code
+set +ex # disable verbosity
+echo -ne '\e[32;1m'
+tail vivado.log | grep "^write_bitstream completed successfully$" && (echo -ne '\e[m') || (
+	echo -ne '\e[31;1m'
+	echo 'write_bitstream failed!'
+	echo -ne '\e[m'
+	false
+)
