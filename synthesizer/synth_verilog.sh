@@ -14,7 +14,7 @@ EOT
 $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 
 	# read shit
-	read_xdc constraints.xdc
+	read_xdc constraints-$XILINX_PART.xdc
 	read_edif $TOP_MODULE.edif
 
 	# Select the FPGA to target and denote which module is the top module
