@@ -1,6 +1,5 @@
 ### Project Specific stuff
 test_run_dir/*
-graphs/
 
 # vivado and yosys
 vivado.cache

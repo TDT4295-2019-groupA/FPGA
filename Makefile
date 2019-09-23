@@ -15,8 +15,10 @@ upload:
 .PHONY: graphs graphs_yosys graphs_diagrammer
 graphs: graphs_yosys graphs_diagrammer
 graphs_yosys: synthesizer/$(TOP_MODULE).v
+	rm graphs/yosys/*
 	cd graphs; ./make_yosys.sh ../synthesizer/$(TOP_MODULE).v
 graphs_diagrammer: synthesizer/$(TOP_MODULE).fir
+	rm graphs/diagrammer/*
 	cd diagrammer; ./diagram.sh -i ../synthesizer/$(TOP_MODULE).fir -t ../graphs/diagrammer -o '""'
 
 
@@ -39,8 +41,6 @@ synthesizer/%.v: synthesizer/%.fir
 .PHONY: clean
 clean:
 	rm -v -r \
-		graphs/yosys/*        \
-		graphs/diagrammer/*   \
 		synthesizer/.Xil      \
 		synthesizer/*.bit     \
 		synthesizer/*.edif    \
