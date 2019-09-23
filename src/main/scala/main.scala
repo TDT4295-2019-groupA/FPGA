@@ -1,5 +1,7 @@
 package Ex0
 import chisel3._
+import chisel3.core.withClockAndReset
+import chisel3.experimental.RawModule
 import generator._
 import java.io.File
 
@@ -20,7 +22,21 @@ object main {
   // val f = new File("synthesizer/FPGATopLevel.fir")
   // chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new FPGATopLevel()), Option(f))
 
-  val f = new File("synthesizer/VivadoTest.fir")
-  chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new VivadoTest()), Option(f))
+  //val f = new File("synthesizer/VivadoTest.fir")
+  //chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new VivadoTest()), Option(f))
 
+  val f = new File("synthesizer/TopModule.fir")
+  chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new TopModule), Option(f))
+}
+
+// Here we isntantiate VivadoTest with the reset button being active low
+class TopModule extends RawModule {
+  val clock = IO(Input(Clock()))
+  val reset = IO(Input(Bool()))
+  val io = IO(new VivadoTestBundle)
+
+  withClockAndReset(clock, !reset) {
+    val vivado_test = Module(new VivadoTest)
+    vivado_test.io <> io
+  }
 }
