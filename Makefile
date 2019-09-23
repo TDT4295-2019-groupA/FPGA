@@ -15,11 +15,13 @@ upload:
 .PHONY: graphs graphs_yosys graphs_diagrammer
 graphs: graphs_yosys graphs_diagrammer
 graphs_yosys: synthesizer/$(TOP_MODULE).v
-	rm graphs/yosys/*
+	rm graphs/yosys/* || true
 	cd graphs; ./make_yosys.sh ../synthesizer/$(TOP_MODULE).v
-graphs_diagrammer: synthesizer/$(TOP_MODULE).fir
-	rm graphs/diagrammer/*
+graphs_diagrammer: synthesizer/$(TOP_MODULE).fir diagrammer/diagram.sh
+	rm graphs/diagrammer/* || true
 	cd diagrammer; ./diagram.sh -i ../synthesizer/$(TOP_MODULE).fir -t ../graphs/diagrammer -o '""'
+diagrammer/diagram.sh:
+	git submodule update --init
 
 
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
