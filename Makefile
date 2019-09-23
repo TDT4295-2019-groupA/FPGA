@@ -15,9 +15,10 @@ bitfile: synthesizer/$(TOP_MODULE).bit
 upload:
 	cd synthesizer; ./upload_bitfile.sh
 
-.PHONY: diagrams
-diagrams:
-	echo todo
+.PHONY: graphs
+graphs: synthesizer/$(TOP_MODULE).v synthesizer/$(TOP_MODULE).fir
+	cd graphs;     ./make_yosys.sh ../synthesizer/$(TOP_MODULE).v
+	cd diagrammer; ./diagram.sh -i ../synthesizer/$(TOP_MODULE).fir -t ../graphs/diagrammer -o '""'
 
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
@@ -35,6 +36,8 @@ synthesizer/%.v: synthesizer/%.fir
 .PHONY: clean
 clean:
 	rm -v -r \
+		graphs/yosys/*        \
+		graphs/diagrammer/*   \
 		synthesizer/.Xil      \
 		synthesizer/*.bit     \
 		synthesizer/*.edif    \
