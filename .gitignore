@@ -8,7 +8,7 @@ vivado.runs
 *.edif
 usage_statistics_webtalk.xml
 *.jou
-
+*.v
 
 
 ### XilinxISE template

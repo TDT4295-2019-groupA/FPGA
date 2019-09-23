@@ -1,5 +1,8 @@
 ## Arty-7 Constraints, with chisel 3.1 naming scheme
 
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+set_property CFGBVS VCCO [current_design]
+
 ## Clock
 
 set_property -dict {PACKAGE_PIN E3  IOSTANDARD LVCMOS33} [get_ports { clock }];
@@ -9,10 +12,7 @@ create_clock -add -name sys_clk_pin -period 10.00 \
 
 ## Reset (use the one that works for you)
 
-## i've tried wiring up the RESET button, but it doesn't work?
 set_property -dict {PACKAGE_PIN C2  IOSTANDARD LVCMOS33} [get_ports { reset }];
-#set_property -dict {PACKAGE_PIN J7  IOSTANDARD LVCMOS33} [get_ports { reset }];
-#set_property -dict {PACKAGE_PIN JP2 IOSTANDARD LVCMOS33} [get_ports { reset }];
 
 ## Switches
 

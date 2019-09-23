@@ -1,9 +1,6 @@
 include synthesizer/config.sh
 export
 SCALA_TARGETS   := $(shell find src/main/ -type f -name '*.scala')
-FIRRTL_TARGETS  := $(wildcard synthesizer/*.fir)
-VERILOG_TARGETS := $(patsubst %.fir,%.v,$(FIRRTL_TARGETS))
-
 
 .PHONY: all
 all: bitfile
@@ -23,7 +20,7 @@ graphs: synthesizer/$(TOP_MODULE).v synthesizer/$(TOP_MODULE).fir
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
 
-synthesizer/$(TOP_MODULE).bit: $(VERILOG_TARGETS) synthesizer/constraints-$(XILINX_PART).xdc synthesizer/$(TOP_MODULE).fir synthesizer/$(TOP_MODULE).v
+synthesizer/$(TOP_MODULE).bit: synthesizer/constraints-$(XILINX_PART).xdc synthesizer/$(TOP_MODULE).v
 ifdef FAST
 	cd synthesizer; ./synth_verilog.sh FAST
 else

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ "$1" = "FAST" ]; then
-	IS_FAST="#"
+	PERHAPS_SKIP="#"
 fi
 set -ex # enable verbose output and exit-on-error
 
@@ -9,8 +9,18 @@ source config.sh
 
 # run yosys to synthesize the verilog file into a netlist
 yosys - <<- EOT
-	read_verilog VivadoTest.v
+
+	# read shit
+	read_verilog $TOP_MODULE.v
+
+	# Synth to System Verilog (if using synth_design in vivado)
+	#hierarchy -top $TOP_MODULE
+	#proc; opt; techmap; opt
+	#write_verilog $TOP_MODULE.sv
+
+	# Synthesize - convert into netlist
 	synth_xilinx -top $TOP_MODULE -edif $TOP_MODULE.edif
+
 EOT
 
 
@@ -21,11 +31,14 @@ $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 	read_xdc constraints-$XILINX_PART.xdc
 	read_edif $TOP_MODULE.edif
 
+	#read_verilog $TOP_MODULE.sv
+	#synth_design -rtl -top $TOP_MODULE -part $XILINX_PART
+
 	# Select the FPGA to target and denote which module is the top module
 	link_design -part $XILINX_PART -top $TOP_MODULE
 
 	# Optimizer: deduce a more optimal design
-	${IS_FAST}opt_design
+	${PERHAPS_SKIP}opt_design
 
 	# Placer: Physical placement of cells from netlist, minimizing total wire length and routing congestions
 	place_design
