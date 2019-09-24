@@ -20,7 +20,7 @@ tee commands.tcl <<- EOT
 	# Select the FPGA to target and denote which module is the top module
 	set_msg_config -id "Vivado 12-1411" -new_severity ERROR
 	link_design -part $XILINX_PART -top $TOP_MODULE
-	if [expr {{get_msg_config -severity Error -count} > 0}] { error "ERROR: Errors encountered! Abort!" }
+	if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
 
 	# This will detect errors early, but won't abort since 'report_drc' completed succaessfully...
 	set_property SEVERITY {Error} [get_drc_checks NSTD-1]
