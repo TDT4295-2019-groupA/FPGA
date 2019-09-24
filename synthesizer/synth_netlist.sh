@@ -12,6 +12,12 @@ yosys - <<- EOT
 
 	# read shit
 	read_verilog $TOP_MODULE.v
+	$(
+		find include/ -type f -name '*.v' |
+		while read line; do
+			echo read_verilog $line
+		done
+	)
 
 	# Synth to System Verilog ( if using synth_design in vivado instead )
 	#hierarchy -top $TOP_MODULE

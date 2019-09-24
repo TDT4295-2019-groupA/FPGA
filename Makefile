@@ -12,10 +12,10 @@ else
 endif
 
 .PHONY: all
-all: bitfile $(VHDL_DESTS)
+all: bitfile
 
 .PHONY: bitfile
-bitfile: synthesizer/$(TOP_MODULE).bit
+bitfile: $(VHDL_DESTS) synthesizer/$(TOP_MODULE).bit
 
 .PHONY: upload
 upload:
@@ -45,7 +45,7 @@ synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
 
 
-synthesizer/$(TOP_MODULE).edif: synthesizer/$(TOP_MODULE).v synthesizer/config.sh
+synthesizer/$(TOP_MODULE).edif: synthesizer/$(TOP_MODULE).v synthesizer/config.sh $(wildcard synthesizer/include/*.v)
 	cd synthesizer; ./synth_netlist.sh $(FLAGS)
 
 
