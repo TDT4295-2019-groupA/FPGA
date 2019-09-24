@@ -22,11 +22,11 @@ object main {
   // val f = new File("synthesizer/FPGATopLevel.fir")
   // chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new FPGATopLevel()), Option(f))
 
-  //val f = new File("synthesizer/VivadoTest.fir")
-  //chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new VivadoTest()), Option(f))
+  val f = new File("synthesizer/VivadoTest.fir")
+  chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new VivadoTest()), Option(f))
 
-  val f = new File("synthesizer/TopModule.fir")
-  chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new TopModule), Option(f))
+  //val f = new File("synthesizer/TopModule.fir")
+  //chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new TopModule), Option(f))
 }
 
 // Here we instantiate VivadoTest with the reset button flipped
