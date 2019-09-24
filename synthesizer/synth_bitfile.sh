@@ -7,25 +7,8 @@ set -ex # enable verbose output and exit-on-error
 # read config
 source config.sh
 
-# run yosys to synthesize the verilog file into a netlist
-yosys - <<- EOT
-
-	# read shit
-	read_verilog $TOP_MODULE.v
-
-	# Synth to System Verilog (if using synth_design in vivado)
-	#hierarchy -top $TOP_MODULE
-	#proc; opt; techmap; opt
-	#write_verilog $TOP_MODULE.sv
-
-	# Synthesize - convert into netlist
-	synth_xilinx -top $TOP_MODULE -edif $TOP_MODULE.edif
-
-EOT
-
-
 # run vivado to convert to a bitfile for our FPGA
-$XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
+tee commands.tcl <<- EOT
 
 	# read shit
 	read_xdc constraints-$XILINX_PART.xdc
@@ -35,7 +18,15 @@ $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 	#synth_design -rtl -top $TOP_MODULE -part $XILINX_PART
 
 	# Select the FPGA to target and denote which module is the top module
+	set_msg_config -id "Vivado 12-1411" -new_severity ERROR
 	link_design -part $XILINX_PART -top $TOP_MODULE
+	if [expr {{get_msg_config -severity Error -count} > 0}] { error "ERROR: Errors encountered! Abort!" }
+
+	# This will detect errors early, but won't abort since 'report_drc' completed succaessfully...
+	set_property SEVERITY {Error} [get_drc_checks NSTD-1]
+	set_property SEVERITY {Error} [get_drc_checks UCIO-1]
+	report_drc -return_string
+	if [expr {{get_msg_config -severity Error -count} > 0}] { error "ERROR: Errors encountered! Abort!" }
 
 	# Optimizer: deduce a more optimal design
 	${PERHAPS_SKIP}opt_design
@@ -53,6 +44,7 @@ $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 	write_bitstream -force $TOP_MODULE.bit
 
 EOT
+$XILINX_TOP_DIR/bin/vivado -mode batch -source commands.tcl || true
 
 # set proper return code
 set +ex # disable verbosity

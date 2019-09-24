@@ -8,6 +8,7 @@ vivado.runs
 usage_statistics_webtalk.xml
 *.jou
 *.v
+*.tcl
 
 
 ### XilinxISE template

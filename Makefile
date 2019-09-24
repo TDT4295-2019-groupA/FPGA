@@ -2,6 +2,13 @@ include synthesizer/config.sh
 export
 SCALA_TARGETS   := $(shell find src/main/ -type f -name '*.scala')
 
+ifdef FAST
+	FLAGS := "FAST"
+else
+	FLAGS := ""
+endif
+
+
 .PHONY: all
 all: bitfile
 
@@ -28,12 +35,12 @@ synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
 
 
-synthesizer/$(TOP_MODULE).bit: synthesizer/constraints-$(XILINX_PART).xdc synthesizer/$(TOP_MODULE).v
-ifdef FAST
-	cd synthesizer; ./synth_verilog.sh FAST
-else
-	cd synthesizer; ./synth_verilog.sh
-endif
+synthesizer/$(TOP_MODULE).edif: synthesizer/$(TOP_MODULE).v synthesizer/config.sh
+	cd synthesizer; ./synth_netlist.sh $(FLAGS)
+
+
+synthesizer/$(TOP_MODULE).bit: synthesizer/constraints-$(XILINX_PART).xdc synthesizer/$(TOP_MODULE).edif synthesizer/config.sh
+	cd synthesizer; ./synth_bitfile.sh $(FLAGS)
 
 
 synthesizer/%.v: synthesizer/%.fir

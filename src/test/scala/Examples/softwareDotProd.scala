@@ -14,7 +14,7 @@ case class DotProdCalculator(vectorLen: Int, timeStep: Int = 0, accumulator: Int
       (accumulator + product, false, this.copy(timeStep = this.timeStep + 1, accumulator = accumulator + product))
   }
 }
-
+/*
 class SoftwareDotProdSpec extends FlatSpec with Matchers {
   import DotProdTests._
 
@@ -40,3 +40,4 @@ class SoftwareDotProdSpec extends FlatSpec with Matchers {
     true
   }
 }
+*/

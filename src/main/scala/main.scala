@@ -29,8 +29,8 @@ object main {
   chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new TopModule), Option(f))
 }
 
-// Here we isntantiate VivadoTest with the reset button being active low
-class TopModule extends RawModule {
+// Here we instantiate VivadoTest with the reset button flipped
+class TopModule extends RawModule { // it won't synthesize though....
   val clock = IO(Input(Clock()))
   val reset = IO(Input(Bool()))
   val io = IO(new VivadoTestBundle)
