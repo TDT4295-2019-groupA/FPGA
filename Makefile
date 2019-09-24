@@ -1,6 +1,9 @@
 include synthesizer/config.sh
 export
-SCALA_TARGETS   := $(shell find src/main/ -type f -name '*.scala')
+SCALA_TARGETS    := $(shell find src/main/scala/ -type f -name '*.scala')
+VHDL_TARGETS     := $(shell find src/main/vhdl/ -mindepth 1 -maxdepth 1 -type d )
+VHDL_DESTS       := $(patsubst src/main/vhdl/%,synthesizer/include/%.v,$(VHDL_TARGETS))
+#VERILOG_TARGETS  := $(shell find src/main/veriog/ -mindepth 1 -maxdepth 1 -type d )
 
 ifdef FAST
 	FLAGS := "FAST"
@@ -8,9 +11,8 @@ else
 	FLAGS := ""
 endif
 
-
 .PHONY: all
-all: bitfile
+all: bitfile $(VHDL_DESTS)
 
 .PHONY: bitfile
 bitfile: synthesizer/$(TOP_MODULE).bit
@@ -30,6 +32,14 @@ graphs_diagrammer: synthesizer/$(TOP_MODULE).fir diagrammer/diagram.sh
 diagrammer/diagram.sh:
 	git submodule update --init
 
+# todo: won't re-make on edits for vhdl files
+synthesizer/include/%.v: src/main/vhdl/%
+	cd synthesizer; mkdir -p include
+	cd synthesizer; ./synth_vhdl.sh ../$@ $* ../$</*.vhd
+
+#synthesizer/include/%.v: src/main/verilog/%
+#	cd synthesizer; mkdir -p include
+#	cp $< $@
 
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
@@ -50,6 +60,7 @@ synthesizer/%.v: synthesizer/%.fir
 .PHONY: clean
 clean:
 	rm -v -r \
+		synthesizer/include/*.v \
 		synthesizer/.Xil      \
 		synthesizer/*.bit     \
 		synthesizer/*.edif    \
