@@ -22,11 +22,11 @@ tee commands.tcl <<- EOT
 	link_design -part $XILINX_PART -top $TOP_MODULE
 	if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
 
-	# This will detect errors early, but won't abort since 'report_drc' completed succaessfully...
-	set_property SEVERITY {Error} [get_drc_checks NSTD-1]
-	set_property SEVERITY {Error} [get_drc_checks UCIO-1]
-	report_drc -return_string
-	if [expr {{get_msg_config -severity Error -count} > 0}] { error "ERROR: Errors encountered! Abort!" }
+	# This will detect errors early
+	${PERHAPS_SKIP}set_property SEVERITY {Error} [get_drc_checks NSTD-1]
+	${PERHAPS_SKIP}set_property SEVERITY {Error} [get_drc_checks UCIO-1]
+	${PERHAPS_SKIP}report_drc -return_string
+	${PERHAPS_SKIP}if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
 
 	# Optimizer: deduce a more optimal design
 	${PERHAPS_SKIP}opt_design
