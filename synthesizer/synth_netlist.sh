@@ -2,14 +2,13 @@
 if [ "$1" = "FAST" ]; then
 	PERHAPS_SKIP="#"
 fi
-set -ex # enable verbose output and exit-on-error
 
 # read config
 source config.sh
+source include.sh
 
 # run yosys to synthesize the verilog file into a netlist
-yosys - <<- EOT
-
+colorize yosys - <<- EOT
 	# read shit
 	read_verilog $TOP_MODULE.v
 	$(

@@ -2,13 +2,14 @@
 if [ "$1" = "FAST" ]; then
 	PERHAPS_SKIP="#"
 fi
-set -ex # enable verbose output and exit-on-error
 
 # read config
 source config.sh
+source include.sh
 
 # run vivado to convert to a bitfile for our FPGA
-tee commands.tcl <<- EOT
+TMP="$(mktemp)"
+colorize tee "$TMP" <<- EOT
 
 	# read shit
 	read_xdc constraints-$XILINX_PART.xdc
@@ -44,12 +45,17 @@ tee commands.tcl <<- EOT
 	write_bitstream -force $TOP_MODULE.bit
 
 EOT
-$XILINX_TOP_DIR/bin/vivado -mode batch -source commands.tcl || true
+
+colorize $XILINX_TOP_DIR/bin/vivado -mode batch -source "$TMP" || (
+	echo -ne '\e[31;1m'
+	echo "Failed!"
+	echo -ne '\e[m'
+)
+
+rm "$TMP"
 
 # set proper return code
-set +ex # disable verbosity
-echo -ne '\e[32;1m'
-tail vivado.log | grep "^write_bitstream completed successfully$" && (echo -ne '\e[m') || (
+tail vivado.log | grep "^write_bitstream completed successfully$" && (echo -ne '!\e[m') || (
 	echo -ne '\e[31;1m'
 	echo 'write_bitstream failed!'
 	echo -ne '\e[m'
