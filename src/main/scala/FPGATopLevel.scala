@@ -2,7 +2,6 @@ package generator
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
-import chisel3.util.Counter
 import output.Adder
 import state.GlobalStateDecoder
 
@@ -40,7 +39,7 @@ class FPGATopLevel() extends MultiIOModule {
 
 
   for (i <- 0 to 16) {
-    val GeneratorNumber = new Generator()
+    val GeneratorNumber = Module(new Generator())
     GeneratorNumber.io.pitchWheelArrayIn := GlobalStateDecoder.io.PitchWheelOut
     GeneratorNumber.io.envelopeIn := GlobalStateDecoder.io.EnvelopeOut
 

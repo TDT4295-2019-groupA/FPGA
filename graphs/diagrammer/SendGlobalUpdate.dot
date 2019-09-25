@@ -1,0 +1,12 @@
+digraph send_global_flow {
+	Verilog_Wrapper -> Decoder
+	Decoder -> Master_Volume_Reg
+	Decoder -> Envelope_Reg
+	Decoder -> Pitchwheel_Reg
+	Envelope_Reg -> GeneratorX
+	Pitchwheel_Reg -> GeneratorX
+	Master_Volume_Reg -> Adder
+	GeneratorX -> Adder
+	Adder -> Verilog_Wrapper
+}
+

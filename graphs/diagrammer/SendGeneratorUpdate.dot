@@ -1,0 +1,7 @@
+digraph SendGeneratorUpdate {
+	Verilog_Wrapper -> Decoder
+	Decoder -> Generator_Indexer
+	Generator_Indexer -> GeneratorX
+	GeneratorX -> Adder
+	Adder -> Verilog_Wrapper
+}

@@ -1,0 +1,16 @@
+digraph Generator {
+	Packet_Input -> Enabled
+	Packet_Input -> Instrument
+	Packet_Input -> Note_Index
+	Packet_Input -> Velocity
+	Global_Input -> Envelope
+	Global_Input -> Pitchwheel
+	NoteLife -> Pitchwheel
+	Pitchwheel -> Generate_Sound
+	Instrument -> Generate_Sound
+	Note_Index -> Generate_Sound
+	Velocity -> Generate_Sound
+	Generate_Sound -> Process_Sound
+	Envelope -> Process_Sound
+	Process_Sound -> Output_To_Adder
+}
