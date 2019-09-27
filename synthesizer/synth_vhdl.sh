@@ -10,7 +10,7 @@ if test -z "$1"; then
 	exit 1
 fi
 
-source include.sh
+source common.sh
 
 (
 	while ! test -z "$1" ; do

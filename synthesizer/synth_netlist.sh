@@ -5,7 +5,7 @@ fi
 
 # read config
 source config.sh
-source include.sh
+source common.sh
 
 # run yosys to synthesize the verilog file into a netlist
 TMP="$(mktemp)"

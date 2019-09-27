@@ -5,7 +5,7 @@ fi
 
 # read config
 source config.sh
-source include.sh
+source common.sh
 
 # run vivado to convert to a bitfile for our FPGA
 TMP="$(mktemp)"
