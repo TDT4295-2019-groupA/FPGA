@@ -52,18 +52,7 @@ colorize tee "$TMP" <<- EOT
 
 EOT
 
-colorize $XILINX_TOP_DIR/bin/vivado -mode batch -source "$TMP" || (
-	echo -ne '\e[31;1m'
-	echo "Failed!"
-	echo -ne '\e[m'
-)
-
+colorize $XILINX_TOP_DIR/bin/vivado -mode batch -source "$TMP"
+RET=$?
 rm "$TMP"
-
-# set proper return code
-tail vivado.log | grep "^write_bitstream completed successfully$" && (echo -ne '!\e[m') || (
-	echo -ne '\e[31;1m'
-	echo 'write_bitstream failed!'
-	echo -ne '\e[m'
-	false
-)
+exit $RET
