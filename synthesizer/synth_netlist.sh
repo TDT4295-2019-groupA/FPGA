@@ -8,7 +8,8 @@ source config.sh
 source include.sh
 
 # run yosys to synthesize the verilog file into a netlist
-colorize yosys - <<- EOT
+TMP="$(mktemp)"
+colorize tee "$TMP" <<- EOT
 	# read shit
 	read_verilog $TOP_MODULE.v
 	$(
@@ -27,3 +28,8 @@ colorize yosys - <<- EOT
 	synth_xilinx -top $TOP_MODULE -edif $TOP_MODULE.edif
 
 EOT
+
+colorize yosys -s "$TMP"
+RET=$?
+rm "$TMP"
+exit $RET

@@ -9,6 +9,8 @@ function colorize {
 		sed -u "s/CRITICAL WARNING:/${ESC}[33;!m&${ESC}[0m/" |
 		sed -u "s/ERROR:/${ESC}[31;1m&${ESC}[0m/" |
 		sed -u "s/^#.*/${ESC}[34;1m&${ESC}[0m/"
+
+		( exit "${PIPESTATUS[0]}" )
 	else
 		$@
 	fi
