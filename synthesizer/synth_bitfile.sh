@@ -15,7 +15,13 @@ colorize tee "$TMP" <<- EOT
 	read_xdc constraints-$XILINX_PART.xdc
 	read_edif $TOP_MODULE.edif
 
-	#read_verilog $TOP_MODULE.sv
+	#read_verilog $TOP_MODULE.v
+	$(
+		find include/ -type f | grep \\\.v$ |
+		while read line; do
+			echo \#read_verilog $line
+		done
+	)
 	#synth_design -rtl -top $TOP_MODULE -part $XILINX_PART
 
 	# Select the FPGA to target and denote which module is the top module

@@ -3,8 +3,7 @@ export
 SCALA_TARGETS    := $(shell find src/main/scala/ -type f -name '*.scala')
 VHDL_TARGETS     := $(shell find src/main/vhdl/ -mindepth 1 -maxdepth 1 -type d )
 VHDL_DESTS       := $(patsubst src/main/vhdl/%,synthesizer/include/%.v,$(VHDL_TARGETS))
-VERILOG_TARGETS  := $(shell find src/main/verilog/ -mindepth 1 -maxdepth 1 -type d )
-VERILOG_DESTS    := $(patsubst src/main/verilog/%,synthesizer/include/%.v,$(VERILOG_TARGETS))
+VERILOG_TARGETS  := $(shell find src/main/verilog/ -type f | grep \\\.v$ )
 
 ifdef FAST
 	FLAGS := "FAST"
@@ -16,7 +15,7 @@ endif
 all: bitfile
 
 .PHONY: bitfile
-bitfile: $(VHDL_DESTS) $(VERILOG_DESTS) synthesizer/$(TOP_MODULE).bit
+bitfile: $(VHDL_DESTS) synthesizer/$(TOP_MODULE).bit
 
 .PHONY: upload
 upload:
@@ -38,9 +37,6 @@ synthesizer/include/%.v: src/main/vhdl/%
 	cd synthesizer; mkdir -p include
 	cd synthesizer; ./synth_vhdl.sh ../$@ $* ../$</*.vhd
 
-synthesizer/include/%.v: src/main/verilog/%
-	cd synthesizer; mkdir -p include
-	cd synthesizer; ./synth_verilog.sh ../$@ $* ../$</*.v
 
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 	sbt run
@@ -48,8 +44,8 @@ synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
 synthesizer/%.v: synthesizer/%.fir
 	firrtl -i $< -o $@ --info-mode=ignore
 
-synthesizer/$(TOP_MODULE).edif: synthesizer/$(TOP_MODULE).v synthesizer/config.sh $(wildcard synthesizer/include/*.v)
-	cd synthesizer; ./synth_netlist.sh $(FLAGS)
+synthesizer/$(TOP_MODULE).edif: synthesizer/$(TOP_MODULE).v $(VERILOG_TARGETS) synthesizer/config.sh $(wildcard synthesizer/include/*.v)
+	cd synthesizer; ./synth_netlist.sh $(FLAGS) ../$(VERILOG_TARGETS)
 
 
 synthesizer/$(TOP_MODULE).bit: synthesizer/constraints-$(XILINX_PART).xdc synthesizer/$(TOP_MODULE).edif synthesizer/config.sh

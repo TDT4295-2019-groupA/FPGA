@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 if [ "$1" = "FAST" ]; then
 	PERHAPS_SKIP="#"
+	shift
+elif [ -z "$1" ]; then
+	shift
 fi
 
 # read config
@@ -11,11 +14,17 @@ source common.sh
 TMP="$(mktemp)"
 colorize tee "$TMP" <<- EOT
 	# read shit
-	read_verilog $TOP_MODULE.v
+	read_verilog -noblackbox $TOP_MODULE.v
 	$(
 		find include/ -type f -name '*.v' |
 		while read line; do
-			echo read_verilog $line
+			echo read_verilog -noblackbox $line
+		done
+	)
+	$(
+		while ! test -z "$1"; do
+			echo read_verilog -noblackbox $1
+			shift
 		done
 	)
 
