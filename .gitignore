@@ -4,6 +4,7 @@ test_run_dir/*
 # vivado and yosys
 vivado.cache
 vivado.runs
+synthesizer/include
 synthesizer/.Xil
 synthesizer/*.edif
 synthesizer/*.jou
