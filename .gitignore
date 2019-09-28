@@ -4,12 +4,11 @@ test_run_dir/*
 # vivado and yosys
 vivado.cache
 vivado.runs
-.Xil
-*.edif
-usage_statistics_webtalk.xml
-*.jou
-*.v
-*.tcl
+synthesizer/.Xil
+synthesizer/*.edif
+synthesizer/*.jou
+synthesizer/*.v
+synthesizer/*.sv
 
 
 ### XilinxISE template
@@ -61,6 +60,7 @@ usage_statistics_webtalk.xml
 *.gise
 par_usage_statistics.html
 usage_statistics_webtalk.html
+usage_statistics_webtalk.xml
 webtalk.log
 webtalk_pn.xml
 

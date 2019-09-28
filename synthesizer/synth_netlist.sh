@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
+SV_MODE="#"
 if [ "$1" = "FAST" ]; then
 	PERHAPS_SKIP="#"
 	shift
+elif [ "$1" = "NO_EDIF" ]; then
+	SV_MODE=""
+	EDIF_MODE="#"
+	shift
 elif [ -z "$1" ]; then
+	# 'make' sucks
 	shift
 fi
 
@@ -14,27 +20,27 @@ source common.sh
 TMP="$(mktemp)"
 colorize tee "$TMP" <<- EOT
 	# read shit
-	read_verilog -noblackbox $TOP_MODULE.v
+	read_verilog $TOP_MODULE.v
 	$(
 		find include/ -type f -name '*.v' |
 		while read line; do
-			echo read_verilog -noblackbox $line
+			echo read_verilog $line
 		done
 	)
 	$(
 		while ! test -z "$1"; do
-			echo read_verilog -noblackbox $1
+			echo read_verilog $1
 			shift
 		done
 	)
 
-	# Synth to System Verilog ( if using synth_design in vivado instead )
-	#hierarchy -top $TOP_MODULE
-	#proc; opt; techmap; opt
-	#write_verilog $TOP_MODULE.sv
+	# Compile to System Verilog
+	${SV_MODE}hierarchy -top $TOP_MODULE
+	${SV_MODE}proc; opt; techmap; opt
+	${SV_MODE}write_verilog $TOP_MODULE.sv
 
-	# Synthesize - convert into netlist
-	synth_xilinx -top $TOP_MODULE -edif $TOP_MODULE.edif
+	# Synthesize into netlist
+	${EDIF_MODE}synth_xilinx -top $TOP_MODULE -edif $TOP_MODULE.edif -flatten
 
 EOT
 

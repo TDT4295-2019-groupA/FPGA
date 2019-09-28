@@ -2,6 +2,13 @@
 if [ "$1" = "FAST" ]; then
 	PERHAPS_SKIP="#"
 fi
+if [ "$1" = "NO_EDIF" ]; then
+	SV_MODE=""
+	EDIF_MODE="#"
+else
+	SV_MODE="#"
+	EDIF_MODE=""
+fi
 
 # read config
 source config.sh
@@ -13,21 +20,20 @@ colorize tee "$TMP" <<- EOT
 
 	# read shit
 	read_xdc constraints-$XILINX_PART.xdc
-	read_edif $TOP_MODULE.edif
-
-	#read_verilog $TOP_MODULE.v
+	${EDIF_MODE}read_edif $TOP_MODULE.edif
 	$(
 		find include/ -type f | grep \\\.v$ |
 		while read line; do
-			echo \#read_verilog $line
+			echo ${EDIF_MODE}read_verilog $line
 		done
 	)
-	#synth_design -rtl -top $TOP_MODULE -part $XILINX_PART
+	${SV_MODE}read_verilog $TOP_MODULE.sv
+	${SV_MODE}synth_design -top $TOP_MODULE -part $XILINX_PART
 
 	# Select the FPGA to target and denote which module is the top module
-	set_msg_config -id "Vivado 12-1411" -new_severity ERROR
-	link_design -part $XILINX_PART -top $TOP_MODULE
-	if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
+	${EDIF_MODE}set_msg_config -id "Vivado 12-1411" -new_severity ERROR
+	${EDIF_MODE}link_design -part $XILINX_PART -top $TOP_MODULE
+	${EDIF_MODE}if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
 
 	# This will detect errors early
 	${PERHAPS_SKIP}set_property SEVERITY {Error} [get_drc_checks NSTD-1]

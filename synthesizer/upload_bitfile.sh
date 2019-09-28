@@ -1,8 +1,6 @@
 #!/bin/bash
-set -ex
-
-# read config
 source config.sh
+source common.sh
 
 if ! test -f "$TOP_MODULE.bit"; then
 	echo "ERROR: No bitfile to upload!"
@@ -11,7 +9,8 @@ fi
 
 # upload the bitfile to the FPGA
 
-$XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
+TMP="$(mktemp)"
+colorize tee "$TMP" <<- EOT
 
 	# start the hardware server
 	open_hw
@@ -31,3 +30,8 @@ $XILINX_TOP_DIR/bin/vivado -mode tcl <<- EOT
 	refresh_hw_device [lindex [get_hw_devices] 0]
 
 EOT
+
+colorize $XILINX_TOP_DIR/bin/vivado -mode batch -source "$TMP"
+RET=$?
+rm "$TMP"
+exit $RET
