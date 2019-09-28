@@ -2,7 +2,6 @@ package blackboxes
 
 import chisel3._
 import chisel3.core.IntParam
-import chisel3.util.HasBlackBoxResource
 import chisel3.experimental.MultiIOModule
 import chisel3.experimental.ExtModule
 
@@ -25,7 +24,7 @@ class SPIReciever extends MultiIOModule {
 
   val spi = Module(new SPIExternal())
   spi.i_Clk        := clock
-  spi.i_Rst_L      := reset
+  spi.i_Rst_L      := !reset.asBool()
 
   io.RX_data_valid := spi.o_RX_DV
   io.RX_data       := spi.o_RX_Byte
@@ -45,7 +44,7 @@ class SPIExternal extends ExtModule(Map("SPI_MODE" -> IntParam(0))) { // Verilog
 
   // Control/Data Signals
   val i_Clk     = IO(Input(Clock()))    // FPGA Clock, must be at least 4x faster than i_SPI_Clk
-  val i_Rst_L   = IO(Input(Bool()))     // FPGA Reset
+  val i_Rst_L   = IO(Input(Bool()))     // FPGA Reset, active low?
   val o_RX_DV   = IO(Output(Bool()))    // Data Valid pulse (1 clock cycle)
   val o_RX_Byte = IO(Output(UInt(8.W))) // Byte received on MOSI
   val i_TX_DV   = IO(Input(Bool()))     // Data Valid pulse to register i_TX_Byte

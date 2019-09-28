@@ -30,7 +30,7 @@ object main {
 }
 
 // Here we instantiate VivadoTest with the reset button flipped
-class TopModule extends RawModule { // it won't synthesize though....
+class TopModule extends RawModule {
   val clock = IO(Input(Clock()))
   val reset = IO(Input(Bool()))
   val io = IO(new VivadoTestBundle)

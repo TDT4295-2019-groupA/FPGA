@@ -196,6 +196,7 @@ module SPI_Slave
   // Tri-statae MISO when CS is high.  Allows for multiple slaves to talk.
   //assign o_SPI_MISO = i_SPI_CS_n ? 1'bZ : w_SPI_MISO_Mux;
 
+  // fix?
   always @(posedge i_Clk)
   begin
     o_SPI_MISO <= i_SPI_CS_n ? 1'b1 : w_SPI_MISO_Mux;

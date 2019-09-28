@@ -1,6 +1,6 @@
 # during testing:
-TOP_MODULE=TopModule
 TOP_MODULE=VivadoTest
+TOP_MODULE=TopModule
 
 # denoting where Xilinx Vivado is installed:
 XILINX_TOP_DIR=/opt/Xilinx/Vivado/2019.1
