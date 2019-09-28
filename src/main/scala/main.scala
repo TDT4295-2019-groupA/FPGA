@@ -7,26 +7,26 @@ import java.io.File
 
 object main {
   def main(args: Array[String]): Unit = {
-    return; // we be dumpin now
-    val s = """
-    | Attempting to "run" a chisel program is rather meaningless.
-    | Instead, try running the tests, for instance with "test" or "testOnly Examples.MyIncrementTest
-    |
-    | If you want to create chisel graphs, simply remove this message and comment in the code underneath
-    | to generate the modules you're interested in.
-    """.stripMargin
-    println(s)
+    if (args.length > 1) {
+      val top_module = args(0)
+      val out_path = args(1)
+      val f = new File(out_path)
+      chisel3.Driver.dumpFirrtl(args(0) match {
+        case "FPGATopLevel" => chisel3.Driver.elaborate(() => new FPGATopLevel())
+        case "VivadoTest"   => chisel3.Driver.elaborate(() => new VivadoTest())
+        case "TopModule"    => chisel3.Driver.elaborate(() => new TopModule)
+      }, Option(f))
+    } else {
+      val s = """
+      | Attempting to "run" a chisel program alone is rather meaningless.
+      | Pass in as a parameter which top level module you'd like to dump as firrtl and where to dump it:
+      |     run VivadoTest synthesizer/VivadoTest.fir
+      |
+      | Otherwise, try running the tests, for instance with "test" or "testOnly Examples.MyIncrementTest
+      """.stripMargin
+      println(s)
+    }
   }
-
-  // Uncomment to dump .fir file
-  // val f = new File("synthesizer/FPGATopLevel.fir")
-  // chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new FPGATopLevel()), Option(f))
-
-  val f = new File("synthesizer/VivadoTest.fir")
-  chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new VivadoTest()), Option(f))
-
-  //val f = new File("synthesizer/TopModule.fir")
-  //chisel3.Driver.dumpFirrtl(chisel3.Driver.elaborate(() => new TopModule), Option(f))
 }
 
 // Here we instantiate VivadoTest with the reset button flipped

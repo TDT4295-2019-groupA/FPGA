@@ -46,10 +46,10 @@ synthesizer/include/%.v: src/main/vhdl/%
 
 
 synthesizer/$(TOP_MODULE).fir: $(SCALA_TARGETS)
-	sbt run
+	sbt "run $(TOP_MODULE) synthesizer/$(TOP_MODULE).fir"
 
 synthesizer/%.v: synthesizer/%.fir
-	firrtl -i $< -o $@ --info-mode=ignore
+	firrtl -i $< -o $@ --info-mode=ignore -ll Info
 
 #synthesizer/$(TOP_MODULE).$(NETLIST_FORMAT): synthesizer/$(TOP_MODULE).v $(VERILOG_TARGETS) synthesizer/config.sh $(wildcard synthesizer/include/*.v)
 synthesizer/$(TOP_MODULE).edif: synthesizer/$(TOP_MODULE).v $(VERILOG_TARGETS) synthesizer/config.sh $(wildcard synthesizer/include/*.v)
@@ -64,7 +64,6 @@ synthesizer/$(TOP_MODULE).bit: synthesizer/constraints-$(XILINX_PART).xdc synthe
 .PHONY: clean
 clean:
 	rm -v -r \
-		synthesizer/include/*.v \
 		synthesizer/.Xil      \
 		synthesizer/*.bit     \
 		synthesizer/*.edif    \
@@ -75,3 +74,8 @@ clean:
 		synthesizer/*.v       \
 		synthesizer/*.log     \
 		synthesizer/*.xml
+
+.PHONY: clean_all
+clean_all: clean
+	rm -v -r \
+		synthesizer/include/*.v \
