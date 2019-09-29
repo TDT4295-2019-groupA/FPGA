@@ -1,5 +1,5 @@
 // Copied from https://raw.githubusercontent.com/nandland/spi-slave/master/Verilog/source/SPI_Slave.v
-// with modifications
+// with modifications by pbsds
 ///////////////////////////////////////////////////////////////////////////////
 // Description: SPI (Serial Peripheral Interface) Slave
 //              Creates slave based on input configuration.
