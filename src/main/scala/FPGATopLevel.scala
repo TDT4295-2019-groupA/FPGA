@@ -2,7 +2,7 @@ package generator
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
-import output.Adder
+import common.Adder
 import state.GlobalStateDecoder
 
 class FPGATopLevel() extends MultiIOModule {

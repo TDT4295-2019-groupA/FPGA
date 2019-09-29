@@ -1,4 +1,4 @@
-package output
+package common
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
