@@ -3,6 +3,7 @@ package generator
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import blackboxes._
+import common._
 
 class VivadoTestBundle extends Bundle {
   val btn      = Input(UInt(4.W))
@@ -19,6 +20,7 @@ class VivadoTestBundle extends Bundle {
 class VivadoTest() extends MultiIOModule {
   val io = IO(new VivadoTestBundle)
 
+  // debounce
   val btn_prev = RegInit(UInt(4.W), 0.U);
   btn_prev := io.btn
   val btn_prev_2 = RegInit(UInt(4.W), 0.U);
@@ -45,22 +47,19 @@ class VivadoTest() extends MultiIOModule {
   }
 
   // do rgb
-  val pwm = Reg(UInt(3.W))
-  pwm := pwm + 1.U
-  when(io.sw(3)) {
-    when(io.btn(3) && pwm === 0.U) {
-      io.rgbled_0 := 0x4.U
-      io.rgbled_1 := 0x2.U
-      io.rgbled_2 := 0x7.U
-      io.rgbled_3 := 0x1.U
-    }
+  val pwm = Module(new PWM(8)).io
+  val counter2 = Reg(UInt(32.W))
+  counter2 := counter2 + 1.U
+  when(io.sw(0)) {
+    pwm.target := counter2 >> 24
   } otherwise {
-    when(io.btn(3) && pwm(0)) {
-      io.rgbled_0 := 0x4.U
-      io.rgbled_1 := 0x2.U
-      io.rgbled_2 := 0x7.U
-      io.rgbled_3 := 0x1.U
-    }
+    pwm.target := 1.U << (io.sw >> 1.U)
+  }
+  when(pwm.high && io.btn(3)) {
+    io.rgbled_0 := 0x4.U
+    io.rgbled_1 := 0x2.U
+    io.rgbled_2 := 0x7.U
+    io.rgbled_3 := 0x1.U
   }
 
   // do spi
@@ -72,8 +71,6 @@ class VivadoTest() extends MultiIOModule {
   when(rx.RX_data_valid) {
     spi_reg := rx.RX_data
   }
-  //spi_reg := (io.spi.mosi << 3) | (false.B << 2) | (io.spi.clk << 1) | (io.spi.cs_n << 0)
-  //io.spi.miso := false.B
 
   // do LED
   when(io.sw(0)) {
@@ -85,12 +82,7 @@ class VivadoTest() extends MultiIOModule {
       io.led := spi_reg
     }
   }.otherwise {
-    io.led := io.sw(1) | (io.sw(2)<<1.U) | (io.sw(3)<<2.U)
+    io.led := io.sw
   }
-
-
-
-  //when(io.btn(0) && (! btn_prev(0)) && (! btn_prev_2(0)) && (! btn_prev_4(0)) && (! btn_prev_4(0))) {
-  //}
 
 }
