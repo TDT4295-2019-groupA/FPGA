@@ -3,7 +3,6 @@ package generator
 import Ex0.TestUtils._
 import chisel3.iotesters.PeekPokeTester
 import chisel3.util.BitPat
-import generator.GeneratorPacket
 import org.scalatest.{FlatSpec, Matchers}
 
 class GeneratorTest extends FlatSpec with Matchers {

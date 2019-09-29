@@ -12,10 +12,11 @@ object main {
       val out_path = args(1)
       val f = new File(out_path)
       chisel3.Driver.dumpFirrtl(args(0) match {
-        case "FPGATopLevel" => chisel3.Driver.elaborate(() => new FPGATopLevel())
-        case "VivadoTest"   => chisel3.Driver.elaborate(() => new VivadoTest())
+        case "FPGATopLevel" => chisel3.Driver.elaborate(() => new FPGATopLevel)
+        case "VivadoTest"   => chisel3.Driver.elaborate(() => new VivadoTest)
         case "TopModule"    => chisel3.Driver.elaborate(() => new TopModule)
       }, Option(f))
+      println("Results written to " + out_path)
     } else {
       val s = """
       | Attempting to "run" a chisel program alone is rather meaningless.

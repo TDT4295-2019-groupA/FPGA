@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ "$1" = "FAST" ]; then
-	PERHAPS_SKIP="#"
+	SLOW="#"
 fi
 if [ "$1" = "NO_EDIF" ]; then
 	SV_MODE=""
@@ -21,12 +21,6 @@ colorize tee "$TMP" <<- EOT
 	# read shit
 	read_xdc constraints-$XILINX_PART.xdc
 	${EDIF_MODE}read_edif $TOP_MODULE.edif
-	$(
-		find include/ -type f | grep \\\.v$ |
-		while read line; do
-			echo ${EDIF_MODE}read_verilog $line
-		done
-	)
 	${SV_MODE}read_verilog $TOP_MODULE.sv
 	${SV_MODE}synth_design -top $TOP_MODULE -part $XILINX_PART
 
@@ -36,13 +30,13 @@ colorize tee "$TMP" <<- EOT
 	${EDIF_MODE}if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
 
 	# This will detect errors early
-	${PERHAPS_SKIP}set_property SEVERITY {Error} [get_drc_checks NSTD-1]
-	${PERHAPS_SKIP}set_property SEVERITY {Error} [get_drc_checks UCIO-1]
-	${PERHAPS_SKIP}report_drc -return_string
-	${PERHAPS_SKIP}if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
+	${SLOW}set_property SEVERITY {Error} [get_drc_checks NSTD-1]
+	${SLOW}set_property SEVERITY {Error} [get_drc_checks UCIO-1]
+	${SLOW}report_drc -return_string
+	${SLOW}if [expr {[get_msg_config -severity Error -count] > 0}] { error "ERROR: Errors encountered! Abort!" }
 
 	# Optimizer: deduce a more optimal design
-	${PERHAPS_SKIP}opt_design
+	${SLOW}opt_design
 
 	# Placer: Physical placement of cells from netlist, minimizing total wire length and routing congestions
 	place_design
