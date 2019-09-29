@@ -14,7 +14,7 @@ class VivadoTestBundle extends Bundle {
   val rgbled_2 = Output(UInt(3.W))
   val rgbled_3 = Output(UInt(3.W))
 
-  val spi = new SPIInterface()
+  val spi = new SPIBus()
 }
 
 class VivadoTest() extends MultiIOModule {
@@ -64,7 +64,7 @@ class VivadoTest() extends MultiIOModule {
 
   // do spi
   val spi_reg = RegInit(UInt(4.W), 8.U)
-  val rx = Module(new SPIReciever()).io
+  val rx = Module(new SPISlave()).io
   rx.TX_data_valid := false.B
   rx.TX_data := 0.U
   rx.spi <> io.spi
