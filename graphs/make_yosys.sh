@@ -1,18 +1,29 @@
 #!/usr/bin/env bash
-
-VERILOG_FILE="$1"
-test "$VERILOG_FILE" = "" && (
-	echo please supple a .v verilog file
+test "$1" = "" && (
+	echo please supply at least one verilog file
 	exit 1
 )
 
-test -d yosys && rm -vr yosys
 mkdir -p yosys
 
-grep "^module" "$VERILOG_FILE" | cut -d" " -f2- | cut -d"(" -f1 | (
-	echo "read_verilog $VERILOG_FILE"
-	echo "prep"
-	while read MODULE; do
-		echo "show -format svg -colors 42 -stretch -prefix yosys/$MODULE $MODULE"
+TMP="$(mktemp)"
+(
+	while ! test -z "$1"; do
+		echo "1 read_verilog $1"
+		grep "^module" "$1" | cut -d" " -f2- | cut -d"(" -f1 |
+		while read MODULE; do
+			echo "6 show -format svg -colors 42 -stretch -prefix yosys/${MODULE}_gen $MODULE"
+			echo "7 show -format svg -colors 42 -stretch -prefix yosys/${MODULE}_opt $MODULE"
+		done
+		shift
 	done
-) |  yosys -Q -T -
+	echo "0 # read files"
+	echo "3 # process files"
+	echo "4 proc"
+	echo "5 opt; fsm; opt; memory_dff; memory_share; memory_collect; memory_map; opt_rmdff; wreduce; clean;"
+) |
+sort |
+tee "$TMP" | cut -c3-
+
+cat "$TMP"  | grep -v ^5 | grep -v ^7  | cut -c3- | yosys -Q -T -
+cat "$TMP"  | grep -v ^6               | cut -c3- | yosys -Q -T -
