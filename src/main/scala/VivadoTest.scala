@@ -19,6 +19,7 @@ class VivadoTestBundle extends Bundle {
 
 class VivadoTest() extends MultiIOModule {
   val io = IO(new VivadoTestBundle)
+  val spi_reg = RegInit(UInt(4.W), 8.U)
 
   // debounce
   val btn_prev = RegInit(UInt(4.W), 0.U);
@@ -48,10 +49,8 @@ class VivadoTest() extends MultiIOModule {
 
   // do rgb
   val pwm = Module(new PWM(8)).io
-  val counter2 = Reg(UInt(32.W))
-  counter2 := counter2 + 1.U
   when(io.sw(0)) {
-    pwm.target := counter2 >> 24
+    pwm.target := spi_reg << 2.U
   } otherwise {
     pwm.target := 1.U << (io.sw >> 1.U)
   }
@@ -63,7 +62,6 @@ class VivadoTest() extends MultiIOModule {
   }
 
   // do spi
-  val spi_reg = RegInit(UInt(4.W), 8.U)
   val rx = Module(new SPISlave()).io
   rx.TX_data_valid := false.B
   rx.TX_data := 0.U
