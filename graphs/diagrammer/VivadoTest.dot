@@ -14,6 +14,12 @@ cluster_VivadoTest_io_btn [shape = "rectangle" style="filled" fillcolor="#CCCCCC
      
 cluster_VivadoTest_io_sw [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_sw" rank="0"]
      
+cluster_VivadoTest_io_spi_mosi [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_mosi" rank="0"]
+     
+cluster_VivadoTest_io_spi_clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_clk" rank="0"]
+     
+cluster_VivadoTest_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
+     
 cluster_VivadoTest_io_led [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_led" rank="1000"]
      
 cluster_VivadoTest_io_rgbled_0 [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_rgbled_0" rank="1000"]
@@ -24,6 +30,74 @@ cluster_VivadoTest_io_rgbled_2 [shape = "rectangle" style="filled" fillcolor="#E
      
 cluster_VivadoTest_io_rgbled_3 [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_rgbled_3" rank="1000"]
      
+cluster_VivadoTest_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
+     
+
+subgraph cluster_VivadoTest_PWM {
+  label="PWM"
+  URL="PWM.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_VivadoTest_PWM_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_VivadoTest_PWM_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_VivadoTest_PWM_io_target [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_target" rank="0"]
+     
+cluster_VivadoTest_PWM_io_high [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_high" rank="1000"]
+     
+
+  
+  
+  
+}
+     
+
+subgraph cluster_VivadoTest_SPISlave {
+  label="SPISlave"
+  URL="SPISlave.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_VivadoTest_SPISlave_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_VivadoTest_SPISlave_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_VivadoTest_SPISlave_io_spi_mosi [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_mosi" rank="0"]
+     
+cluster_VivadoTest_SPISlave_io_spi_clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_clk" rank="0"]
+     
+cluster_VivadoTest_SPISlave_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
+     
+cluster_VivadoTest_SPISlave_io_RX_data_valid [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_RX_data_valid" rank="1000"]
+     
+cluster_VivadoTest_SPISlave_io_RX_data [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_RX_data" rank="1000"]
+     
+cluster_VivadoTest_SPISlave_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
+     
+
+subgraph cluster_VivadoTest_SPISlave_spi {
+  label="spi"
+  URL="SPI_Slave.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+  
+  
+  
+}
+     
+struct_cluster_VivadoTest_spi_reg [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>spi_reg</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
 struct_cluster_VivadoTest_btn_prev [shape="plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
   <TR>
@@ -32,16 +106,40 @@ struct_cluster_VivadoTest_btn_prev [shape="plaintext" label=<
     <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
-struct_cluster_VivadoTest_c [shape="plaintext" label=<
+struct_cluster_VivadoTest_btn_prev_2 [shape="plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
   <TR>
     <TD PORT="in">&#x25cf;</TD>
-    <TD>c</TD>
+    <TD>btn_prev_2</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+struct_cluster_VivadoTest_btn_prev_3 [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>btn_prev_3</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+struct_cluster_VivadoTest_btn_prev_4 [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>btn_prev_4</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+struct_cluster_VivadoTest_btn_counter [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>btn_counter</TD>
     <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
 
-mux_2045159326 [shape = "plaintext" label=<
+mux_194545662 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -50,91 +148,6 @@ mux_2045159326 [shape = "plaintext" label=<
   </TR>
   <TR>
     <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_bits_2 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > bits </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>(0, 0)</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_or_3 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > or </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_pad_4 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD > pad </TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_or_5 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > or </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_pad_6 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD > pad </TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_bits_7 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > bits </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>(1, 1)</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_shl_8 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > shl </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
   </TR>
 </TABLE>>];
        
@@ -147,35 +160,25 @@ op_bits_9 [shape = "plaintext" label=<
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD>(2, 2)</TD>
+    <TD>(0, 0)</TD>
   </TR>
 </TABLE>>];
        
 
-op_pad_10 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+mux_1896844168 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD > pad </TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_shl_11 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD>2</TD>
+    <TD PORT="in2">&#x25cf;</TD>
   </TR>
 </TABLE>>];
        
 
-op_bits_12 [shape = "plaintext" label=<
+op_bits_10 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -183,25 +186,25 @@ op_bits_12 [shape = "plaintext" label=<
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD>(3, 3)</TD>
+    <TD>(1, 1)</TD>
   </TR>
 </TABLE>>];
        
 
-mux_1109944343 [shape = "plaintext" label=<
+mux_2140958307 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
-    <TD PORT="in1">4</TD>
+    <TD PORT="in1">&#x25cf;</TD>
     <TD ROWSPAN="2" PORT="select">a?</TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD PORT="in2">0</TD>
+    <TD PORT="in2">&#x25cf;</TD>
   </TR>
 </TABLE>>];
        
 
-op_bits_13 [shape = "plaintext" label=<
+op_bits_11 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -210,6 +213,32 @@ op_bits_13 [shape = "plaintext" label=<
   </TR>
   <TR>
     <TD>(0, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_12 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_13 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
   </TR>
 </TABLE>>];
        
@@ -224,59 +253,7 @@ op_pad_14 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_642408023 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">2</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">0</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_bits_15 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > bits </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>(1, 1)</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1564988634 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">7</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">0</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_bits_16 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > bits </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>(1, 1)</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_pad_17 [shape = "plaintext" label=<
+op_pad_15 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -286,85 +263,56 @@ op_pad_17 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_18 [shape = "plaintext" label=<
+op_pad_16 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > bits </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>(0, 0)</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
        
 
-mux_1574776256 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">0</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_18661467 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">5</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_571449877 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">1</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_bits_19 [shape = "plaintext" label=<
+op_shl_17 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" > shl </TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD>(2, 2)</TD>
+    <TD>2</TD>
   </TR>
 </TABLE>>];
        
 
-mux_627727378 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+op_shl_18 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>3</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1681293841 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">4</TD>
     <TD ROWSPAN="2" PORT="select">a?</TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD PORT="in2">&#x25cf;</TD>
+    <TD PORT="in2">0</TD>
   </TR>
 </TABLE>>];
        
 
-op_and_20 [shape = "plaintext" label=<
+op_and_19 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -377,7 +325,7 @@ op_and_20 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_21 [shape = "plaintext" label=<
+op_bits_20 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -390,15 +338,38 @@ op_bits_21 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_22 [shape = "plaintext" label=<
+op_pad_21 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > eq </TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1261884093 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">2</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
     <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_22 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
   </TR>
 </TABLE>>];
        
@@ -416,7 +387,404 @@ op_bits_23 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_24 [shape = "plaintext" label=<
+mux_1164610145 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">7</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_24 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_25 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(3, 3)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_26 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_27 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_28 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(3, 3)</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1472839260 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">8</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_29 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(3, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1131243327 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_30 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1574776256 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_948248131 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1280902079 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_478551359 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_206413326 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">5</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_945249963 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">1</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_31 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(1, 1)</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1237270781 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_32 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_33 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_34 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_35 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_36 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(2, 2)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_37 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_38 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(2, 2)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_39 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_40 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(2, 2)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_41 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_42 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(2, 2)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_43 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_44 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(2, 2)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_45 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -429,7 +797,7 @@ op_tail_24 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_25 [shape = "plaintext" label=<
+op_add_46 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -442,55 +810,186 @@ op_add_25 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  op_bits_2:out -> mux_2045159326:select
-  op_tail_24:out -> mux_627727378:in1
-  op_bits_19:out -> mux_571449877:select
-  mux_2045159326:out -> cluster_VivadoTest_io_led
-  cluster_VivadoTest_reset -> mux_18661467:select
-  op_bits_23:out -> op_eq_22:in1
-  op_bits_12:out -> op_shl_11:in1
-  mux_627727378:out -> mux_571449877:in2
+op_bits_47 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_149664104 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_48 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(0, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_49 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_50 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_shl_51 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>2</TD>
+  </TR>
+</TABLE>>];
+       
+
+  struct_cluster_VivadoTest_btn_prev_4:out -> op_bits_42:in1
+  op_pad_16:out -> op_or_13:in2
+  cluster_VivadoTest_io_btn -> op_bits_20:in1
+  cluster_VivadoTest_io_spi_cs_n -> cluster_VivadoTest_SPISlave_io_spi_cs_n
+  cluster_VivadoTest_clock -> cluster_VivadoTest_SPISlave_clock
+  op_eq_43:out -> op_and_32:in2
+  mux_194545662:out -> cluster_VivadoTest_io_led
+  mux_945249963:out -> mux_206413326:in2
+  op_bits_28:out -> op_and_27:in2
+  op_or_13:out -> op_or_12:in1
+  struct_cluster_VivadoTest_btn_counter:out -> mux_1237270781:in2
+  cluster_VivadoTest_io_sw -> mux_1896844168:in2
+  cluster_VivadoTest_reset -> mux_206413326:select
+  op_and_22:out -> mux_1261884093:select
   cluster_VivadoTest_io_sw -> op_bits_9:in1
+  op_bits_40:out -> op_eq_39:in1
+  cluster_VivadoTest_io_btn -> op_bits_11:in1
   mux_1574776256:out -> struct_cluster_VivadoTest_btn_prev:in
-  cluster_VivadoTest_io_btn -> op_bits_15:in1
-  mux_1109944343:out -> cluster_VivadoTest_io_rgbled_0
-  op_bits_16:out -> mux_1564988634:select
-  op_pad_17:out -> cluster_VivadoTest_io_rgbled_3
-  op_pad_4:out -> op_or_3:in1
-  op_eq_22:out -> op_and_20:in2
-  op_add_25:out -> op_tail_24:in1
-  op_bits_9:out -> op_shl_8:in1
-  op_or_5:out -> op_pad_4:in1
-  cluster_VivadoTest_io_btn -> op_bits_19:in1
-  cluster_VivadoTest_io_sw -> op_bits_2:in1
-  cluster_VivadoTest_io_btn -> op_bits_21:in1
-  mux_571449877:out -> mux_18661467:in2
-  cluster_VivadoTest_io_sw -> op_bits_12:in1
-  op_shl_8:out -> op_or_5:in2
-  cluster_VivadoTest_io_btn -> op_bits_16:in1
-  struct_cluster_VivadoTest_c:out -> op_add_25:in1
-  op_bits_13:out -> mux_1109944343:select
-  op_or_3:out -> mux_2045159326:in2
-  op_bits_18:out -> op_pad_17:in1
-  op_bits_21:out -> op_and_20:in1
-  struct_cluster_VivadoTest_c:out -> mux_627727378:in2
+  cluster_VivadoTest_io_btn -> op_bits_28:in1
+  op_and_24:out -> mux_1164610145:select
+  mux_149664104:out -> op_bits_47:in1
+  struct_cluster_VivadoTest_btn_counter:out -> op_add_46:in1
+  mux_1681293841:out -> cluster_VivadoTest_io_rgbled_0
+  struct_cluster_VivadoTest_spi_reg:out -> op_pad_30:in1
+  op_bits_36:out -> op_and_35:in1
+  op_bits_42:out -> op_eq_41:in1
+  cluster_VivadoTest_io_spi_mosi -> op_pad_15:in1
+  op_eq_41:out -> op_and_33:in2
+  op_and_32:out -> mux_1237270781:select
+  op_pad_30:out -> mux_1131243327:in2
+  op_pad_26:out -> cluster_VivadoTest_io_rgbled_3
+  cluster_VivadoTest_PWM_io_high -> op_and_22:in1
+  mux_1280902079:out -> struct_cluster_VivadoTest_btn_prev_3:in
+  mux_1237270781:out -> mux_945249963:in2
+  op_bits_25:out -> op_and_24:in2
+  struct_cluster_VivadoTest_btn_prev:out -> op_bits_38:in1
+  op_shl_17:out -> op_pad_16:in1
+  cluster_VivadoTest_reset -> cluster_VivadoTest_PWM_reset
+  mux_1261884093:out -> op_pad_21:in1
+  cluster_VivadoTest_reset -> cluster_VivadoTest_SPISlave_reset
+  cluster_VivadoTest_io_btn -> op_bits_25:in1
+  struct_cluster_VivadoTest_spi_reg:out -> mux_2140958307:in2
+  struct_cluster_VivadoTest_btn_prev_2:out -> op_bits_40:in1
+  op_pad_14:out -> op_or_13:in1
+  mux_1896844168:out -> mux_194545662:in2
+  struct_cluster_VivadoTest_btn_prev:out -> mux_948248131:in2
+  op_and_33:out -> op_and_32:in1
+  op_tail_45:out -> mux_1237270781:in1
+  cluster_VivadoTest_PWM_io_high -> op_and_27:in1
+  mux_1472839260:out -> struct_cluster_VivadoTest_spi_reg:in
+  cluster_VivadoTest_reset -> mux_1472839260:select
+  mux_1131243327:out -> op_bits_29:in1
+  struct_cluster_VivadoTest_btn_prev_4:out -> op_bits_44:in1
+  cluster_VivadoTest_SPISlave_io_RX_data -> mux_1131243327:in1
+  cluster_VivadoTest_reset -> mux_948248131:select
+  cluster_VivadoTest_io_btn -> op_bits_31:in1
+  cluster_VivadoTest_io_spi_clk -> cluster_VivadoTest_SPISlave_io_spi_clk
+  mux_2140958307:out -> mux_1896844168:in1
+  op_and_27:out -> op_pad_26:in1
+  op_and_19:out -> mux_1681293841:select
+  op_eq_39:out -> op_and_34:in2
+  op_bits_20:out -> op_and_19:in2
+  op_bits_31:out -> mux_945249963:select
+  cluster_VivadoTest_io_sw -> op_bits_48:in1
+  op_shl_51:out -> op_pad_50:in1
+  op_and_34:out -> op_and_33:in1
+  struct_cluster_VivadoTest_btn_prev_3:out -> mux_478551359:in2
+  dummy -> mux_149664104:in2
+  cluster_VivadoTest_SPISlave_io_RX_data_valid -> mux_1131243327:select
+  op_bits_29:out -> mux_1472839260:in2
+  op_bits_47:out -> cluster_VivadoTest_PWM_io_target
+  mux_206413326:out -> struct_cluster_VivadoTest_btn_counter:in
   cluster_VivadoTest_io_btn -> mux_1574776256:in2
-  mux_1564988634:out -> cluster_VivadoTest_io_rgbled_2
-  cluster_VivadoTest_io_sw -> op_bits_7:in1
-  op_and_20:out -> mux_627727378:select
+  mux_1164610145:out -> cluster_VivadoTest_io_rgbled_2
+  cluster_VivadoTest_PWM_io_high -> op_and_24:in1
+  cluster_VivadoTest_io_spi_mosi -> cluster_VivadoTest_SPISlave_io_spi_mosi
   cluster_VivadoTest_reset -> mux_1574776256:select
-  mux_18661467:out -> struct_cluster_VivadoTest_c:in
-  cluster_VivadoTest_io_btn -> op_bits_13:in1
-  op_pad_14:out -> cluster_VivadoTest_io_rgbled_1
-  op_shl_11:out -> op_pad_10:in1
-  struct_cluster_VivadoTest_c:out -> mux_2045159326:in1
-  op_pad_10:out -> op_or_3:in2
-  op_pad_6:out -> op_or_5:in1
-  op_bits_15:out -> mux_642408023:select
-  op_bits_7:out -> op_pad_6:in1
-  mux_642408023:out -> op_pad_14:in1
-  cluster_VivadoTest_io_btn -> op_bits_18:in1
-  struct_cluster_VivadoTest_btn_prev:out -> op_bits_23:in1
+  cluster_VivadoTest_reset -> mux_1280902079:select
+  op_bits_38:out -> op_eq_37:in1
+  op_or_12:out -> mux_2140958307:in1
+  mux_478551359:out -> struct_cluster_VivadoTest_btn_prev_4:in
+  op_bits_10:out -> mux_1896844168:select
+  struct_cluster_VivadoTest_btn_counter:out -> mux_194545662:in1
+  cluster_VivadoTest_io_sw -> op_bits_10:in1
+  op_pad_50:out -> op_pad_49:in1
+  op_pad_21:out -> cluster_VivadoTest_io_rgbled_1
+  op_bits_9:out -> mux_194545662:select
+  cluster_VivadoTest_io_spi_clk -> op_shl_17:in1
+  op_eq_37:out -> op_and_35:in2
+  cluster_VivadoTest_clock -> cluster_VivadoTest_PWM_clock
+  op_bits_44:out -> op_eq_43:in1
+  struct_cluster_VivadoTest_btn_prev_2:out -> mux_1280902079:in2
+  op_bits_11:out -> mux_2140958307:select
+  op_bits_23:out -> op_and_22:in2
+  cluster_VivadoTest_PWM_io_high -> op_and_19:in1
+  op_shl_18:out -> op_or_12:in2
+  struct_cluster_VivadoTest_spi_reg:out -> op_shl_51:in1
+  op_and_35:out -> op_and_34:in1
+  op_pad_15:out -> op_pad_14:in1
+  cluster_VivadoTest_io_btn -> op_bits_36:in1
+  cluster_VivadoTest_io_spi_cs_n -> op_shl_18:in1
+  op_pad_49:out -> mux_149664104:in1
+  cluster_VivadoTest_reset -> mux_478551359:select
+  op_add_46:out -> op_tail_45:in1
+  cluster_VivadoTest_io_btn -> op_bits_23:in1
+  cluster_VivadoTest_SPISlave_io_spi_miso -> cluster_VivadoTest_io_spi_miso
+  mux_948248131:out -> struct_cluster_VivadoTest_btn_prev_2:in
+  op_bits_48:out -> mux_149664104:select
   
   
 }

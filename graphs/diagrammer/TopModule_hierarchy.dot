@@ -24,7 +24,52 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
     <TD BGCOLOR="#FFDEAD" > VivadoTest </TD>
   </TR>
         
+  <TR>
+    <TD PORT="module_3" BGCOLOR="#FFF8DC" >PWM</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_4" BGCOLOR="#FFF8DC" >SPISlave</TD>
+  </TR>
+        
 </TABLE>>];
 
-      module_1:module_2 -> module_2
+      module_3 [shape= "plaintext" href="PWM.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > PWM </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_4 [shape= "plaintext" href="SPISlave.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > SPISlave </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_5" BGCOLOR="#FFF8DC" >spi</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_5 [shape= "plaintext" href="SPI_Slave.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > SPI_Slave </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_2:module_3 -> module_3
+module_4:module_5 -> module_5
+module_2:module_4 -> module_4
+module_1:module_2 -> module_2
 }

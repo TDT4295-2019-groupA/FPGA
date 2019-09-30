@@ -1,0 +1,103 @@
+digraph SPISlave {
+stylesheet = "styles.css"
+rankdir="LR" 
+
+subgraph cluster_SPISlave {
+  label="SPISlave"
+  URL=""
+  bgcolor="#FFF8DC"
+  cluster_SPISlave_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_SPISlave_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_SPISlave_io_spi_mosi [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_mosi" rank="0"]
+     
+cluster_SPISlave_io_spi_clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_clk" rank="0"]
+     
+cluster_SPISlave_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
+     
+cluster_SPISlave_io_RX_data_valid [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_RX_data_valid" rank="1000"]
+     
+cluster_SPISlave_io_RX_data [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_RX_data" rank="1000"]
+     
+cluster_SPISlave_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
+     
+
+subgraph cluster_SPISlave_spi {
+  label="spi"
+  URL="SPI_Slave.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_SPISlave_spi_i_Clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_Clk" rank="0"]
+     
+cluster_SPISlave_spi_i_Rst_L [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_Rst_L" rank="0"]
+     
+cluster_SPISlave_spi_i_TX_DV [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_TX_DV" rank="0"]
+     
+cluster_SPISlave_spi_i_TX_Byte [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_TX_Byte" rank="0"]
+     
+cluster_SPISlave_spi_i_SPI_Clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_SPI_Clk" rank="0"]
+     
+cluster_SPISlave_spi_i_SPI_MOSI [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_SPI_MOSI" rank="0"]
+     
+cluster_SPISlave_spi_i_SPI_CS_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_SPI_CS_n" rank="0"]
+     
+cluster_SPISlave_spi_o_RX_DV [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="o_RX_DV" rank="1000"]
+     
+cluster_SPISlave_spi_o_RX_Byte [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="o_RX_Byte" rank="1000"]
+     
+cluster_SPISlave_spi_o_SPI_MISO [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="o_SPI_MISO" rank="1000"]
+     
+
+  
+  
+  
+}
+     
+
+op_eq_5 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+cluster_SPISlave_lit6 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
+cluster_SPISlave_lit7 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
+
+op_eq_8 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">0</TD>
+  </TR>
+</TABLE>>];
+       
+
+  cluster_SPISlave_io_spi_cs_n -> op_eq_8:in1
+  cluster_SPISlave_lit7 -> cluster_SPISlave_spi_i_TX_Byte
+  op_eq_8:out -> cluster_SPISlave_spi_i_SPI_CS_n
+  cluster_SPISlave_io_spi_mosi -> cluster_SPISlave_spi_i_SPI_MOSI
+  cluster_SPISlave_lit6 -> cluster_SPISlave_spi_i_TX_DV
+  cluster_SPISlave_reset -> op_eq_5:in1
+  cluster_SPISlave_clock -> cluster_SPISlave_spi_i_Clk
+  op_eq_5:out -> cluster_SPISlave_spi_i_Rst_L
+  cluster_SPISlave_spi_o_SPI_MISO -> cluster_SPISlave_io_spi_miso
+  cluster_SPISlave_io_spi_clk -> cluster_SPISlave_spi_i_SPI_Clk
+  cluster_SPISlave_spi_o_RX_Byte -> cluster_SPISlave_io_RX_data
+  cluster_SPISlave_spi_o_RX_DV -> cluster_SPISlave_io_RX_data_valid
+  
+  
+}
+     
+}
