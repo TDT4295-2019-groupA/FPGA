@@ -25,7 +25,6 @@ class GeneratorTest extends FlatSpec with Matchers {
 object GeneratorTests {
 
   val rand = new scala.util.Random(100)
-  import generator._
 
   class BasicGeneratorTest(c: Generator) extends PeekPokeTester(c) {
     println("Testing that it runs at all")
@@ -41,24 +40,32 @@ object GeneratorTests {
     Preface with 1 to not drop any bits.
     00000000 01000000 00000000 01000000 00000000 00000000 000000000 00000000 000000
     In total realendian: "000000000100000000000000010000000000000000000000000000000000000000000001"
-    ""
-    In total ""
     */
 
-    val genPackIn = (BitPat.bitPatToUInt(BitPat("b000000000100000000000000010000000000000000000000000000000000000000000001")))
+    //Currently not used
+    //val genPackIn = (BitPat.bitPatToUInt(BitPat("b000000000100000000000000010000000000000000000000000000000000000000000001")))
 
+    //Writeenable has to be set
     poke(c.io.writeEnable, true)
     poke(c.io.generatorPacketIn.toBits, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001", 2))
 
+    //I think it defaults to 0.U anyway, so this is prob pointless
     poke(c.io.envelopeIn.toBits, 0)
     poke(c.io.pitchWheelArrayIn.toBits, 0)
 
     step(1)
+
+    //Reset input to ensure it doenst update state when it's not supposed to
+    poke(c.io.writeEnable, false)
+    poke(c.io.generatorPacketIn.toBits, 0)
+
     for (ii <- 0 until 100) {
-      poke(c.io.generatorPacketIn.toBits, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001", 2))
       printf("Sound output: %d\n", peek(c.io.sampleOut))
-      //printf("PacketIn/Out: %d\n", peek(c.io.outputTest))
       step(1)
+
+      //Both of these are for debugging
+      //poke(c.io.generatorPacketIn.toBits, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001", 2))
+      //printf("PacketIn/Out: %d\n", peek(c.io.outputTest))
     }
   }
 }

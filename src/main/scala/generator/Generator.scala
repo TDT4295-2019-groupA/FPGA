@@ -52,7 +52,7 @@ class Generator extends MultiIOModule{
   }
 
 
-  when(io.generatorPacketIn.reset_note) {
+  when(io.writeEnable && io.generatorPacketIn.reset_note) {
     noteLife := 0.U
   } otherwise {
     noteLife := noteLife + 1.U
@@ -85,7 +85,7 @@ class Generator extends MultiIOModule{
   }
 
   printf("Inputs: Enabled: %b, Instrument: %d, Note_Index: %d, Channel_Index: %d, Velocity: %d, Reset_Note: %b\n", io.generatorPacketIn.enabled, io.generatorPacketIn.instrument, io.generatorPacketIn.note_index, io.generatorPacketIn.channel_index, io.generatorPacketIn.velocity, io.generatorPacketIn.reset_note)
-  printf("Instrument: %d, Enabled: %b, Note_Index: %d, WriteEnable: %b, InstrumentEnumSquare: %d, Velocity: %d\n", instrument, enabled, note_index, io.writeEnable, InstrumentEnum.SQUARE, velocity)
+  printf("Instrument: %d, Enabled: %b, Note_Index: %d, WriteEnable: %b, InstrumentEnumSquare: %d, Velocity: %d, Notelife: %d\n", instrument, enabled, note_index, io.writeEnable, InstrumentEnum.SQUARE, velocity, noteLife)
   printf("Saved_Sample: %d, Velocity_Max: %d, Velocity: %d\n", saved_sample, VELOCITY_MAX, velocity)
   //printf("PackageIn: %d\n", io.generatorPacketIn.asUInt())
   //printf("SampleMax: %d, VelocityMax: %d\n", SAMPLE_MAX.toUInt, VELOCITY_MAX.toUInt)

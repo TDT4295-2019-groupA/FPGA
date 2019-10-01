@@ -10,3 +10,11 @@ class PitchWheelArray extends Bundle {
     pitchWheelArray(wheelNum+7, wheelNum*8)
   }
 }
+
+object PitchWheelArray {
+  def DEFAULT: PitchWheelArray = {
+    val w = Wire(new PitchWheelArray)
+    w.pitchWheelArray := 0.U
+    w
+  }
+}
