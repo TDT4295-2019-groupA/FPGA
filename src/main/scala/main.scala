@@ -3,6 +3,7 @@ import chisel3._
 import chisel3.core.withClockAndReset
 import chisel3.experimental.RawModule
 import generator._
+import communication.SPIInputHandler
 import java.io.File
 
 object main {
@@ -12,9 +13,10 @@ object main {
       val out_path = args(1)
       val f = new File(out_path)
       chisel3.Driver.dumpFirrtl(args(0) match {
-        case "FPGATopLevel" => chisel3.Driver.elaborate(() => new FPGATopLevel)
-        case "VivadoTest"   => chisel3.Driver.elaborate(() => new VivadoTest)
-        case "TopModule"    => chisel3.Driver.elaborate(() => new TopModule)
+        case "FPGATopLevel"    => chisel3.Driver.elaborate(() => new FPGATopLevel)
+        case "VivadoTest"      => chisel3.Driver.elaborate(() => new VivadoTest)
+        case "TopModule"       => chisel3.Driver.elaborate(() => new TopModule)
+        case "SPIInputHandler" => chisel3.Driver.elaborate(() => new SPIInputHandler)
       }, Option(f))
       println("Results written to " + out_path)
     } else {
