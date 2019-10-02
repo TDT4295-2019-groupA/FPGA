@@ -1,8 +1,9 @@
 #!/bin/bash
-source config.sh
-source common.sh
+source $(dirname $0)/common.sh
 
-if ! test -f "$TOP_MODULE.bit"; then
+BITFILE="$1"; shift
+
+if ! test -f "$BITFILE"; then
 	echo "ERROR: No bitfile to upload!"
 	exit 1
 fi
@@ -23,8 +24,8 @@ colorize tee "$TMP" <<- EOT
 	# Program and Refresh the xc7a35t_0 Device
 	current_hw_device [lindex [get_hw_devices] 0]
 	refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
-	set_property PROGRAM.FILE {$(pwd)/$TOP_MODULE.bit} [lindex [get_hw_devices] 0]
-	# set_property PROBES.FILE {$(pwd)/$TOP_MODULE.ltx} [lindex [get_hw_devices] 0]
+	set_property PROGRAM.FILE {$BITFILE} [lindex [get_hw_devices] 0]
+	# set_property PROBES.FILE {$BITFILE.ltx} [lindex [get_hw_devices] 0]
 
 	program_hw_devices [lindex [get_hw_devices] 0]
 	refresh_hw_device [lindex [get_hw_devices] 0]

@@ -4,12 +4,12 @@ test_run_dir/*
 # vivado and yosys
 vivado.cache
 vivado.runs
-synthesizer/include
-synthesizer/.Xil
-synthesizer/*.edif
-synthesizer/*.jou
-synthesizer/*.v
-synthesizer/*.sv
+synthesize/include
+synthesize/*.v
+synthesize/*.sv
+.Xil
+*.edif
+*.jou
 
 
 ### XilinxISE template

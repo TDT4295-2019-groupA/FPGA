@@ -1,4 +1,8 @@
 
+# denoting where Xilinx Vivado is installed:
+XILINX_TOP_DIR=/opt/Xilinx/Vivado/2019.1
+#XILINX_DIR=$XILINX_TOP_DIR/ids_lite/ISE
+
 function colorize {
 	if [ -t 1 ]; then
 		ESC=$(printf '\033')

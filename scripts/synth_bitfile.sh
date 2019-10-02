@@ -1,26 +1,37 @@
 #!/usr/bin/env bash
+source $(dirname $0)/common.sh
 if [ "$1" = "FAST" ]; then
 	SLOW="#"
+	shift
 fi
 if [ "$1" = "NO_EDIF" ]; then
 	SV_MODE=""
 	EDIF_MODE="#"
+	shift
 else
 	SV_MODE="#"
 	EDIF_MODE=""
+	shift
+fi
+if [ -z "$1" ]; then
+	# make sucks
+	shift
 fi
 
-# read config
-source config.sh
-source common.sh
+TOP_MODULE="$1";       shift
+XILINX_PART="$1";      shift
+CONSTRAINTS_FILE="$1"; shift
+NETLIST_FILE="$1";     shift
+OUTPUT_PATH="$1";      shift
+
 
 # run vivado to convert to a bitfile for our FPGA
 TMP="$(mktemp)"
 colorize tee "$TMP" <<- EOT
 
 	# read shit
-	read_xdc constraints-$XILINX_PART.xdc
-	${EDIF_MODE}read_edif $TOP_MODULE.edif
+	read_xdc $CONSTRAINTS_FILE
+	${EDIF_MODE}read_edif $NETLIST_FILE
 	${SV_MODE}read_verilog $TOP_MODULE.sv
 	${SV_MODE}synth_design -top $TOP_MODULE -part $XILINX_PART
 
@@ -48,7 +59,7 @@ colorize tee "$TMP" <<- EOT
 	report_utilization; report_timing
 
 	# dump results
-	write_bitstream -force $TOP_MODULE.bit
+	write_bitstream -force $OUTPUT_PATH
 
 EOT
 

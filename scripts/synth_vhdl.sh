@@ -9,7 +9,7 @@ if test -z "$1"; then
 	exit 1
 fi
 
-source common.sh
+source $(dirname $0)/common.sh
 
 TMP="$(mktemp)"
 (
@@ -24,7 +24,7 @@ TMP="$(mktemp)"
 	echo
 	echo \#Dump results design...
 	echo write_verilog -force $OUTPUT
-) | tee "$TMP"
+) | colorize tee "$TMP"
 
 colorize $XILINX_TOP_DIR/bin/vivado -mode batch -source "$TMP"
 
