@@ -63,9 +63,6 @@ object GeneratorTests {
       printf("Sound output: %d\n", peek(c.io.sampleOut))
       step(1)
 
-      //Both of these are for debugging
-      //poke(c.io.generatorPacketIn.toBits, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001", 2))
-      //printf("PacketIn/Out: %d\n", peek(c.io.outputTest))
     }
   }
 }

@@ -8,19 +8,14 @@ class GeneratorStateDecoder extends MultiIOModule {
   val io = IO(
     new Bundle {
       val packetIn = Input(UInt(88.W))
-
-      val resetNoteOut = Output(Bool())
       val indexOut = Output(UInt(16.W))
 
       val GeneratorPacketOut = Output(new GeneratorPacket)
     }
   )
 
-  io.resetNoteOut := io.packetIn(7, 0)
-  io.indexOut := io.packetIn(23, 8)
+  io.indexOut := io.packetIn(15, 0)
 
-  io.GeneratorPacketOut := io.packetIn(87, 24).asTypeOf(new GeneratorPacket)
-
-
+  io.GeneratorPacketOut := io.packetIn(87, 16).asTypeOf(new GeneratorPacket)
 
 }

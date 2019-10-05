@@ -11,7 +11,7 @@ class Generator extends MultiIOModule{
   val MIDI_A3_INDEX = 45
   val SAMPLE_RATE = 44100
   val SAMPLE_MAX: SInt = 0x7FFF.S
-  val VELOCITY_MAX: UInt = 0x7f.U
+  val VELOCITY_MAX: SInt = 0x7f.S
 
   val io = IO(
     new Bundle {
@@ -79,17 +79,10 @@ class Generator extends MultiIOModule{
   }
 
   when(enabled) {
-    io.sampleOut := (saved_sample * (velocity / VELOCITY_MAX))
+    io.sampleOut := (saved_sample  / VELOCITY_MAX) * velocity.asSInt()
   } otherwise {
     io.sampleOut := 0.S
   }
-
-  printf("Inputs: Enabled: %b, Instrument: %d, Note_Index: %d, Channel_Index: %d, Velocity: %d, Reset_Note: %b\n", io.generatorPacketIn.enabled, io.generatorPacketIn.instrument, io.generatorPacketIn.note_index, io.generatorPacketIn.channel_index, io.generatorPacketIn.velocity, io.generatorPacketIn.reset_note)
-  printf("Instrument: %d, Enabled: %b, Note_Index: %d, WriteEnable: %b, InstrumentEnumSquare: %d, Velocity: %d, Notelife: %d\n", instrument, enabled, note_index, io.writeEnable, InstrumentEnum.SQUARE, velocity, noteLife)
-  printf("Saved_Sample: %d, Velocity_Max: %d, Velocity: %d\n", saved_sample, VELOCITY_MAX, velocity)
-  //printf("PackageIn: %d\n", io.generatorPacketIn.asUInt())
-  //printf("SampleMax: %d, VelocityMax: %d\n", SAMPLE_MAX.toUInt, VELOCITY_MAX.toUInt)
-  //printf("VelocityIn:%d\n", io.generatorPacketIn.velocity)
 }
 
 object InstrumentEnum extends Enumeration {

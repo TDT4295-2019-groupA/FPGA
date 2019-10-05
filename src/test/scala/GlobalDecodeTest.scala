@@ -9,7 +9,7 @@ import toplevel.DecoderTests.GlobalStateDecoderTest
 class DecodeTest extends FlatSpec with Matchers {
   behavior of "Decoders"
 
-  it should "Set up and calculate correctly" in {
+  it should "Decode Global Packets Correctly" in {
     wrapTester(
       chisel3.iotesters.Driver(() => new GlobalStateDecoder()) { c =>
         new GlobalStateDecoderTest(c)

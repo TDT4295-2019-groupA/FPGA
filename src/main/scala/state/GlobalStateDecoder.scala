@@ -29,4 +29,6 @@ class GlobalStateDecoder extends MultiIOModule {
   io.volumeOut := VolumeReg
   io.EnvelopeOut := EnvelopeReg
   io.PitchWheelOut := PitchWheelReg
+
+  //printf("Current Global State: VolumeOut: %d, EnvelopeOut: %d, PitchWheelOut: %d\n", VolumeReg.asUInt(), EnvelopeReg.asUInt(), PitchWheelReg.asUInt())
 }
