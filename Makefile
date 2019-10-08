@@ -2,7 +2,7 @@ TOP_MODULE  := FPGATopLevel
 TOP_MODULE  := VivadoTest
 TOP_MODULE  := TopModule
 XILINX_PART := xc7a35ticsg324-1L# the arty 7 dev kit
-BUILD_DIR   := $(BUILD_DIR)
+BUILD_DIR   := synthesize
 SCALA_TARGETS    := $(shell find src/main/scala/             -type f -name '*.scala')
 VERILOG_TARGETS  := $(shell find src/main/resources/verilog/ -type f -name '*.v')
 VHDL_TARGETS     := $(shell find src/main/resources/vhdl/ -mindepth 1 -maxdepth 1 -type d )
@@ -61,11 +61,11 @@ $(TOP_MODULE_VERILOG_TARGET): $(TOP_MODULE_FIRRTL_TARGET)
 	firrtl -i $< -o $@ --info-mode=ignore -ll Info
 
 $(TOP_MODULE_NETLIST_TARGET): $(TOP_MODULE_VERILOG_TARGET) $(VERILOG_TARGETS) $(VHDL_DESTS)
-	cd $(BUILD_DIR) \
+	cd $(BUILD_DIR); \
 	../scripts/synth_netlist.sh $(FLAGS) $(TOP_MODULE) ../$(TOP_MODULE_NETLIST_TARGET) $(patsubst %,../%,$^)
 
 $(TOP_MODULE_BITFILE_TARGET): $(CONSTRAINTS_FILE) $(TOP_MODULE_NETLIST_TARGET)
-	cd $(BUILD_DIR) \
+	cd $(BUILD_DIR); \
 	../scripts/synth_bitfile.sh $(FLAGS) $(TOP_MODULE) $(XILINX_PART) ../$(CONSTRAINTS_FILE) ../$(TOP_MODULE_NETLIST_TARGET) ../$@
 
 .PHONY: clean
