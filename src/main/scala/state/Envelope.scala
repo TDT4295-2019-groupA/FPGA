@@ -5,13 +5,20 @@ import chisel3.util.BitPat
 
 class Envelope extends Bundle {
 
-  val envelope = UInt(112.W)
+  /*
+  See the SPI packet details to understand this: https://github.com/TDT4295-2019-groupA/planning/wiki/SPI-packets
+  Currently: Attack: 2 bytes, Decay: 2 bytes, Sustain: 1 byte, Release: 2 bytes. Total: 7 bytes = 56 bits
+   */
 
-  def attack = envelope(31, 0)
-  def decay = envelope(63, 32)
-  def sustain = envelope(79, 64)
-  def release = envelope(111, 80)
+  val envelope = UInt(56.W)
+
+  def attack = envelope(15, 0)
+  def decay = envelope(31, 16)
+  def sustain = envelope(39, 32)
+  def release = envelope(55, 40)
 }
+
+
 
 //TODO: Fix default implementation
 object Envelope {

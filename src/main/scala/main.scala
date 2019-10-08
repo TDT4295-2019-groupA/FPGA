@@ -13,7 +13,7 @@ object main {
       val out_path = args(1)
       val f = new File(out_path)
       chisel3.Driver.dumpFirrtl(args(0) match {
-        case "FPGATopLevel"    => chisel3.Driver.elaborate(() => new FPGATopLevel)
+        case "FPGATopLevel"    => chisel3.Driver.elaborate(() => new SoundTopLevel)
         case "VivadoTest"      => chisel3.Driver.elaborate(() => new VivadoTest)
         case "TopModule"       => chisel3.Driver.elaborate(() => new TopModule)
         case "SPIInputHandler" => chisel3.Driver.elaborate(() => new SPIInputHandler)

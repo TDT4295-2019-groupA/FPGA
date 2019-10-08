@@ -3,13 +3,16 @@ package generator
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import common.Adder
-import state.GlobalStateDecoder
+import state.{GlobalStateDecoder, GlobalUpdatePacket}
 
-class FPGATopLevel() extends MultiIOModule {
+class SoundTopLevel() extends MultiIOModule {
 
   val io = IO(
     new Bundle {
-      val spiPacketIn = Input(UInt(256.W))
+      val genPacketIn = Input(new GeneratorUpdatePacket)
+      val genWriteEnable = Input(Bool())
+      val gloPacketIn = Input(new GlobalUpdatePacket)
+      val gloWriteEnable = Input(Bool())
       val resultOut = Output(SInt(32.W))
     }
   )
@@ -30,19 +33,9 @@ class FPGATopLevel() extends MultiIOModule {
   val GeneratorStateDecoder = Module(new GeneratorStateDecoder())
   val Adder = Module(new Adder())
 
-  when(io.spiPacketIn(7, 0) === 1.U) {
-    GlobalStateDecoder.io.packetIn := io.spiPacketIn(255, 8)
-    GlobalStateDecoder.io.writeEnable := 1.U.toBool()
-  } otherwise {
-    GlobalStateDecoder.io.packetIn := 0.U
-    GlobalStateDecoder.io.writeEnable := 0.U.toBool()
-  }
-
-  when (io.spiPacketIn(7, 0) === 2.U) {
-    GeneratorStateDecoder.io.packetIn := io.spiPacketIn(95, 8)
-  } otherwise {
-    GeneratorStateDecoder.io.packetIn := 0.U
-  }
+  GlobalStateDecoder.io.packetIn := io.gloPacketIn
+  GlobalStateDecoder.io.writeEnable := io.gloWriteEnable
+  GeneratorStateDecoder.io.packetIn := io.genPacketIn
 
   for (i <- 1 to 16) {
     val GeneratorNumber = Module(new Generator())
@@ -64,7 +57,6 @@ class FPGATopLevel() extends MultiIOModule {
   }
 
   io.resultOut := Adder.io.soundOutput
-  debug.packet_select := io.spiPacketIn(7, 0)
   debug.note_index := GeneratorStateDecoder.io.indexOut
   debug.volume_out := GlobalStateDecoder.io.volumeOut
   debug.envelope_out := GlobalStateDecoder.io.EnvelopeOut.asUInt()
