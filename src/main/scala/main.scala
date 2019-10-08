@@ -6,6 +6,8 @@ import generator._
 import communication.SPIInputHandler
 import java.io.File
 
+import toplevel.SoundTopLevel
+
 object main {
   def main(args: Array[String]): Unit = {
     if (args.length > 1) {

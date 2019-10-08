@@ -1,8 +1,9 @@
-package generator
+package toplevel
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import common.Adder
+import generator.{Generator, GeneratorStateDecoder, GeneratorUpdatePacket}
 import state.{GlobalStateDecoder, GlobalUpdatePacket}
 
 class SoundTopLevel() extends MultiIOModule {
@@ -10,7 +11,6 @@ class SoundTopLevel() extends MultiIOModule {
   val io = IO(
     new Bundle {
       val genPacketIn = Input(new GeneratorUpdatePacket)
-      val genWriteEnable = Input(Bool())
       val gloPacketIn = Input(new GlobalUpdatePacket)
       val gloWriteEnable = Input(Bool())
       val resultOut = Output(SInt(32.W))
@@ -19,7 +19,6 @@ class SoundTopLevel() extends MultiIOModule {
 
   val debug = IO(
     new Bundle {
-      val packet_select = Output(UInt())
       val note_index = Output(UInt())
       val volume_out = Output(UInt())
       val envelope_out = Output(UInt())
