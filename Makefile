@@ -1,5 +1,3 @@
-TOP_MODULE  := FPGATopLevel
-TOP_MODULE  := VivadoTest
 TOP_MODULE  := TopModule
 XILINX_PART := xc7a35ticsg324-1L# the arty 7 dev kit
 BUILD_DIR   := synthesize
