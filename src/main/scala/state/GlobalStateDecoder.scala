@@ -11,24 +11,24 @@ class GlobalStateDecoder extends MultiIOModule {
       val writeEnable = Input(Bool())
 
       val volumeOut = Output(UInt(16.W))
-      val EnvelopeOut = Output(new Envelope)
-      val PitchWheelOut = Output(new PitchWheelArray)
+      val envelopeOut = Output(new Envelope)
+      val pitchWheelOut = Output(new PitchWheelArray)
     }
   )
 
-  val VolumeReg = RegInit(UInt(16.W), 0.U)
-  val EnvelopeReg = RegInit(new Envelope, Envelope.DEFAULT)
-  val PitchWheelReg = RegInit(new PitchWheelArray, PitchWheelArray.DEFAULT)
+  val volumeReg = RegInit(UInt(16.W), 0.U)
+  val envelopeReg = RegInit(new Envelope, Envelope.DEFAULT)
+  val pitchWheelReg = RegInit(new PitchWheelArray, PitchWheelArray.DEFAULT)
 
   when(io.writeEnable) {
-    VolumeReg := io.packetIn.volume
-    EnvelopeReg := io.packetIn.envelope
-    PitchWheelReg := io.packetIn.pitchwheel
+    volumeReg := io.packetIn.volume
+    envelopeReg := io.packetIn.envelope
+    pitchWheelReg := io.packetIn.pitchwheel
   }
 
-  io.volumeOut := VolumeReg
-  io.EnvelopeOut := EnvelopeReg
-  io.PitchWheelOut := PitchWheelReg
+  io.volumeOut := volumeReg
+  io.envelopeOut := envelopeReg
+  io.pitchWheelOut := pitchWheelReg
 
   //printf("Current Global State: VolumeOut: %d, EnvelopeOut: %d, PitchWheelOut: %d\n", VolumeReg.asUInt(), EnvelopeReg.asUInt(), PitchWheelReg.asUInt())
 }

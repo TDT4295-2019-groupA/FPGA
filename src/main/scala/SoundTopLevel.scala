@@ -29,37 +29,37 @@ class SoundTopLevel() extends MultiIOModule {
   )
 
 
-  val GlobalStateDecoder = Module(new GlobalStateDecoder())
-  val GeneratorStateDecoder = Module(new GeneratorStateDecoder())
-  val Adder = Module(new Adder())
+  val globalStateDecoder = Module(new GlobalStateDecoder())
+  val generatorStateDecoder = Module(new GeneratorStateDecoder())
+  val adder = Module(new Adder())
 
-  GlobalStateDecoder.io.packetIn := io.gloPacketIn
-  GlobalStateDecoder.io.writeEnable := io.gloWriteEnable
-  GeneratorStateDecoder.io.packetIn := io.genPacketIn
+  globalStateDecoder.io.packetIn := io.gloPacketIn
+  globalStateDecoder.io.writeEnable := io.gloWriteEnable
+  generatorStateDecoder.io.packetIn := io.genPacketIn
 
   for (i <- 1 to 16) {
-    val GeneratorNumber = Module(new Generator())
-    GeneratorNumber.io.pitchWheelArrayIn := GlobalStateDecoder.io.PitchWheelOut
-    GeneratorNumber.io.envelopeIn := GlobalStateDecoder.io.EnvelopeOut
+    val generatorNumber = Module(new Generator())
+    generatorNumber.io.pitchWheelArrayIn := globalStateDecoder.io.pitchWheelOut
+    generatorNumber.io.envelopeIn := globalStateDecoder.io.envelopeOut
 
-    Adder.io.adderInputs(i-1) := GeneratorNumber.io.sampleOut
-    GeneratorNumber.io.generatorPacketIn := GeneratorStateDecoder.io.GeneratorPacketOut
+    adder.io.adderInputs(i-1) := generatorNumber.io.sampleOut
+    generatorNumber.io.generatorPacketIn := generatorStateDecoder.io.GeneratorPacketOut
 
-    when(GeneratorStateDecoder.io.indexOut === i.U) {
-      GeneratorNumber.io.writeEnable := true.B
+    when(generatorStateDecoder.io.indexOut === i.U) {
+      generatorNumber.io.writeEnable := true.B
     } otherwise {
-      GeneratorNumber.io.writeEnable := false.B
+      generatorNumber.io.writeEnable := false.B
     }
 
     if(i == 7) {
-      debug.gen7_out := GeneratorNumber.io.sampleOut
+      debug.gen7_out := generatorNumber.io.sampleOut
     }
   }
 
-  io.resultOut := Adder.io.soundOutput
-  debug.note_index := GeneratorStateDecoder.io.indexOut
-  debug.volume_out := GlobalStateDecoder.io.volumeOut
-  debug.envelope_out := GlobalStateDecoder.io.EnvelopeOut.asUInt()
-  debug.pitchwheel_out := GlobalStateDecoder.io.PitchWheelOut.asUInt()
+  io.resultOut := adder.io.soundOutput
+  debug.note_index := generatorStateDecoder.io.indexOut
+  debug.volume_out := globalStateDecoder.io.volumeOut
+  debug.envelope_out := globalStateDecoder.io.envelopeOut.asUInt()
+  debug.pitchwheel_out := globalStateDecoder.io.pitchWheelOut.asUInt()
 
 }
