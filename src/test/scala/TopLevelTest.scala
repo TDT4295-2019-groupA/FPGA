@@ -47,8 +47,7 @@ object TopLevelTests {
 
      */
 
-    poke(c.io.spiPacketIn, BigInt("1111000011100011110011001010101011110000111000111100110010101010111100001110001111001100101010101111000011100011110011001010101011001100101010100001110011001100101010100001110011001100101010100001110011001100101010100001110011001100101010100100000000000001", 2))
-                                   1111111111110010000000110011101000010001010011001011101000010001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    //poke(c.io.spiPacketIn, BigInt("1111000011100011110011001010101011110000111000111100110010101010111100001110001111001100101010101111000011100011110011001010101011001100101010100001110011001100101010100001110011001100101010100001110011001100101010100001110011001100101010100100000000000001", 2))
     step(1)
     printf("Current State: packet_select: %d, generator_index: %d, volume_out: %d, envelope_out: %d, pitchwheel_out: %d, generator_out: %d, sound_out: %d\n",
       peek(c.debug.packet_select),
@@ -58,8 +57,7 @@ object TopLevelTests {
       peek(c.debug.pitchwheel_out),
       peek(c.debug.gen7_out),
       peek(c.io.resultOut))
-    poke(c.io.spiPacketIn, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001000000000000011100000010", 2))
-                                   000000010000000000000000000000010000000000000000000000000000000000111001000000010101101000000010
+    //poke(c.io.spiPacketIn, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001000000000000011100000010", 2))
     step(1)
     printf("Current State: packet_select: %d, generator_index: %d, volume_out: %d, envelope_out: %d, pitchwheel_out: %d, generator_out: %d, sound_out: %d\n",
       peek(c.debug.packet_select),
@@ -70,7 +68,7 @@ object TopLevelTests {
       peek(c.debug.gen7_out),
       peek(c.io.resultOut))
     //Reset input to ensure it doenst update state when it's not supposed to
-    poke(c.io.spiPacketIn.toBits, 0)
+    //poke(c.io.spiPacketIn.toBits, 0)
     for (ii <- 0 until 100) {
       step(1)
       printf("Current State: packet_select: %d, generator_index : %d, volume_out: %d, envelope_out: %d, pitchwheel_out: %d, generator_out: %d, sound_out: %d\n",
@@ -89,7 +87,7 @@ object TopLevelTests {
 
     println(new File((".")).getAbsolutePath)
     for (line <- Source.fromFile(filename).getLines()) {
-      poke(c.io.spiPacketIn, BigInt(line))
+      //poke(c.io.spiPacketIn, BigInt(line))
       step(1)
       printf("Current State: packet_select: %d, generator_index : %d, volume_out: %d, envelope_out: %d, pitchwheel_out: %d, generator_out: %d, sound_out: %d\n",
         peek(c.debug.packet_select),
