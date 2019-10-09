@@ -1,16 +1,12 @@
 package generator
 
 import chisel3._
+import config.config
 import chisel3.experimental.MultiIOModule
 import chisel3.util.{Counter, is, switch}
 import state.{Envelope, PitchWheelArray}
 
 class Generator extends MultiIOModule{
-
-  val MIDI_A3_FREQ = 440.0
-  val MIDI_A3_INDEX = 45
-  val SAMPLE_RATE = 44100
-  val SAMPLE_MAX: SInt = 0x7FFF.S
 
   val io = IO(
     new Bundle {
@@ -36,10 +32,10 @@ class Generator extends MultiIOModule{
   }
 
   def fpga_note_index_to_freq(note_index: Int): Double =
-    MIDI_A3_FREQ * scala.math.pow(2.0, (note_index - MIDI_A3_INDEX) / 12.0)
+    config.MIDI_A3_FREQ * scala.math.pow(2.0, (note_index - config.MIDI_A3_INDEX) / 12.0)
 
   def freq_to_wavelength_in_samples(freq: Double): Double =
-    scala.math.round(SAMPLE_RATE / freq)
+    scala.math.round(config.SAMPLE_RATE / freq)
 
   val saved_sample = RegInit(SInt(16.W), 0.S)
 
@@ -61,16 +57,16 @@ class Generator extends MultiIOModule{
 
   when(instrument === InstrumentEnum.SQUARE) {
     when (((noteLife << 1).asSInt() / wavelength)(0).asSInt() === 1.S) {
-      saved_sample := SAMPLE_MAX * (-1).S
+      saved_sample := (-config.SAMPLE_MAX).S
     } otherwise {
-      saved_sample := SAMPLE_MAX
+      saved_sample := config.SAMPLE_MAX.S
     }
   }
   when(instrument === InstrumentEnum.TRIANGLE) {
     saved_sample := 0.S
   }
   when(instrument === InstrumentEnum.SAWTOOTH) {
-    saved_sample := ((((noteLife % wavelength.asUInt()) << 1).asSInt() - wavelength) * SAMPLE_MAX) / wavelength
+    saved_sample := ((((noteLife % wavelength.asUInt()) << 1).asSInt() - wavelength) * config.SAMPLE_MAX.S) / wavelength
   }
   when(instrument === InstrumentEnum.SINE) {
     saved_sample := 0.S
@@ -83,6 +79,7 @@ class Generator extends MultiIOModule{
   }
 }
 
+// todo: move to config.scala?
 object InstrumentEnum extends Enumeration {
   type InstrumentEnum = UInt
   val SQUARE: UInt = 0.U

@@ -3,6 +3,7 @@ package toplevel
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import common.Adder
+import config.config
 import generator.{Generator, GeneratorStateDecoder, GeneratorUpdatePacket}
 import state.{GlobalStateDecoder, GlobalUpdatePacket}
 
@@ -38,7 +39,7 @@ class SoundTopLevel() extends MultiIOModule {
 
   adder.io.volumeIn := globalStateDecoder.io.volumeOut
 
-  for (i <- 1 to 16) {
+  for (i <- 1 to config.N_GENERATORS) {
     val generatorNumber = Module(new Generator())
     generatorNumber.io.pitchWheelArrayIn := globalStateDecoder.io.pitchWheelOut
     generatorNumber.io.envelopeIn := globalStateDecoder.io.envelopeOut
