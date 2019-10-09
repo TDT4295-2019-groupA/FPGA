@@ -1,0 +1,16 @@
+digraph "GeneratorStateDecoder" {
+label="GeneratorStateDecoder";
+rankdir="LR";
+remincross=true;
+n1 [ shape=octagon, label="io_GeneratorPacketOut_generatorInput", color="black", fontcolor="black" ];
+n2 [ shape=octagon, label="io_indexOut", color="black", fontcolor="black" ];
+n3 [ shape=octagon, label="io_packetIn_generatorUpdatePacket", color="black", fontcolor="black" ];
+{ rank="source"; n3;}
+{ rank="sink"; n1; n2;}
+x0 [ shape=record, style=rounded, label="<s0> 87:16 - 71:0 " ];
+x1 [ shape=record, style=rounded, label="<s0> 15:0 - 15:0 " ];
+x0:e -> n1:w [colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];
+x1:e -> n2:w [colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];
+n3:e -> x0:s0:w [colorscheme="dark28", color="3", fontcolor="3", style="setlinewidth(3)", label=""];
+n3:e -> x1:s0:w [colorscheme="dark28", color="3", fontcolor="3", style="setlinewidth(3)", label=""];
+}

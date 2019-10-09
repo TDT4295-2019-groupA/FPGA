@@ -23,9 +23,9 @@ n20 [ shape=octagon, label="clock", color="black", fontcolor="black" ];
 { rank="source"; n13; n14; n16; n19; n20;}
 { rank="sink"; n15; n17; n18;}
 v0 [ label="1'0" ];
-c24 [ shape=record, label="{{<p21> A|<p22> B}|$62\n$eq|{<p23> Y}}" ];
+c24 [ shape=record, label="{{<p21> A|<p22> B}|$390\n$eq|{<p23> Y}}" ];
 v1 [ label="1'0" ];
-c25 [ shape=record, label="{{<p21> A|<p22> B}|$61\n$eq|{<p23> Y}}" ];
+c25 [ shape=record, label="{{<p21> A|<p22> B}|$389\n$eq|{<p23> Y}}" ];
 c36 [ shape=record, label="{{<p26> i_Clk|<p27> i_Rst_L|<p28> i_SPI_CS_n|<p29> i_SPI_Clk|<p30> i_SPI_MOSI|<p31> i_TX_Byte|<p32> i_TX_DV}|spi\nSPI_Slave_nandland|{<p33> o_RX_Byte|<p34> o_RX_DV|<p35> o_SPI_MISO}}" ];
 x2 [shape=box, style=rounded, label="BUF"];
 x3 [shape=box, style=rounded, label="BUF"];

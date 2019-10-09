@@ -1,0 +1,543 @@
+digraph Top {
+stylesheet = "styles.css"
+rankdir="LR" 
+
+subgraph cluster_Top {
+  label="Top"
+  URL=""
+  bgcolor="#FFF8DC"
+  cluster_Top_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_Top_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_Top_io_spi_mosi [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_mosi" rank="0"]
+     
+cluster_Top_io_spi_clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_clk" rank="0"]
+     
+cluster_Top_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
+     
+cluster_Top_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
+     
+cluster_Top_io_pwm_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out" rank="1000"]
+     
+
+subgraph cluster_Top_SoundTopLevel {
+  label="SoundTopLevel"
+  URL="SoundTopLevel.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_Top_SoundTopLevel_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_Top_SoundTopLevel_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_genPacketIn_generatorUpdatePacket [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_genPacketIn_generatorUpdatePacket" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_gloPacketIn_globalUpdatePacket [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_gloPacketIn_globalUpdatePacket" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_gloWriteEnable [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_gloWriteEnable" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_resultOut [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_resultOut" rank="1000"]
+     
+
+subgraph cluster_Top_SoundTopLevel_globalStateDecoder {
+  label="globalStateDecoder"
+  URL="GlobalStateDecoder.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_generatorStateDecoder {
+  label="generatorStateDecoder"
+  URL="GeneratorStateDecoder.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_adder {
+  label="adder"
+  URL="Adder.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator {
+  label="Generator"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_1 {
+  label="Generator_1"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_2 {
+  label="Generator_2"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_3 {
+  label="Generator_3"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_4 {
+  label="Generator_4"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_5 {
+  label="Generator_5"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_6 {
+  label="Generator_6"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_7 {
+  label="Generator_7"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_8 {
+  label="Generator_8"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_9 {
+  label="Generator_9"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_10 {
+  label="Generator_10"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_11 {
+  label="Generator_11"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_12 {
+  label="Generator_12"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_13 {
+  label="Generator_13"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_14 {
+  label="Generator_14"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_15 {
+  label="Generator_15"
+  URL="Generator.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SPISlave {
+  label="SPISlave"
+  URL="SPISlave.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_Top_SPISlave_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_Top_SPISlave_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_Top_SPISlave_io_spi_mosi [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_mosi" rank="0"]
+     
+cluster_Top_SPISlave_io_spi_clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_clk" rank="0"]
+     
+cluster_Top_SPISlave_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
+     
+cluster_Top_SPISlave_io_RX_data_valid [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_RX_data_valid" rank="1000"]
+     
+cluster_Top_SPISlave_io_RX_data [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_RX_data" rank="1000"]
+     
+cluster_Top_SPISlave_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
+     
+
+subgraph cluster_Top_SPISlave_spi {
+  label="spi"
+  URL="SPI_Slave_nandland.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SPIInputHandler {
+  label="SPIInputHandler"
+  URL="SPIInputHandler.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_Top_SPIInputHandler_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_Top_SPIInputHandler_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_Top_SPIInputHandler_io_RX_data [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_RX_data" rank="0"]
+     
+cluster_Top_SPIInputHandler_io_RX_data_valid [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_RX_data_valid" rank="0"]
+     
+cluster_Top_SPIInputHandler_io_packet_valid [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_packet_valid" rank="1000"]
+     
+cluster_Top_SPIInputHandler_io_packet_data [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_packet_data" rank="1000"]
+     
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_PWM {
+  label="PWM"
+  URL="PWM.dot.svg"
+  bgcolor="#ADD8E6"
+  cluster_Top_PWM_clock [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="clock" rank="0"]
+     
+cluster_Top_PWM_reset [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="reset" rank="0"]
+     
+cluster_Top_PWM_io_target [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_target" rank="0"]
+     
+cluster_Top_PWM_io_high [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_high" rank="1000"]
+     
+
+  
+  
+  
+}
+     
+
+op_bits_1202 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(87, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_1203 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_1204 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > and </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1189120291 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_1205 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_1206 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_1207 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">1</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_1208 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asUInt_1209 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asUInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asSInt_1210 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asSInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_1211 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_add_1212 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > add </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">-2147483648</TD>
+  </TR>
+</TABLE>>];
+       
+
+  cluster_Top_SPISlave_io_RX_data_valid -> cluster_Top_SPIInputHandler_io_RX_data_valid
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_1208:in1
+  cluster_Top_reset -> cluster_Top_PWM_reset
+  op_and_1204:out -> cluster_Top_SoundTopLevel_io_gloWriteEnable
+  op_bits_1208:out -> op_eq_1207:in2
+  cluster_Top_io_spi_clk -> cluster_Top_SPISlave_io_spi_clk
+  op_add_1212:out -> op_tail_1211:in1
+  op_eq_1207:out -> mux_1189120291:in2
+  cluster_Top_io_spi_mosi -> cluster_Top_SPISlave_io_spi_mosi
+  cluster_Top_SPISlave_io_RX_data -> cluster_Top_SPIInputHandler_io_RX_data
+  op_asUInt_1209:out -> cluster_Top_PWM_io_target
+  op_bits_1202:out -> cluster_Top_SoundTopLevel_io_genPacketIn_generatorUpdatePacket
+  mux_1189120291:out -> op_and_1204:in2
+  cluster_Top_SPISlave_io_spi_miso -> cluster_Top_io_spi_miso
+  cluster_Top_reset -> cluster_Top_SPISlave_reset
+  cluster_Top_reset -> cluster_Top_SPIInputHandler_reset
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_1202:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_1206:in1
+  cluster_Top_PWM_io_high -> cluster_Top_io_pwm_out
+  cluster_Top_SoundTopLevel_io_resultOut -> op_add_1212:in1
+  cluster_Top_io_spi_cs_n -> cluster_Top_SPISlave_io_spi_cs_n
+  op_bits_1206:out -> op_eq_1205:in2
+  cluster_Top_clock -> cluster_Top_SoundTopLevel_clock
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_1203:in1
+  cluster_Top_clock -> cluster_Top_PWM_clock
+  cluster_Top_SPIInputHandler_io_packet_valid -> op_and_1204:in1
+  op_bits_1203:out -> cluster_Top_SoundTopLevel_io_gloPacketIn_globalUpdatePacket
+  op_asSInt_1210:out -> op_asUInt_1209:in1
+  op_tail_1211:out -> op_asSInt_1210:in1
+  cluster_Top_clock -> cluster_Top_SPISlave_clock
+  cluster_Top_clock -> cluster_Top_SPIInputHandler_clock
+  cluster_Top_reset -> cluster_Top_SoundTopLevel_reset
+  op_eq_1205:out -> mux_1189120291:select
+  
+  
+}
+     
+}

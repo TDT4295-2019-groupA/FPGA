@@ -1,0 +1,50 @@
+digraph "TopModule" {
+label="TopModule";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="Top_clock", color="black", fontcolor="black" ];
+n2 [ shape=diamond, label="Top_io_pwm_out", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="Top_io_spi_clk", color="black", fontcolor="black" ];
+n4 [ shape=diamond, label="Top_io_spi_cs_n", color="black", fontcolor="black" ];
+n5 [ shape=diamond, label="Top_io_spi_miso", color="black", fontcolor="black" ];
+n6 [ shape=diamond, label="Top_io_spi_mosi", color="black", fontcolor="black" ];
+n7 [ shape=diamond, label="Top_reset", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="clock", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="io_pwm_out", color="black", fontcolor="black" ];
+n10 [ shape=octagon, label="io_spi_clk", color="black", fontcolor="black" ];
+n11 [ shape=octagon, label="io_spi_cs_n", color="black", fontcolor="black" ];
+n12 [ shape=octagon, label="io_spi_miso", color="black", fontcolor="black" ];
+n13 [ shape=octagon, label="io_spi_mosi", color="black", fontcolor="black" ];
+n14 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
+{ rank="source"; n10; n11; n13; n14; n8;}
+{ rank="sink"; n12; n9;}
+c17 [ shape=record, label="{{<p15> A}|$471\n$not|{<p16> Y}}" ];
+c18 [ shape=record, label="{{<p8> clock|<p10> io_spi_clk|<p11> io_spi_cs_n|<p13> io_spi_mosi|<p14> reset}|Top\nTop|{<p9> io_pwm_out|<p12> io_spi_miso}}" ];
+x0 [shape=box, style=rounded, label="BUF"];
+x1 [shape=box, style=rounded, label="BUF"];
+x2 [shape=box, style=rounded, label="BUF"];
+x3 [shape=box, style=rounded, label="BUF"];
+x4 [shape=box, style=rounded, label="BUF"];
+x5 [shape=box, style=rounded, label="BUF"];
+x0:e:e -> n1:w [colorscheme="dark28", color="4", fontcolor="4", label=""];
+n10:e -> c18:p10:w [colorscheme="dark28", color="4", fontcolor="4", label=""];
+n10:e -> x1:w:w [colorscheme="dark28", color="4", fontcolor="4", label=""];
+n11:e -> c18:p11:w [colorscheme="dark28", color="3", fontcolor="3", label=""];
+n11:e -> x2:w:w [colorscheme="dark28", color="3", fontcolor="3", label=""];
+x5:e:e -> n12:w [colorscheme="dark28", color="6", fontcolor="6", label=""];
+n13:e -> c18:p13:w [colorscheme="dark28", color="5", fontcolor="5", label=""];
+n13:e -> x3:w:w [colorscheme="dark28", color="5", fontcolor="5", label=""];
+n14:e -> c17:p15:w [colorscheme="dark28", color="2", fontcolor="2", label=""];
+c18:p9:e -> n2:w [colorscheme="dark28", color="8", fontcolor="8", label=""];
+n2:e -> x4:w:w [colorscheme="dark28", color="8", fontcolor="8", label=""];
+x1:e:e -> n3:w [colorscheme="dark28", color="3", fontcolor="3", label=""];
+x2:e:e -> n4:w [colorscheme="dark28", color="1", fontcolor="1", label=""];
+c18:p12:e -> n5:w [colorscheme="dark28", color="6", fontcolor="6", label=""];
+n5:e -> x5:w:w [colorscheme="dark28", color="6", fontcolor="6", label=""];
+x3:e:e -> n6:w [colorscheme="dark28", color="7", fontcolor="7", label=""];
+c17:p16:e -> n7:w [colorscheme="dark28", color="3", fontcolor="3", label=""];
+n7:e -> c18:p14:w [colorscheme="dark28", color="3", fontcolor="3", label=""];
+n8:e -> c18:p8:w [colorscheme="dark28", color="4", fontcolor="4", label=""];
+n8:e -> x0:w:w [colorscheme="dark28", color="4", fontcolor="4", label=""];
+x4:e:e -> n9:w [colorscheme="dark28", color="1", fontcolor="1", label=""];
+}

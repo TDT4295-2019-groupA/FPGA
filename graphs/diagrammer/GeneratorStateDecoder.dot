@@ -1,0 +1,50 @@
+digraph GeneratorStateDecoder {
+stylesheet = "styles.css"
+rankdir="LR" 
+
+subgraph cluster_GeneratorStateDecoder {
+  label="GeneratorStateDecoder"
+  URL=""
+  bgcolor="#FFF8DC"
+  cluster_GeneratorStateDecoder_io_packetIn_generatorUpdatePacket [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_packetIn_generatorUpdatePacket" rank="0"]
+     
+cluster_GeneratorStateDecoder_io_indexOut [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_indexOut" rank="1000"]
+     
+cluster_GeneratorStateDecoder_io_GeneratorPacketOut_generatorInput [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_GeneratorPacketOut_generatorInput" rank="1000"]
+     
+
+op_bits_1057 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_1058 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(87, 16)</TD>
+  </TR>
+</TABLE>>];
+       
+
+  cluster_GeneratorStateDecoder_io_packetIn_generatorUpdatePacket -> op_bits_1057:in1
+  cluster_GeneratorStateDecoder_io_packetIn_generatorUpdatePacket -> op_bits_1058:in1
+  op_bits_1058:out -> cluster_GeneratorStateDecoder_io_GeneratorPacketOut_generatorInput
+  op_bits_1057:out -> cluster_GeneratorStateDecoder_io_indexOut
+  
+  
+}
+     
+}

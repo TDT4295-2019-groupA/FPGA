@@ -36,7 +36,7 @@
 <text text-anchor="middle" x="334" y="-524.3" font-family="Times,serif" font-size="14.00" fill="#000000">i_Clk</text>
 </g>
 <!-- cluster_SPISlave_clock&#45;&gt;cluster_SPISlave_spi_i_Clk -->
-<g id="edge6" class="edge">
+<g id="edge7" class="edge">
 <title>cluster_SPISlave_clock&#45;&gt;cluster_SPISlave_spi_i_Clk</title>
 <path fill="none" stroke="#000000" d="M223.6656,-545.6535C244.5697,-542.3089 273.6899,-537.6496 296.7653,-533.9576"/>
 <polygon fill="#000000" stroke="#000000" points="297.5694,-537.3735 306.8909,-532.3375 296.4635,-530.4614 297.5694,-537.3735"/>
@@ -47,9 +47,9 @@
 <polygon fill="#cccccc" stroke="#000000" points="90.5,-516 36.5,-516 36.5,-480 90.5,-480 90.5,-516"/>
 <text text-anchor="middle" x="63.5" y="-494.3" font-family="Times,serif" font-size="14.00" fill="#000000">reset</text>
 </g>
-<!-- op_eq_47 -->
+<!-- op_eq_1127 -->
 <g id="node19" class="node">
-<title>op_eq_47</title>
+<title>op_eq_1127</title>
 <polygon fill="#d8bfd8" stroke="transparent" points="155,-460 155,-510 238,-510 238,-460 155,-460"/>
 <polygon fill="none" stroke="#000000" points="155.5,-485 155.5,-510 178.5,-510 178.5,-485 155.5,-485"/>
 <text text-anchor="start" x="160.5" y="-493.8" font-family="Times,serif" font-size="14.00" fill="#000000">●</text>
@@ -60,9 +60,9 @@
 <polygon fill="none" stroke="#000000" points="155.5,-460 155.5,-485 178.5,-485 178.5,-460 155.5,-460"/>
 <text text-anchor="start" x="162" y="-468.8" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
 </g>
-<!-- cluster_SPISlave_reset&#45;&gt;op_eq_47 -->
-<g id="edge10" class="edge">
-<title>cluster_SPISlave_reset&#45;&gt;op_eq_47:in1</title>
+<!-- cluster_SPISlave_reset&#45;&gt;op_eq_1127 -->
+<g id="edge1" class="edge">
+<title>cluster_SPISlave_reset&#45;&gt;op_eq_1127:in1</title>
 <path fill="none" stroke="#000000" d="M90.8743,-498C106.3832,-498 126.4267,-498 145.4039,-498"/>
 <polygon fill="#000000" stroke="#000000" points="145.5,-501.5001 155.5,-498 145.5,-494.5001 145.5,-501.5001"/>
 </g>
@@ -97,7 +97,7 @@
 <text text-anchor="middle" x="334" y="-362.3" font-family="Times,serif" font-size="14.00" fill="#000000">i_SPI_Clk</text>
 </g>
 <!-- cluster_SPISlave_io_spi_clk&#45;&gt;cluster_SPISlave_spi_i_SPI_Clk -->
-<g id="edge9" class="edge">
+<g id="edge10" class="edge">
 <title>cluster_SPISlave_io_spi_clk&#45;&gt;cluster_SPISlave_spi_i_SPI_Clk</title>
 <path fill="none" stroke="#000000" d="M238.5017,-366C252.2289,-366 267.6416,-366 282.0135,-366"/>
 <polygon fill="#000000" stroke="#000000" points="282.2556,-369.5001 292.2555,-366 282.2555,-362.5001 282.2556,-369.5001"/>
@@ -108,9 +108,9 @@
 <polygon fill="#cccccc" stroke="#000000" points="111,-332 16,-332 16,-296 111,-296 111,-332"/>
 <text text-anchor="middle" x="63.5" y="-310.3" font-family="Times,serif" font-size="14.00" fill="#000000">io_spi_cs_n</text>
 </g>
-<!-- op_eq_50 -->
+<!-- op_eq_1130 -->
 <g id="node22" class="node">
-<title>op_eq_50</title>
+<title>op_eq_1130</title>
 <polygon fill="#d8bfd8" stroke="transparent" points="155,-276 155,-326 238,-326 238,-276 155,-276"/>
 <polygon fill="none" stroke="#000000" points="155.5,-301 155.5,-326 178.5,-326 178.5,-301 155.5,-301"/>
 <text text-anchor="start" x="160.5" y="-309.8" font-family="Times,serif" font-size="14.00" fill="#000000">●</text>
@@ -121,9 +121,9 @@
 <polygon fill="none" stroke="#000000" points="155.5,-276 155.5,-301 178.5,-301 178.5,-276 155.5,-276"/>
 <text text-anchor="start" x="162" y="-284.8" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
 </g>
-<!-- cluster_SPISlave_io_spi_cs_n&#45;&gt;op_eq_50 -->
-<g id="edge1" class="edge">
-<title>cluster_SPISlave_io_spi_cs_n&#45;&gt;op_eq_50:in1</title>
+<!-- cluster_SPISlave_io_spi_cs_n&#45;&gt;op_eq_1130 -->
+<g id="edge6" class="edge">
+<title>cluster_SPISlave_io_spi_cs_n&#45;&gt;op_eq_1130:in1</title>
 <path fill="none" stroke="#000000" d="M111.2498,-314C122.1498,-314 133.8715,-314 145.2187,-314"/>
 <polygon fill="#000000" stroke="#000000" points="145.5,-317.5001 155.5,-314 145.5,-310.5001 145.5,-317.5001"/>
 </g>
@@ -200,44 +200,44 @@
 <text text-anchor="middle" x="334" y="-146.3" font-family="Times,serif" font-size="14.00" fill="#000000">o_SPI_MISO</text>
 </g>
 <!-- cluster_SPISlave_spi_o_SPI_MISO&#45;&gt;cluster_SPISlave_io_spi_miso -->
-<g id="edge8" class="edge">
+<g id="edge9" class="edge">
 <title>cluster_SPISlave_spi_o_SPI_MISO&#45;&gt;cluster_SPISlave_io_spi_miso</title>
 <path fill="none" stroke="#000000" d="M386.3797,-150C400.5539,-150 415.9978,-150 430.5307,-150"/>
 <polygon fill="#000000" stroke="#000000" points="430.9208,-153.5001 440.9208,-150 430.9207,-146.5001 430.9208,-153.5001"/>
 </g>
-<!-- op_eq_47&#45;&gt;cluster_SPISlave_spi_i_Rst_L -->
-<g id="edge7" class="edge">
-<title>op_eq_47:out&#45;&gt;cluster_SPISlave_spi_i_Rst_L</title>
+<!-- op_eq_1127&#45;&gt;cluster_SPISlave_spi_i_Rst_L -->
+<g id="edge8" class="edge">
+<title>op_eq_1127:out&#45;&gt;cluster_SPISlave_spi_i_Rst_L</title>
 <path fill="none" stroke="#000000" d="M238.5,-485C255.2025,-485 273.4409,-483.3189 289.4618,-481.2711"/>
 <polygon fill="#000000" stroke="#000000" points="290.1948,-484.7037 299.6311,-479.8864 289.2503,-477.7677 290.1948,-484.7037"/>
 </g>
-<!-- cluster_SPISlave_lit48 -->
+<!-- cluster_SPISlave_lit1128 -->
 <g id="node20" class="node">
-<title>cluster_SPISlave_lit48</title>
+<title>cluster_SPISlave_lit1128</title>
 <ellipse fill="#d3d3d3" stroke="#000000" cx="196.5" cy="-236" rx="18" ry="18"/>
 <text text-anchor="middle" x="196.5" y="-232.3" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
 </g>
-<!-- cluster_SPISlave_lit48&#45;&gt;cluster_SPISlave_spi_i_TX_DV -->
+<!-- cluster_SPISlave_lit1128&#45;&gt;cluster_SPISlave_spi_i_TX_DV -->
 <g id="edge5" class="edge">
-<title>cluster_SPISlave_lit48&#45;&gt;cluster_SPISlave_spi_i_TX_DV</title>
+<title>cluster_SPISlave_lit1128&#45;&gt;cluster_SPISlave_spi_i_TX_DV</title>
 <path fill="none" stroke="#000000" d="M214.4757,-238.8761C232.774,-241.8038 261.9145,-246.4663 286.8407,-250.4545"/>
 <polygon fill="#000000" stroke="#000000" points="286.4367,-253.9343 296.8641,-252.0583 287.5427,-247.0222 286.4367,-253.9343"/>
 </g>
-<!-- cluster_SPISlave_lit49 -->
+<!-- cluster_SPISlave_lit1129 -->
 <g id="node21" class="node">
-<title>cluster_SPISlave_lit49</title>
+<title>cluster_SPISlave_lit1129</title>
 <ellipse fill="#d3d3d3" stroke="#000000" cx="196.5" cy="-182" rx="18" ry="18"/>
 <text text-anchor="middle" x="196.5" y="-178.3" font-family="Times,serif" font-size="14.00" fill="#000000">0</text>
 </g>
-<!-- cluster_SPISlave_lit49&#45;&gt;cluster_SPISlave_spi_i_TX_Byte -->
+<!-- cluster_SPISlave_lit1129&#45;&gt;cluster_SPISlave_spi_i_TX_Byte -->
 <g id="edge2" class="edge">
-<title>cluster_SPISlave_lit49&#45;&gt;cluster_SPISlave_spi_i_TX_Byte</title>
+<title>cluster_SPISlave_lit1129&#45;&gt;cluster_SPISlave_spi_i_TX_Byte</title>
 <path fill="none" stroke="#000000" d="M214.4757,-184.8761C231.3551,-187.5768 257.4603,-191.7536 280.973,-195.5157"/>
 <polygon fill="#000000" stroke="#000000" points="280.4293,-198.9731 290.8567,-197.0971 281.5353,-192.061 280.4293,-198.9731"/>
 </g>
-<!-- op_eq_50&#45;&gt;cluster_SPISlave_spi_i_SPI_CS_n -->
+<!-- op_eq_1130&#45;&gt;cluster_SPISlave_spi_i_SPI_CS_n -->
 <g id="edge3" class="edge">
-<title>op_eq_50:out&#45;&gt;cluster_SPISlave_spi_i_SPI_CS_n</title>
+<title>op_eq_1130:out&#45;&gt;cluster_SPISlave_spi_i_SPI_CS_n</title>
 <path fill="none" stroke="#000000" d="M238.5,-301C250.626,-301 263.5614,-301.8861 275.8702,-303.1552"/>
 <polygon fill="#000000" stroke="#000000" points="275.7014,-306.6583 286.0306,-304.3004 276.4855,-299.7023 275.7014,-306.6583"/>
 </g>
