@@ -35,7 +35,7 @@ all.v: $(All_VERILOG_TARGETS)
 vivado: all.v $(CONSTRAINTS_FILE)
 	cp -v all.v vivado/tut01/vivado.srcs/sources_1/new/top.v
 	cp -v $(CONSTRAINTS_FILE) vivado/tut01/vivado.srcs/constrs_1/new/arty.xdc
-	@echo Updated the vivado project named tut01!
+	@echo Updated the vivado project named tut01 in vivado/tut01!
 
 .PHONY: bitfile
 bitfile: $(VHDL_DESTS) $(TOP_MODULE_BITFILE_TARGET)
@@ -94,6 +94,7 @@ endif # USE YOSYS ========
 
 .PHONY: clean
 clean:
+	rm -vf all.v || true
 	rm -vf $(TOP_MODULE_VERILOG_TARGET) || true
 	rm -vf $(TOP_MODULE_FIRRTL_TARGET)  || true
 	rm -vf $(TOP_MODULE_NETLIST_TARGET) || true
