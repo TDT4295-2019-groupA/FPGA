@@ -6,7 +6,7 @@
 ////                                                                        ////
 ////                                                                        ////
 ////  This file is part of the Ethernet IP core project                     ////
-////  http://opencores.com/project,spi_verilog_master_slave                 ////
+////  https://opencores.org/projects/spi_verilog_master_slave               ////
 ////                                                                        ////
 ////  Author(s):                                                            ////
 ////      Santhosh G (santhg@opencores.org)                                 ////

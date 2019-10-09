@@ -22,7 +22,7 @@ class SPISlave extends MultiIOModule {
     val spi           = new SPIBus
   })
 
-  val spi = Module(new SPISlaveV())
+  val spi = Module(new SPI_Slave_nandland())
   spi.i_Clk        := clock
   spi.i_Rst_L      := !reset.asBool()
 
@@ -36,11 +36,28 @@ class SPISlave extends MultiIOModule {
   io.spi.miso      := spi.o_SPI_MISO
   spi.i_SPI_MOSI   := io.spi.mosi
   spi.i_SPI_CS_n   := !io.spi.cs_n
+
+/*
+  val spi = Module(new SPI_Slave_opencores())
+  spi.rstb         := !reset.asBool()
+  io.RX_data_valid := spi.done
+  io.RX_data       := spi.rdata
+  //io.TX_data_valid
+  spi.tdata        := io.TX_data
+
+  io.spi.miso      := spi.sdout
+  spi.sck          := io.spi.clk
+  spi.sdin         := io.spi.mosi
+  spi.ss           := io.spi.cs_n
+
+  spi.mlb := true.B
+  spi.ten := true.B
+*/
 }
 
 // Blackbox for verilog module, along with its shitty names
-class SPISlaveV extends ExtModule(Map("SPI_MODE" -> IntParam(0))) { // Verilog parameters
-  override def desiredName: String = "SPI_Slave_nandland" // verilog name, note casing
+class SPI_Slave_nandland extends ExtModule(Map("SPI_MODE" -> IntParam(0))) { // Verilog parameters
+  override def desiredName: String = "SPI_Slave_nandland" // verilog name
   //setResource("/verilog/nandland/SPI_Slave_nandland.v") // doesn't work for ExtModule, only BlackBox :(
 
   // Control/Data Signals
@@ -56,4 +73,21 @@ class SPISlaveV extends ExtModule(Map("SPI_MODE" -> IntParam(0))) { // Verilog p
   val o_SPI_MISO = IO(Output(Bool()))
   val i_SPI_MOSI = IO(Input(Bool()))
   val i_SPI_CS_n = IO(Input(Bool()))    // Active low
+}
+
+// Blackbox for verilog module, along with its shitty names
+class SPI_Slave_opencores extends ExtModule() { // Verilog parameters
+  override def desiredName: String = "spi_slave" // verilog name
+
+  val rstb  = IO(Input(Bool()))
+  val ss    = IO(Input(Bool()))
+  val sck   = IO(Input(Bool()))
+  val sdin  = IO(Input(Bool()))
+  val ten   = IO(Input(Bool()))
+  val mlb   = IO(Input(Bool()))
+  val tdata = IO(Input(UInt(8.W)))
+
+  val sdout = IO(Output(Bool()))
+  val done  = IO(Output(Bool()))
+  val rdata = IO(Output(UInt(8.W)))
 }
