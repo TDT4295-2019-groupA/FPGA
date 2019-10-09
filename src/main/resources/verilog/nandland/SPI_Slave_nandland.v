@@ -23,7 +23,7 @@
 //              More info: https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus#Mode_numbers
 ///////////////////////////////////////////////////////////////////////////////
 
-module SPI_Slave
+module SPI_Slave_nandland
   #(parameter SPI_MODE = 0)
   (
    // Control/Data Signals,

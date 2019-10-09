@@ -26,7 +26,7 @@ c21 [ shape=record, label="{{<p19> A}|$61\n$not|{<p20> Y}}" ];
 c22 [ shape=record, label="{{<p19> A}|$62\n$not|{<p20> Y}}" ];
 v0 [ label="8'00000000" ];
 v1 [ label="1'0" ];
-c33 [ shape=record, label="{{<p23> i_Clk|<p24> i_Rst_L|<p25> i_SPI_CS_n|<p26> i_SPI_Clk|<p27> i_SPI_MOSI|<p28> i_TX_Byte|<p29> i_TX_DV}|spi\nSPI_Slave|{<p30> o_RX_Byte|<p31> o_RX_DV|<p32> o_SPI_MISO}}" ];
+c33 [ shape=record, label="{{<p23> i_Clk|<p24> i_Rst_L|<p25> i_SPI_CS_n|<p26> i_SPI_Clk|<p27> i_SPI_MOSI|<p28> i_TX_Byte|<p29> i_TX_DV}|spi\nSPI_Slave_nandland|{<p30> o_RX_Byte|<p31> o_RX_DV|<p32> o_SPI_MISO}}" ];
 x2 [shape=box, style=rounded, label="BUF"];
 x3 [shape=box, style=rounded, label="BUF"];
 x4 [shape=box, style=rounded, label="BUF"];

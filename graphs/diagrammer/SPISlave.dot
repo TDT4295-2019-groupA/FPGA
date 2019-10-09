@@ -25,7 +25,7 @@ cluster_SPISlave_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0F
 
 subgraph cluster_SPISlave_spi {
   label="spi"
-  URL="SPI_Slave.dot.svg"
+  URL="SPI_Slave_nandland.dot.svg"
   bgcolor="#ADD8E6"
   cluster_SPISlave_spi_i_Clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_Clk" rank="0"]
      
@@ -54,7 +54,7 @@ cluster_SPISlave_spi_o_SPI_MISO [shape = "rectangle" style="filled" fillcolor="#
 }
      
 
-op_eq_5 [shape = "plaintext" label=<
+op_eq_47 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -66,12 +66,12 @@ op_eq_5 [shape = "plaintext" label=<
   </TR>
 </TABLE>>];
        
-cluster_SPISlave_lit6 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+cluster_SPISlave_lit48 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
      
-cluster_SPISlave_lit7 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+cluster_SPISlave_lit49 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
      
 
-op_eq_8 [shape = "plaintext" label=<
+op_eq_50 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -84,16 +84,16 @@ op_eq_8 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  cluster_SPISlave_io_spi_cs_n -> op_eq_8:in1
-  cluster_SPISlave_lit7 -> cluster_SPISlave_spi_i_TX_Byte
-  op_eq_8:out -> cluster_SPISlave_spi_i_SPI_CS_n
+  cluster_SPISlave_io_spi_cs_n -> op_eq_50:in1
+  cluster_SPISlave_lit49 -> cluster_SPISlave_spi_i_TX_Byte
+  op_eq_50:out -> cluster_SPISlave_spi_i_SPI_CS_n
   cluster_SPISlave_io_spi_mosi -> cluster_SPISlave_spi_i_SPI_MOSI
-  cluster_SPISlave_lit6 -> cluster_SPISlave_spi_i_TX_DV
-  cluster_SPISlave_reset -> op_eq_5:in1
+  cluster_SPISlave_lit48 -> cluster_SPISlave_spi_i_TX_DV
   cluster_SPISlave_clock -> cluster_SPISlave_spi_i_Clk
-  op_eq_5:out -> cluster_SPISlave_spi_i_Rst_L
+  op_eq_47:out -> cluster_SPISlave_spi_i_Rst_L
   cluster_SPISlave_spi_o_SPI_MISO -> cluster_SPISlave_io_spi_miso
   cluster_SPISlave_io_spi_clk -> cluster_SPISlave_spi_i_SPI_Clk
+  cluster_SPISlave_reset -> op_eq_47:in1
   cluster_SPISlave_spi_o_RX_Byte -> cluster_SPISlave_io_RX_data
   cluster_SPISlave_spi_o_RX_DV -> cluster_SPISlave_io_RX_data_valid
   

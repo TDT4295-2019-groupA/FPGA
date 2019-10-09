@@ -13,9 +13,9 @@ n15 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
 n16 [ shape=octagon, label="clock", color="black", fontcolor="black" ];
 { rank="source"; n13; n15; n16;}
 { rank="sink"; n14;}
-c20 [ shape=record, label="{{<p17> CLK|<p18> D}|$449\n$dff|{<p19> Q}}" ];
+c20 [ shape=record, label="{{<p17> CLK|<p18> D}|$448\n$dff|{<p19> Q}}" ];
 v0 [ label="8'00000000" ];
-c25 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$118\n$mux|{<p24> Y}}" ];
+c25 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$117\n$mux|{<p24> Y}}" ];
 v1 [ label="1'0" ];
 v2 [ label="1'1" ];
 c26 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$59\n$mux|{<p24> Y}}" ];

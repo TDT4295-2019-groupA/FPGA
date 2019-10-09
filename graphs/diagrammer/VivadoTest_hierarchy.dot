@@ -1,0 +1,60 @@
+digraph VivadoTest_hierarchy { rankdir="TB" 
+ node [shape="rectangle"]; 
+rankdir="LR" 
+stylesheet = "styles.css"
+module_1 [shape= "plaintext" href="VivadoTest.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > VivadoTest </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_2" BGCOLOR="#FFF8DC" >PWM</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_3" BGCOLOR="#FFF8DC" >SPISlave</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_2 [shape= "plaintext" href="PWM.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > PWM </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_3 [shape= "plaintext" href="SPISlave.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > SPISlave </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_4" BGCOLOR="#FFF8DC" >spi</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_4 [shape= "plaintext" href="SPI_Slave_nandland.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > SPI_Slave_nandland </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_1:module_2 -> module_2
+module_3:module_4 -> module_4
+module_1:module_3 -> module_3
+}

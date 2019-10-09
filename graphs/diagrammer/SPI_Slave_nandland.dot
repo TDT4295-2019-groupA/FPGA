@@ -1,0 +1,35 @@
+digraph SPI_Slave_nandland {
+stylesheet = "styles.css"
+rankdir="LR" 
+
+subgraph cluster_SPI_Slave_nandland {
+  label="SPI_Slave_nandland"
+  URL=""
+  bgcolor="#FFF8DC"
+  cluster_SPI_Slave_nandland_i_Clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_Clk" rank="0"]
+     
+cluster_SPI_Slave_nandland_i_Rst_L [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_Rst_L" rank="0"]
+     
+cluster_SPI_Slave_nandland_i_TX_DV [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_TX_DV" rank="0"]
+     
+cluster_SPI_Slave_nandland_i_TX_Byte [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_TX_Byte" rank="0"]
+     
+cluster_SPI_Slave_nandland_i_SPI_Clk [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_SPI_Clk" rank="0"]
+     
+cluster_SPI_Slave_nandland_i_SPI_MOSI [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_SPI_MOSI" rank="0"]
+     
+cluster_SPI_Slave_nandland_i_SPI_CS_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="i_SPI_CS_n" rank="0"]
+     
+cluster_SPI_Slave_nandland_o_RX_DV [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="o_RX_DV" rank="1000"]
+     
+cluster_SPI_Slave_nandland_o_RX_Byte [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="o_RX_Byte" rank="1000"]
+     
+cluster_SPI_Slave_nandland_o_SPI_MISO [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="o_SPI_MISO" rank="1000"]
+     
+
+  
+  
+  
+}
+     
+}
