@@ -31,6 +31,13 @@ all: bitfile
 all.v: $(All_VERILOG_TARGETS)
 	cat $(All_VERILOG_TARGETS) > all.v
 
+.PHONY: vivado
+vivado: all.v $(CONSTRAINTS_FILE)
+	cp -v all.v vivado/tut01/vivado.srcs/sources_1/new/top.v
+	cp -v $(CONSTRAINTS_FILE) vivado/tut01/vivado.srcs/constrs_1/new/arty.xdc
+	@echo Updated the vivado project named tut01!
+
+
 .PHONY: bitfile
 bitfile: $(VHDL_DESTS) $(TOP_MODULE_BITFILE_TARGET)
 

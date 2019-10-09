@@ -2,6 +2,7 @@
 test_run_dir/*
 
 # vivado and yosys
+/all.v
 vivado.cache
 vivado.runs
 synthesize/include
