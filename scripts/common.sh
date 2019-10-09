@@ -1,10 +1,10 @@
 
 # denoting where Xilinx Vivado is installed:
 if [ -d "/opt/Xilinx/Vivado" ]; then
-	XILINX_TOP_DIR="$(ls -d /opt/Xilinx/Vivado/*/)"
+	XILINX_TOP_DIR="$(ls -d /opt/Xilinx/Vivado/*/ | head -n 1)"
 fi
 if [ -d "/tools/Xilinx/Vivado" ]; then
-	XILINX_TOP_DIR="$(ls -d /tools/Xilinx/Vivado/*/)"
+	XILINX_TOP_DIR="$(ls -d /tools/Xilinx/Vivado/*/ | head -n 1)"
 fi
 
 #XILINX_DIR=$XILINX_TOP_DIR/ids_lite/ISE
@@ -32,3 +32,10 @@ function colorize {
 		$@
 	fi
 }
+
+
+if [ -z "$XILINX_TOP_DIR" ]; then
+	colorize echo ERROR: UNABLE TO LOCATE VIVADO!
+	colorize echo INFO: Please install it or modify scripts/common.sh with its location
+	exit 1
+fi
