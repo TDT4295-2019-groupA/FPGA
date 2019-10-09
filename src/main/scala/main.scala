@@ -19,6 +19,7 @@ object main {
         case "VivadoTest"      => chisel3.Driver.elaborate(() => new VivadoTest)
         case "TopModule"       => chisel3.Driver.elaborate(() => new TopModule)
         case "SPIInputHandler" => chisel3.Driver.elaborate(() => new SPIInputHandler)
+        case "TestA"           => chisel3.Driver.elaborate(() => new TestA)
       }, Option(f))
       println("Results written to " + out_path)
     } else {
