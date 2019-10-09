@@ -13,6 +13,7 @@ import toplevel.SoundTopLevel
 class TopBundle extends Bundle {
   val spi = new SPIBus()
   //val i2s = new I2SBus()
+  val pwm_out = Output(Bool())
 }
 
 class Top() extends MultiIOModule {
@@ -28,6 +29,10 @@ class Top() extends MultiIOModule {
   soundTopLevel.genPacketIn    := input.packet.data.asTypeOf(new GeneratorUpdatePacket)
   soundTopLevel.gloWriteEnable := false.B
   //io.i2c.data := soundTopLevel.resultOut
+
+  val pwm = Module(new PWM(32)).io
+  io.pwm_out := pwm.high
+  pwm.target := (soundTopLevel.resultOut + 0x80000000.S ).toUInt
 
   // drive the SPISlave
   rx.TX_data_valid := false.B // transmit nothing
