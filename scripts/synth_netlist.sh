@@ -33,13 +33,28 @@ colorize tee "$TMP" <<- EOT
 		done
 	)
 
-	# Compile to System Verilog
+	# Compile to System(?) Verilog
 	${SV_MODE}hierarchy -top $TOP_MODULE
 	${SV_MODE}proc; opt; techmap; opt
-	${SV_MODE}write_verilog $TOP_MODULE.sv
+	${SV_MODE}write_verilog $OUTPUT_PATH
+
+	${EDIF_MODE}proc
+	${EDIF_MODE}async2sync
+	${EDIF_MODE}opt
+
 
 	# Synthesize into netlist
-	${EDIF_MODE}synth_xilinx -top $TOP_MODULE -edif $OUTPUT_PATH -flatten
+
+	#${EDIF_MODE}synth_xilinx -top $TOP_MODULE -edif $OUTPUT_PATH -flatten
+
+	${EDIF_MODE}synth_xilinx -top $TOP_MODULE -edif $OUTPUT_PATH
+
+	#${EDIF_MODE}synth_xilinx -top $TOP_MODULE
+	#${EDIF_MODE}hilomap -hicell VCC P -locell GND G
+	#${EDIF_MODE}dffsr2dff
+	#${EDIF_MODE}opt_rmdff
+	#${EDIF_MODE}opt
+	#${EDIF_MODE}write_edif -nogndvcc $OUTPUT_PATH
 
 EOT
 

@@ -11,7 +11,7 @@ synthesize/*.sv
 .Xil
 *.edif
 *.jou
-
+tight_setup_hold_pins.txt
 
 ### XilinxISE template
 # intermediate build files
