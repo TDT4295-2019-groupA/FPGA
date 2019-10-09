@@ -32,7 +32,7 @@ class Top() extends MultiIOModule {
 
   val pwm = Module(new PWM(32)).io
   io.pwm_out := pwm.high
-  pwm.target := (soundTopLevel.resultOut + 0x80000000.S ).toUInt
+  pwm.target := (soundTopLevel.resultOut + 0x80000000.S ).asUInt
 
   // drive the SPISlave
   rx.TX_data_valid := false.B // transmit nothing

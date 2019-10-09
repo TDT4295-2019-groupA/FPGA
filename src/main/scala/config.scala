@@ -7,7 +7,7 @@ object config {
   val MIDI_A3_FREQ    = 440.0  // i won't listen to your a=432Hz bullshit
   //val MIDI_A3_INDEX   = 45
   val MIDI_A3_INDEX   = 58     // this sounds better *lenny face*
-  val N_GENERATORS    = 16
+  val N_GENERATORS    = 8
   val N_MIDI_CHANNELS = 16     // max amount of channels supported by the MIDI standard
   val N_MIDI_KEYS     = 128    // max amount of keys supported by the MIDI standard
   val SAMPLE_MAX      = 0x7FFF // max output from a single generator
