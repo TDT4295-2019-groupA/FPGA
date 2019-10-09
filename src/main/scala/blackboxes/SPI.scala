@@ -40,8 +40,8 @@ class SPISlave extends MultiIOModule {
 
 // Blackbox for verilog module, along with its shitty names
 class SPISlaveV extends ExtModule(Map("SPI_MODE" -> IntParam(0))) { // Verilog parameters
-  override def desiredName: String = "SPI_Slave" // verilog name, note casing
-  //setResource("/verilog/nandland/SPI_Slave.v") // doesn't work for ExtModule, only BlackBox :(
+  override def desiredName: String = "SPI_Slave_nandland" // verilog name, note casing
+  //setResource("/verilog/nandland/SPI_Slave_nandland.v") // doesn't work for ExtModule, only BlackBox :(
 
   // Control/Data Signals
   val i_Clk     = IO(Input(Clock()))    // FPGA Clock, must be at least 4x faster than i_SPI_Clk
