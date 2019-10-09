@@ -83,8 +83,13 @@ object TopLevelTests {
 
     println(new File((".")).getAbsolutePath)
     for (line <- Source.fromFile(filename).getLines()) {
-      poke(c.io.packetIn, BigInt(line))
-      step(1)
+      if(line.startsWith("skip:")) {
+        step(1)
+        //step(line.split(":")(1).toInt)
+      } else {
+        poke(c.io.packetIn, BigInt(line))
+        step(1)
+      }
       printf("Current State: generator_index : %d, volume_out: %d, envelope_out: %d, pitchwheel_out: %d, generator_out: %d, sound_out: %d\n",
         peek(c.debug.generator_index),
         peek(c.debug.volume_out),

@@ -5,13 +5,16 @@ import chisel3.experimental.MultiIOModule
 
 class Adder extends MultiIOModule{
 
+  val VELOCITY_MAX: SInt = 0x7f.S
+
   val io = IO(
     new Bundle {
-      val adderInputs = Input(Vec(16, SInt(16.W)))
+      val adderInputs = Input(Vec(16, SInt(24.W)))
+      val volumeIn = Input(UInt(16.W))
       val soundOutput = Output(SInt(16.W))
     }
   )
-  io.soundOutput := sumVec(io.adderInputs)
+  io.soundOutput := (sumVec(io.adderInputs) / VELOCITY_MAX) * io.volumeIn
 
   def sumVec(v : Vec[SInt]): SInt = Vec(sumAll(v.toList))(0)
 

@@ -11,7 +11,6 @@ class Generator extends MultiIOModule{
   val MIDI_A3_INDEX = 45
   val SAMPLE_RATE = 44100
   val SAMPLE_MAX: SInt = 0x7FFF.S
-  val VELOCITY_MAX: SInt = 0x7f.S
 
   val io = IO(
     new Bundle {
@@ -21,7 +20,7 @@ class Generator extends MultiIOModule{
       val pitchWheelArrayIn = Input(new PitchWheelArray)
       val writeEnable = Input(Bool())
 
-      val sampleOut = Output(SInt(16.W))
+      val sampleOut = Output(SInt(24.W))
     }
   )
   val noteLife = RegInit(UInt(32.W), 0.U)
@@ -60,26 +59,25 @@ class Generator extends MultiIOModule{
 
   val wavelength: SInt = lookupTable(note_index)
 
-  val inst = io.generatorPacketIn.instrument // shortname
-  when(inst === InstrumentEnum.SQUARE) {
-    when (((noteLife.asSInt() * 2.S) / wavelength) % 2.S === 1.S) {
+  when(instrument === InstrumentEnum.SQUARE) {
+    when (((noteLife << 1).asSInt() / wavelength)(0).asSInt() === 1.S) {
       saved_sample := SAMPLE_MAX * (-1).S
     } otherwise {
       saved_sample := SAMPLE_MAX
     }
   }
-  when(inst === InstrumentEnum.TRIANGLE) {
+  when(instrument === InstrumentEnum.TRIANGLE) {
     saved_sample := 0.S
   }
-  when(inst === InstrumentEnum.SAWTOOTH) {
-    saved_sample := ((((noteLife % wavelength.asUInt()) * 2.S) - wavelength) * SAMPLE_MAX) / wavelength
+  when(instrument === InstrumentEnum.SAWTOOTH) {
+    saved_sample := ((((noteLife % wavelength.asUInt()) << 1).asSInt() - wavelength) * SAMPLE_MAX) / wavelength
   }
-  when(inst === InstrumentEnum.SINE) {
+  when(instrument === InstrumentEnum.SINE) {
     saved_sample := 0.S
   }
 
   when(enabled) {
-    io.sampleOut := (saved_sample  / VELOCITY_MAX) * velocity.asSInt()
+    io.sampleOut := saved_sample * velocity.asSInt()
   } otherwise {
     io.sampleOut := 0.S
   }

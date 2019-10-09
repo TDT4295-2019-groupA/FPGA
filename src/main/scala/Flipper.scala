@@ -48,6 +48,6 @@ class Flipper extends MultiIOModule{
   debug.gen7_out := soundTopLevel.debug.gen7_out
   io.soundOut := soundTopLevel.io.resultOut
 
-  chisel3.printf("Testing stuff: Input: %b\n", io.packetIn)
+  //chisel3.printf("Testing stuff: Input: %b\n", io.packetIn)
 
 }

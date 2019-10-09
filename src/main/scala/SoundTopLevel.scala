@@ -36,6 +36,8 @@ class SoundTopLevel() extends MultiIOModule {
   globalStateDecoder.io.writeEnable := io.gloWriteEnable
   generatorStateDecoder.io.packetIn := io.genPacketIn
 
+  adder.io.volumeIn := globalStateDecoder.io.volumeOut
+
   for (i <- 1 to 16) {
     val generatorNumber = Module(new Generator())
     generatorNumber.io.pitchWheelArrayIn := globalStateDecoder.io.pitchWheelOut
