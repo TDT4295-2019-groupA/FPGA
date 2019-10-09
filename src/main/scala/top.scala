@@ -8,6 +8,7 @@ import common._
 import communication._
 import config.config
 import state.GlobalUpdatePacket
+import toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
   val spi = new SPIBus()
@@ -25,7 +26,6 @@ class Top() extends MultiIOModule {
   // drive SoundTopLevel
   soundTopLevel.gloPacketIn    := input.packet.data.asTypeOf(new GlobalUpdatePacket)
   soundTopLevel.genPacketIn    := input.packet.data.asTypeOf(new GeneratorUpdatePacket)
-  soundTopLevel.genWriteEnable := false.B
   soundTopLevel.gloWriteEnable := false.B
   //io.i2c.data := soundTopLevel.resultOut
 
@@ -47,7 +47,6 @@ class Top() extends MultiIOModule {
         soundTopLevel.gloWriteEnable := true.B
       }
       is (config.sGeneratorUpdate.U) {
-        soundTopLevel.genWriteEnable := true.B
       }
     }
   }

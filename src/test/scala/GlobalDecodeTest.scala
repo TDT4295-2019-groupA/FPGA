@@ -44,7 +44,7 @@ object DecoderTests {
     poke(c.io.writeEnable, false)
 
     for (ii <- 0 until 100) {
-      printf("Volume: %d, Envlope: %d, PitchWheel: %d\n", peek(c.io.volumeOut), peek(c.io.EnvelopeOut.asUInt()), peek(c.io.PitchWheelOut.asUInt()))
+      printf("Volume: %d, Envlope: %d, PitchWheel: %d\n", peek(c.io.volumeOut), peek(c.io.envelopeOut.asUInt()), peek(c.io.pitchWheelOut.asUInt()))
       step(1)
     }
   }
