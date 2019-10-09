@@ -45,7 +45,7 @@ graphs_yosys: $(TOP_MODULE_VERILOG_TARGET) $(VERILOG_TARGETS) $(VHDL_DESTS)
 	cd graphs; ../scripts/make_yosys.sh $(patsubst %,../%,$^)
 graphs_diagrammer: $(TOP_MODULE_FIRRTL_TARGET) diagrammer/diagram.sh
 	rm graphs/diagrammer/* || true
-	cd diagrammer; ./diagram.sh -i ../$(TOP_MODULE_FIRRTL_TARGET) -t ../graphs/diagrammer -o '""'
+	cd diagrammer; ./diagram.sh -i ../$(TOP_MODULE_FIRRTL_TARGET) -t ../graphs/diagrammer  --dot-timeout-seconds 1000 -o '""'
 diagrammer/diagram.sh:
 	git submodule update --init
 
