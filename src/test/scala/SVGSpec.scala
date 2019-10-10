@@ -37,7 +37,7 @@ class Adder() extends Module {
 }
 
 object AdderTests {
-  
+
   class AdderTester(c: Adder) extends PeekPokeTesterLogger(c)  {
     //                                ^^^^^^^^^^^^^^^^^^^^^^^ This is an extension of the regular peek poke tester
     override def ioLoggers = List("" -> c.io)
@@ -49,5 +49,3 @@ object AdderTests {
     writeLog
   }
 }
-
-

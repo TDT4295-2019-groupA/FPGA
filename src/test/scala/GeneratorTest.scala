@@ -46,17 +46,17 @@ object GeneratorTests {
     //val genPackIn = (BitPat.bitPatToUInt(BitPat("b000000000100000000000000010000000000000000000000000000000000000000000001")))
 
     //Writeenable has to be set
-    poke(c.io.writeEnable, true)
-    poke(c.io.generatorPacketIn.toBits, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001", 2))
+    poke(c.io.generator_update_valid, true)
+    poke(c.io.generator_update.toBits, BigInt("000000000100000000000000010000000000000000000000000000000000000000000001", 2))
     //I think it defaults to 0.U anyway, so this is prob pointless
-    poke(c.io.envelopeIn.toBits, 0)
-    poke(c.io.pitchWheelArrayIn.toBits, 0)
+    poke(c.io.global_config.envelope.toBits, 0)
+    poke(c.io.global_config.pitchwheels.toBits, 0)
     step(1)
     //Reset input to ensure it doenst update state when it's not supposed to
-    poke(c.io.writeEnable, false)
-    poke(c.io.generatorPacketIn.toBits, 0)
+    poke(c.io.generator_update_valid, false)
+    poke(c.io.generator_update.toBits, 0)
     for (ii <- 0 until 100) {
-      printf("Sound output: %d\n", peek(c.io.sampleOut))
+      printf("Sound output: %d\n", peek(c.io.sample_out))
       step(1)
 
     }

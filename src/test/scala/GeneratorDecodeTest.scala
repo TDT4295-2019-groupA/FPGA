@@ -1,10 +1,19 @@
 package toplevel
 
+import chisel3._
 import Ex0.TestUtils._
 import chisel3.iotesters.PeekPokeTester
-import generator.GeneratorStateDecoder
+import communication.GeneratorUpdatePacket
 import org.scalatest.{FlatSpec, Matchers}
 import toplevel.GeneratorDecoderTest.GeneratorStateDecoderTest
+
+class GeneratorStateDecoder extends Module {
+  val io = IO(new Bundle {
+    val in = Input(new GeneratorUpdatePacket)
+    val out = Output(new GeneratorUpdatePacket)
+  })
+  io.out := io.in.withEndianSwapped()
+}
 
 class GeneratorDecodeTest extends FlatSpec with Matchers {
   behavior of "Decoders"
@@ -31,10 +40,11 @@ object GeneratorDecoderTest {
 
      */
 
-    poke(c.io.packetIn.toBits, BigInt("0000000001000000000000000100000000000000000000000000000000000000000000010000000000000111", 2))
+    poke(c.io.in.toBits, BigInt("0000000001000000000000000100000000000000000000000000000000000000000000010000000000000111", 2))
 
     for (ii <- 0 until 100) {
-      printf("indexOut: %d, packetOut: %d\n", peek(c.io.indexOut), peek(c.io.GeneratorPacketOut.asUInt()))
+
+      printf("generator_index: %d, packetOut: %d\n", peek(c.io.out.generator_index).asUInt(), peek(c.io.out.data.asUInt()).asUInt())
       step(1)
     }
   }

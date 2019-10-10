@@ -4,8 +4,6 @@ import chisel3._
 import chisel3.experimental.MultiIOModule
 import chisel3.util._
 import config.config
-import generator.GeneratorStateDecoder
-import state.GlobalStateDecoder
 
 // TODO: this needs tests
 

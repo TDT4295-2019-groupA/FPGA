@@ -1,5 +1,6 @@
+// what is this even?
+/*
 package toplevel
-
 import chisel3.experimental.MultiIOModule
 import chisel3._
 import generator.GeneratorUpdatePacket
@@ -51,3 +52,4 @@ class Flipper extends MultiIOModule{
   //chisel3.printf("Testing stuff: Input: %b\n", io.packetIn)
 
 }
+*/

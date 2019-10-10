@@ -1,32 +1,37 @@
 package generator
 
 import chisel3._
+import chisel3.util._
 import config.config
 import chisel3.experimental.MultiIOModule
-import chisel3.util.{Counter, is, switch}
-import state.{Envelope, PitchWheelArray}
+import communication._
 
 class Generator extends MultiIOModule{
-
   val io = IO(
     new Bundle {
-      val generatorPacketIn = Input(new GeneratorPacket)
-
-      val envelopeIn = Input(new Envelope)
-      val pitchWheelArrayIn = Input(new PitchWheelArray)
-      val writeEnable = Input(Bool())
-
-      val sampleOut = Output(SInt(24.W))
+      val generator_update_valid = Input(Bool()) // pulsed for one cycle
+      val generator_update       = Input(new GeneratorUpdate)
+      val global_config          = Input(new GlobalUpdate) // assumed always valid
+      val step_sample            = Input(Bool()) // pulsed for one cycle
+      val sample_out             = Output(SInt(24.W))
     }
   )
-  val noteLife = RegInit(UInt(32.W), 0.U)
-  val enabled = RegInit(Bool(), false.B)
-  val instrument = RegInit(UInt(8.W), InstrumentEnum.SQUARE)
-  val note_index = RegInit(UInt(8.W), 0.U)
-  val velocity = RegInit(UInt(8.W), 64.U)
+  // state
+  val note_life  = RegInit(UInt(32.W), 0.U)
+  val generator_config = Reg(new GeneratorUpdate)
 
-  val lookupTable = Reg(Vec(128, SInt(32.W)))
+  // handle input
+  when (io.generator_update_valid) {
+    generator_config := io.generator_update
+    when (io.generator_update.reset_note) {
+      note_life := 0.U
+    }
+  }
+  when (io.step_sample) {
+    note_life := note_life + 1.U
+  }
 
+  val lookupTable = Reg(Vec(128, SInt(32.W))) // todo: for what? rename this
   for (i <- 0 to 127) {
     lookupTable(i) := freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.S
   }
@@ -37,46 +42,31 @@ class Generator extends MultiIOModule{
   def freq_to_wavelength_in_samples(freq: Double): Double =
     scala.math.round(config.SAMPLE_RATE / freq)
 
-  val saved_sample = RegInit(SInt(16.W), 0.S)
+  val wavelength: SInt = lookupTable(generator_config.note_index)
+  val current_sample = Wire(SInt(16.W))
+  current_sample := 0.S
 
-  when(io.writeEnable) {
-    enabled := io.generatorPacketIn.enabled
-    instrument := io.generatorPacketIn.instrument
-    note_index := io.generatorPacketIn.note_index
-    velocity := io.generatorPacketIn.velocity
-  }
-
-
-  when(io.writeEnable && io.generatorPacketIn.reset_note) {
-    noteLife := 0.U
-  } otherwise {
-    noteLife := noteLife + 1.U
-  }
-
-  val wavelength: SInt = lookupTable(note_index)
-
-  when(instrument === InstrumentEnum.SQUARE) {
-    when (((noteLife << 1).asSInt() / wavelength)(0).asSInt() === 1.S) {
-      saved_sample := (-config.SAMPLE_MAX).S
-    } otherwise {
-      saved_sample := config.SAMPLE_MAX.S
+  // todo: get rid of the modulo, see the reference implementation
+  switch (generator_config.instrument) {
+    is (InstrumentEnum.SQUARE) {
+      when (((note_life << 1).asSInt() / wavelength)(0).asSInt() === 1.S) {
+        current_sample := (-config.SAMPLE_MAX).S
+      } otherwise {
+        current_sample := config.SAMPLE_MAX.S
+      }
+    }
+    is (InstrumentEnum.TRIANGLE) {
+      current_sample := 0.S
+    }
+    is (InstrumentEnum.SAWTOOTH) {
+      current_sample := ((((note_life % wavelength.asUInt()) << 1).asSInt() - wavelength) * config.SAMPLE_MAX.S) / wavelength
+    }
+    is (InstrumentEnum.SINE) {
+      current_sample := 0.S
     }
   }
-  when(instrument === InstrumentEnum.TRIANGLE) {
-    saved_sample := 0.S
-  }
-  when(instrument === InstrumentEnum.SAWTOOTH) {
-    saved_sample := ((((noteLife % wavelength.asUInt()) << 1).asSInt() - wavelength) * config.SAMPLE_MAX.S) / wavelength
-  }
-  when(instrument === InstrumentEnum.SINE) {
-    saved_sample := 0.S
-  }
 
-  when(enabled) {
-    io.sampleOut := saved_sample * velocity.asSInt()
-  } otherwise {
-    io.sampleOut := 0.S
-  }
+  io.sample_out := current_sample * generator_config.velocity.asSInt()
 }
 
 // todo: move to config.scala?

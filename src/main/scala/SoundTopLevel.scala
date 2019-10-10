@@ -3,24 +3,23 @@ package toplevel
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import common.Adder
+import communication._
 import config.config
-import generator.{Generator, GeneratorStateDecoder, GeneratorUpdatePacket}
-import state.{GlobalStateDecoder, GlobalUpdatePacket}
+import generator.Generator
 
 class SoundTopLevel() extends MultiIOModule {
-
   val io = IO(
     new Bundle {
-      val genPacketIn = Input(new GeneratorUpdatePacket)
-      val gloPacketIn = Input(new GlobalUpdatePacket)
-      val gloWriteEnable = Input(Bool())
-      val resultOut = Output(SInt(32.W))
+      val generator_update_packet_valid = Input(Bool()) // pulsed for one cycle
+      val generator_update_packet       = Input(new GeneratorUpdatePacket)
+      val global_update_packet_valid    = Input(Bool()) // pulsed for one cycle
+      val global_update_packet          = Input(new GlobalUpdatePacket)
+      val step_sample                   = Input(Bool()) // pulsed for one cycle
+      val sample_out                    = Output(SInt(32.W))
     }
   )
-
   val debug = IO(
     new Bundle {
-      val note_index = Output(UInt())
       val volume_out = Output(UInt())
       val envelope_out = Output(UInt())
       val pitchwheel_out = Output(UInt())
@@ -28,40 +27,40 @@ class SoundTopLevel() extends MultiIOModule {
     }
   )
 
+  // global generator state
+  val global_config = Reg(new GlobalUpdate)
+  when (io.generator_update_packet_valid) {
+    global_config := io.global_update_packet.data
+  }
 
-  val globalStateDecoder = Module(new GlobalStateDecoder())
-  val generatorStateDecoder = Module(new GeneratorStateDecoder())
-  val adder = Module(new Adder())
+  // initalize our sample adder
+  val adder = Module(new Adder()).io
+  adder.volume := global_config.volume
+  io.sample_out := adder.sample_out
 
-  globalStateDecoder.io.packetIn := io.gloPacketIn
-  globalStateDecoder.io.writeEnable := io.gloWriteEnable
-  generatorStateDecoder.io.packetIn := io.genPacketIn
 
-  adder.io.volumeIn := globalStateDecoder.io.volumeOut
-
+  // init the generators, and hook outputs to the adder
   for (i <- 1 to config.N_GENERATORS) {
-    val generatorNumber = Module(new Generator())
-    generatorNumber.io.pitchWheelArrayIn := globalStateDecoder.io.pitchWheelOut
-    generatorNumber.io.envelopeIn := globalStateDecoder.io.envelopeOut
+    val generator = Module(new Generator()).io
+    generator.generator_update_valid := false.B // overridden below
+    generator.generator_update := io.generator_update_packet.data
+    generator.global_config := global_config
+    generator.step_sample := false.B // overridden below
 
-    adder.io.adderInputs(i-1) := generatorNumber.io.sampleOut
-    generatorNumber.io.generatorPacketIn := generatorStateDecoder.io.GeneratorPacketOut
+    adder.samples_in(i-1) := generator.sample_out
 
-    when(generatorStateDecoder.io.indexOut === i.U) {
-      generatorNumber.io.writeEnable := true.B
-    } otherwise {
-      generatorNumber.io.writeEnable := false.B
+    when(io.generator_update_packet.generator_index === i.U) {
+      generator.generator_update_valid := io.generator_update_packet_valid
     }
 
-    if(i == 7) {
-      debug.gen7_out := generatorNumber.io.sampleOut
+    if(i == 7) { // TODO: remove this, it won't allow synthing with less than 7 generators due to it leaving a unconnected output
+      debug.gen7_out := generator.sample_out
     }
   }
 
-  io.resultOut := adder.io.soundOutput
-  debug.note_index := generatorStateDecoder.io.indexOut
-  debug.volume_out := globalStateDecoder.io.volumeOut
-  debug.envelope_out := globalStateDecoder.io.envelopeOut.asUInt()
-  debug.pitchwheel_out := globalStateDecoder.io.pitchWheelOut.asUInt()
+  // debug. remove this?
+  debug.volume_out := global_config.volume
+  debug.envelope_out := global_config.envelope.asUInt()
+  debug.pitchwheel_out := global_config.pitchwheels.asUInt()
 
 }
