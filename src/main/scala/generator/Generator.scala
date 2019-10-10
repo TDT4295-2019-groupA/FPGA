@@ -67,6 +67,11 @@ class Generator extends MultiIOModule{
   }
 
   io.sample_out := current_sample * generator_config.velocity.asSInt()
+
+  printf("valid %d\n", io.generator_update_valid)
+  printf("instrument %d\n", io.generator_update.instrument)
+  printf("instrument %d\n", generator_config.instrument)
+  //printf("note_life %d\n", generator_config.instrument)
 }
 
 // todo: move to config.scala?
