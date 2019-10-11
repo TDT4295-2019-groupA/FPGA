@@ -29,7 +29,7 @@ class SoundTopLevel() extends MultiIOModule {
 
   // global generator state
   val global_config = Reg(new GlobalUpdate)
-  when (io.generator_update_packet_valid) {
+  when (io.global_update_packet_valid) {
     global_config := io.global_update_packet.data
   }
 
@@ -75,16 +75,15 @@ class SoundTopLevelPeekPokeWrapper extends Module {
   val top = Module(new SoundTopLevel).io
   val io = IO(new Bundle { // wrapper for SoundTopLevel, since
     val generator_update_packet_valid = Input(Bool())
-    val generator_update_packet       = Input(UInt(top.generator_update_packet.getWidth.W))
     val global_update_packet_valid    = Input(Bool())
-    val global_update_packet          = Input(UInt(top.global_update_packet.getWidth.W))
+    val packet_data                   = Input(UInt(256.W))
     val step_sample                   = Input(Bool())
     val sample_out                    = Output(SInt(32.W))
   })
   top.generator_update_packet_valid := io.generator_update_packet_valid
-  top.generator_update_packet       := io.generator_update_packet.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
+  top.generator_update_packet       := io.packet_data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
   top.global_update_packet_valid    := io.global_update_packet_valid
-  top.global_update_packet          := io.global_update_packet.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
+  top.global_update_packet          := io.packet_data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
   top.step_sample                   := io.step_sample
   io.sample_out                     := top.sample_out
 }

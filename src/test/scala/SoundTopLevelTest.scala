@@ -99,13 +99,13 @@ object SoundTopLevelTests {
         printf("SPI: %x\n", packet_data)
 
         if (packet_type == config.sGlobalUpdate) {
-          poke(c.io.global_update_packet, packet_data)
+          poke(c.io.packet_data, packet_data)
           poke(c.io.global_update_packet_valid, true)
           step(1)
           poke(c.io.global_update_packet_valid, false)
         }
         if (packet_type == config.sGeneratorUpdate) {
-          poke(c.io.generator_update_packet, packet_data)
+          poke(c.io.packet_data, packet_data)
           poke(c.io.generator_update_packet_valid, true)
           step(1)
           poke(c.io.generator_update_packet_valid, false)
