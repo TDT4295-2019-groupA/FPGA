@@ -1,5 +1,7 @@
 package config
 
+import chisel3._
+
 // tweakable constants
 object config {
   val FREQ_SHIFT      = 12     // scaling factor (bit shifts) when dealing with frequencies
@@ -19,4 +21,13 @@ object config {
   val sGlobalUpdate    = 1
   val sGeneratorUpdate = 2
 
+  object InstrumentEnum extends Enumeration {
+    type InstrumentEnum = UInt
+    val SQUARE: UInt = 0.U
+    val TRIANGLE: UInt = 1.U
+    val SAWTOOTH: UInt = 2.U
+    val SINE: UInt = 3.U
+  }
 }
+
+

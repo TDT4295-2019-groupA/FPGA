@@ -5,7 +5,7 @@ import chisel3._
 import communication._
 import chisel3.iotesters.PeekPokeTester
 import org.scalatest.{FlatSpec, Matchers}
-import toplevel.DecoderTests.GlobalStateDecoderTest
+import toplevel.GlobalDecoderTests.GlobalStateDecoderTest
 
 class GlobalStateDecoder extends Module {
   val io = IO(new Bundle{
@@ -15,7 +15,7 @@ class GlobalStateDecoder extends Module {
   io.out := io.in.withEndianSwapped()
 }
 
-class DecodeTest extends FlatSpec with Matchers {
+class GlobalDecodeTest extends FlatSpec with Matchers {
   behavior of "Decoders"
 
   it should "Decode Global Packets Correctly" in {
@@ -27,7 +27,7 @@ class DecodeTest extends FlatSpec with Matchers {
   }
 }
 
-object DecoderTests {
+object GlobalDecoderTests {
 
   val rand = new scala.util.Random(100)
 

@@ -27,7 +27,7 @@ class SoundTopLevelTest extends FlatSpec with Matchers {
   }
 */
 
-  it should "Run the pipeline correctly" in {
+  it should "Succeed with all the data" in {
     wrapTester(
       chisel3.iotesters.Driver(() => new SoundTopLevelPeekPokeWrapper()) { c =>
         new SoundTopLevelTests.PlayingMidiTest(c)

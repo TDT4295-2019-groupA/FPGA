@@ -29,11 +29,28 @@ class Generator extends MultiIOModule{
   def freq_to_wavelength_in_samples(freq: Double): Double =
     scala.math.round(config.SAMPLE_RATE / freq)
 
-  val wavelength_lut = Reg(Vec(128, UInt(32.W)))
-  for (i <- 0 to 127) {
+
+  /*
+  Here we can save a lot of space for some computation.
+  Every 12th step in the note_index is roughly equal to half the previous one
+  ie: step 25 = step 13 / 2
+  By using modulo for index and dividing for range, we can reduce the size from 128 to 12
+  This increases computational complexity, but hopefully reduces space necessary
+   */
+
+  val wavelength_lut = Reg(Vec(12, UInt(32.W)))
+  //val wavelength: UInt = wavelength_lut(generator_config.note_index)
+
+
+  val wavelength: UInt = Wire(UInt())
+  for (i <- 0 until 12) {
     wavelength_lut(i) := freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.U
   }
-  val wavelength: UInt = wavelength_lut(generator_config.note_index)
+  when(generator_config.note_index >= 12.U) {
+    wavelength := wavelength_lut(generator_config.note_index % 12.U) >> (generator_config.note_index / 12.U)
+  }.otherwise{
+    wavelength := wavelength_lut(generator_config.note_index)
+  }
 
 
   // handle input
@@ -60,26 +77,25 @@ class Generator extends MultiIOModule{
 
   // todo: get rid of the modulo, see the reference implementation
   switch (generator_config.instrument) {
-    is (InstrumentEnum.SQUARE) {
-      when ((wavelength_pos << 1) > wavelength) {
+    is (config.InstrumentEnum.SQUARE) {
+      when ((wavelength_pos << 1).asUInt() > wavelength) {
         current_sample := (-config.SAMPLE_MAX).S
       } otherwise {
         current_sample := config.SAMPLE_MAX.S
       }
     }
-    is (InstrumentEnum.TRIANGLE) {
+    is (config.InstrumentEnum.TRIANGLE) {
       current_sample := 0.S
     }
-    is (InstrumentEnum.SAWTOOTH) {
+    is (config.InstrumentEnum.SAWTOOTH) {
       //current_sample := ((((wavelength_pos) << 1) - wavelength) * config.SAMPLE_MAX.S) / wavelength.asSInt()
       current_sample := 0.S
     }
-    is (InstrumentEnum.SINE) {
+    is (config.InstrumentEnum.SINE) {
       current_sample := 0.S
     }
   }
 
-  //io.sample_out := current_sample * generator_config.velocity.asSInt() / config.VELOCITY_MAX.S
   io.sample_out := current_sample * generator_config.velocity.asSInt() >> 7
 
   //printf("valid %d\n", io.generator_update_valid)
@@ -89,11 +105,3 @@ class Generator extends MultiIOModule{
   //printf("generator_update_valid %d\n", io.generator_update_valid)
 }
 
-// todo: move to config.scala?
-object InstrumentEnum extends Enumeration {
-  type InstrumentEnum = UInt
-  val SQUARE: UInt = 0.U
-  val TRIANGLE: UInt = 1.U
-  val SAWTOOTH: UInt = 2.U
-  val SINE: UInt = 3.U
-}
