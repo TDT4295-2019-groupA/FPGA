@@ -16,9 +16,25 @@ cluster_TopModule_io_spi_clk [shape = "rectangle" style="filled" fillcolor="#CCC
      
 cluster_TopModule_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
      
+cluster_TopModule_io_sw [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_sw" rank="0"]
+     
+cluster_TopModule_io_btn [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_btn" rank="0"]
+     
 cluster_TopModule_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
      
-cluster_TopModule_io_pwm_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out" rank="1000"]
+cluster_TopModule_io_pwm_out_l [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out_l" rank="1000"]
+     
+cluster_TopModule_io_pwm_out_r [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out_r" rank="1000"]
+     
+cluster_TopModule_io_led [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_led" rank="1000"]
+     
+cluster_TopModule_io_rgbled_0 [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_rgbled_0" rank="1000"]
+     
+cluster_TopModule_io_rgbled_1 [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_rgbled_1" rank="1000"]
+     
+cluster_TopModule_io_rgbled_2 [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_rgbled_2" rank="1000"]
+     
+cluster_TopModule_io_rgbled_3 [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_rgbled_3" rank="1000"]
      
 
 subgraph cluster_TopModule_Top {
@@ -35,9 +51,13 @@ cluster_TopModule_Top_io_spi_clk [shape = "rectangle" style="filled" fillcolor="
      
 cluster_TopModule_Top_io_spi_cs_n [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_spi_cs_n" rank="0"]
      
+cluster_TopModule_Top_io_sw [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_sw" rank="0"]
+     
 cluster_TopModule_Top_io_spi_miso [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_spi_miso" rank="1000"]
      
-cluster_TopModule_Top_io_pwm_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out" rank="1000"]
+cluster_TopModule_Top_io_pwm_out_l [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out_l" rank="1000"]
+     
+cluster_TopModule_Top_io_pwm_out_r [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_pwm_out_r" rank="1000"]
      
 
 subgraph cluster_TopModule_Top_SoundTopLevel {
@@ -45,32 +65,8 @@ subgraph cluster_TopModule_Top_SoundTopLevel {
   URL="SoundTopLevel.dot.svg"
   bgcolor="#FFB6C1"
   
-subgraph cluster_TopModule_Top_SoundTopLevel_globalStateDecoder {
-  label="globalStateDecoder"
-  URL="GlobalStateDecoder.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_generatorStateDecoder {
-  label="generatorStateDecoder"
-  URL="GeneratorStateDecoder.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_adder {
-  label="adder"
+subgraph cluster_TopModule_Top_SoundTopLevel_Adder {
+  label="Adder"
   URL="Adder.dot.svg"
   bgcolor="#FFF8DC"
   
@@ -177,102 +173,6 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7 {
 }
      
 
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_8 {
-  label="Generator_8"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_9 {
-  label="Generator_9"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_10 {
-  label="Generator_10"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_11 {
-  label="Generator_11"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_12 {
-  label="Generator_12"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_13 {
-  label="Generator_13"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_14 {
-  label="Generator_14"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
-subgraph cluster_TopModule_Top_SoundTopLevel_Generator_15 {
-  label="Generator_15"
-  URL="Generator.dot.svg"
-  bgcolor="#FFF8DC"
-  
-
-  
-  
-  
-}
-     
-
   
   
   
@@ -331,8 +231,18 @@ subgraph cluster_TopModule_Top_PWM {
   
 }
      
+cluster_TopModule_lit1 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
+cluster_TopModule_lit2 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
+cluster_TopModule_lit3 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
+cluster_TopModule_lit4 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
+cluster_TopModule_lit5 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+     
 
-op_eq_1 [shape = "plaintext" label=<
+op_eq_6 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -346,13 +256,20 @@ op_eq_1 [shape = "plaintext" label=<
        
 
   cluster_TopModule_io_spi_mosi -> cluster_TopModule_Top_io_spi_mosi
+  cluster_TopModule_lit4 -> cluster_TopModule_io_rgbled_2
   cluster_TopModule_clock -> cluster_TopModule_Top_clock
+  cluster_TopModule_lit3 -> cluster_TopModule_io_rgbled_1
   cluster_TopModule_io_spi_cs_n -> cluster_TopModule_Top_io_spi_cs_n
-  cluster_TopModule_reset -> op_eq_1:in1
-  op_eq_1:out -> cluster_TopModule_Top_reset
+  cluster_TopModule_Top_io_pwm_out_l -> cluster_TopModule_io_pwm_out_l
+  cluster_TopModule_lit1 -> cluster_TopModule_io_led
   cluster_TopModule_Top_io_spi_miso -> cluster_TopModule_io_spi_miso
+  op_eq_6:out -> cluster_TopModule_Top_reset
+  cluster_TopModule_lit2 -> cluster_TopModule_io_rgbled_0
+  cluster_TopModule_lit5 -> cluster_TopModule_io_rgbled_3
+  cluster_TopModule_Top_io_pwm_out_r -> cluster_TopModule_io_pwm_out_r
+  cluster_TopModule_io_sw -> cluster_TopModule_Top_io_sw
+  cluster_TopModule_reset -> op_eq_6:in1
   cluster_TopModule_io_spi_clk -> cluster_TopModule_Top_io_spi_clk
-  cluster_TopModule_Top_io_pwm_out -> cluster_TopModule_io_pwm_out
   
   
 }

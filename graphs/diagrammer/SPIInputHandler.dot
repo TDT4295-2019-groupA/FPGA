@@ -16,146 +16,214 @@ cluster_SPIInputHandler_io_RX_data_valid [shape = "rectangle" style="filled" fil
      
 cluster_SPIInputHandler_io_packet_valid [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_packet_valid" rank="1000"]
      
+cluster_SPIInputHandler_io_packet_magic [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_packet_magic" rank="1000"]
+     
 cluster_SPIInputHandler_io_packet_data [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_packet_data" rank="1000"]
      
-struct_cluster_SPIInputHandler_data_0 [shape="plaintext" label=<
+struct_cluster_SPIInputHandler_data [shape="plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
   <TR>
     <TD PORT="in">&#x25cf;</TD>
-    <TD>data_0</TD>
+    <TD>data</TD>
     <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
-struct_cluster_SPIInputHandler_data_1 [shape="plaintext" label=<
+struct_cluster_SPIInputHandler_data_len [shape="plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
   <TR>
     <TD PORT="in">&#x25cf;</TD>
-    <TD>data_1</TD>
+    <TD>data_len</TD>
     <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
-struct_cluster_SPIInputHandler_data_2 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_2</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_3 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_3</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_4 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_4</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_5 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_5</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_6 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_6</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_7 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_7</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_8 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_8</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_9 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_9</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_10 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_10</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_11 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_11</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_12 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_12</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_13 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_13</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_14 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_14</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_data_15 [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>data_15</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-struct_cluster_SPIInputHandler_write_pos [shape="plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
-  <TR>
-    <TD PORT="in">&#x25cf;</TD>
-    <TD>write_pos</TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
+cluster_SPIInputHandler_data_len_set [label = "data_len_set" shape="rectangle"]; 
 
-op_and_1059 [shape = "plaintext" label=<
+mux_1550928206 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_67 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_add_68 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > add </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">8</TD>
+  </TR>
+</TABLE>>];
+       
+cluster_SPIInputHandler_data_set [label = "data_set" shape="rectangle"]; 
+
+op_bits_69 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(255, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_34151795 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_70 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_71 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_shl_72 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_73 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_74 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+cluster_SPIInputHandler_magic [label = "magic" shape="rectangle"]; 
+
+op_bits_75 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_dshr_76 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > dshr </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_77 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asUInt_78 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asUInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_sub_79 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > sub </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_80 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -168,7 +236,72 @@ op_and_1059 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_1060 [shape = "plaintext" label=<
+mux_470788516 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_81 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1897819423 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_82 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">1</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_83 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">200</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_and_84 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -181,134 +314,7 @@ op_and_1060 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_gt_1061 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > gt </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">0</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1741067321 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">0</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1062 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">0</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1851567856 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1063 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">1</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1064 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">25</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_pad_1065 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD > pad </TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_tail_1066 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1067 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_and_1068 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > and </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1069 [shape = "plaintext" label=<
+op_eq_85 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">2</TD>
@@ -321,7 +327,7 @@ op_eq_1069 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1070 [shape = "plaintext" label=<
+op_eq_86 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -329,12 +335,38 @@ op_eq_1070 [shape = "plaintext" label=<
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD PORT="in2">12</TD>
+    <TD PORT="in2">96</TD>
   </TR>
 </TABLE>>];
        
 
-op_tail_1071 [shape = "plaintext" label=<
+op_bits_87 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_dshr_88 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > dshr </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_89 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -347,20 +379,69 @@ op_tail_1071 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_1072 [shape = "plaintext" label=<
+op_asUInt_90 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
+    <TD > asUInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
        
 
-op_pad_1073 [shape = "plaintext" label=<
+op_sub_91 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > sub </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_92 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(255, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_34151795 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_93 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_94 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -370,11 +451,44 @@ op_pad_1073 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_cat_1074 [shape = "plaintext" label=<
+op_shl_95 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_96 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_97 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_569728215 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
@@ -383,189 +497,7 @@ op_cat_1074 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_cat_1075 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1076 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1077 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1078 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1079 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1080 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1081 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1082 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1083 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1084 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1085 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1086 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1087 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_cat_1088 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > cat </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_57030520 [shape = "plaintext" label=<
+mux_1041322918 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -578,10 +510,10 @@ mux_57030520 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1165412923 [shape = "plaintext" label=<
+mux_1058085818 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
-    <TD PORT="in1">&#x25cf;</TD>
+    <TD PORT="in1">0</TD>
     <TD ROWSPAN="2" PORT="select">a?</TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
@@ -591,7 +523,7 @@ mux_1165412923 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1089 [shape = "plaintext" label=<
+op_eq_98 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">0</TD>
@@ -604,7 +536,7 @@ op_eq_1089 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_533080307 [shape = "plaintext" label=<
+mux_1825543560 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -617,20 +549,7 @@ mux_533080307 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_363630077 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1090 [shape = "plaintext" label=<
+op_eq_99 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">1</TD>
@@ -643,7 +562,33 @@ op_eq_1090 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1320429442 [shape = "plaintext" label=<
+mux_202093380 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_100 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > eq </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">200</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1979901603 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -656,20 +601,7 @@ mux_1320429442 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_2022975861 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1091 [shape = "plaintext" label=<
+op_eq_101 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">2</TD>
@@ -682,514 +614,7 @@ op_eq_1091 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_620948455 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_604561071 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1092 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">3</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1263831489 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_602656225 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1093 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">4</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_573971875 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1973390690 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1094 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">5</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_834472745 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1687116200 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1095 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">6</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1557799533 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1013270875 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1096 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">7</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_797640185 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1986807383 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1097 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">8</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1952560594 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_463146034 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1098 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">9</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1245675951 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1197888240 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1099 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">10</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1844581321 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_951772120 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1100 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">11</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_2048315067 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_578647514 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1101 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">12</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_810539954 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1798206613 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1102 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">13</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1800064499 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_665394789 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1103 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">14</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_1972711167 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_581144440 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_eq_1104 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">15</TD>
-    <TD ROWSPAN="2" > eq </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_2023575106 [shape = "plaintext" label=<
+mux_674586465 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1202,46 +627,20 @@ mux_2023575106 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1467630313 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_863241577 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" PORT="select">a?</TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_gt_1105 [shape = "plaintext" label=<
+op_eq_102 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > gt </TD>
+    <TD ROWSPAN="2" > eq </TD>
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD PORT="in2">0</TD>
+    <TD PORT="in2">96</TD>
   </TR>
 </TABLE>>];
        
 
-mux_851093810 [shape = "plaintext" label=<
+mux_1404642599 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1254,7 +653,33 @@ mux_851093810 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1106 [shape = "plaintext" label=<
+mux_1847370933 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1154642403 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">0</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_103 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1267,7 +692,7 @@ op_eq_1106 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1523757594 [shape = "plaintext" label=<
+mux_636556958 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1280,7 +705,7 @@ mux_1523757594 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1107 [shape = "plaintext" label=<
+op_eq_104 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">1</TD>
@@ -1293,7 +718,7 @@ op_eq_1107 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1301687974 [shape = "plaintext" label=<
+mux_360063563 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1306,7 +731,7 @@ mux_1301687974 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1108 [shape = "plaintext" label=<
+op_eq_105 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1314,74 +739,12 @@ op_eq_1108 [shape = "plaintext" label=<
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD PORT="in2">25</TD>
+    <TD PORT="in2">200</TD>
   </TR>
 </TABLE>>];
        
 
-op_pad_1109 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD > pad </TD>
-    <TD PORT="out">&#x25cf;</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_tail_1110 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1111 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_tail_1112 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1113 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-mux_2063119099 [shape = "plaintext" label=<
+mux_1806072301 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1394,7 +757,7 @@ mux_2063119099 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1114 [shape = "plaintext" label=<
+op_eq_106 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">2</TD>
@@ -1407,7 +770,7 @@ op_eq_1114 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_417955112 [shape = "plaintext" label=<
+mux_1424440449 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1420,7 +783,7 @@ mux_417955112 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_1115 [shape = "plaintext" label=<
+op_eq_107 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1428,338 +791,111 @@ op_eq_1115 [shape = "plaintext" label=<
     <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
   </TR>
   <TR>
-    <TD PORT="in2">12</TD>
+    <TD PORT="in2">96</TD>
   </TR>
 </TABLE>>];
        
 
-op_tail_1116 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1117 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_tail_1118 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1119 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_tail_1120 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1121 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_tail_1122 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > tail </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD>1</TD>
-  </TR>
-</TABLE>>];
-       
-
-op_add_1123 [shape = "plaintext" label=<
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
-  <TR>
-    <TD PORT="in1">&#x25cf;</TD>
-    <TD ROWSPAN="2" > add </TD>
-    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
-  </TR>
-  <TR>
-    <TD PORT="in2">1</TD>
-  </TR>
-</TABLE>>];
-       
-
-  cluster_SPIInputHandler_io_RX_data -> mux_578647514:in1
-  op_eq_1063:out -> mux_1851567856:select
-  mux_1687116200:out -> mux_834472745:in1
-  struct_cluster_SPIInputHandler_data_0:out -> mux_57030520:in2
-  mux_620948455:out -> struct_cluster_SPIInputHandler_data_3:in
-  op_cat_1075:out -> op_cat_1074:in1
-  mux_573971875:out -> struct_cluster_SPIInputHandler_data_5:in
-  mux_851093810:out -> mux_863241577:in1
-  mux_1851567856:out -> mux_1741067321:in2
-  mux_533080307:out -> struct_cluster_SPIInputHandler_data_1:in
-  cluster_SPIInputHandler_io_RX_data -> mux_2022975861:in1
-  op_cat_1081:out -> op_cat_1079:in2
-  cluster_SPIInputHandler_io_RX_data -> mux_1986807383:in1
-  struct_cluster_SPIInputHandler_data_6:out -> op_cat_1084:in2
-  mux_1952560594:out -> struct_cluster_SPIInputHandler_data_9:in
-  struct_cluster_SPIInputHandler_data_12:out -> mux_2048315067:in2
-  struct_cluster_SPIInputHandler_data_9:out -> mux_1952560594:in2
-  mux_1557799533:out -> struct_cluster_SPIInputHandler_data_7:in
-  op_cat_1084:out -> op_cat_1083:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1102:in2
-  op_eq_1097:out -> mux_1986807383:select
-  mux_1741067321:out -> op_and_1060:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_gt_1105:in1
-  mux_363630077:out -> mux_533080307:in1
-  op_eq_1106:out -> mux_851093810:select
-  mux_1798206613:out -> mux_810539954:in1
-  struct_cluster_SPIInputHandler_data_13:out -> op_cat_1078:in1
-  struct_cluster_SPIInputHandler_data_8:out -> op_cat_1081:in2
-  struct_cluster_SPIInputHandler_data_7:out -> mux_1013270875:in2
-  struct_cluster_SPIInputHandler_data_0:out -> op_cat_1088:in2
-  struct_cluster_SPIInputHandler_data_4:out -> op_cat_1085:in2
-  cluster_SPIInputHandler_io_RX_data -> mux_665394789:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_363630077:in1
-  struct_cluster_SPIInputHandler_data_5:out -> mux_573971875:in2
-  op_add_1111:out -> op_tail_1110:in1
-  op_and_1059:out -> cluster_SPIInputHandler_io_packet_valid
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_834472745:select
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1092:in2
-  struct_cluster_SPIInputHandler_data_9:out -> mux_463146034:in2
-  struct_cluster_SPIInputHandler_data_3:out -> mux_604561071:in2
-  struct_cluster_SPIInputHandler_data_3:out -> op_cat_1087:in1
-  struct_cluster_SPIInputHandler_data_0:out -> op_eq_1106:in2
-  mux_417955112:out -> mux_2063119099:in1
-  struct_cluster_SPIInputHandler_data_11:out -> op_cat_1080:in1
-  op_pad_1109:out -> op_eq_1108:in1
-  mux_1986807383:out -> mux_797640185:in1
-  op_eq_1100:out -> mux_951772120:select
-  mux_2063119099:out -> mux_1523757594:in2
-  op_eq_1090:out -> mux_363630077:select
-  struct_cluster_SPIInputHandler_data_7:out -> op_cat_1084:in1
-  op_eq_1099:out -> mux_1197888240:select
-  struct_cluster_SPIInputHandler_data_10:out -> mux_1197888240:in2
-  op_and_1068:out -> mux_1851567856:in2
-  mux_1800064499:out -> struct_cluster_SPIInputHandler_data_14:in
-  mux_581144440:out -> mux_1972711167:in1
-  op_cat_1074:out -> op_pad_1073:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_1798206613:in1
-  mux_1245675951:out -> struct_cluster_SPIInputHandler_data_10:in
-  op_tail_1110:out -> op_pad_1109:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_1165412923:in1
-  struct_cluster_SPIInputHandler_data_14:out -> mux_1800064499:in2
-  mux_463146034:out -> mux_1952560594:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1096:in2
-  op_eq_1062:out -> mux_1741067321:select
-  mux_2022975861:out -> mux_1320429442:in1
-  op_eq_1070:out -> op_and_1068:in2
-  op_tail_1118:out -> mux_417955112:in2
-  mux_2048315067:out -> struct_cluster_SPIInputHandler_data_12:in
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1113:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_1013270875:in1
-  struct_cluster_SPIInputHandler_data_1:out -> op_cat_1088:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_951772120:in1
-  struct_cluster_SPIInputHandler_data_6:out -> mux_1687116200:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1093:in2
-  op_add_1119:out -> op_tail_1118:in1
-  struct_cluster_SPIInputHandler_data_5:out -> mux_1973390690:in2
-  op_cat_1078:out -> op_cat_1076:in2
-  op_eq_1101:out -> mux_578647514:select
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1245675951:select
-  op_add_1121:out -> op_tail_1120:in1
-  op_cat_1076:out -> op_cat_1075:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1117:in1
-  struct_cluster_SPIInputHandler_data_15:out -> mux_581144440:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1097:in2
-  mux_863241577:out -> mux_1467630313:in1
-  op_and_1060:out -> op_and_1059:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1467630313:select
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1557799533:select
-  mux_1165412923:out -> mux_57030520:in1
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1800064499:select
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1103:in2
-  op_cat_1086:out -> op_cat_1082:in2
-  op_eq_1064:out -> mux_1851567856:in1
-  op_cat_1080:out -> op_cat_1079:in1
-  struct_cluster_SPIInputHandler_data_0:out -> op_eq_1069:in2
-  op_pad_1065:out -> op_eq_1064:in1
-  op_tail_1116:out -> op_eq_1115:in1
-  op_gt_1105:out -> mux_863241577:select
-  struct_cluster_SPIInputHandler_data_10:out -> mux_1245675951:in2
-  mux_578647514:out -> mux_2048315067:in1
-  mux_665394789:out -> mux_1800064499:in1
-  op_eq_1098:out -> mux_463146034:select
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1067:in1
-  op_gt_1061:out -> op_and_1060:in1
-  struct_cluster_SPIInputHandler_data_0:out -> op_eq_1107:in2
-  struct_cluster_SPIInputHandler_data_4:out -> mux_602656225:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1072:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_1973390690:in1
-  struct_cluster_SPIInputHandler_data_7:out -> mux_1557799533:in2
-  struct_cluster_SPIInputHandler_data_9:out -> op_cat_1081:in1
-  struct_cluster_SPIInputHandler_data_11:out -> mux_1844581321:in2
-  op_eq_1114:out -> mux_2063119099:select
-  struct_cluster_SPIInputHandler_data_4:out -> mux_1263831489:in2
-  op_cat_1088:out -> op_cat_1086:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1123:in1
-  op_tail_1112:out -> mux_1301687974:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1263831489:select
-  op_tail_1071:out -> op_eq_1070:in1
-  mux_1263831489:out -> struct_cluster_SPIInputHandler_data_4:in
-  mux_2023575106:out -> struct_cluster_SPIInputHandler_write_pos:in
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1090:in2
-  cluster_SPIInputHandler_io_RX_data -> mux_604561071:in1
-  mux_1973390690:out -> mux_573971875:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_gt_1061:in1
-  mux_797640185:out -> struct_cluster_SPIInputHandler_data_8:in
-  mux_1320429442:out -> struct_cluster_SPIInputHandler_data_2:in
-  mux_1301687974:out -> mux_1523757594:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_463146034:in1
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_620948455:select
-  op_eq_1096:out -> mux_1013270875:select
-  op_pad_1073:out -> cluster_SPIInputHandler_io_packet_data
-  struct_cluster_SPIInputHandler_data_5:out -> op_cat_1085:in1
-  mux_834472745:out -> struct_cluster_SPIInputHandler_data_6:in
-  mux_57030520:out -> struct_cluster_SPIInputHandler_data_0:in
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1094:in2
-  op_eq_1104:out -> mux_581144440:select
-  struct_cluster_SPIInputHandler_data_0:out -> op_eq_1062:in2
-  cluster_SPIInputHandler_io_RX_data -> mux_1197888240:in1
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1320429442:select
-  struct_cluster_SPIInputHandler_data_14:out -> op_cat_1077:in2
-  op_eq_1102:out -> mux_1798206613:select
-  op_eq_1069:out -> op_and_1068:in1
-  op_cat_1077:out -> op_cat_1076:in1
-  mux_951772120:out -> mux_1844581321:in1
-  op_tail_1122:out -> mux_863241577:in2
-  struct_cluster_SPIInputHandler_data_6:out -> mux_834472745:in2
-  op_eq_1091:out -> mux_2022975861:select
-  struct_cluster_SPIInputHandler_data_2:out -> mux_2022975861:in2
-  op_tail_1066:out -> op_pad_1065:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1098:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1100:in2
-  cluster_SPIInputHandler_io_RX_data -> mux_1687116200:in1
-  struct_cluster_SPIInputHandler_data_12:out -> mux_578647514:in2
-  struct_cluster_SPIInputHandler_data_8:out -> mux_1986807383:in2
-  cluster_SPIInputHandler_io_RX_data -> mux_602656225:in1
-  op_eq_1089:out -> mux_1165412923:select
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_533080307:select
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1111:in1
-  op_eq_1092:out -> mux_604561071:select
-  cluster_SPIInputHandler_io_RX_data_valid -> op_and_1059:in1
-  cluster_SPIInputHandler_io_RX_data -> mux_581144440:in1
-  struct_cluster_SPIInputHandler_data_1:out -> mux_533080307:in2
-  op_eq_1108:out -> mux_1301687974:select
-  op_cat_1085:out -> op_cat_1083:in2
-  mux_1972711167:out -> struct_cluster_SPIInputHandler_data_15:in
-  mux_1844581321:out -> struct_cluster_SPIInputHandler_data_11:in
-  struct_cluster_SPIInputHandler_data_13:out -> mux_810539954:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1104:in2
-  mux_810539954:out -> struct_cluster_SPIInputHandler_data_13:in
-  struct_cluster_SPIInputHandler_data_3:out -> mux_620948455:in2
-  op_eq_1095:out -> mux_1687116200:select
-  struct_cluster_SPIInputHandler_data_1:out -> mux_363630077:in2
-  struct_cluster_SPIInputHandler_data_2:out -> op_cat_1087:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1119:in1
-  op_eq_1094:out -> mux_1973390690:select
-  struct_cluster_SPIInputHandler_data_14:out -> mux_665394789:in2
-  mux_1197888240:out -> mux_1245675951:in1
-  op_add_1072:out -> op_tail_1071:in1
-  op_add_1113:out -> op_tail_1112:in1
-  op_eq_1115:out -> mux_417955112:select
-  op_cat_1083:out -> op_cat_1082:in1
-  struct_cluster_SPIInputHandler_data_8:out -> mux_797640185:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1089:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_2048315067:select
-  op_tail_1120:out -> mux_2063119099:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1952560594:select
-  mux_1467630313:out -> mux_2023575106:in2
-  mux_1523757594:out -> mux_851093810:in2
-  op_add_1117:out -> op_tail_1116:in1
-  mux_602656225:out -> mux_1263831489:in1
-  struct_cluster_SPIInputHandler_data_0:out -> mux_1165412923:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_573971875:select
-  struct_cluster_SPIInputHandler_data_13:out -> mux_1798206613:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_57030520:select
-  op_cat_1087:out -> op_cat_1086:in1
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1844581321:select
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1091:in2
-  mux_1013270875:out -> mux_1557799533:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_add_1121:in1
-  op_cat_1082:out -> op_cat_1074:in2
-  struct_cluster_SPIInputHandler_data_2:out -> mux_1320429442:in2
-  struct_cluster_SPIInputHandler_data_15:out -> mux_1972711167:in2
-  op_eq_1093:out -> mux_602656225:select
-  struct_cluster_SPIInputHandler_data_12:out -> op_cat_1078:in2
-  op_eq_1103:out -> mux_665394789:select
-  struct_cluster_SPIInputHandler_data_0:out -> op_eq_1114:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_810539954:select
-  struct_cluster_SPIInputHandler_data_11:out -> mux_951772120:in2
-  mux_604561071:out -> mux_620948455:in1
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1095:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_797640185:select
-  struct_cluster_SPIInputHandler_data_0:out -> op_eq_1063:in2
-  op_eq_1107:out -> mux_1523757594:select
-  cluster_SPIInputHandler_reset -> mux_2023575106:select
-  struct_cluster_SPIInputHandler_write_pos:out -> mux_1467630313:in2
-  struct_cluster_SPIInputHandler_data_10:out -> op_cat_1080:in2
-  struct_cluster_SPIInputHandler_data_15:out -> op_cat_1077:in1
-  op_cat_1079:out -> op_cat_1075:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1099:in2
-  struct_cluster_SPIInputHandler_write_pos:out -> op_eq_1101:in2
-  cluster_SPIInputHandler_io_RX_data_valid -> mux_1972711167:select
-  op_add_1067:out -> op_tail_1066:in1
-  op_add_1123:out -> op_tail_1122:in1
+  mux_1154642403:out -> mux_1847370933:in1
+  struct_cluster_SPIInputHandler_data_len:out -> op_add_68:in1
+  cluster_SPIInputHandler_data_len_set -> op_eq_102:in1
+  cluster_SPIInputHandler_data_len_set -> op_sub_79:in1
+  struct_cluster_SPIInputHandler_data:out -> op_pad_74:in1
+  op_tail_67:out -> mux_1550928206:in1
+  op_and_80:out -> cluster_SPIInputHandler_io_packet_valid
+  mux_1424440449:out -> mux_1806072301:in1
+  struct_cluster_SPIInputHandler_data:out -> op_pad_97:in1
+  mux_34151795:out -> op_bits_69:in1
+  mux_1979901603:out -> mux_1825543560:in2
+  cluster_SPIInputHandler_reset -> mux_1404642599:select
+  op_eq_102:out -> mux_674586465:select
+  op_eq_98:out -> mux_1058085818:select
+  op_eq_81:out -> mux_470788516:select
+  cluster_SPIInputHandler_io_RX_data_valid -> mux_34151795:select
+  op_pad_97:out -> mux_34151795:in2
+  cluster_SPIInputHandler_magic -> op_eq_104:in2
+  cluster_SPIInputHandler_io_RX_data_valid -> mux_1041322918:select
+  cluster_SPIInputHandler_data_set -> mux_674586465:in2
+  op_bits_69:out -> cluster_SPIInputHandler_data_set
+  op_shl_72:out -> op_pad_71:in1
+  mux_1806072301:out -> mux_636556958:in2
+  op_eq_104:out -> mux_636556958:select
+  op_dshr_76:out -> op_bits_75:in1
+  cluster_SPIInputHandler_data_len_set -> op_eq_86:in1
+  op_eq_103:out -> mux_1154642403:select
+  cluster_SPIInputHandler_magic -> op_eq_101:in2
+  op_tail_89:out -> op_dshr_88:in2
+  mux_1058085818:out -> mux_1041322918:in1
+  op_pad_73:out -> op_or_70:in2
+  mux_1847370933:out -> mux_1404642599:in2
+  cluster_SPIInputHandler_data_len_set -> op_eq_100:in1
+  mux_470788516:out -> op_and_80:in2
+  cluster_SPIInputHandler_data_len_set -> op_eq_107:in1
+  mux_1404642599:out -> struct_cluster_SPIInputHandler_data_len:in
+  op_shl_95:out -> op_pad_94:in1
+  op_and_84:out -> mux_1897819423:in2
+  op_eq_107:out -> mux_1424440449:select
+  cluster_SPIInputHandler_data_len_set -> op_sub_91:in1
+  cluster_SPIInputHandler_reset -> mux_569728215:select
+  mux_569728215:out -> struct_cluster_SPIInputHandler_data:in
+  op_eq_86:out -> op_and_84:in2
+  mux_1550928206:out -> cluster_SPIInputHandler_data_len_set
+  op_pad_96:out -> op_or_93:in2
+  op_bits_92:out -> cluster_SPIInputHandler_io_packet_data
+  cluster_SPIInputHandler_data_set -> mux_1979901603:in2
+  cluster_SPIInputHandler_data_len_set -> op_eq_83:in1
+  mux_202093380:out -> mux_1825543560:in1
+  struct_cluster_SPIInputHandler_data:out -> op_shl_72:in1
+  cluster_SPIInputHandler_magic -> op_eq_81:in2
+  op_eq_100:out -> mux_202093380:select
+  cluster_SPIInputHandler_magic -> op_eq_85:in2
+  op_or_93:out -> mux_34151795:in1
+  op_eq_105:out -> mux_360063563:select
+  mux_360063563:out -> mux_636556958:in1
+  mux_1041322918:out -> mux_569728215:in2
+  cluster_SPIInputHandler_io_RX_data -> op_pad_73:in1
+  cluster_SPIInputHandler_data_len_set -> mux_360063563:in2
+  op_sub_79:out -> op_asUInt_78:in1
+  op_tail_77:out -> op_dshr_76:in2
+  cluster_SPIInputHandler_data_set -> op_dshr_88:in1
+  cluster_SPIInputHandler_data_set -> mux_202093380:in2
+  struct_cluster_SPIInputHandler_data:out -> op_shl_95:in1
+  cluster_SPIInputHandler_data_len_set -> mux_1424440449:in2
+  op_eq_82:out -> mux_1897819423:select
+  cluster_SPIInputHandler_magic -> op_eq_106:in2
+  cluster_SPIInputHandler_data_len_set -> mux_1806072301:in2
+  op_add_68:out -> op_tail_67:in1
+  op_pad_71:out -> op_or_70:in1
+  op_eq_83:out -> mux_1897819423:in1
+  cluster_SPIInputHandler_io_RX_data_valid -> op_and_80:in1
+  mux_636556958:out -> mux_1154642403:in2
+  op_asUInt_90:out -> op_tail_89:in1
+  op_eq_99:out -> mux_1825543560:select
+  cluster_SPIInputHandler_magic -> op_eq_98:in2
+  cluster_SPIInputHandler_data_len_set -> op_eq_105:in1
+  op_eq_85:out -> op_and_84:in1
+  op_eq_106:out -> mux_1806072301:select
+  cluster_SPIInputHandler_io_RX_data -> op_pad_96:in1
+  cluster_SPIInputHandler_data_len_set -> mux_1847370933:in2
+  op_eq_101:out -> mux_1979901603:select
+  op_bits_75:out -> cluster_SPIInputHandler_magic
+  cluster_SPIInputHandler_magic -> op_eq_99:in2
+  mux_674586465:out -> mux_1979901603:in1
+  cluster_SPIInputHandler_io_RX_data_valid -> mux_1847370933:select
+  op_pad_94:out -> op_or_93:in1
+  cluster_SPIInputHandler_io_RX_data_valid -> mux_1550928206:select
+  cluster_SPIInputHandler_data_set -> op_dshr_76:in1
+  cluster_SPIInputHandler_magic -> op_eq_82:in2
+  mux_1825543560:out -> mux_1058085818:in2
+  struct_cluster_SPIInputHandler_data_len:out -> mux_1550928206:in2
+  op_bits_87:out -> cluster_SPIInputHandler_io_packet_magic
+  cluster_SPIInputHandler_data_set -> mux_1041322918:in2
+  op_dshr_88:out -> op_bits_87:in1
+  op_sub_91:out -> op_asUInt_90:in1
+  mux_1897819423:out -> mux_470788516:in2
+  cluster_SPIInputHandler_magic -> op_eq_103:in2
+  mux_34151795:out -> op_bits_92:in1
+  op_asUInt_78:out -> op_tail_77:in1
   
   
 }
