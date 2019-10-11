@@ -21,6 +21,10 @@ object config {
   val sGlobalUpdate    = 1
   val sGeneratorUpdate = 2
 
+  // SPI packet lengths
+  val GlobalUpdateLength    = 25 // bytes
+  val GeneratorUpdateLength = 12 // bytes
+
   object InstrumentEnum extends Enumeration {
     type InstrumentEnum = UInt
     val SQUARE: UInt = 0.U
