@@ -76,6 +76,7 @@ class Generator extends MultiIOModule{
   current_sample := 0.S
 
   // todo: get rid of the modulo, see the reference implementation
+  // todo: implement other wavetypes (if we have the space)
   switch (generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE) {
       when ((wavelength_pos << 1).asUInt() > wavelength) {
@@ -97,6 +98,43 @@ class Generator extends MultiIOModule{
   }
 
   io.sample_out := current_sample * generator_config.velocity.asSInt() >> 7
+
+
+  /*
+  Here is the envelope implementation. It is taken pretty directly from the reference implementation
+  Should not be implemented until we have more space available
+  Needs a lot of optimizations wrt approximating instead of calculating, especially division
+   */
+
+  //TODO: Start using this (sample_out := (current_sample * envelope_effect) >> 16 * velocity
+  /*
+
+  val envelope = io.global_config.envelope
+  val life = Wire(UInt(32.W))
+  life := note_life / config.NOTE_LIFE_COEFF.U
+  val scaled_sustain = Wire(UInt(16.W))
+  scaled_sustain := (envelope.sustain << 8).asUInt() | envelope.sustain
+  val envelope_effect = Wire(UInt(16.W))
+  val last_active_envelope_effect = RegInit(UInt(16.W), 0.U)
+
+  when(!generator_config.enabled) {
+  when (life < envelope.release) {
+  envelope_effect := last_active_envelope_effect * (envelope.release - life) / envelope.release
+  }.otherwise{
+    envelope_effect := 0.U
+  }
+  }.elsewhen(life < envelope.attack) {
+    envelope_effect := 0xffff.U * life / envelope.attack
+  }.elsewhen(life < envelope.attack + envelope.decay) {
+    envelope_effect := (envelope.decay - (life - envelope.attack)) * (0xffff.U - scaled_sustain) / envelope.decay + scaled_sustain
+  }.otherwise{
+    envelope_effect := scaled_sustain
+  }
+
+    when(generator_config.enabled){
+    last_active_envelope_effect := envelope_effect
+  }
+   */
 
   //printf("valid %d\n", io.generator_update_valid)
   //printf("instrument %d\n", io.generator_update.instrument)
