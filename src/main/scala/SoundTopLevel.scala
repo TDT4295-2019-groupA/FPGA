@@ -43,13 +43,14 @@ class SoundTopLevel() extends MultiIOModule {
   for (i <- 1 to config.N_GENERATORS) {
     val generator = Module(new Generator()).io
     generator.generator_update_valid := false.B // overridden below
-    generator.generator_update := io.generator_update_packet.data
-    generator.global_config := global_config
-    generator.step_sample := io.step_sample
+    generator.generator_update       := io.generator_update_packet.data
+    generator.global_config          := global_config
+    generator.step_sample            := io.step_sample
 
     adder.samples_in(i-1) := generator.sample_out
+    //printf("sample gen%d: %d\n", (i-1).U, generator.sample_out)
 
-    when(io.generator_update_packet.generator_index === i.U) {
+    when(io.generator_update_packet.generator_index === (i-1).U) {
       generator.generator_update_valid := io.generator_update_packet_valid
     }
 
@@ -63,10 +64,13 @@ class SoundTopLevel() extends MultiIOModule {
   debug.envelope_out := global_config.envelope.asUInt()
   debug.pitchwheel_out := global_config.pitchwheels.asUInt()
 
+//  printf("generator_index %d\n", io.generator_update_packet.generator_index)
+
 }
 
 // we are unable to assign BigInts to Bundles in PeekPokeTester,
-// therefore we make a wrapper and test that instead
+// therefore we made this wrapper and test that instead
+// while at it, we let this one handle endianess like we do in Top normally
 class SoundTopLevelPeekPokeWrapper extends Module {
   val top = Module(new SoundTopLevel).io
   val io = IO(new Bundle { // wrapper for SoundTopLevel, since
@@ -83,5 +87,4 @@ class SoundTopLevelPeekPokeWrapper extends Module {
   top.global_update_packet          := io.global_update_packet.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
   top.step_sample                   := io.step_sample
   io.sample_out                     := top.sample_out
-
 }

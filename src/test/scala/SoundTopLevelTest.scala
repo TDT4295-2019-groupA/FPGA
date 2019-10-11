@@ -3,8 +3,6 @@ package toplevel
 import java.io.File
 import java.nio.ByteBuffer
 
-//import chisel3.{printf => _, _}
-//import communication._
 import Ex0.TestUtils._
 import config.config
 import chisel3.iotesters.PeekPokeTester
@@ -75,9 +73,11 @@ object SoundTopLevelTests {
     }
   }
   class PlayingMidiTest(c: SoundTopLevelPeekPokeWrapper) extends PeekPokeTester(c) {
+    // generated with ./simulator my.mid -s -n
     val filename = "src/test/resources/input_data/sootopolis_spi.txt"
     println(new File(filename).getAbsolutePath)
 
+    var samples_made:Int = 0
     for (line <- Source.fromFile(filename).getLines()) {
 
       if(line.startsWith("Step:")) {
@@ -86,10 +86,9 @@ object SoundTopLevelTests {
         for (i <- 1 to n_samples) {
           poke(c.io.step_sample, true)
           step(1)
-          printf("sample_out1: %d\n", peek(c.io.sample_out))
           poke(c.io.step_sample, false)
-//          step(1)
-//          printf("sample_out2: %d\n", peek(c.io.sample_out))
+          printf("sample_out#%d: %d\n", samples_made, peek(c.io.sample_out))
+          samples_made += 1
         }
 
       }

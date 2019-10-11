@@ -18,7 +18,7 @@ class Adder extends MultiIOModule{
   io.sample_out := (sumVec(io.samples_in) / VELOCITY_MAX) * io.volume
 
   //def sumVec(v : Vec[SInt]): SInt = Vec(sumAll(v.toList))(0)
-  def sumVec(v : Vec[SInt]): SInt = sumAll(v.toList)
+  def sumVec(v : Vec[SInt]): SInt = sumAll(v.toList.map(_.asTypeOf(SInt(32.W))))
 
   def sumLevel(ins: List[SInt]): List[SInt] = ins match {
     case a :: b :: t => a + b :: sumLevel(t)
