@@ -20,7 +20,7 @@ class Generator extends MultiIOModule{
   // Generator State
   val note_life       = RegInit(UInt(32.W), 0.U) // time passed since start of note counted in samples
   val wavelength_pos  = RegInit(UInt(32.W), 0.U) // time passed since start of note counted in samples, mod wavelength
-  val generator_config = Reg(new GeneratorUpdate)
+  val generator_config = RegInit(new GeneratorUpdate, 0.U.asTypeOf(new GeneratorUpdate))
 
   // LUTs
   def fpga_note_index_to_freq(note_index: Int): Double =
