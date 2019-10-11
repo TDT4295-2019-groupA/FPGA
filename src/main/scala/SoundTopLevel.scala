@@ -15,7 +15,7 @@ class SoundTopLevel() extends MultiIOModule {
       val global_update_packet_valid    = Input(Bool()) // pulsed for one cycle
       val global_update_packet          = Input(new GlobalUpdatePacket)
       val step_sample                   = Input(Bool()) // pulsed for one cycle
-      val sample_out                    = Output(SInt(32.W))
+      val sample_out                    = Output(SInt(32.W)) // TODO: define when this is valid
     }
   )
   val debug = IO(
