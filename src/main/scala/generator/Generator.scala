@@ -97,7 +97,11 @@ class Generator extends MultiIOModule{
     }
   }
 
-  io.sample_out := current_sample * generator_config.velocity.asSInt() >> 7
+  when (generator_config.enabled) {
+    io.sample_out := current_sample * generator_config.velocity.asSInt() >> 7
+  } otherwise {
+    io.sample_out := 0.S
+  }
 
 
   /*
