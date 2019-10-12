@@ -75,7 +75,6 @@ class Generator extends MultiIOModule{
   val current_sample = Wire(SInt(16.W))
   current_sample := 0.S
 
-  // todo: get rid of the modulo, see the reference implementation
   // todo: implement other wavetypes (if we have the space)
   switch (generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE) {
@@ -117,16 +116,16 @@ class Generator extends MultiIOModule{
   val life = Wire(UInt(32.W))
   life := note_life / config.NOTE_LIFE_COEFF.U
   val scaled_sustain = Wire(UInt(16.W))
-  scaled_sustain := (envelope.sustain << 8).asUInt() | envelope.sustain
+  scaled_sustain := (envelope.sustain << 8.U) | envelope.sustain
   val envelope_effect = Wire(UInt(16.W))
   val last_active_envelope_effect = RegInit(UInt(16.W), 0.U)
 
   when(!generator_config.enabled) {
-  when (life < envelope.release) {
-  envelope_effect := last_active_envelope_effect * (envelope.release - life) / envelope.release
-  }.otherwise{
-    envelope_effect := 0.U
-  }
+    when (life < envelope.release) {
+      envelope_effect := last_active_envelope_effect * (envelope.release - life) / envelope.release
+    } otherwise {
+      envelope_effect := 0.U
+    }
   }.elsewhen(life < envelope.attack) {
     envelope_effect := 0xffff.U * life / envelope.attack
   }.elsewhen(life < envelope.attack + envelope.decay) {
