@@ -1,11 +1,11 @@
-package toplevel
+package sadie.toplevel
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
-import common.Adder
-import communication._
-import config.config
-import generator.Generator
+import sadie.common.Adder
+import sadie.communication._
+import sadie.config.config
+import sadie.generator.Generator
 
 class SoundTopLevel() extends MultiIOModule {
   val io = IO(

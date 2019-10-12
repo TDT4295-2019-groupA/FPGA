@@ -1,9 +1,9 @@
-package generator
+package sadie.generator
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
-import blackboxes._
-import common._
+import sadie.blackboxes._
+import sadie.common._
 
 class VivadoTestBundle extends Bundle {
   val btn      = Input(UInt(4.W))

@@ -1,9 +1,9 @@
-package communication
+package sadie.communication
 
 import chisel3._
 import chisel3.Bundle
-import common.swapEndian
-import config.config
+import sadie.common.swapEndian
+import sadie.config.config
 
 
 class Envelope extends Bundle {
@@ -54,7 +54,7 @@ class GlobalUpdate extends Bundle {
     val w = Wire(new GlobalUpdate)
     w.volume      := volume
     w.envelope    := envelope.withEndianSwapped
-    w.pitchwheels := pitchwheels
+    w.pitchwheels := Vec(pitchwheels.toList.reverse)
     return w
   }
 }

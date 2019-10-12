@@ -1,10 +1,10 @@
-package generator
+package sadie.generator
 
 import chisel3._
 import chisel3.util._
-import config.config
 import chisel3.experimental.MultiIOModule
-import communication._
+import sadie.communication._
+import sadie.config.config
 
 class Generator extends MultiIOModule{
   val io = IO(
@@ -142,4 +142,3 @@ class Generator extends MultiIOModule{
   //printf("note_life %d\n", note_life)
   //printf("generator_update_valid %d\n", io.generator_update_valid)
 }
-

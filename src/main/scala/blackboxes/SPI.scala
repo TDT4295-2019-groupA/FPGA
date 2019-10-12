@@ -1,4 +1,4 @@
-package blackboxes
+package sadie.blackboxes
 
 import chisel3._
 import chisel3.core.IntParam

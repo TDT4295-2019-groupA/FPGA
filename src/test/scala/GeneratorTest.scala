@@ -1,4 +1,4 @@
-package generator
+package sadie.generator
 
 import Ex0.TestUtils._
 import chisel3.iotesters.PeekPokeTester

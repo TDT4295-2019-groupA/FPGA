@@ -1,8 +1,8 @@
-package generator
+package sadie.generator
 
 import chisel3._
-import chisel3.util._
 import chisel3.experimental.MultiIOModule
+import chisel3.util._
 
 class TestB() extends MultiIOModule {
   val io = IO(new Bundle {

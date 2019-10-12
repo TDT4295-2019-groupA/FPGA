@@ -1,12 +1,12 @@
-package Ex0
+package sadie
+
 import chisel3._
 import chisel3.core.withClockAndReset
 import chisel3.experimental.RawModule
-import generator._
-import communication.SPIInputHandler
 import java.io.File
-
-import toplevel.SoundTopLevel
+import sadie.communication.SPIInputHandler
+import sadie.generator._
+import sadie.toplevel.SoundTopLevel
 
 object main {
   def main(args: Array[String]): Unit = {

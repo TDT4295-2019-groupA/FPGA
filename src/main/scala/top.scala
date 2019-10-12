@@ -1,13 +1,13 @@
-package generator
+package sadie.generator
 
-import blackboxes._
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import chisel3.util._
-import common._
-import communication._
-import config.config
-import toplevel.SoundTopLevel
+import sadie.blackboxes._
+import sadie.common._
+import sadie.communication._
+import sadie.config.config
+import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
   val spi = new SPIBus()

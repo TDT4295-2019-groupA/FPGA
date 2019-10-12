@@ -1,8 +1,8 @@
-package common
+package sadie.common
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
-import config.config
+import sadie.config.config
 
 class Adder extends MultiIOModule{
 

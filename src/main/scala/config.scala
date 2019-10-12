@@ -1,4 +1,4 @@
-package config
+package sadie.config
 
 import chisel3._
 
@@ -34,5 +34,3 @@ object config {
     val SINE: UInt = 3.U
   }
 }
-
-

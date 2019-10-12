@@ -1,9 +1,9 @@
-package communication
+package sadie.communication
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import chisel3.util._
-import config.config
+import sadie.config.config
 
 // TODO: this needs tests
 
