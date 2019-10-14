@@ -38,20 +38,18 @@ class Generator extends MultiIOModule{
   This increases computational complexity, but hopefully reduces space necessary
    */
 
-  val wavelength_lut = Reg(Vec(12, UInt(32.W)))
-  //val wavelength: UInt = wavelength_lut(generator_config.note_index)
+  val lookup_value_array = new Array[(UInt, UInt)](12)
+  val note_remainder: UInt = Wire(UInt())
+  val note_divide: UInt = Wire(UInt())
 
+  note_remainder := generator_config.note_index % 12.U
+  note_divide := generator_config.note_index / 12.U
 
-  val wavelength: UInt = Wire(UInt())
   for (i <- 0 until 12) {
-    wavelength_lut(i) := freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.U
-  }
-  when(generator_config.note_index >= 12.U) {
-    wavelength := wavelength_lut(generator_config.note_index % 12.U) >> (generator_config.note_index / 12.U)
-  }.otherwise{
-    wavelength := wavelength_lut(generator_config.note_index)
+    lookup_value_array(i) = i.U -> freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.U
   }
 
+  val wavelength = (MuxLookup(note_remainder, 0.U (32.W), lookup_value_array) >> note_divide).asUInt()
 
   // handle input
   when (io.generator_update_valid) {
@@ -74,9 +72,6 @@ class Generator extends MultiIOModule{
 
   val current_sample = Wire(SInt(16.W))
   current_sample := 0.S
-
-  // todo: get rid of the modulo, see the reference implementation
-  // todo: implement other wavetypes (if we have the space)
   switch (generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE) {
       when ((wavelength_pos << 1).asUInt() > wavelength) {
@@ -89,8 +84,7 @@ class Generator extends MultiIOModule{
       current_sample := 0.S
     }
     is (config.InstrumentEnum.SAWTOOTH) {
-      //current_sample := ((((wavelength_pos) << 1) - wavelength) * config.SAMPLE_MAX.S) / wavelength.asSInt()
-      current_sample := 0.S
+      current_sample := ((((wavelength_pos) << 1) - wavelength) * config.SAMPLE_MAX.S) / wavelength.asSInt()
     }
     is (config.InstrumentEnum.SINE) {
       current_sample := 0.S
