@@ -81,42 +81,51 @@ class Generator extends MultiIOModule{
       }
     }
     is (config.InstrumentEnum.TRIANGLE) {
-      current_sample := 0.S
+      val half = Wire(UInt())
+      val quarter = Wire(UInt())
+      val pos = Wire(UInt())
+
+      half := wavelength_pos >>1
+      quarter := wavelength_pos >>2
+
+      when(wavelength_pos > (half + quarter)) {
+        pos := wavelength_pos - (half + quarter)
+      }.otherwise {
+        pos := wavelength_pos + quarter
+      }
+      current_sample := ((pos - half).asUInt() - quarter).asSInt() * config.SAMPLE_MAX.asSInt() / quarter.asSInt()
     }
     is (config.InstrumentEnum.SAWTOOTH) {
       current_sample := ((((wavelength_pos) << 1) - wavelength) * config.SAMPLE_MAX.S) / wavelength.asSInt()
     }
     is (config.InstrumentEnum.SINE) {
-      current_sample := 0.S
+
+      //See: https://en.wikipedia.org/wiki/Bhaskara_I%27s_sine_approximation_formula
+
+      val angleValue = Wire(SInt())
+      angleValue := 2.S * 314.S * note_life / wavelength.asSInt()
+      current_sample := config.SAMPLE_MAX.asSInt() * ((4.S * angleValue * (180.S - angleValue)) / (40500.S - angleValue * (180.S - angleValue))).asSInt()
     }
   }
 
-  io.sample_out := current_sample * generator_config.velocity.asSInt() >> 7
-
-
   /*
   Here is the envelope implementation. It is taken pretty directly from the reference implementation
-  Should not be implemented until we have more space available
-  Needs a lot of optimizations wrt approximating instead of calculating, especially division
    */
-
-  //TODO: Start using this (sample_out := (current_sample * envelope_effect) >> 16 * velocity
-  /*
-
   val envelope = io.global_config.envelope
   val life = Wire(UInt(32.W))
-  life := note_life / config.NOTE_LIFE_COEFF.U
   val scaled_sustain = Wire(UInt(16.W))
-  scaled_sustain := (envelope.sustain << 8).asUInt() | envelope.sustain
   val envelope_effect = Wire(UInt(16.W))
   val last_active_envelope_effect = RegInit(UInt(16.W), 0.U)
 
+  life := note_life / config.NOTE_LIFE_COEFF.U
+  scaled_sustain := (envelope.sustain << 8).asUInt() | envelope.sustain
+
   when(!generator_config.enabled) {
-  when (life < envelope.release) {
-  envelope_effect := last_active_envelope_effect * (envelope.release - life) / envelope.release
-  }.otherwise{
-    envelope_effect := 0.U
-  }
+    when (life < envelope.release) {
+      envelope_effect := last_active_envelope_effect * (envelope.release - life) / envelope.release
+    }.otherwise{
+      envelope_effect := 0.U
+    }
   }.elsewhen(life < envelope.attack) {
     envelope_effect := 0xffff.U * life / envelope.attack
   }.elsewhen(life < envelope.attack + envelope.decay) {
@@ -125,14 +134,10 @@ class Generator extends MultiIOModule{
     envelope_effect := scaled_sustain
   }
 
-    when(generator_config.enabled){
+  when(generator_config.enabled){
     last_active_envelope_effect := envelope_effect
   }
-   */
 
-  //printf("valid %d\n", io.generator_update_valid)
-  //printf("instrument %d\n", io.generator_update.instrument)
-  //printf("instrument %d\n", generator_config.instrument)
-  //printf("note_life %d\n", note_life)
-  //printf("generator_update_valid %d\n", io.generator_update_valid)
+  io.sample_out := ((current_sample * envelope_effect.asSInt()).asSInt() >> 16).asSInt() *  generator_config.velocity.asSInt()
+
 }

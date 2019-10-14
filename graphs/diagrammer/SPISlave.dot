@@ -54,7 +54,7 @@ cluster_SPISlave_spi_o_SPI_MISO [shape = "rectangle" style="filled" fillcolor="#
 }
      
 
-op_eq_96 [shape = "plaintext" label=<
+op_eq_235 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -66,12 +66,12 @@ op_eq_96 [shape = "plaintext" label=<
   </TR>
 </TABLE>>];
        
-cluster_SPISlave_lit97 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+cluster_SPISlave_lit236 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
      
-cluster_SPISlave_lit98 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+cluster_SPISlave_lit237 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
      
 
-op_eq_99 [shape = "plaintext" label=<
+op_eq_238 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -84,15 +84,15 @@ op_eq_99 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  cluster_SPISlave_io_spi_cs_n -> op_eq_99:in1
-  cluster_SPISlave_lit98 -> cluster_SPISlave_spi_i_TX_Byte
-  op_eq_99:out -> cluster_SPISlave_spi_i_SPI_CS_n
+  cluster_SPISlave_reset -> op_eq_235:in1
+  cluster_SPISlave_lit237 -> cluster_SPISlave_spi_i_TX_Byte
+  op_eq_238:out -> cluster_SPISlave_spi_i_SPI_CS_n
   cluster_SPISlave_io_spi_mosi -> cluster_SPISlave_spi_i_SPI_MOSI
-  cluster_SPISlave_lit97 -> cluster_SPISlave_spi_i_TX_DV
-  cluster_SPISlave_reset -> op_eq_96:in1
+  cluster_SPISlave_lit236 -> cluster_SPISlave_spi_i_TX_DV
   cluster_SPISlave_clock -> cluster_SPISlave_spi_i_Clk
-  op_eq_96:out -> cluster_SPISlave_spi_i_Rst_L
+  op_eq_235:out -> cluster_SPISlave_spi_i_Rst_L
   cluster_SPISlave_spi_o_SPI_MISO -> cluster_SPISlave_io_spi_miso
+  cluster_SPISlave_io_spi_cs_n -> op_eq_238:in1
   cluster_SPISlave_io_spi_clk -> cluster_SPISlave_spi_i_SPI_Clk
   cluster_SPISlave_spi_o_RX_Byte -> cluster_SPISlave_io_RX_data
   cluster_SPISlave_spi_o_RX_DV -> cluster_SPISlave_io_RX_data_valid

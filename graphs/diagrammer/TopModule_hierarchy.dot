@@ -25,68 +25,24 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
   </TR>
         
   <TR>
-    <TD PORT="module_4" BGCOLOR="#FFF8DC" >PWM</TD>
+    <TD PORT="module_14" BGCOLOR="#FFF8DC" >PWM</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_3" BGCOLOR="#FFF8DC" >SPIInputHandler</TD>
+    <TD PORT="module_13" BGCOLOR="#FFF8DC" >SPIInputHandler</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_5" BGCOLOR="#FFF8DC" >SPISlave</TD>
+    <TD PORT="module_15" BGCOLOR="#FFF8DC" >SPISlave</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_7" BGCOLOR="#FFF8DC" >SoundTopLevel</TD>
+    <TD PORT="module_3" BGCOLOR="#FFF8DC" >SoundTopLevel</TD>
   </TR>
         
 </TABLE>>];
 
-      module_3 [shape= "plaintext" href="SPIInputHandler.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > SPIInputHandler </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_4 [shape= "plaintext" href="PWM.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > PWM </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_5 [shape= "plaintext" href="SPISlave.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > SPISlave </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_6" BGCOLOR="#FFF8DC" >spi</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_6 [shape= "plaintext" href="SPI_Slave_nandland.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > SPI_Slave_nandland </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_7 [shape= "plaintext" href="SoundTopLevel.dot.svg" label=<
+      module_3 [shape= "plaintext" href="SoundTopLevel.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -95,39 +51,79 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
   </TR>
         
   <TR>
-    <TD PORT="module_11" BGCOLOR="#FFF8DC" >Adder</TD>
+    <TD PORT="module_12" BGCOLOR="#FFF8DC" >Adder</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_8" BGCOLOR="#FFF8DC" >Generator</TD>
+    <TD PORT="module_11" BGCOLOR="#FFF8DC" >Generator</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_14" BGCOLOR="#FFF8DC" >Generator_1</TD>
+    <TD PORT="module_6" BGCOLOR="#FFF8DC" >Generator_1</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_13" BGCOLOR="#FFF8DC" >Generator_2</TD>
+    <TD PORT="module_4" BGCOLOR="#FFF8DC" >Generator_2</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_10" BGCOLOR="#FFF8DC" >Generator_3</TD>
+    <TD PORT="module_8" BGCOLOR="#FFF8DC" >Generator_3</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_16" BGCOLOR="#FFF8DC" >Generator_4</TD>
+    <TD PORT="module_7" BGCOLOR="#FFF8DC" >Generator_4</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_12" BGCOLOR="#FFF8DC" >Generator_5</TD>
+    <TD PORT="module_9" BGCOLOR="#FFF8DC" >Generator_5</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_9" BGCOLOR="#FFF8DC" >Generator_6</TD>
+    <TD PORT="module_5" BGCOLOR="#FFF8DC" >Generator_6</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_15" BGCOLOR="#FFF8DC" >Generator_7</TD>
+    <TD PORT="module_10" BGCOLOR="#FFF8DC" >Generator_7</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_4 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_5 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_6 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_7 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
   </TR>
         
 </TABLE>>];
@@ -162,7 +158,17 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_11 [shape= "plaintext" href="Adder.dot.svg" label=<
+      module_11 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_12 [shape= "plaintext" href="Adder.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -172,69 +178,63 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_12 [shape= "plaintext" href="Generator.dot.svg" label=<
+      module_13 [shape= "plaintext" href="SPIInputHandler.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+    <TD BGCOLOR="#FFDEAD" > SPIInputHandler </TD>
   </TR>
         
 </TABLE>>];
 
-      module_13 [shape= "plaintext" href="Generator.dot.svg" label=<
+      module_14 [shape= "plaintext" href="PWM.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+    <TD BGCOLOR="#FFDEAD" > PWM </TD>
   </TR>
         
 </TABLE>>];
 
-      module_14 [shape= "plaintext" href="Generator.dot.svg" label=<
+      module_15 [shape= "plaintext" href="SPISlave.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+    <TD BGCOLOR="#FFDEAD" > SPISlave </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_16" BGCOLOR="#FFF8DC" >spi</TD>
   </TR>
         
 </TABLE>>];
 
-      module_15 [shape= "plaintext" href="Generator.dot.svg" label=<
+      module_16 [shape= "plaintext" href="SPI_Slave_nandland.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+    <TD BGCOLOR="#FFDEAD" > SPI_Slave_nandland </TD>
   </TR>
         
 </TABLE>>];
 
-      module_16 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_2:module_3 -> module_3
-module_2:module_4 -> module_4
-module_5:module_6 -> module_6
-module_2:module_5 -> module_5
-module_7:module_8 -> module_8
-module_7:module_9 -> module_9
-module_7:module_10 -> module_10
-module_7:module_11 -> module_11
-module_7:module_12 -> module_12
-module_7:module_13 -> module_13
-module_7:module_14 -> module_14
-module_7:module_15 -> module_15
-module_7:module_16 -> module_16
-module_2:module_7 -> module_7
+      module_3:module_4 -> module_4
+module_3:module_5 -> module_5
+module_3:module_6 -> module_6
+module_3:module_7 -> module_7
+module_3:module_8 -> module_8
+module_3:module_9 -> module_9
+module_3:module_10 -> module_10
+module_3:module_11 -> module_11
+module_3:module_12 -> module_12
+module_2:module_3 -> module_3
+module_2:module_13 -> module_13
+module_2:module_14 -> module_14
+module_15:module_16 -> module_16
+module_2:module_15 -> module_15
 module_1:module_2 -> module_2
 }
