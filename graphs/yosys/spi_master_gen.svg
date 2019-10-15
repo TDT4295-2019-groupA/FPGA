@@ -26,7 +26,7 @@
 <polyline fill="none" stroke="black" points="2067.44,-651 2123.44,-651 "/>
 <text text-anchor="middle" x="2095.44" y="-635.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="2123.44,-628 2123.44,-697 "/>
-<text text-anchor="middle" x="2149.94" y="-666.3" font-family="Times,serif" font-size="14.00">$666</text>
+<text text-anchor="middle" x="2149.94" y="-666.3" font-family="Times,serif" font-size="14.00">$731</text>
 <text text-anchor="middle" x="2149.94" y="-651.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="2176.44,-628 2176.44,-697 "/>
 <text text-anchor="middle" x="2190.44" y="-658.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -47,7 +47,7 @@
 <polyline fill="none" stroke="black" points="6446.68,-2305 6502.68,-2305 "/>
 <text text-anchor="middle" x="6474.68" y="-2289.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="6502.68,-2282 6502.68,-2351 "/>
-<text text-anchor="middle" x="6529.18" y="-2320.3" font-family="Times,serif" font-size="14.00">$665</text>
+<text text-anchor="middle" x="6529.18" y="-2320.3" font-family="Times,serif" font-size="14.00">$730</text>
 <text text-anchor="middle" x="6529.18" y="-2305.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="6555.68,-2282 6555.68,-2351 "/>
 <text text-anchor="middle" x="6569.68" y="-2312.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -68,7 +68,7 @@
 <polyline fill="none" stroke="black" points="228.26,-1533 284.26,-1533 "/>
 <text text-anchor="middle" x="256.26" y="-1517.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="284.26,-1510 284.26,-1579 "/>
-<text text-anchor="middle" x="310.76" y="-1548.3" font-family="Times,serif" font-size="14.00">$664</text>
+<text text-anchor="middle" x="310.76" y="-1548.3" font-family="Times,serif" font-size="14.00">$729</text>
 <text text-anchor="middle" x="310.76" y="-1533.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="337.26,-1510 337.26,-1579 "/>
 <text text-anchor="middle" x="351.26" y="-1540.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -89,7 +89,7 @@
 <polyline fill="none" stroke="black" points="228.26,-2636 284.26,-2636 "/>
 <text text-anchor="middle" x="256.26" y="-2620.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="284.26,-2613 284.26,-2682 "/>
-<text text-anchor="middle" x="310.76" y="-2651.3" font-family="Times,serif" font-size="14.00">$663</text>
+<text text-anchor="middle" x="310.76" y="-2651.3" font-family="Times,serif" font-size="14.00">$728</text>
 <text text-anchor="middle" x="310.76" y="-2636.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="337.26,-2613 337.26,-2682 "/>
 <text text-anchor="middle" x="351.26" y="-2643.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -110,7 +110,7 @@
 <polyline fill="none" stroke="black" points="2067.44,-3153 2123.44,-3153 "/>
 <text text-anchor="middle" x="2095.44" y="-3137.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="2123.44,-3130 2123.44,-3199 "/>
-<text text-anchor="middle" x="2149.94" y="-3168.3" font-family="Times,serif" font-size="14.00">$662</text>
+<text text-anchor="middle" x="2149.94" y="-3168.3" font-family="Times,serif" font-size="14.00">$727</text>
 <text text-anchor="middle" x="2149.94" y="-3153.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="2176.44,-3130 2176.44,-3199 "/>
 <text text-anchor="middle" x="2190.44" y="-3160.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -131,7 +131,7 @@
 <polyline fill="none" stroke="black" points="5572.08,-3019 5628.08,-3019 "/>
 <text text-anchor="middle" x="5600.08" y="-3003.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="5628.08,-2996 5628.08,-3065 "/>
-<text text-anchor="middle" x="5654.58" y="-3034.3" font-family="Times,serif" font-size="14.00">$661</text>
+<text text-anchor="middle" x="5654.58" y="-3034.3" font-family="Times,serif" font-size="14.00">$726</text>
 <text text-anchor="middle" x="5654.58" y="-3019.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="5681.08,-2996 5681.08,-3065 "/>
 <text text-anchor="middle" x="5695.08" y="-3026.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -240,7 +240,7 @@
 <polyline fill="none" stroke="black" points="6262.08,-366 6289.08,-366 "/>
 <text text-anchor="middle" x="6275.58" y="-350.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="6289.08,-343 6289.08,-412 "/>
-<text text-anchor="middle" x="6317.08" y="-381.3" font-family="Times,serif" font-size="14.00">$411</text>
+<text text-anchor="middle" x="6317.08" y="-381.3" font-family="Times,serif" font-size="14.00">$469</text>
 <text text-anchor="middle" x="6317.08" y="-366.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="6345.08,-343 6345.08,-412 "/>
 <text text-anchor="middle" x="6358.08" y="-373.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -374,7 +374,7 @@
 <polyline fill="none" stroke="black" points="734.63,-2603 761.63,-2603 "/>
 <text text-anchor="middle" x="748.13" y="-2587.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="761.63,-2580 761.63,-2649 "/>
-<text text-anchor="middle" x="789.63" y="-2618.3" font-family="Times,serif" font-size="14.00">$433</text>
+<text text-anchor="middle" x="789.63" y="-2618.3" font-family="Times,serif" font-size="14.00">$491</text>
 <text text-anchor="middle" x="789.63" y="-2603.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="817.63,-2580 817.63,-2649 "/>
 <text text-anchor="middle" x="830.63" y="-2610.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -509,7 +509,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-419.5 2806.67,-419.5 "/>
 <text text-anchor="middle" x="2793.17" y="-404.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-396.5 2806.67,-442.5 "/>
-<text text-anchor="middle" x="2858.17" y="-423.3" font-family="Times,serif" font-size="14.00">$519_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-423.3" font-family="Times,serif" font-size="14.00">$577_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-408.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-396.5 2909.67,-442.5 "/>
 <text text-anchor="middle" x="2922.67" y="-415.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -528,7 +528,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-354.5 2806.67,-354.5 "/>
 <text text-anchor="middle" x="2793.17" y="-339.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-331.5 2806.67,-377.5 "/>
-<text text-anchor="middle" x="2858.17" y="-358.3" font-family="Times,serif" font-size="14.00">$518_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-358.3" font-family="Times,serif" font-size="14.00">$576_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-343.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-331.5 2909.67,-377.5 "/>
 <text text-anchor="middle" x="2922.67" y="-350.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -547,7 +547,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-2220.5 2806.67,-2220.5 "/>
 <text text-anchor="middle" x="2793.17" y="-2205.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-2197.5 2806.67,-2243.5 "/>
-<text text-anchor="middle" x="2858.17" y="-2224.3" font-family="Times,serif" font-size="14.00">$515_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-2224.3" font-family="Times,serif" font-size="14.00">$573_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-2209.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-2197.5 2909.67,-2243.5 "/>
 <text text-anchor="middle" x="2922.67" y="-2216.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -566,7 +566,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-142.5 2806.67,-142.5 "/>
 <text text-anchor="middle" x="2793.17" y="-127.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-119.5 2806.67,-165.5 "/>
-<text text-anchor="middle" x="2858.17" y="-146.3" font-family="Times,serif" font-size="14.00">$511_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-146.3" font-family="Times,serif" font-size="14.00">$569_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-131.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-119.5 2909.67,-165.5 "/>
 <text text-anchor="middle" x="2922.67" y="-138.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -585,7 +585,7 @@
 <polyline fill="none" stroke="black" points="3375.63,-966.5 3402.63,-966.5 "/>
 <text text-anchor="middle" x="3389.13" y="-951.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3402.63,-943.5 3402.63,-989.5 "/>
-<text text-anchor="middle" x="3454.13" y="-970.3" font-family="Times,serif" font-size="14.00">$508_CMP0</text>
+<text text-anchor="middle" x="3454.13" y="-970.3" font-family="Times,serif" font-size="14.00">$566_CMP0</text>
 <text text-anchor="middle" x="3454.13" y="-955.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="3505.63,-943.5 3505.63,-989.5 "/>
 <text text-anchor="middle" x="3518.63" y="-962.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -604,7 +604,7 @@
 <polyline fill="none" stroke="black" points="2990.31,-628.5 3017.31,-628.5 "/>
 <text text-anchor="middle" x="3003.81" y="-613.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3017.31,-605.5 3017.31,-651.5 "/>
-<text text-anchor="middle" x="3068.81" y="-632.3" font-family="Times,serif" font-size="14.00">$507_CMP0</text>
+<text text-anchor="middle" x="3068.81" y="-632.3" font-family="Times,serif" font-size="14.00">$565_CMP0</text>
 <text text-anchor="middle" x="3068.81" y="-617.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="3120.31,-605.5 3120.31,-651.5 "/>
 <text text-anchor="middle" x="3133.31" y="-624.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -623,7 +623,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-993.5 2806.67,-993.5 "/>
 <text text-anchor="middle" x="2793.17" y="-978.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-970.5 2806.67,-1016.5 "/>
-<text text-anchor="middle" x="2858.17" y="-997.3" font-family="Times,serif" font-size="14.00">$503_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-997.3" font-family="Times,serif" font-size="14.00">$561_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-982.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-970.5 2909.67,-1016.5 "/>
 <text text-anchor="middle" x="2922.67" y="-989.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -642,7 +642,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-928.5 2806.67,-928.5 "/>
 <text text-anchor="middle" x="2793.17" y="-913.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-905.5 2806.67,-951.5 "/>
-<text text-anchor="middle" x="2858.17" y="-932.3" font-family="Times,serif" font-size="14.00">$502_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-932.3" font-family="Times,serif" font-size="14.00">$560_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-917.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-905.5 2909.67,-951.5 "/>
 <text text-anchor="middle" x="2922.67" y="-924.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -661,7 +661,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-824.5 2806.67,-824.5 "/>
 <text text-anchor="middle" x="2793.17" y="-809.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-801.5 2806.67,-847.5 "/>
-<text text-anchor="middle" x="2858.17" y="-828.3" font-family="Times,serif" font-size="14.00">$501_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-828.3" font-family="Times,serif" font-size="14.00">$559_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-813.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-801.5 2909.67,-847.5 "/>
 <text text-anchor="middle" x="2922.67" y="-820.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -680,7 +680,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1185.5 2806.67,-1185.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1170.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1162.5 2806.67,-1208.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1189.3" font-family="Times,serif" font-size="14.00">$498_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1189.3" font-family="Times,serif" font-size="14.00">$556_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1174.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1162.5 2909.67,-1208.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1181.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -699,7 +699,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1736.5 2806.67,-1736.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1721.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1713.5 2806.67,-1759.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1740.3" font-family="Times,serif" font-size="14.00">$493_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1740.3" font-family="Times,serif" font-size="14.00">$551_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1725.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1713.5 2909.67,-1759.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1732.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -718,7 +718,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1671.5 2806.67,-1671.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1656.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1648.5 2806.67,-1694.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1675.3" font-family="Times,serif" font-size="14.00">$492_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1675.3" font-family="Times,serif" font-size="14.00">$550_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1660.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1648.5 2909.67,-1694.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1667.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -737,7 +737,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1801.5 2806.67,-1801.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1786.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1778.5 2806.67,-1824.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1805.3" font-family="Times,serif" font-size="14.00">$488_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1805.3" font-family="Times,serif" font-size="14.00">$546_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1790.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1778.5 2909.67,-1824.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1797.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -756,7 +756,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1513.5 2806.67,-1513.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1498.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1490.5 2806.67,-1536.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1517.3" font-family="Times,serif" font-size="14.00">$480_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1517.3" font-family="Times,serif" font-size="14.00">$538_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1502.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1490.5 2909.67,-1536.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1509.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -775,7 +775,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-759.5 2806.67,-759.5 "/>
 <text text-anchor="middle" x="2793.17" y="-744.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-736.5 2806.67,-782.5 "/>
-<text text-anchor="middle" x="2858.17" y="-763.3" font-family="Times,serif" font-size="14.00">$472_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-763.3" font-family="Times,serif" font-size="14.00">$530_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-748.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-736.5 2909.67,-782.5 "/>
 <text text-anchor="middle" x="2922.67" y="-755.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -794,7 +794,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1866.5 2806.67,-1866.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1851.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1843.5 2806.67,-1889.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1870.3" font-family="Times,serif" font-size="14.00">$464_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1870.3" font-family="Times,serif" font-size="14.00">$522_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1855.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1843.5 2909.67,-1889.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1862.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -815,7 +815,7 @@
 <polyline fill="none" stroke="black" points="2803.17,-1932 2830.17,-1932 "/>
 <text text-anchor="middle" x="2816.67" y="-1916.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2830.17,-1909 2830.17,-1978 "/>
-<text text-anchor="middle" x="2858.17" y="-1947.3" font-family="Times,serif" font-size="14.00">$461</text>
+<text text-anchor="middle" x="2858.17" y="-1947.3" font-family="Times,serif" font-size="14.00">$519</text>
 <text text-anchor="middle" x="2858.17" y="-1932.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2886.17,-1909 2886.17,-1978 "/>
 <text text-anchor="middle" x="2899.17" y="-1939.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -834,7 +834,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-2465.5 2806.67,-2465.5 "/>
 <text text-anchor="middle" x="2793.17" y="-2450.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-2442.5 2806.67,-2488.5 "/>
-<text text-anchor="middle" x="2858.17" y="-2469.3" font-family="Times,serif" font-size="14.00">$456_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-2469.3" font-family="Times,serif" font-size="14.00">$514_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-2454.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-2442.5 2909.67,-2488.5 "/>
 <text text-anchor="middle" x="2922.67" y="-2461.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -853,7 +853,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-577.5 2806.67,-577.5 "/>
 <text text-anchor="middle" x="2793.17" y="-562.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-554.5 2806.67,-600.5 "/>
-<text text-anchor="middle" x="2858.17" y="-581.3" font-family="Times,serif" font-size="14.00">$443_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-581.3" font-family="Times,serif" font-size="14.00">$501_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-566.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-554.5 2909.67,-600.5 "/>
 <text text-anchor="middle" x="2922.67" y="-573.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -872,7 +872,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-2285.5 2806.67,-2285.5 "/>
 <text text-anchor="middle" x="2793.17" y="-2270.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-2262.5 2806.67,-2308.5 "/>
-<text text-anchor="middle" x="2858.17" y="-2289.3" font-family="Times,serif" font-size="14.00">$436_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-2289.3" font-family="Times,serif" font-size="14.00">$494_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-2274.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-2262.5 2909.67,-2308.5 "/>
 <text text-anchor="middle" x="2922.67" y="-2281.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -891,7 +891,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1289.5 2806.67,-1289.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1274.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1266.5 2806.67,-1312.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1293.3" font-family="Times,serif" font-size="14.00">$429_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1293.3" font-family="Times,serif" font-size="14.00">$487_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1278.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1266.5 2909.67,-1312.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1285.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -912,7 +912,7 @@
 <polyline fill="none" stroke="black" points="1259.52,-1582 1286.52,-1582 "/>
 <text text-anchor="middle" x="1273.02" y="-1566.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="1286.52,-1559 1286.52,-1628 "/>
-<text text-anchor="middle" x="1314.52" y="-1597.3" font-family="Times,serif" font-size="14.00">$426</text>
+<text text-anchor="middle" x="1314.52" y="-1597.3" font-family="Times,serif" font-size="14.00">$484</text>
 <text text-anchor="middle" x="1314.52" y="-1582.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="1342.52,-1559 1342.52,-1628 "/>
 <text text-anchor="middle" x="1355.52" y="-1589.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -931,7 +931,7 @@
 <polyline fill="none" stroke="black" points="2779.67,-1393.5 2806.67,-1393.5 "/>
 <text text-anchor="middle" x="2793.17" y="-1378.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2806.67,-1370.5 2806.67,-1416.5 "/>
-<text text-anchor="middle" x="2858.17" y="-1397.3" font-family="Times,serif" font-size="14.00">$422_CMP0</text>
+<text text-anchor="middle" x="2858.17" y="-1397.3" font-family="Times,serif" font-size="14.00">$480_CMP0</text>
 <text text-anchor="middle" x="2858.17" y="-1382.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="2909.67,-1370.5 2909.67,-1416.5 "/>
 <text text-anchor="middle" x="2922.67" y="-1389.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1000,7 +1000,7 @@
 <polyline fill="none" stroke="black" points="6262.08,-2389 6289.08,-2389 "/>
 <text text-anchor="middle" x="6275.58" y="-2373.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="6289.08,-2366 6289.08,-2435 "/>
-<text text-anchor="middle" x="6317.08" y="-2404.3" font-family="Times,serif" font-size="14.00">$414</text>
+<text text-anchor="middle" x="6317.08" y="-2404.3" font-family="Times,serif" font-size="14.00">$472</text>
 <text text-anchor="middle" x="6317.08" y="-2389.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="6345.08,-2366 6345.08,-2435 "/>
 <text text-anchor="middle" x="6358.08" y="-2396.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1021,7 +1021,7 @@
 <polyline fill="none" stroke="black" points="5882.08,-2389 5909.08,-2389 "/>
 <text text-anchor="middle" x="5895.58" y="-2373.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="5909.08,-2366 5909.08,-2435 "/>
-<text text-anchor="middle" x="5937.08" y="-2404.3" font-family="Times,serif" font-size="14.00">$406</text>
+<text text-anchor="middle" x="5937.08" y="-2404.3" font-family="Times,serif" font-size="14.00">$464</text>
 <text text-anchor="middle" x="5937.08" y="-2389.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="5965.08,-2366 5965.08,-2435 "/>
 <text text-anchor="middle" x="5978.08" y="-2396.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1087,7 +1087,7 @@
 <polyline fill="none" stroke="black" points="218.76,-2489.5 245.76,-2489.5 "/>
 <text text-anchor="middle" x="232.26" y="-2474.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="245.76,-2466.5 245.76,-2512.5 "/>
-<text text-anchor="middle" x="297.26" y="-2493.3" font-family="Times,serif" font-size="14.00">$452_CMP0</text>
+<text text-anchor="middle" x="297.26" y="-2493.3" font-family="Times,serif" font-size="14.00">$510_CMP0</text>
 <text text-anchor="middle" x="297.26" y="-2478.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="348.76,-2466.5 348.76,-2512.5 "/>
 <text text-anchor="middle" x="361.76" y="-2485.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1106,7 +1106,7 @@
 <polyline fill="none" stroke="black" points="218.76,-2570.5 245.76,-2570.5 "/>
 <text text-anchor="middle" x="232.26" y="-2555.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="245.76,-2547.5 245.76,-2593.5 "/>
-<text text-anchor="middle" x="297.26" y="-2574.3" font-family="Times,serif" font-size="14.00">$451_CMP0</text>
+<text text-anchor="middle" x="297.26" y="-2574.3" font-family="Times,serif" font-size="14.00">$509_CMP0</text>
 <text text-anchor="middle" x="297.26" y="-2559.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="348.76,-2547.5 348.76,-2593.5 "/>
 <text text-anchor="middle" x="361.76" y="-2566.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1125,7 +1125,7 @@
 <polyline fill="none" stroke="black" points="218.76,-2318.5 245.76,-2318.5 "/>
 <text text-anchor="middle" x="232.26" y="-2303.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="245.76,-2295.5 245.76,-2341.5 "/>
-<text text-anchor="middle" x="297.26" y="-2322.3" font-family="Times,serif" font-size="14.00">$450_CMP0</text>
+<text text-anchor="middle" x="297.26" y="-2322.3" font-family="Times,serif" font-size="14.00">$508_CMP0</text>
 <text text-anchor="middle" x="297.26" y="-2307.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="348.76,-2295.5 348.76,-2341.5 "/>
 <text text-anchor="middle" x="361.76" y="-2314.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1144,7 +1144,7 @@
 <polyline fill="none" stroke="black" points="218.76,-2397.5 245.76,-2397.5 "/>
 <text text-anchor="middle" x="232.26" y="-2382.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="245.76,-2374.5 245.76,-2420.5 "/>
-<text text-anchor="middle" x="297.26" y="-2401.3" font-family="Times,serif" font-size="14.00">$449_CMP0</text>
+<text text-anchor="middle" x="297.26" y="-2401.3" font-family="Times,serif" font-size="14.00">$507_CMP0</text>
 <text text-anchor="middle" x="297.26" y="-2386.3" font-family="Times,serif" font-size="14.00">$eq</text>
 <polyline fill="none" stroke="black" points="348.76,-2374.5 348.76,-2420.5 "/>
 <text text-anchor="middle" x="361.76" y="-2393.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1171,7 +1171,7 @@
 <polyline fill="none" stroke="black" points="1677.59,-3172 1704.59,-3172 "/>
 <text text-anchor="middle" x="1691.09" y="-3156.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="1704.59,-3149 1704.59,-3218 "/>
-<text text-anchor="middle" x="1732.59" y="-3187.3" font-family="Times,serif" font-size="14.00">$393</text>
+<text text-anchor="middle" x="1732.59" y="-3187.3" font-family="Times,serif" font-size="14.00">$451</text>
 <text text-anchor="middle" x="1732.59" y="-3172.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="1760.59,-3149 1760.59,-3218 "/>
 <text text-anchor="middle" x="1773.59" y="-3179.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1312,7 +1312,7 @@
 <polyline fill="none" stroke="black" points="2368.34,-1413 2424.34,-1413 "/>
 <text text-anchor="middle" x="2396.34" y="-1397.8" font-family="Times,serif" font-size="14.00">D</text>
 <polyline fill="none" stroke="black" points="2424.34,-1390 2424.34,-1459 "/>
-<text text-anchor="middle" x="2450.84" y="-1428.3" font-family="Times,serif" font-size="14.00">$667</text>
+<text text-anchor="middle" x="2450.84" y="-1428.3" font-family="Times,serif" font-size="14.00">$732</text>
 <text text-anchor="middle" x="2450.84" y="-1413.3" font-family="Times,serif" font-size="14.00">$adff</text>
 <polyline fill="none" stroke="black" points="2477.34,-1390 2477.34,-1459 "/>
 <text text-anchor="middle" x="2491.34" y="-1420.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -1429,7 +1429,7 @@
 <polyline fill="none" stroke="black" points="5064.2,-1277.5 5103.2,-1277.5 "/>
 <text text-anchor="middle" x="5083.7" y="-1262.3" font-family="Times,serif" font-size="14.00">EN</text>
 <polyline fill="none" stroke="black" points="5103.2,-1254.5 5103.2,-1300.5 "/>
-<text text-anchor="middle" x="5138.2" y="-1281.3" font-family="Times,serif" font-size="14.00">$625</text>
+<text text-anchor="middle" x="5138.2" y="-1281.3" font-family="Times,serif" font-size="14.00">$683</text>
 <text text-anchor="middle" x="5138.2" y="-1266.3" font-family="Times,serif" font-size="14.00">$dlatch</text>
 <polyline fill="none" stroke="black" points="5173.2,-1254.5 5173.2,-1300.5 "/>
 <text text-anchor="middle" x="5187.2" y="-1273.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -1446,7 +1446,7 @@
 <polygon fill="none" stroke="black" points="4877.35,-1246.5 4877.35,-1284.5 4982.35,-1284.5 4982.35,-1246.5 4877.35,-1246.5"/>
 <text text-anchor="middle" x="4890.35" y="-1261.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4903.35,-1246.5 4903.35,-1284.5 "/>
-<text text-anchor="middle" x="4929.85" y="-1269.3" font-family="Times,serif" font-size="14.00">$626</text>
+<text text-anchor="middle" x="4929.85" y="-1269.3" font-family="Times,serif" font-size="14.00">$684</text>
 <text text-anchor="middle" x="4929.85" y="-1254.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="4956.35,-1246.5 4956.35,-1284.5 "/>
 <text text-anchor="middle" x="4969.35" y="-1261.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1463,7 +1463,7 @@
 <polygon fill="none" stroke="black" points="4620.39,-1246.5 4620.39,-1284.5 4768.39,-1284.5 4768.39,-1246.5 4620.39,-1246.5"/>
 <text text-anchor="middle" x="4633.39" y="-1261.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4646.39,-1246.5 4646.39,-1284.5 "/>
-<text text-anchor="middle" x="4694.39" y="-1269.3" font-family="Times,serif" font-size="14.00">$643</text>
+<text text-anchor="middle" x="4694.39" y="-1269.3" font-family="Times,serif" font-size="14.00">$701</text>
 <text text-anchor="middle" x="4694.39" y="-1254.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="4742.39,-1246.5 4742.39,-1284.5 "/>
 <text text-anchor="middle" x="4755.39" y="-1261.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1497,7 +1497,7 @@
 <polyline fill="none" stroke="black" points="3975.91,-1291.5 4002.91,-1291.5 "/>
 <text text-anchor="middle" x="3989.41" y="-1276.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="4002.91,-1268.5 4002.91,-1314.5 "/>
-<text text-anchor="middle" x="4029.41" y="-1295.3" font-family="Times,serif" font-size="14.00">$641</text>
+<text text-anchor="middle" x="4029.41" y="-1295.3" font-family="Times,serif" font-size="14.00">$699</text>
 <text text-anchor="middle" x="4029.41" y="-1280.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="4055.91,-1268.5 4055.91,-1314.5 "/>
 <text text-anchor="middle" x="4068.91" y="-1287.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1514,7 +1514,7 @@
 <polygon fill="none" stroke="black" points="3761.27,-1261.5 3761.27,-1299.5 3909.27,-1299.5 3909.27,-1261.5 3761.27,-1261.5"/>
 <text text-anchor="middle" x="3774.27" y="-1276.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3787.27,-1261.5 3787.27,-1299.5 "/>
-<text text-anchor="middle" x="3835.27" y="-1284.3" font-family="Times,serif" font-size="14.00">$639</text>
+<text text-anchor="middle" x="3835.27" y="-1284.3" font-family="Times,serif" font-size="14.00">$697</text>
 <text text-anchor="middle" x="3835.27" y="-1269.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3883.27,-1261.5 3883.27,-1299.5 "/>
 <text text-anchor="middle" x="3896.27" y="-1276.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1531,7 +1531,7 @@
 <polygon fill="none" stroke="black" points="3567.63,-1261.5 3567.63,-1299.5 3715.63,-1299.5 3715.63,-1261.5 3567.63,-1261.5"/>
 <text text-anchor="middle" x="3580.63" y="-1276.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3593.63,-1261.5 3593.63,-1299.5 "/>
-<text text-anchor="middle" x="3641.63" y="-1284.3" font-family="Times,serif" font-size="14.00">$637</text>
+<text text-anchor="middle" x="3641.63" y="-1284.3" font-family="Times,serif" font-size="14.00">$695</text>
 <text text-anchor="middle" x="3641.63" y="-1269.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3689.63,-1261.5 3689.63,-1299.5 "/>
 <text text-anchor="middle" x="3702.63" y="-1276.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1550,7 +1550,7 @@
 <polyline fill="none" stroke="black" points="3400.63,-1280.5 3427.63,-1280.5 "/>
 <text text-anchor="middle" x="3414.13" y="-1265.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3427.63,-1257.5 3427.63,-1303.5 "/>
-<text text-anchor="middle" x="3454.13" y="-1284.3" font-family="Times,serif" font-size="14.00">$635</text>
+<text text-anchor="middle" x="3454.13" y="-1284.3" font-family="Times,serif" font-size="14.00">$693</text>
 <text text-anchor="middle" x="3454.13" y="-1269.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3480.63,-1257.5 3480.63,-1303.5 "/>
 <text text-anchor="middle" x="3493.63" y="-1276.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1567,7 +1567,7 @@
 <polygon fill="none" stroke="black" points="3191.63,-1007.5 3191.63,-1045.5 3339.63,-1045.5 3339.63,-1007.5 3191.63,-1007.5"/>
 <text text-anchor="middle" x="3204.63" y="-1022.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3217.63,-1007.5 3217.63,-1045.5 "/>
-<text text-anchor="middle" x="3265.63" y="-1030.3" font-family="Times,serif" font-size="14.00">$633</text>
+<text text-anchor="middle" x="3265.63" y="-1030.3" font-family="Times,serif" font-size="14.00">$691</text>
 <text text-anchor="middle" x="3265.63" y="-1015.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3313.63,-1007.5 3313.63,-1045.5 "/>
 <text text-anchor="middle" x="3326.63" y="-1022.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1586,7 +1586,7 @@
 <polyline fill="none" stroke="black" points="4181.51,-1239.5 4208.51,-1239.5 "/>
 <text text-anchor="middle" x="4195.01" y="-1224.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="4208.51,-1216.5 4208.51,-1262.5 "/>
-<text text-anchor="middle" x="4235.01" y="-1243.3" font-family="Times,serif" font-size="14.00">$631</text>
+<text text-anchor="middle" x="4235.01" y="-1243.3" font-family="Times,serif" font-size="14.00">$689</text>
 <text text-anchor="middle" x="4235.01" y="-1228.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="4261.51,-1216.5 4261.51,-1262.5 "/>
 <text text-anchor="middle" x="4274.51" y="-1235.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1609,7 +1609,7 @@
 <polygon fill="none" stroke="black" points="3954.91,-1207.5 3954.91,-1245.5 4102.91,-1245.5 4102.91,-1207.5 3954.91,-1207.5"/>
 <text text-anchor="middle" x="3967.91" y="-1222.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3980.91,-1207.5 3980.91,-1245.5 "/>
-<text text-anchor="middle" x="4028.91" y="-1230.3" font-family="Times,serif" font-size="14.00">$629</text>
+<text text-anchor="middle" x="4028.91" y="-1230.3" font-family="Times,serif" font-size="14.00">$687</text>
 <text text-anchor="middle" x="4028.91" y="-1215.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="4076.91,-1207.5 4076.91,-1245.5 "/>
 <text text-anchor="middle" x="4089.91" y="-1222.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1632,7 +1632,7 @@
 <polygon fill="none" stroke="black" points="3976.41,-1333.5 3976.41,-1371.5 4081.41,-1371.5 4081.41,-1333.5 3976.41,-1333.5"/>
 <text text-anchor="middle" x="3989.41" y="-1348.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4002.41,-1333.5 4002.41,-1371.5 "/>
-<text text-anchor="middle" x="4028.91" y="-1356.3" font-family="Times,serif" font-size="14.00">$627</text>
+<text text-anchor="middle" x="4028.91" y="-1356.3" font-family="Times,serif" font-size="14.00">$685</text>
 <text text-anchor="middle" x="4028.91" y="-1341.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="4055.41,-1333.5 4055.41,-1371.5 "/>
 <text text-anchor="middle" x="4068.41" y="-1348.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1651,7 +1651,7 @@
 <polyline fill="none" stroke="black" points="4625.89,-1990.5 4664.89,-1990.5 "/>
 <text text-anchor="middle" x="4645.39" y="-1975.3" font-family="Times,serif" font-size="14.00">EN</text>
 <polyline fill="none" stroke="black" points="4664.89,-1967.5 4664.89,-2013.5 "/>
-<text text-anchor="middle" x="4699.89" y="-1994.3" font-family="Times,serif" font-size="14.00">$604</text>
+<text text-anchor="middle" x="4699.89" y="-1994.3" font-family="Times,serif" font-size="14.00">$662</text>
 <text text-anchor="middle" x="4699.89" y="-1979.3" font-family="Times,serif" font-size="14.00">$dlatch</text>
 <polyline fill="none" stroke="black" points="4734.89,-1967.5 4734.89,-2013.5 "/>
 <text text-anchor="middle" x="4748.89" y="-1986.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -1668,7 +1668,7 @@
 <polygon fill="none" stroke="black" points="4409.19,-1903.5 4409.19,-1941.5 4514.19,-1941.5 4514.19,-1903.5 4409.19,-1903.5"/>
 <text text-anchor="middle" x="4422.19" y="-1918.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4435.19,-1903.5 4435.19,-1941.5 "/>
-<text text-anchor="middle" x="4461.69" y="-1926.3" font-family="Times,serif" font-size="14.00">$605</text>
+<text text-anchor="middle" x="4461.69" y="-1926.3" font-family="Times,serif" font-size="14.00">$663</text>
 <text text-anchor="middle" x="4461.69" y="-1911.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="4488.19,-1903.5 4488.19,-1941.5 "/>
 <text text-anchor="middle" x="4501.19" y="-1918.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1685,7 +1685,7 @@
 <polygon fill="none" stroke="black" points="4160.51,-2055.5 4160.51,-2093.5 4308.51,-2093.5 4308.51,-2055.5 4160.51,-2055.5"/>
 <text text-anchor="middle" x="4173.51" y="-2070.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4186.51,-2055.5 4186.51,-2093.5 "/>
-<text text-anchor="middle" x="4234.51" y="-2078.3" font-family="Times,serif" font-size="14.00">$622</text>
+<text text-anchor="middle" x="4234.51" y="-2078.3" font-family="Times,serif" font-size="14.00">$680</text>
 <text text-anchor="middle" x="4234.51" y="-2063.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="4282.51,-2055.5 4282.51,-2093.5 "/>
 <text text-anchor="middle" x="4295.51" y="-2070.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1719,7 +1719,7 @@
 <polyline fill="none" stroke="black" points="3782.27,-2108.5 3809.27,-2108.5 "/>
 <text text-anchor="middle" x="3795.77" y="-2093.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3809.27,-2085.5 3809.27,-2131.5 "/>
-<text text-anchor="middle" x="3835.77" y="-2112.3" font-family="Times,serif" font-size="14.00">$620</text>
+<text text-anchor="middle" x="3835.77" y="-2112.3" font-family="Times,serif" font-size="14.00">$678</text>
 <text text-anchor="middle" x="3835.77" y="-2097.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3862.27,-2085.5 3862.27,-2131.5 "/>
 <text text-anchor="middle" x="3875.27" y="-2104.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1736,7 +1736,7 @@
 <polygon fill="none" stroke="black" points="3567.63,-2047.5 3567.63,-2085.5 3715.63,-2085.5 3715.63,-2047.5 3567.63,-2047.5"/>
 <text text-anchor="middle" x="3580.63" y="-2062.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3593.63,-2047.5 3593.63,-2085.5 "/>
-<text text-anchor="middle" x="3641.63" y="-2070.3" font-family="Times,serif" font-size="14.00">$618</text>
+<text text-anchor="middle" x="3641.63" y="-2070.3" font-family="Times,serif" font-size="14.00">$676</text>
 <text text-anchor="middle" x="3641.63" y="-2055.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3689.63,-2047.5 3689.63,-2085.5 "/>
 <text text-anchor="middle" x="3702.63" y="-2062.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1753,7 +1753,7 @@
 <polygon fill="none" stroke="black" points="3379.63,-2047.5 3379.63,-2085.5 3527.63,-2085.5 3527.63,-2047.5 3379.63,-2047.5"/>
 <text text-anchor="middle" x="3392.63" y="-2062.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3405.63,-2047.5 3405.63,-2085.5 "/>
-<text text-anchor="middle" x="3453.63" y="-2070.3" font-family="Times,serif" font-size="14.00">$616</text>
+<text text-anchor="middle" x="3453.63" y="-2070.3" font-family="Times,serif" font-size="14.00">$674</text>
 <text text-anchor="middle" x="3453.63" y="-2055.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3501.63,-2047.5 3501.63,-2085.5 "/>
 <text text-anchor="middle" x="3514.63" y="-2062.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1772,7 +1772,7 @@
 <polyline fill="none" stroke="black" points="3212.63,-2066.5 3239.63,-2066.5 "/>
 <text text-anchor="middle" x="3226.13" y="-2051.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3239.63,-2043.5 3239.63,-2089.5 "/>
-<text text-anchor="middle" x="3266.13" y="-2070.3" font-family="Times,serif" font-size="14.00">$614</text>
+<text text-anchor="middle" x="3266.13" y="-2070.3" font-family="Times,serif" font-size="14.00">$672</text>
 <text text-anchor="middle" x="3266.13" y="-2055.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3292.63,-2043.5 3292.63,-2089.5 "/>
 <text text-anchor="middle" x="3305.63" y="-2062.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1789,7 +1789,7 @@
 <polygon fill="none" stroke="black" points="2994.31,-1231.5 2994.31,-1269.5 3142.31,-1269.5 3142.31,-1231.5 2994.31,-1231.5"/>
 <text text-anchor="middle" x="3007.31" y="-1246.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3020.31,-1231.5 3020.31,-1269.5 "/>
-<text text-anchor="middle" x="3068.31" y="-1254.3" font-family="Times,serif" font-size="14.00">$612</text>
+<text text-anchor="middle" x="3068.31" y="-1254.3" font-family="Times,serif" font-size="14.00">$670</text>
 <text text-anchor="middle" x="3068.31" y="-1239.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3116.31,-1231.5 3116.31,-1269.5 "/>
 <text text-anchor="middle" x="3129.31" y="-1246.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1808,7 +1808,7 @@
 <polyline fill="none" stroke="black" points="3782.27,-2043.5 3809.27,-2043.5 "/>
 <text text-anchor="middle" x="3795.77" y="-2028.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3809.27,-2020.5 3809.27,-2066.5 "/>
-<text text-anchor="middle" x="3835.77" y="-2047.3" font-family="Times,serif" font-size="14.00">$610</text>
+<text text-anchor="middle" x="3835.77" y="-2047.3" font-family="Times,serif" font-size="14.00">$668</text>
 <text text-anchor="middle" x="3835.77" y="-2032.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3862.27,-2020.5 3862.27,-2066.5 "/>
 <text text-anchor="middle" x="3875.27" y="-2039.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1831,7 +1831,7 @@
 <polygon fill="none" stroke="black" points="3567.63,-1582.5 3567.63,-1620.5 3715.63,-1620.5 3715.63,-1582.5 3567.63,-1582.5"/>
 <text text-anchor="middle" x="3580.63" y="-1597.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3593.63,-1582.5 3593.63,-1620.5 "/>
-<text text-anchor="middle" x="3641.63" y="-1605.3" font-family="Times,serif" font-size="14.00">$608</text>
+<text text-anchor="middle" x="3641.63" y="-1605.3" font-family="Times,serif" font-size="14.00">$666</text>
 <text text-anchor="middle" x="3641.63" y="-1590.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3689.63,-1582.5 3689.63,-1620.5 "/>
 <text text-anchor="middle" x="3702.63" y="-1597.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1854,7 +1854,7 @@
 <polygon fill="none" stroke="black" points="3589.13,-2104.5 3589.13,-2142.5 3694.13,-2142.5 3694.13,-2104.5 3589.13,-2104.5"/>
 <text text-anchor="middle" x="3602.13" y="-2119.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3615.13,-2104.5 3615.13,-2142.5 "/>
-<text text-anchor="middle" x="3641.63" y="-2127.3" font-family="Times,serif" font-size="14.00">$606</text>
+<text text-anchor="middle" x="3641.63" y="-2127.3" font-family="Times,serif" font-size="14.00">$664</text>
 <text text-anchor="middle" x="3641.63" y="-2112.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="3668.13,-2104.5 3668.13,-2142.5 "/>
 <text text-anchor="middle" x="3681.13" y="-2119.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1873,7 +1873,7 @@
 <polyline fill="none" stroke="black" points="4861.35,-905.5 4900.35,-905.5 "/>
 <text text-anchor="middle" x="4880.85" y="-890.3" font-family="Times,serif" font-size="14.00">EN</text>
 <polyline fill="none" stroke="black" points="4900.35,-882.5 4900.35,-928.5 "/>
-<text text-anchor="middle" x="4935.35" y="-909.3" font-family="Times,serif" font-size="14.00">$553</text>
+<text text-anchor="middle" x="4935.35" y="-909.3" font-family="Times,serif" font-size="14.00">$611</text>
 <text text-anchor="middle" x="4935.35" y="-894.3" font-family="Times,serif" font-size="14.00">$dlatch</text>
 <polyline fill="none" stroke="black" points="4970.35,-882.5 4970.35,-928.5 "/>
 <text text-anchor="middle" x="4984.35" y="-901.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -1890,7 +1890,7 @@
 <polygon fill="none" stroke="black" points="4641.89,-856.5 4641.89,-894.5 4746.89,-894.5 4746.89,-856.5 4641.89,-856.5"/>
 <text text-anchor="middle" x="4654.89" y="-871.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4667.89,-856.5 4667.89,-894.5 "/>
-<text text-anchor="middle" x="4694.39" y="-879.3" font-family="Times,serif" font-size="14.00">$554</text>
+<text text-anchor="middle" x="4694.39" y="-879.3" font-family="Times,serif" font-size="14.00">$612</text>
 <text text-anchor="middle" x="4694.39" y="-864.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="4720.89,-856.5 4720.89,-894.5 "/>
 <text text-anchor="middle" x="4733.89" y="-871.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1907,7 +1907,7 @@
 <polygon fill="none" stroke="black" points="4387.69,-830.5 4387.69,-868.5 4535.69,-868.5 4535.69,-830.5 4387.69,-830.5"/>
 <text text-anchor="middle" x="4400.69" y="-845.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4413.69,-830.5 4413.69,-868.5 "/>
-<text text-anchor="middle" x="4461.69" y="-853.3" font-family="Times,serif" font-size="14.00">$601</text>
+<text text-anchor="middle" x="4461.69" y="-853.3" font-family="Times,serif" font-size="14.00">$659</text>
 <text text-anchor="middle" x="4461.69" y="-838.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="4509.69,-830.5 4509.69,-868.5 "/>
 <text text-anchor="middle" x="4522.69" y="-845.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1943,7 +1943,7 @@
 <polyline fill="none" stroke="black" points="3975.91,-883.5 4002.91,-883.5 "/>
 <text text-anchor="middle" x="3989.41" y="-868.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="4002.91,-860.5 4002.91,-906.5 "/>
-<text text-anchor="middle" x="4029.41" y="-887.3" font-family="Times,serif" font-size="14.00">$599</text>
+<text text-anchor="middle" x="4029.41" y="-887.3" font-family="Times,serif" font-size="14.00">$657</text>
 <text text-anchor="middle" x="4029.41" y="-872.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="4055.91,-860.5 4055.91,-906.5 "/>
 <text text-anchor="middle" x="4068.91" y="-879.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1960,7 +1960,7 @@
 <polygon fill="none" stroke="black" points="3761.27,-841.5 3761.27,-879.5 3909.27,-879.5 3909.27,-841.5 3761.27,-841.5"/>
 <text text-anchor="middle" x="3774.27" y="-856.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3787.27,-841.5 3787.27,-879.5 "/>
-<text text-anchor="middle" x="3835.27" y="-864.3" font-family="Times,serif" font-size="14.00">$597</text>
+<text text-anchor="middle" x="3835.27" y="-864.3" font-family="Times,serif" font-size="14.00">$655</text>
 <text text-anchor="middle" x="3835.27" y="-849.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3883.27,-841.5 3883.27,-879.5 "/>
 <text text-anchor="middle" x="3896.27" y="-856.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1977,7 +1977,7 @@
 <polygon fill="none" stroke="black" points="3567.63,-853.5 3567.63,-891.5 3715.63,-891.5 3715.63,-853.5 3567.63,-853.5"/>
 <text text-anchor="middle" x="3580.63" y="-868.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3593.63,-853.5 3593.63,-891.5 "/>
-<text text-anchor="middle" x="3641.63" y="-876.3" font-family="Times,serif" font-size="14.00">$595</text>
+<text text-anchor="middle" x="3641.63" y="-876.3" font-family="Times,serif" font-size="14.00">$653</text>
 <text text-anchor="middle" x="3641.63" y="-861.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3689.63,-853.5 3689.63,-891.5 "/>
 <text text-anchor="middle" x="3702.63" y="-868.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -1996,7 +1996,7 @@
 <polyline fill="none" stroke="black" points="3400.63,-901.5 3427.63,-901.5 "/>
 <text text-anchor="middle" x="3414.13" y="-886.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3427.63,-878.5 3427.63,-924.5 "/>
-<text text-anchor="middle" x="3454.13" y="-905.3" font-family="Times,serif" font-size="14.00">$593</text>
+<text text-anchor="middle" x="3454.13" y="-905.3" font-family="Times,serif" font-size="14.00">$651</text>
 <text text-anchor="middle" x="3454.13" y="-890.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3480.63,-878.5 3480.63,-924.5 "/>
 <text text-anchor="middle" x="3493.63" y="-897.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2013,7 +2013,7 @@
 <polygon fill="none" stroke="black" points="3191.63,-819.5 3191.63,-857.5 3339.63,-857.5 3339.63,-819.5 3191.63,-819.5"/>
 <text text-anchor="middle" x="3204.63" y="-834.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3217.63,-819.5 3217.63,-857.5 "/>
-<text text-anchor="middle" x="3265.63" y="-842.3" font-family="Times,serif" font-size="14.00">$591</text>
+<text text-anchor="middle" x="3265.63" y="-842.3" font-family="Times,serif" font-size="14.00">$649</text>
 <text text-anchor="middle" x="3265.63" y="-827.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3313.63,-819.5 3313.63,-857.5 "/>
 <text text-anchor="middle" x="3326.63" y="-834.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2030,7 +2030,7 @@
 <polygon fill="none" stroke="black" points="2783.67,-619.5 2783.67,-657.5 2931.67,-657.5 2931.67,-619.5 2783.67,-619.5"/>
 <text text-anchor="middle" x="2796.67" y="-634.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="2809.67,-619.5 2809.67,-657.5 "/>
-<text text-anchor="middle" x="2857.67" y="-642.3" font-family="Times,serif" font-size="14.00">$589</text>
+<text text-anchor="middle" x="2857.67" y="-642.3" font-family="Times,serif" font-size="14.00">$647</text>
 <text text-anchor="middle" x="2857.67" y="-627.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="2905.67,-619.5 2905.67,-657.5 "/>
 <text text-anchor="middle" x="2918.67" y="-634.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2054,7 +2054,7 @@
 <polyline fill="none" stroke="black" points="2587.59,-638.5 2614.59,-638.5 "/>
 <text text-anchor="middle" x="2601.09" y="-623.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="2614.59,-615.5 2614.59,-661.5 "/>
-<text text-anchor="middle" x="2641.09" y="-642.3" font-family="Times,serif" font-size="14.00">$587</text>
+<text text-anchor="middle" x="2641.09" y="-642.3" font-family="Times,serif" font-size="14.00">$645</text>
 <text text-anchor="middle" x="2641.09" y="-627.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="2667.59,-615.5 2667.59,-661.5 "/>
 <text text-anchor="middle" x="2680.59" y="-634.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2077,7 +2077,7 @@
 <polygon fill="none" stroke="black" points="2362.84,-607.5 2362.84,-645.5 2510.84,-645.5 2510.84,-607.5 2362.84,-607.5"/>
 <text text-anchor="middle" x="2375.84" y="-622.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="2388.84,-607.5 2388.84,-645.5 "/>
-<text text-anchor="middle" x="2436.84" y="-630.3" font-family="Times,serif" font-size="14.00">$585</text>
+<text text-anchor="middle" x="2436.84" y="-630.3" font-family="Times,serif" font-size="14.00">$643</text>
 <text text-anchor="middle" x="2436.84" y="-615.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="2484.84,-607.5 2484.84,-645.5 "/>
 <text text-anchor="middle" x="2497.84" y="-622.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2100,7 +2100,7 @@
 <polygon fill="none" stroke="black" points="2384.34,-798.5 2384.34,-836.5 2489.34,-836.5 2489.34,-798.5 2384.34,-798.5"/>
 <text text-anchor="middle" x="2397.34" y="-813.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="2410.34,-798.5 2410.34,-836.5 "/>
-<text text-anchor="middle" x="2436.84" y="-821.3" font-family="Times,serif" font-size="14.00">$583</text>
+<text text-anchor="middle" x="2436.84" y="-821.3" font-family="Times,serif" font-size="14.00">$641</text>
 <text text-anchor="middle" x="2436.84" y="-806.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="2463.34,-798.5 2463.34,-836.5 "/>
 <text text-anchor="middle" x="2476.34" y="-813.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2119,7 +2119,7 @@
 <polyline fill="none" stroke="black" points="3782.27,-741.5 3809.27,-741.5 "/>
 <text text-anchor="middle" x="3795.77" y="-726.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3809.27,-718.5 3809.27,-764.5 "/>
-<text text-anchor="middle" x="3835.77" y="-745.3" font-family="Times,serif" font-size="14.00">$581</text>
+<text text-anchor="middle" x="3835.77" y="-745.3" font-family="Times,serif" font-size="14.00">$639</text>
 <text text-anchor="middle" x="3835.77" y="-730.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3862.27,-718.5 3862.27,-764.5 "/>
 <text text-anchor="middle" x="3875.27" y="-737.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2136,7 +2136,7 @@
 <polygon fill="none" stroke="black" points="3567.63,-658.5 3567.63,-696.5 3715.63,-696.5 3715.63,-658.5 3567.63,-658.5"/>
 <text text-anchor="middle" x="3580.63" y="-673.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3593.63,-658.5 3593.63,-696.5 "/>
-<text text-anchor="middle" x="3641.63" y="-681.3" font-family="Times,serif" font-size="14.00">$579</text>
+<text text-anchor="middle" x="3641.63" y="-681.3" font-family="Times,serif" font-size="14.00">$637</text>
 <text text-anchor="middle" x="3641.63" y="-666.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3689.63,-658.5 3689.63,-696.5 "/>
 <text text-anchor="middle" x="3702.63" y="-673.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2153,7 +2153,7 @@
 <polygon fill="none" stroke="black" points="3379.63,-629.5 3379.63,-667.5 3527.63,-667.5 3527.63,-629.5 3379.63,-629.5"/>
 <text text-anchor="middle" x="3392.63" y="-644.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3405.63,-629.5 3405.63,-667.5 "/>
-<text text-anchor="middle" x="3453.63" y="-652.3" font-family="Times,serif" font-size="14.00">$577</text>
+<text text-anchor="middle" x="3453.63" y="-652.3" font-family="Times,serif" font-size="14.00">$635</text>
 <text text-anchor="middle" x="3453.63" y="-637.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3501.63,-629.5 3501.63,-667.5 "/>
 <text text-anchor="middle" x="3514.63" y="-644.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2172,7 +2172,7 @@
 <polyline fill="none" stroke="black" points="3212.63,-674.5 3239.63,-674.5 "/>
 <text text-anchor="middle" x="3226.13" y="-659.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3239.63,-651.5 3239.63,-697.5 "/>
-<text text-anchor="middle" x="3266.13" y="-678.3" font-family="Times,serif" font-size="14.00">$575</text>
+<text text-anchor="middle" x="3266.13" y="-678.3" font-family="Times,serif" font-size="14.00">$633</text>
 <text text-anchor="middle" x="3266.13" y="-663.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3292.63,-651.5 3292.63,-697.5 "/>
 <text text-anchor="middle" x="3305.63" y="-670.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2189,7 +2189,7 @@
 <polygon fill="none" stroke="black" points="2994.31,-670.5 2994.31,-708.5 3142.31,-708.5 3142.31,-670.5 2994.31,-670.5"/>
 <text text-anchor="middle" x="3007.31" y="-685.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3020.31,-670.5 3020.31,-708.5 "/>
-<text text-anchor="middle" x="3068.31" y="-693.3" font-family="Times,serif" font-size="14.00">$573</text>
+<text text-anchor="middle" x="3068.31" y="-693.3" font-family="Times,serif" font-size="14.00">$631</text>
 <text text-anchor="middle" x="3068.31" y="-678.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3116.31,-670.5 3116.31,-708.5 "/>
 <text text-anchor="middle" x="3129.31" y="-685.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2206,7 +2206,7 @@
 <polygon fill="none" stroke="black" points="1658.09,-1134.5 1658.09,-1172.5 1806.09,-1172.5 1806.09,-1134.5 1658.09,-1134.5"/>
 <text text-anchor="middle" x="1671.09" y="-1149.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="1684.09,-1134.5 1684.09,-1172.5 "/>
-<text text-anchor="middle" x="1732.09" y="-1157.3" font-family="Times,serif" font-size="14.00">$571</text>
+<text text-anchor="middle" x="1732.09" y="-1157.3" font-family="Times,serif" font-size="14.00">$629</text>
 <text text-anchor="middle" x="1732.09" y="-1142.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="1780.09,-1134.5 1780.09,-1172.5 "/>
 <text text-anchor="middle" x="1793.09" y="-1149.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2230,7 +2230,7 @@
 <polyline fill="none" stroke="black" points="1076.88,-1157.5 1103.88,-1157.5 "/>
 <text text-anchor="middle" x="1090.38" y="-1142.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="1103.88,-1134.5 1103.88,-1180.5 "/>
-<text text-anchor="middle" x="1130.38" y="-1161.3" font-family="Times,serif" font-size="14.00">$569</text>
+<text text-anchor="middle" x="1130.38" y="-1161.3" font-family="Times,serif" font-size="14.00">$627</text>
 <text text-anchor="middle" x="1130.38" y="-1146.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="1156.88,-1134.5 1156.88,-1180.5 "/>
 <text text-anchor="middle" x="1169.88" y="-1153.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2253,7 +2253,7 @@
 <polygon fill="none" stroke="black" points="884.13,-1130.5 884.13,-1168.5 1032.13,-1168.5 1032.13,-1130.5 884.13,-1130.5"/>
 <text text-anchor="middle" x="897.13" y="-1145.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="910.13,-1130.5 910.13,-1168.5 "/>
-<text text-anchor="middle" x="958.13" y="-1153.3" font-family="Times,serif" font-size="14.00">$567</text>
+<text text-anchor="middle" x="958.13" y="-1153.3" font-family="Times,serif" font-size="14.00">$625</text>
 <text text-anchor="middle" x="958.13" y="-1138.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="1006.13,-1130.5 1006.13,-1168.5 "/>
 <text text-anchor="middle" x="1019.13" y="-1145.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2278,7 +2278,7 @@
 <polyline fill="none" stroke="black" points="3975.91,-818.5 4002.91,-818.5 "/>
 <text text-anchor="middle" x="3989.41" y="-803.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="4002.91,-795.5 4002.91,-841.5 "/>
-<text text-anchor="middle" x="4029.41" y="-822.3" font-family="Times,serif" font-size="14.00">$565</text>
+<text text-anchor="middle" x="4029.41" y="-822.3" font-family="Times,serif" font-size="14.00">$623</text>
 <text text-anchor="middle" x="4029.41" y="-807.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="4055.91,-795.5 4055.91,-841.5 "/>
 <text text-anchor="middle" x="4068.91" y="-814.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2295,7 +2295,7 @@
 <polygon fill="none" stroke="black" points="3761.27,-784.5 3761.27,-822.5 3909.27,-822.5 3909.27,-784.5 3761.27,-784.5"/>
 <text text-anchor="middle" x="3774.27" y="-799.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3787.27,-784.5 3787.27,-822.5 "/>
-<text text-anchor="middle" x="3835.27" y="-807.3" font-family="Times,serif" font-size="14.00">$563</text>
+<text text-anchor="middle" x="3835.27" y="-807.3" font-family="Times,serif" font-size="14.00">$621</text>
 <text text-anchor="middle" x="3835.27" y="-792.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3883.27,-784.5 3883.27,-822.5 "/>
 <text text-anchor="middle" x="3896.27" y="-799.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2314,7 +2314,7 @@
 <polyline fill="none" stroke="black" points="3588.63,-805.5 3615.63,-805.5 "/>
 <text text-anchor="middle" x="3602.13" y="-790.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3615.63,-782.5 3615.63,-828.5 "/>
-<text text-anchor="middle" x="3642.13" y="-809.3" font-family="Times,serif" font-size="14.00">$561</text>
+<text text-anchor="middle" x="3642.13" y="-809.3" font-family="Times,serif" font-size="14.00">$619</text>
 <text text-anchor="middle" x="3642.13" y="-794.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3668.63,-782.5 3668.63,-828.5 "/>
 <text text-anchor="middle" x="3681.63" y="-801.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2337,7 +2337,7 @@
 <polygon fill="none" stroke="black" points="3379.63,-686.5 3379.63,-724.5 3527.63,-724.5 3527.63,-686.5 3379.63,-686.5"/>
 <text text-anchor="middle" x="3392.63" y="-701.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3405.63,-686.5 3405.63,-724.5 "/>
-<text text-anchor="middle" x="3453.63" y="-709.3" font-family="Times,serif" font-size="14.00">$559</text>
+<text text-anchor="middle" x="3453.63" y="-709.3" font-family="Times,serif" font-size="14.00">$617</text>
 <text text-anchor="middle" x="3453.63" y="-694.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3501.63,-686.5 3501.63,-724.5 "/>
 <text text-anchor="middle" x="3514.63" y="-701.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2360,7 +2360,7 @@
 <polygon fill="none" stroke="black" points="3401.13,-782.5 3401.13,-820.5 3506.13,-820.5 3506.13,-782.5 3401.13,-782.5"/>
 <text text-anchor="middle" x="3414.13" y="-797.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3427.13,-782.5 3427.13,-820.5 "/>
-<text text-anchor="middle" x="3453.63" y="-805.3" font-family="Times,serif" font-size="14.00">$557</text>
+<text text-anchor="middle" x="3453.63" y="-805.3" font-family="Times,serif" font-size="14.00">$615</text>
 <text text-anchor="middle" x="3453.63" y="-790.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="3480.13,-782.5 3480.13,-820.5 "/>
 <text text-anchor="middle" x="3493.13" y="-797.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2377,7 +2377,7 @@
 <polygon fill="none" stroke="black" points="3782.77,-898.5 3782.77,-936.5 3887.77,-936.5 3887.77,-898.5 3782.77,-898.5"/>
 <text text-anchor="middle" x="3795.77" y="-913.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3808.77,-898.5 3808.77,-936.5 "/>
-<text text-anchor="middle" x="3835.27" y="-921.3" font-family="Times,serif" font-size="14.00">$555</text>
+<text text-anchor="middle" x="3835.27" y="-921.3" font-family="Times,serif" font-size="14.00">$613</text>
 <text text-anchor="middle" x="3835.27" y="-906.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="3861.77,-898.5 3861.77,-936.5 "/>
 <text text-anchor="middle" x="3874.77" y="-913.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2396,7 +2396,7 @@
 <polyline fill="none" stroke="black" points="4393.19,-173.5 4432.19,-173.5 "/>
 <text text-anchor="middle" x="4412.69" y="-158.3" font-family="Times,serif" font-size="14.00">EN</text>
 <polyline fill="none" stroke="black" points="4432.19,-150.5 4432.19,-196.5 "/>
-<text text-anchor="middle" x="4467.19" y="-177.3" font-family="Times,serif" font-size="14.00">$536</text>
+<text text-anchor="middle" x="4467.19" y="-177.3" font-family="Times,serif" font-size="14.00">$594</text>
 <text text-anchor="middle" x="4467.19" y="-162.3" font-family="Times,serif" font-size="14.00">$dlatch</text>
 <polyline fill="none" stroke="black" points="4502.19,-150.5 4502.19,-196.5 "/>
 <text text-anchor="middle" x="4516.19" y="-169.8" font-family="Times,serif" font-size="14.00">Q</text>
@@ -2413,7 +2413,7 @@
 <polygon fill="none" stroke="black" points="4182.01,-142.5 4182.01,-180.5 4287.01,-180.5 4287.01,-142.5 4182.01,-142.5"/>
 <text text-anchor="middle" x="4195.01" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="4208.01,-142.5 4208.01,-180.5 "/>
-<text text-anchor="middle" x="4234.51" y="-165.3" font-family="Times,serif" font-size="14.00">$537</text>
+<text text-anchor="middle" x="4234.51" y="-165.3" font-family="Times,serif" font-size="14.00">$595</text>
 <text text-anchor="middle" x="4234.51" y="-150.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="4261.01,-142.5 4261.01,-180.5 "/>
 <text text-anchor="middle" x="4274.01" y="-157.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2430,7 +2430,7 @@
 <polygon fill="none" stroke="black" points="3954.91,-142.5 3954.91,-180.5 4102.91,-180.5 4102.91,-142.5 3954.91,-142.5"/>
 <text text-anchor="middle" x="3967.91" y="-157.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3980.91,-142.5 3980.91,-180.5 "/>
-<text text-anchor="middle" x="4028.91" y="-165.3" font-family="Times,serif" font-size="14.00">$550</text>
+<text text-anchor="middle" x="4028.91" y="-165.3" font-family="Times,serif" font-size="14.00">$608</text>
 <text text-anchor="middle" x="4028.91" y="-150.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="4076.91,-142.5 4076.91,-180.5 "/>
 <text text-anchor="middle" x="4089.91" y="-157.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2449,7 +2449,7 @@
 <polyline fill="none" stroke="black" points="3782.27,-161.5 3809.27,-161.5 "/>
 <text text-anchor="middle" x="3795.77" y="-146.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3809.27,-138.5 3809.27,-184.5 "/>
-<text text-anchor="middle" x="3835.77" y="-165.3" font-family="Times,serif" font-size="14.00">$548</text>
+<text text-anchor="middle" x="3835.77" y="-165.3" font-family="Times,serif" font-size="14.00">$606</text>
 <text text-anchor="middle" x="3835.77" y="-150.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3862.27,-138.5 3862.27,-184.5 "/>
 <text text-anchor="middle" x="3875.27" y="-157.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2466,7 +2466,7 @@
 <polygon fill="none" stroke="black" points="3567.63,-100.5 3567.63,-138.5 3715.63,-138.5 3715.63,-100.5 3567.63,-100.5"/>
 <text text-anchor="middle" x="3580.63" y="-115.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3593.63,-100.5 3593.63,-138.5 "/>
-<text text-anchor="middle" x="3641.63" y="-123.3" font-family="Times,serif" font-size="14.00">$546</text>
+<text text-anchor="middle" x="3641.63" y="-123.3" font-family="Times,serif" font-size="14.00">$604</text>
 <text text-anchor="middle" x="3641.63" y="-108.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3689.63,-100.5 3689.63,-138.5 "/>
 <text text-anchor="middle" x="3702.63" y="-115.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2485,7 +2485,7 @@
 <polyline fill="none" stroke="black" points="3400.63,-119.5 3427.63,-119.5 "/>
 <text text-anchor="middle" x="3414.13" y="-104.3" font-family="Times,serif" font-size="14.00">B</text>
 <polyline fill="none" stroke="black" points="3427.63,-96.5 3427.63,-142.5 "/>
-<text text-anchor="middle" x="3454.13" y="-123.3" font-family="Times,serif" font-size="14.00">$544</text>
+<text text-anchor="middle" x="3454.13" y="-123.3" font-family="Times,serif" font-size="14.00">$602</text>
 <text text-anchor="middle" x="3454.13" y="-108.3" font-family="Times,serif" font-size="14.00">$and</text>
 <polyline fill="none" stroke="black" points="3480.63,-96.5 3480.63,-142.5 "/>
 <text text-anchor="middle" x="3493.63" y="-115.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2508,7 +2508,7 @@
 <polygon fill="none" stroke="black" points="3191.63,-23.5 3191.63,-61.5 3339.63,-61.5 3339.63,-23.5 3191.63,-23.5"/>
 <text text-anchor="middle" x="3204.63" y="-38.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3217.63,-23.5 3217.63,-61.5 "/>
-<text text-anchor="middle" x="3265.63" y="-46.3" font-family="Times,serif" font-size="14.00">$542</text>
+<text text-anchor="middle" x="3265.63" y="-46.3" font-family="Times,serif" font-size="14.00">$600</text>
 <text text-anchor="middle" x="3265.63" y="-31.3" font-family="Times,serif" font-size="14.00">$reduce_or</text>
 <polyline fill="none" stroke="black" points="3313.63,-23.5 3313.63,-61.5 "/>
 <text text-anchor="middle" x="3326.63" y="-38.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2531,7 +2531,7 @@
 <polygon fill="none" stroke="black" points="3213.13,-119.5 3213.13,-157.5 3318.13,-157.5 3318.13,-119.5 3213.13,-119.5"/>
 <text text-anchor="middle" x="3226.13" y="-134.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3239.13,-119.5 3239.13,-157.5 "/>
-<text text-anchor="middle" x="3265.63" y="-142.3" font-family="Times,serif" font-size="14.00">$540</text>
+<text text-anchor="middle" x="3265.63" y="-142.3" font-family="Times,serif" font-size="14.00">$598</text>
 <text text-anchor="middle" x="3265.63" y="-127.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="3292.13,-119.5 3292.13,-157.5 "/>
 <text text-anchor="middle" x="3305.13" y="-134.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2548,7 +2548,7 @@
 <polygon fill="none" stroke="black" points="3589.13,-157.5 3589.13,-195.5 3694.13,-195.5 3694.13,-157.5 3589.13,-157.5"/>
 <text text-anchor="middle" x="3602.13" y="-172.8" font-family="Times,serif" font-size="14.00">A</text>
 <polyline fill="none" stroke="black" points="3615.13,-157.5 3615.13,-195.5 "/>
-<text text-anchor="middle" x="3641.63" y="-180.3" font-family="Times,serif" font-size="14.00">$538</text>
+<text text-anchor="middle" x="3641.63" y="-180.3" font-family="Times,serif" font-size="14.00">$596</text>
 <text text-anchor="middle" x="3641.63" y="-165.3" font-family="Times,serif" font-size="14.00">$not</text>
 <polyline fill="none" stroke="black" points="3668.13,-157.5 3668.13,-195.5 "/>
 <text text-anchor="middle" x="3681.13" y="-172.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2598,7 +2598,7 @@
 <polyline fill="none" stroke="black" points="3394.63,-485 3421.63,-485 "/>
 <text text-anchor="middle" x="3408.13" y="-469.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3421.63,-462 3421.63,-531 "/>
-<text text-anchor="middle" x="3454.13" y="-500.3" font-family="Times,serif" font-size="14.00">$517</text>
+<text text-anchor="middle" x="3454.13" y="-500.3" font-family="Times,serif" font-size="14.00">$575</text>
 <text text-anchor="middle" x="3454.13" y="-485.3" font-family="Times,serif" font-size="14.00">$pmux</text>
 <polyline fill="none" stroke="black" points="3486.63,-462 3486.63,-531 "/>
 <text text-anchor="middle" x="3499.63" y="-492.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2680,7 +2680,7 @@
 <polyline fill="none" stroke="black" points="3780.77,-2238 3807.77,-2238 "/>
 <text text-anchor="middle" x="3794.27" y="-2222.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3807.77,-2215 3807.77,-2284 "/>
-<text text-anchor="middle" x="3835.77" y="-2253.3" font-family="Times,serif" font-size="14.00">$514</text>
+<text text-anchor="middle" x="3835.77" y="-2253.3" font-family="Times,serif" font-size="14.00">$572</text>
 <text text-anchor="middle" x="3835.77" y="-2238.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3863.77,-2215 3863.77,-2284 "/>
 <text text-anchor="middle" x="3876.77" y="-2245.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2735,7 +2735,7 @@
 <polyline fill="none" stroke="black" points="3013.81,-206 3040.81,-206 "/>
 <text text-anchor="middle" x="3027.31" y="-190.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3040.81,-183 3040.81,-252 "/>
-<text text-anchor="middle" x="3068.81" y="-221.3" font-family="Times,serif" font-size="14.00">$510</text>
+<text text-anchor="middle" x="3068.81" y="-221.3" font-family="Times,serif" font-size="14.00">$568</text>
 <text text-anchor="middle" x="3068.81" y="-206.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3096.81,-183 3096.81,-252 "/>
 <text text-anchor="middle" x="3109.81" y="-213.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2820,7 +2820,7 @@
 <polyline fill="none" stroke="black" points="3969.91,-1044 3996.91,-1044 "/>
 <text text-anchor="middle" x="3983.41" y="-1028.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3996.91,-1021 3996.91,-1090 "/>
-<text text-anchor="middle" x="4029.41" y="-1059.3" font-family="Times,serif" font-size="14.00">$506</text>
+<text text-anchor="middle" x="4029.41" y="-1059.3" font-family="Times,serif" font-size="14.00">$564</text>
 <text text-anchor="middle" x="4029.41" y="-1044.3" font-family="Times,serif" font-size="14.00">$pmux</text>
 <polyline fill="none" stroke="black" points="4061.91,-1021 4061.91,-1090 "/>
 <text text-anchor="middle" x="4074.91" y="-1051.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -2951,7 +2951,7 @@
 <polyline fill="none" stroke="black" points="2076.94,-1804 2103.94,-1804 "/>
 <text text-anchor="middle" x="2090.44" y="-1788.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2103.94,-1781 2103.94,-1850 "/>
-<text text-anchor="middle" x="2136.44" y="-1819.3" font-family="Times,serif" font-size="14.00">$500</text>
+<text text-anchor="middle" x="2136.44" y="-1819.3" font-family="Times,serif" font-size="14.00">$558</text>
 <text text-anchor="middle" x="2136.44" y="-1804.3" font-family="Times,serif" font-size="14.00">$pmux</text>
 <polyline fill="none" stroke="black" points="2168.94,-1781 2168.94,-1850 "/>
 <text text-anchor="middle" x="2181.94" y="-1811.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3025,7 +3025,7 @@
 <polyline fill="none" stroke="black" points="4639.89,-2238 4666.89,-2238 "/>
 <text text-anchor="middle" x="4653.39" y="-2222.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="4666.89,-2215 4666.89,-2284 "/>
-<text text-anchor="middle" x="4694.89" y="-2253.3" font-family="Times,serif" font-size="14.00">$497</text>
+<text text-anchor="middle" x="4694.89" y="-2253.3" font-family="Times,serif" font-size="14.00">$555</text>
 <text text-anchor="middle" x="4694.89" y="-2238.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="4722.89,-2215 4722.89,-2284 "/>
 <text text-anchor="middle" x="4735.89" y="-2245.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3106,7 +3106,7 @@
 <polyline fill="none" stroke="black" points="3582.63,-1715 3609.63,-1715 "/>
 <text text-anchor="middle" x="3596.13" y="-1699.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3609.63,-1692 3609.63,-1761 "/>
-<text text-anchor="middle" x="3642.13" y="-1730.3" font-family="Times,serif" font-size="14.00">$491</text>
+<text text-anchor="middle" x="3642.13" y="-1730.3" font-family="Times,serif" font-size="14.00">$549</text>
 <text text-anchor="middle" x="3642.13" y="-1715.3" font-family="Times,serif" font-size="14.00">$pmux</text>
 <polyline fill="none" stroke="black" points="3674.63,-1692 3674.63,-1761 "/>
 <text text-anchor="middle" x="3687.63" y="-1722.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3178,7 +3178,7 @@
 <polyline fill="none" stroke="black" points="3974.41,-2324 4001.41,-2324 "/>
 <text text-anchor="middle" x="3987.91" y="-2308.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="4001.41,-2301 4001.41,-2370 "/>
-<text text-anchor="middle" x="4029.41" y="-2339.3" font-family="Times,serif" font-size="14.00">$487</text>
+<text text-anchor="middle" x="4029.41" y="-2339.3" font-family="Times,serif" font-size="14.00">$545</text>
 <text text-anchor="middle" x="4029.41" y="-2324.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="4057.41,-2301 4057.41,-2370 "/>
 <text text-anchor="middle" x="4070.41" y="-2331.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3228,7 +3228,7 @@
 <polyline fill="none" stroke="black" points="3587.13,-2425 3614.13,-2425 "/>
 <text text-anchor="middle" x="3600.63" y="-2409.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3614.13,-2402 3614.13,-2471 "/>
-<text text-anchor="middle" x="3642.13" y="-2440.3" font-family="Times,serif" font-size="14.00">$485</text>
+<text text-anchor="middle" x="3642.13" y="-2440.3" font-family="Times,serif" font-size="14.00">$543</text>
 <text text-anchor="middle" x="3642.13" y="-2425.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3670.13,-2402 3670.13,-2471 "/>
 <text text-anchor="middle" x="3683.13" y="-2432.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3260,7 +3260,7 @@
 <polyline fill="none" stroke="black" points="3013.81,-1565 3040.81,-1565 "/>
 <text text-anchor="middle" x="3027.31" y="-1549.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3040.81,-1542 3040.81,-1611 "/>
-<text text-anchor="middle" x="3068.81" y="-1580.3" font-family="Times,serif" font-size="14.00">$479</text>
+<text text-anchor="middle" x="3068.81" y="-1580.3" font-family="Times,serif" font-size="14.00">$537</text>
 <text text-anchor="middle" x="3068.81" y="-1565.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3096.81,-1542 3096.81,-1611 "/>
 <text text-anchor="middle" x="3109.81" y="-1572.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3317,7 +3317,7 @@
 <polyline fill="none" stroke="black" points="2586.09,-1592 2613.09,-1592 "/>
 <text text-anchor="middle" x="2599.59" y="-1576.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2613.09,-1569 2613.09,-1638 "/>
-<text text-anchor="middle" x="2641.09" y="-1607.3" font-family="Times,serif" font-size="14.00">$477</text>
+<text text-anchor="middle" x="2641.09" y="-1607.3" font-family="Times,serif" font-size="14.00">$535</text>
 <text text-anchor="middle" x="2641.09" y="-1592.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2669.09,-1569 2669.09,-1638 "/>
 <text text-anchor="middle" x="2682.09" y="-1599.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3356,7 +3356,7 @@
 <polyline fill="none" stroke="black" points="3211.13,-1176 3238.13,-1176 "/>
 <text text-anchor="middle" x="3224.63" y="-1160.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3238.13,-1153 3238.13,-1222 "/>
-<text text-anchor="middle" x="3266.13" y="-1191.3" font-family="Times,serif" font-size="14.00">$471</text>
+<text text-anchor="middle" x="3266.13" y="-1191.3" font-family="Times,serif" font-size="14.00">$529</text>
 <text text-anchor="middle" x="3266.13" y="-1176.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3294.13,-1153 3294.13,-1222 "/>
 <text text-anchor="middle" x="3307.13" y="-1183.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3412,7 +3412,7 @@
 <polyline fill="none" stroke="black" points="2586.09,-1158 2613.09,-1158 "/>
 <text text-anchor="middle" x="2599.59" y="-1142.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2613.09,-1135 2613.09,-1204 "/>
-<text text-anchor="middle" x="2641.09" y="-1173.3" font-family="Times,serif" font-size="14.00">$469</text>
+<text text-anchor="middle" x="2641.09" y="-1173.3" font-family="Times,serif" font-size="14.00">$527</text>
 <text text-anchor="middle" x="2641.09" y="-1158.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2669.09,-1135 2669.09,-1204 "/>
 <text text-anchor="middle" x="2682.09" y="-1165.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3462,7 +3462,7 @@
 <polyline fill="none" stroke="black" points="3013.81,-1948 3040.81,-1948 "/>
 <text text-anchor="middle" x="3027.31" y="-1932.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3040.81,-1925 3040.81,-1994 "/>
-<text text-anchor="middle" x="3068.81" y="-1963.3" font-family="Times,serif" font-size="14.00">$463</text>
+<text text-anchor="middle" x="3068.81" y="-1963.3" font-family="Times,serif" font-size="14.00">$521</text>
 <text text-anchor="middle" x="3068.81" y="-1948.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3096.81,-1925 3096.81,-1994 "/>
 <text text-anchor="middle" x="3109.81" y="-1955.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3531,7 +3531,7 @@
 <polyline fill="none" stroke="black" points="3013.81,-2475 3040.81,-2475 "/>
 <text text-anchor="middle" x="3027.31" y="-2459.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3040.81,-2452 3040.81,-2521 "/>
-<text text-anchor="middle" x="3068.81" y="-2490.3" font-family="Times,serif" font-size="14.00">$455</text>
+<text text-anchor="middle" x="3068.81" y="-2490.3" font-family="Times,serif" font-size="14.00">$513</text>
 <text text-anchor="middle" x="3068.81" y="-2475.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3096.81,-2452 3096.81,-2521 "/>
 <text text-anchor="middle" x="3109.81" y="-2482.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3576,7 +3576,7 @@
 <polyline fill="none" stroke="black" points="2586.09,-2481 2613.09,-2481 "/>
 <text text-anchor="middle" x="2599.59" y="-2465.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2613.09,-2458 2613.09,-2527 "/>
-<text text-anchor="middle" x="2641.09" y="-2496.3" font-family="Times,serif" font-size="14.00">$453</text>
+<text text-anchor="middle" x="2641.09" y="-2496.3" font-family="Times,serif" font-size="14.00">$511</text>
 <text text-anchor="middle" x="2641.09" y="-2481.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2669.09,-2458 2669.09,-2527 "/>
 <text text-anchor="middle" x="2682.09" y="-2488.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3674,7 +3674,7 @@
 <polyline fill="none" stroke="black" points="730.13,-2402 757.13,-2402 "/>
 <text text-anchor="middle" x="743.63" y="-2386.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="757.13,-2379 757.13,-2448 "/>
-<text text-anchor="middle" x="789.63" y="-2417.3" font-family="Times,serif" font-size="14.00">$448</text>
+<text text-anchor="middle" x="789.63" y="-2417.3" font-family="Times,serif" font-size="14.00">$506</text>
 <text text-anchor="middle" x="789.63" y="-2402.3" font-family="Times,serif" font-size="14.00">$pmux</text>
 <polyline fill="none" stroke="black" points="822.13,-2379 822.13,-2448 "/>
 <text text-anchor="middle" x="835.13" y="-2409.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3743,7 +3743,7 @@
 <polyline fill="none" stroke="black" points="3211.13,-1088 3238.13,-1088 "/>
 <text text-anchor="middle" x="3224.63" y="-1072.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3238.13,-1065 3238.13,-1134 "/>
-<text text-anchor="middle" x="3266.13" y="-1103.3" font-family="Times,serif" font-size="14.00">$442</text>
+<text text-anchor="middle" x="3266.13" y="-1103.3" font-family="Times,serif" font-size="14.00">$500</text>
 <text text-anchor="middle" x="3266.13" y="-1088.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3294.13,-1065 3294.13,-1134 "/>
 <text text-anchor="middle" x="3307.13" y="-1095.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3799,7 +3799,7 @@
 <polyline fill="none" stroke="black" points="2803.17,-1059 2830.17,-1059 "/>
 <text text-anchor="middle" x="2816.67" y="-1043.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2830.17,-1036 2830.17,-1105 "/>
-<text text-anchor="middle" x="2858.17" y="-1074.3" font-family="Times,serif" font-size="14.00">$440</text>
+<text text-anchor="middle" x="2858.17" y="-1074.3" font-family="Times,serif" font-size="14.00">$498</text>
 <text text-anchor="middle" x="2858.17" y="-1059.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2886.17,-1036 2886.17,-1105 "/>
 <text text-anchor="middle" x="2899.17" y="-1066.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3855,7 +3855,7 @@
 <polyline fill="none" stroke="black" points="3211.13,-2339 3238.13,-2339 "/>
 <text text-anchor="middle" x="3224.63" y="-2323.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3238.13,-2316 3238.13,-2385 "/>
-<text text-anchor="middle" x="3266.13" y="-2354.3" font-family="Times,serif" font-size="14.00">$435</text>
+<text text-anchor="middle" x="3266.13" y="-2354.3" font-family="Times,serif" font-size="14.00">$493</text>
 <text text-anchor="middle" x="3266.13" y="-2339.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3294.13,-2316 3294.13,-2385 "/>
 <text text-anchor="middle" x="3307.13" y="-2346.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -3934,7 +3934,7 @@
 <polyline fill="none" stroke="black" points="1474.76,-1667 1501.76,-1667 "/>
 <text text-anchor="middle" x="1488.26" y="-1651.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="1501.76,-1644 1501.76,-1713 "/>
-<text text-anchor="middle" x="1529.76" y="-1682.3" font-family="Times,serif" font-size="14.00">$428</text>
+<text text-anchor="middle" x="1529.76" y="-1682.3" font-family="Times,serif" font-size="14.00">$486</text>
 <text text-anchor="middle" x="1529.76" y="-1667.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="1557.76,-1644 1557.76,-1713 "/>
 <text text-anchor="middle" x="1570.76" y="-1674.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4009,7 +4009,7 @@
 <polyline fill="none" stroke="black" points="3013.81,-1412 3040.81,-1412 "/>
 <text text-anchor="middle" x="3027.31" y="-1396.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3040.81,-1389 3040.81,-1458 "/>
-<text text-anchor="middle" x="3068.81" y="-1427.3" font-family="Times,serif" font-size="14.00">$421</text>
+<text text-anchor="middle" x="3068.81" y="-1427.3" font-family="Times,serif" font-size="14.00">$479</text>
 <text text-anchor="middle" x="3068.81" y="-1412.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3096.81,-1389 3096.81,-1458 "/>
 <text text-anchor="middle" x="3109.81" y="-1419.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4066,7 +4066,7 @@
 <polyline fill="none" stroke="black" points="1259.52,-1267 1286.52,-1267 "/>
 <text text-anchor="middle" x="1273.02" y="-1251.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="1286.52,-1244 1286.52,-1313 "/>
-<text text-anchor="middle" x="1314.52" y="-1282.3" font-family="Times,serif" font-size="14.00">$419</text>
+<text text-anchor="middle" x="1314.52" y="-1282.3" font-family="Times,serif" font-size="14.00">$477</text>
 <text text-anchor="middle" x="1314.52" y="-1267.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="1342.52,-1244 1342.52,-1313 "/>
 <text text-anchor="middle" x="1355.52" y="-1274.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4133,7 +4133,7 @@
 <polyline fill="none" stroke="black" points="6027.08,-2389 6054.08,-2389 "/>
 <text text-anchor="middle" x="6040.58" y="-2373.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="6054.08,-2366 6054.08,-2435 "/>
-<text text-anchor="middle" x="6082.08" y="-2404.3" font-family="Times,serif" font-size="14.00">$408</text>
+<text text-anchor="middle" x="6082.08" y="-2404.3" font-family="Times,serif" font-size="14.00">$466</text>
 <text text-anchor="middle" x="6082.08" y="-2389.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="6110.08,-2366 6110.08,-2435 "/>
 <text text-anchor="middle" x="6123.08" y="-2396.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4178,7 +4178,7 @@
 <polyline fill="none" stroke="black" points="6027.08,-329 6054.08,-329 "/>
 <text text-anchor="middle" x="6040.58" y="-313.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="6054.08,-306 6054.08,-375 "/>
-<text text-anchor="middle" x="6082.08" y="-344.3" font-family="Times,serif" font-size="14.00">$402</text>
+<text text-anchor="middle" x="6082.08" y="-344.3" font-family="Times,serif" font-size="14.00">$460</text>
 <text text-anchor="middle" x="6082.08" y="-329.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="6110.08,-306 6110.08,-375 "/>
 <text text-anchor="middle" x="6123.08" y="-336.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4217,7 +4217,7 @@
 <polyline fill="none" stroke="black" points="5882.08,-231 5909.08,-231 "/>
 <text text-anchor="middle" x="5895.58" y="-215.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="5909.08,-208 5909.08,-277 "/>
-<text text-anchor="middle" x="5937.08" y="-246.3" font-family="Times,serif" font-size="14.00">$400</text>
+<text text-anchor="middle" x="5937.08" y="-246.3" font-family="Times,serif" font-size="14.00">$458</text>
 <text text-anchor="middle" x="5937.08" y="-231.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="5965.08,-208 5965.08,-277 "/>
 <text text-anchor="middle" x="5978.08" y="-238.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4257,7 +4257,7 @@
 <polyline fill="none" stroke="black" points="903.63,-2767 930.63,-2767 "/>
 <text text-anchor="middle" x="917.13" y="-2751.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="930.63,-2744 930.63,-2813 "/>
-<text text-anchor="middle" x="958.63" y="-2782.3" font-family="Times,serif" font-size="14.00">$396</text>
+<text text-anchor="middle" x="958.63" y="-2782.3" font-family="Times,serif" font-size="14.00">$454</text>
 <text text-anchor="middle" x="958.63" y="-2767.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="986.63,-2744 986.63,-2813 "/>
 <text text-anchor="middle" x="999.63" y="-2774.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4308,7 +4308,7 @@
 <polyline fill="none" stroke="black" points="3211.13,-2973 3238.13,-2973 "/>
 <text text-anchor="middle" x="3224.63" y="-2957.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="3238.13,-2950 3238.13,-3019 "/>
-<text text-anchor="middle" x="3266.13" y="-2988.3" font-family="Times,serif" font-size="14.00">$390</text>
+<text text-anchor="middle" x="3266.13" y="-2988.3" font-family="Times,serif" font-size="14.00">$448</text>
 <text text-anchor="middle" x="3266.13" y="-2973.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="3294.13,-2950 3294.13,-3019 "/>
 <text text-anchor="middle" x="3307.13" y="-2980.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4340,7 +4340,7 @@
 <polyline fill="none" stroke="black" points="1259.52,-3037 1286.52,-3037 "/>
 <text text-anchor="middle" x="1273.02" y="-3021.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="1286.52,-3014 1286.52,-3083 "/>
-<text text-anchor="middle" x="1314.52" y="-3052.3" font-family="Times,serif" font-size="14.00">$387</text>
+<text text-anchor="middle" x="1314.52" y="-3052.3" font-family="Times,serif" font-size="14.00">$445</text>
 <text text-anchor="middle" x="1314.52" y="-3037.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="1342.52,-3014 1342.52,-3083 "/>
 <text text-anchor="middle" x="1355.52" y="-3044.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4373,7 +4373,7 @@
 <polyline fill="none" stroke="black" points="2586.09,-3060 2613.09,-3060 "/>
 <text text-anchor="middle" x="2599.59" y="-3044.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2613.09,-3037 2613.09,-3106 "/>
-<text text-anchor="middle" x="2641.09" y="-3075.3" font-family="Times,serif" font-size="14.00">$384</text>
+<text text-anchor="middle" x="2641.09" y="-3075.3" font-family="Times,serif" font-size="14.00">$442</text>
 <text text-anchor="middle" x="2641.09" y="-3060.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2669.09,-3037 2669.09,-3106 "/>
 <text text-anchor="middle" x="2682.09" y="-3067.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4414,7 +4414,7 @@
 <polyline fill="none" stroke="black" points="2803.17,-3252 2830.17,-3252 "/>
 <text text-anchor="middle" x="2816.67" y="-3236.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2830.17,-3229 2830.17,-3298 "/>
-<text text-anchor="middle" x="2858.17" y="-3267.3" font-family="Times,serif" font-size="14.00">$381</text>
+<text text-anchor="middle" x="2858.17" y="-3267.3" font-family="Times,serif" font-size="14.00">$439</text>
 <text text-anchor="middle" x="2858.17" y="-3252.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2886.17,-3229 2886.17,-3298 "/>
 <text text-anchor="middle" x="2899.17" y="-3259.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -4447,7 +4447,7 @@
 <polyline fill="none" stroke="black" points="2586.09,-3334 2613.09,-3334 "/>
 <text text-anchor="middle" x="2599.59" y="-3318.8" font-family="Times,serif" font-size="14.00">S</text>
 <polyline fill="none" stroke="black" points="2613.09,-3311 2613.09,-3380 "/>
-<text text-anchor="middle" x="2641.09" y="-3349.3" font-family="Times,serif" font-size="14.00">$378</text>
+<text text-anchor="middle" x="2641.09" y="-3349.3" font-family="Times,serif" font-size="14.00">$436</text>
 <text text-anchor="middle" x="2641.09" y="-3334.3" font-family="Times,serif" font-size="14.00">$mux</text>
 <polyline fill="none" stroke="black" points="2669.09,-3311 2669.09,-3380 "/>
 <text text-anchor="middle" x="2682.09" y="-3341.8" font-family="Times,serif" font-size="14.00">Y</text>
@@ -5275,7 +5275,7 @@
 <g id="node333" class="node">
 <title>n105</title>
 <polygon fill="none" stroke="black" points="1314.02,-1746.5 1227.72,-1728.5 1314.02,-1710.5 1400.32,-1728.5 1314.02,-1746.5"/>
-<text text-anchor="middle" x="1314.02" y="-1724.8" font-family="Times,serif" font-size="14.00">$434_CMP</text>
+<text text-anchor="middle" x="1314.02" y="-1724.8" font-family="Times,serif" font-size="14.00">$492_CMP</text>
 </g>
 <!-- x133&#45;&gt;n105 -->
 <g id="edge36" class="edge">
@@ -5304,7 +5304,7 @@
 <g id="node330" class="node">
 <title>n101</title>
 <polygon fill="none" stroke="black" points="1314.02,-1692.5 1227.72,-1674.5 1314.02,-1656.5 1400.32,-1674.5 1314.02,-1692.5"/>
-<text text-anchor="middle" x="1314.02" y="-1670.8" font-family="Times,serif" font-size="14.00">$441_CMP</text>
+<text text-anchor="middle" x="1314.02" y="-1670.8" font-family="Times,serif" font-size="14.00">$499_CMP</text>
 </g>
 <!-- x135&#45;&gt;n101 -->
 <g id="edge28" class="edge">

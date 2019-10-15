@@ -12,14 +12,14 @@ n8 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
 { rank="source"; n4; n7; n8;}
 { rank="sink"; n6;}
 v0 [ label="30'110000001100000011000000110000" ];
-c12 [ shape=record, label="{{<p9> A|<p10> B}|$188\n$add|{<p11> Y}}" ];
-c13 [ shape=record, label="{{<p9> A|<p10> B}|$189\n$gt|{<p11> Y}}" ];
-c17 [ shape=record, label="{{<p14> CLK|<p15> D}|$648\n$dff|{<p16> Q}}" ];
+c12 [ shape=record, label="{{<p9> A|<p10> B}|$214\n$add|{<p11> Y}}" ];
+c13 [ shape=record, label="{{<p9> A|<p10> B}|$215\n$gt|{<p11> Y}}" ];
+c17 [ shape=record, label="{{<p14> CLK|<p15> D}|$706\n$dff|{<p16> Q}}" ];
 v1 [ label="0" ];
-c19 [ shape=record, label="{{<p9> A|<p10> B|<p18> S}|$241\n$mux|{<p11> Y}}" ];
+c19 [ shape=record, label="{{<p9> A|<p10> B|<p18> S}|$273\n$mux|{<p11> Y}}" ];
 v2 [ label="1'1" ];
 v3 [ label="1'0" ];
-c20 [ shape=record, label="{{<p9> A|<p10> B|<p18> S}|$190\n$mux|{<p11> Y}}" ];
+c20 [ shape=record, label="{{<p9> A|<p10> B|<p18> S}|$216\n$mux|{<p11> Y}}" ];
 c19:p11:e -> c17:p15:w [colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];
 c12:p11:e -> n2:w [colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];
 n2:e -> c19:p9:w [colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];

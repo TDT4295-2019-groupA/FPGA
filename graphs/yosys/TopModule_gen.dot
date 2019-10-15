@@ -29,7 +29,7 @@ n25 [ shape=octagon, label="clock", color="black", fontcolor="black" ];
 { rank="source"; n16; n17; n20; n21; n23; n24; n25;}
 { rank="sink"; n11; n12; n13; n14; n15; n18; n19; n22;}
 v0 [ label="1'0" ];
-c29 [ shape=record, label="{{<p26> A|<p27> B}|$228\n$eq|{<p28> Y}}" ];
+c29 [ shape=record, label="{{<p26> A|<p27> B}|$260\n$eq|{<p28> Y}}" ];
 c30 [ shape=record, label="{{<p25> clock|<p21> io_spi_clk|<p20> io_spi_cs_n|<p23> io_spi_mosi|<p17> io_sw|<p24> reset}|Top\nTop|{<p19> io_pwm_out_l|<p18> io_pwm_out_r|<p22> io_spi_miso}}" ];
 x1 [shape=box, style=rounded, label="BUF"];
 x2 [shape=box, style=rounded, label="BUF"];

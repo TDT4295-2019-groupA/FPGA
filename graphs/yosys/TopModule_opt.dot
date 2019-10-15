@@ -28,7 +28,7 @@ n23 [ shape=octagon, label="io_sw", color="black", fontcolor="black" ];
 n24 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
 { rank="source"; n10; n11; n19; n20; n22; n23; n24;}
 { rank="sink"; n12; n13; n14; n15; n16; n17; n18; n21;}
-c27 [ shape=record, label="{{<p25> A}|$228\n$not|{<p26> Y}}" ];
+c27 [ shape=record, label="{{<p25> A}|$260\n$not|{<p26> Y}}" ];
 c28 [ shape=record, label="{{<p10> clock|<p19> io_spi_clk|<p20> io_spi_cs_n|<p22> io_spi_mosi|<p23> io_sw|<p24> reset}|Top\nTop|{<p13> io_pwm_out_l|<p14> io_pwm_out_r|<p21> io_spi_miso}}" ];
 x0 [shape=box, style=rounded, label="BUF"];
 x1 [shape=box, style=rounded, label="BUF"];

@@ -1,0 +1,36 @@
+digraph "Square" {
+label="Square";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="_GEN_1", color="black", fontcolor="black" ];
+n2 [ shape=diamond, label="_GEN_2", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="_T_13", color="black", fontcolor="black" ];
+n4 [ shape=diamond, label="_T_14", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="io_sample_out", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="io_wavelength", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="io_wavelength_pos", color="black", fontcolor="black" ];
+{ rank="source"; n6; n7;}
+{ rank="sink"; n5;}
+c11 [ shape=record, label="{{<p8> A|<p9> B}|$65\n$gt|{<p10> Y}}" ];
+x0 [ shape=record, style=rounded, label="<s1> 31:0 - 32:1 |0 -&gt; 0:0 " ];
+x0:e -> c11:p8:w [arrowhead=odiamond, arrowtail=odiamond, dir=both, colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];
+v1 [ label="16'0111111111111111" ];
+v2 [ label="16'1000000000000001" ];
+c13 [ shape=record, label="{{<p8> A|<p9> B|<p12> S}|$66\n$mux|{<p10> Y}}" ];
+x3 [ shape=record, style=rounded, label="0 -&gt; 32:32 |<s0> 31:0 - 31:0 " ];
+x4 [ shape=record, style=rounded, label="0 -&gt; 32:12 |<s0> 11:0 - 11:0 " ];
+x5 [ shape=record, style=rounded, label="<s1> 31:0 - 32:1 |0 -&gt; 0:0 " ];
+x3:e -> n1:w [colorscheme="dark28", color="4", fontcolor="4", style="setlinewidth(3)", label=""];
+x4:e -> n2:w [colorscheme="dark28", color="3", fontcolor="3", style="setlinewidth(3)", label=""];
+x5:e -> n3:w [colorscheme="dark28", color="6", fontcolor="6", style="setlinewidth(3)", label=""];
+c11:p10:e -> n4:w [colorscheme="dark28", color="5", fontcolor="5", label=""];
+n4:e -> c13:p12:w [colorscheme="dark28", color="5", fontcolor="5", label=""];
+c13:p10:e -> n5:w [colorscheme="dark28", color="2", fontcolor="2", style="setlinewidth(3)", label=""];
+n6:e -> c11:p9:w [colorscheme="dark28", color="8", fontcolor="8", style="setlinewidth(3)", label=""];
+n6:e -> x4:s0:w [colorscheme="dark28", color="8", fontcolor="8", style="setlinewidth(3)", label=""];
+n7:e -> x0:s1:w [colorscheme="dark28", color="3", fontcolor="3", style="setlinewidth(3)", label=""];
+n7:e -> x3:s0:w [colorscheme="dark28", color="3", fontcolor="3", style="setlinewidth(3)", label=""];
+n7:e -> x5:s1:w [colorscheme="dark28", color="3", fontcolor="3", style="setlinewidth(3)", label=""];
+v1:e -> c13:p8:w [colorscheme="dark28", color="1", fontcolor="1", style="setlinewidth(3)", label=""];
+v2:e -> c13:p9:w [colorscheme="dark28", color="6", fontcolor="6", style="setlinewidth(3)", label=""];
+}

@@ -13,17 +13,17 @@ n15 [ shape=octagon, label="reset", color="black", fontcolor="black" ];
 n16 [ shape=octagon, label="clock", color="black", fontcolor="black" ];
 { rank="source"; n13; n15; n16;}
 { rank="sink"; n14;}
-c20 [ shape=record, label="{{<p17> CLK|<p18> D}|$648\n$dff|{<p19> Q}}" ];
+c20 [ shape=record, label="{{<p17> CLK|<p18> D}|$706\n$dff|{<p19> Q}}" ];
 v0 [ label="0" ];
-c25 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$241\n$mux|{<p24> Y}}" ];
+c25 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$273\n$mux|{<p24> Y}}" ];
 v1 [ label="1'0" ];
 v2 [ label="1'1" ];
-c26 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$190\n$mux|{<p24> Y}}" ];
-c27 [ shape=record, label="{{<p21> A|<p22> B}|$189\n$gt|{<p24> Y}}" ];
+c26 [ shape=record, label="{{<p21> A|<p22> B|<p23> S}|$216\n$mux|{<p24> Y}}" ];
+c27 [ shape=record, label="{{<p21> A|<p22> B}|$215\n$gt|{<p24> Y}}" ];
 v3 [ label="808464432" ];
-c28 [ shape=record, label="{{<p21> A|<p22> B}|$188\n$add|{<p24> Y}}" ];
+c28 [ shape=record, label="{{<p21> A|<p22> B}|$214\n$add|{<p24> Y}}" ];
 v4 [ label="808464432" ];
-c29 [ shape=record, label="{{<p21> A|<p22> B}|$187\n$add|{<p24> Y}}" ];
+c29 [ shape=record, label="{{<p21> A|<p22> B}|$213\n$add|{<p24> Y}}" ];
 x5 [shape=box, style=rounded, label="BUF"];
 x6 [shape=box, style=rounded, label="BUF"];
 x7 [shape=box, style=rounded, label="BUF"];
