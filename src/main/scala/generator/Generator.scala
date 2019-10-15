@@ -3,6 +3,8 @@ package sadie.generator
 import chisel3._
 import chisel3.util._
 import chisel3.experimental.MultiIOModule
+import envelope.EnvelopeImpl
+import instruments.{Sawtooth, Sine, Square, Triangle}
 import sadie.communication._
 import sadie.config.config
 
@@ -61,7 +63,6 @@ class Generator extends MultiIOModule{
   }
   when (io.step_sample) {
     note_life      := note_life + 1.U
-
     when (wavelength_pos >= wavelength) {
       wavelength_pos := 0.U
     } otherwise {
@@ -72,72 +73,54 @@ class Generator extends MultiIOModule{
 
   val current_sample = Wire(SInt(16.W))
   current_sample := 0.S
+
+  val square = Module(new Square()).io
+  square.wavelength := wavelength
+  square.wavelength_pos := wavelength_pos
+  square.note_life := note_life
+
+  val triangle = Module(new Triangle()).io
+  triangle.wavelength := wavelength
+  triangle.wavelength_pos := wavelength_pos
+  triangle.note_life := note_life
+
+  val sawtooth = Module(new Sawtooth()).io
+  sawtooth.wavelength := wavelength
+  sawtooth.wavelength_pos := wavelength_pos
+  sawtooth.note_life := note_life
+
+  val sine = Module(new Sine()).io
+  sine.wavelength := wavelength
+  sine.wavelength_pos := wavelength_pos
+  sine.note_life := note_life
+
   switch (generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE) {
-      when ((wavelength_pos << 1).asUInt() > wavelength) {
-        current_sample := (-config.SAMPLE_MAX).S
-      } otherwise {
-        current_sample := config.SAMPLE_MAX.S
-      }
+      current_sample := square.sample_out
     }
     is (config.InstrumentEnum.TRIANGLE) {
-      val half = Wire(UInt())
-      val quarter = Wire(UInt())
-      val pos = Wire(UInt())
-
-      half := wavelength_pos >>1
-      quarter := wavelength_pos >>2
-
-      when(wavelength_pos > (half + quarter)) {
-        pos := wavelength_pos - (half + quarter)
-      }.otherwise {
-        pos := wavelength_pos + quarter
-      }
-      current_sample := ((pos - half).asUInt() - quarter).asSInt() * config.SAMPLE_MAX.asSInt() / quarter.asSInt()
+      current_sample := triangle.sample_out
     }
     is (config.InstrumentEnum.SAWTOOTH) {
-      current_sample := ((((wavelength_pos) << 1) - wavelength) * config.SAMPLE_MAX.S) / wavelength.asSInt()
+      current_sample := sawtooth.sample_out
     }
     is (config.InstrumentEnum.SINE) {
-
-      //See: https://en.wikipedia.org/wiki/Bhaskara_I%27s_sine_approximation_formula
-
-      val angleValue = Wire(SInt())
-      angleValue := 2.S * 314.S * note_life / wavelength.asSInt()
-      current_sample := config.SAMPLE_MAX.asSInt() * ((4.S * angleValue * (180.S - angleValue)) / (40500.S - angleValue * (180.S - angleValue))).asSInt()
+      current_sample := sine.sample_out
     }
   }
 
-  /*
-  Here is the envelope implementation. It is taken pretty directly from the reference implementation
-   */
-  val envelope = io.global_config.envelope
-  val life = Wire(UInt(32.W))
-  val scaled_sustain = Wire(UInt(16.W))
-  val envelope_effect = Wire(UInt(16.W))
   val last_active_envelope_effect = RegInit(UInt(16.W), 0.U)
+  val envelope_impl = Module(new EnvelopeImpl()).io
 
-  life := note_life / config.NOTE_LIFE_COEFF.U
-  scaled_sustain := (envelope.sustain << 8).asUInt() | envelope.sustain
-
-  when(!generator_config.enabled) {
-    when (life < envelope.release) {
-      envelope_effect := last_active_envelope_effect * (envelope.release - life) / envelope.release
-    }.otherwise{
-      envelope_effect := 0.U
-    }
-  }.elsewhen(life < envelope.attack) {
-    envelope_effect := 0xffff.U * life / envelope.attack
-  }.elsewhen(life < envelope.attack + envelope.decay) {
-    envelope_effect := (envelope.decay - (life - envelope.attack)) * (0xffff.U - scaled_sustain) / envelope.decay + scaled_sustain
-  }.otherwise{
-    envelope_effect := scaled_sustain
-  }
+  envelope_impl.note_life := note_life
+  envelope_impl.envelope := io.global_config.envelope
+  envelope_impl.last_active_envelope_effect := last_active_envelope_effect
+  envelope_impl.enabled := generator_config.enabled
 
   when(generator_config.enabled){
-    last_active_envelope_effect := envelope_effect
+    last_active_envelope_effect := envelope_impl.envelope_effect
   }
 
-  io.sample_out := ((current_sample * envelope_effect.asSInt()).asSInt() >> 16).asSInt() *  generator_config.velocity.asSInt()
+  io.sample_out := ((current_sample * envelope_impl.envelope_effect.asSInt()).asSInt() >> 16).asSInt() *  generator_config.velocity.asSInt()
 
 }

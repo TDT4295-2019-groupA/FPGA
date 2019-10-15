@@ -1,0 +1,75 @@
+digraph Square {
+stylesheet = "styles.css"
+rankdir="LR" 
+
+subgraph cluster_Square {
+  label="Square"
+  URL=""
+  bgcolor="#FFF8DC"
+  cluster_Square_io_wavelength [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_wavelength" rank="0"]
+     
+cluster_Square_io_wavelength_pos [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_wavelength_pos" rank="0"]
+     
+cluster_Square_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+mux_4578551 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">-32767</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">32767</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_gt_139 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > gt </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_shl_140 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_141 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+  op_shl_140:out -> op_gt_139:in1
+  cluster_Square_io_wavelength_pos -> op_shl_140:in1
+  op_gt_139:out -> mux_4578551:select
+  mux_4578551:out -> cluster_Square_io_sample_out
+  cluster_Square_io_wavelength -> op_pad_141:in1
+  op_pad_141:out -> op_gt_139:in2
+  
+  
+}
+     
+}

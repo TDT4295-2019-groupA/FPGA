@@ -82,6 +82,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -94,6 +153,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_1 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_1_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_1_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_1_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_1_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_1_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -106,6 +224,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_2 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_2_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_2_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_2_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_2_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_2_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -118,6 +295,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_3 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_3_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_3_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_3_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_3_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_3_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -130,6 +366,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_4 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_4_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_4_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_4_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_4_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_4_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -142,6 +437,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_5 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_5_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_5_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_5_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_5_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_5_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -154,6 +508,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_6 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_6_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_6_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_6_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_6_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_6_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -166,6 +579,65 @@ subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7 {
   URL="Generator.dot.svg"
   bgcolor="#FFF8DC"
   
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_TopModule_Top_SoundTopLevel_Generator_7_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#ADD8E6"
+  
+
+  
+  
+  
+}
+     
 
   
   

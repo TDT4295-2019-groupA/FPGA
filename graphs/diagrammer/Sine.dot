@@ -1,0 +1,347 @@
+digraph Sine {
+stylesheet = "styles.css"
+rankdir="LR" 
+
+subgraph cluster_Sine {
+  label="Sine"
+  URL=""
+  bgcolor="#FFF8DC"
+  cluster_Sine_io_wavelength [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_wavelength" rank="0"]
+     
+cluster_Sine_io_note_life [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_note_life" rank="0"]
+     
+cluster_Sine_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+cluster_Sine_angleValue [label = "angleValue" shape="rectangle"]; 
+
+op_div_142 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > div </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asSInt_143 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asSInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_144 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_mul_145 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > mul </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_146 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_mul_147 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">2</TD>
+    <TD ROWSPAN="2" > mul </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">314</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_cvt_148 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > cvt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_149 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asSInt_150 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asSInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_mul_151 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">32767</TD>
+    <TD ROWSPAN="2" > mul </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_div_152 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > div </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_mul_153 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > mul </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_mul_154 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">4</TD>
+    <TD ROWSPAN="2" > mul </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_155 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asSInt_156 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asSInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_157 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_sub_158 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">180</TD>
+    <TD ROWSPAN="2" > sub </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_159 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asSInt_160 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asSInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_161 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_sub_162 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">40500</TD>
+    <TD ROWSPAN="2" > sub </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_mul_163 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > mul </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_asSInt_164 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > asSInt </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_tail_165 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > tail </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>1</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_sub_166 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">180</TD>
+    <TD ROWSPAN="2" > sub </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+  op_div_152:out -> op_mul_151:in2
+  op_asSInt_143:out -> op_div_142:in1
+  op_mul_147:out -> op_pad_146:in1
+  cluster_Sine_angleValue -> op_mul_163:in1
+  op_tail_165:out -> op_asSInt_164:in1
+  op_mul_163:out -> op_sub_162:in2
+  cluster_Sine_io_note_life -> op_cvt_148:in1
+  op_sub_162:out -> op_tail_161:in1
+  op_mul_153:out -> op_div_152:in1
+  cluster_Sine_angleValue -> op_sub_166:in2
+  op_pad_146:out -> op_mul_145:in1
+  op_tail_157:out -> op_asSInt_156:in1
+  op_sub_166:out -> op_tail_165:in1
+  op_tail_144:out -> op_asSInt_143:in1
+  op_mul_151:out -> cluster_Sine_io_sample_out
+  op_pad_155:out -> op_mul_153:in2
+  op_div_142:out -> cluster_Sine_angleValue
+  cluster_Sine_angleValue -> op_sub_158:in2
+  op_asSInt_164:out -> op_mul_163:in2
+  op_sub_158:out -> op_tail_157:in1
+  cluster_Sine_angleValue -> op_mul_154:in2
+  op_asSInt_150:out -> op_pad_149:in1
+  op_mul_145:out -> op_tail_144:in1
+  cluster_Sine_io_wavelength -> op_asSInt_150:in1
+  op_pad_159:out -> op_div_152:in2
+  op_pad_149:out -> op_div_142:in2
+  op_mul_154:out -> op_mul_153:in1
+  op_cvt_148:out -> op_mul_145:in2
+  op_asSInt_156:out -> op_pad_155:in1
+  op_tail_161:out -> op_asSInt_160:in1
+  op_asSInt_160:out -> op_pad_159:in1
+  
+  
+}
+     
+}
