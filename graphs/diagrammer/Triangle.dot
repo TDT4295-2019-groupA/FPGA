@@ -40,7 +40,7 @@ op_shr_138 [shape = "plaintext" label=<
        
 cluster_Triangle_pos [label = "pos" shape="rectangle"]; 
 
-mux_1631069564 [shape = "plaintext" label=<
+mux_1103487145 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -384,15 +384,16 @@ op_asSInt_166 [shape = "plaintext" label=<
   op_sub_146:out -> op_asUInt_145:in1
   op_asUInt_161:out -> op_tail_160:in1
   cluster_Triangle_io_wavelength_pos -> op_gt_139:in1
-  op_tail_151:out -> mux_1631069564:in2
   op_tail_160:out -> op_sub_159:in1
   op_pad_163:out -> op_sub_162:in2
   cluster_Triangle_io_wavelength_pos -> op_sub_146:in1
   op_shr_137:out -> cluster_Triangle_half
   op_tail_157:out -> op_asSInt_156:in1
   cluster_Triangle_quarter -> op_pad_143:in1
+  op_gt_139:out -> mux_1103487145:select
   op_tail_148:out -> op_pad_147:in1
   op_sub_162:out -> op_asUInt_161:in1
+  op_tail_151:out -> mux_1103487145:in2
   op_pad_150:out -> op_add_149:in2
   op_pad_143:out -> op_add_142:in2
   cluster_Triangle_quarter -> op_asSInt_166:in1
@@ -400,7 +401,6 @@ op_asSInt_166 [shape = "plaintext" label=<
   cluster_Triangle_io_wavelength_pos -> op_shr_137:in1
   op_pad_165:out -> op_div_154:in2
   cluster_Triangle_quarter -> op_pad_153:in1
-  op_tail_144:out -> mux_1631069564:in1
   op_div_154:out -> cluster_Triangle_io_sample_out
   cluster_Triangle_pos -> op_sub_162:in1
   op_tail_141:out -> op_pad_140:in1
@@ -413,7 +413,7 @@ op_asSInt_166 [shape = "plaintext" label=<
   op_pad_164:out -> op_sub_159:in2
   cluster_Triangle_io_wavelength_pos -> op_shr_138:in1
   op_shr_138:out -> cluster_Triangle_quarter
-  op_gt_139:out -> mux_1631069564:select
+  op_tail_144:out -> mux_1103487145:in1
   op_asUInt_145:out -> op_tail_144:in1
   cluster_Triangle_half -> op_add_142:in1
   op_add_142:out -> op_tail_141:in1
@@ -421,7 +421,7 @@ op_asSInt_166 [shape = "plaintext" label=<
   op_mul_155:out -> op_div_154:in1
   op_pad_147:out -> op_sub_146:in2
   cluster_Triangle_quarter -> op_pad_164:in1
-  mux_1631069564:out -> cluster_Triangle_pos
+  mux_1103487145:out -> cluster_Triangle_pos
   cluster_Triangle_io_wavelength_pos -> op_add_152:in1
   
   
