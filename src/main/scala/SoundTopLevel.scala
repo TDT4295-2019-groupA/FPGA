@@ -18,14 +18,6 @@ class SoundTopLevel() extends MultiIOModule {
       val sample_out                    = Output(SInt(32.W)) // TODO: define when this is valid
     }
   )
-  val debug = IO(
-    new Bundle {
-      val volume_out = Output(UInt())
-      val envelope_out = Output(UInt())
-      val pitchwheel_out = Output(UInt())
-      val gen7_out = Output(SInt())
-    }
-  )
 
   // global generator state
   val global_config = Reg(new GlobalUpdate)
@@ -53,19 +45,7 @@ class SoundTopLevel() extends MultiIOModule {
     when(io.generator_update_packet.generator_index === (i-1).U) {
       generator.generator_update_valid := io.generator_update_packet_valid
     }
-
-    if(i == 7) { // TODO: remove this, it won't allow synthing with less than 7 generators due to it leaving a unconnected output
-      debug.gen7_out := generator.sample_out
-    }
   }
-
-  // debug. remove this?
-  debug.volume_out := global_config.volume
-  debug.envelope_out := global_config.envelope.asUInt()
-  debug.pitchwheel_out := global_config.pitchwheels.asUInt()
-
-//  printf("generator_index %d\n", io.generator_update_packet.generator_index)
-
 }
 
 // we are unable to assign BigInts to Bundles in PeekPokeTester,

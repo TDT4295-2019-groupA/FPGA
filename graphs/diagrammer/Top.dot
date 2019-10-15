@@ -39,6 +39,8 @@ cluster_Top_SoundTopLevel_io_generator_update_packet_generator_index [shape = "r
      
 cluster_Top_SoundTopLevel_io_generator_update_packet_data_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_reset_note" rank="0"]
      
+cluster_Top_SoundTopLevel_io_generator_update_packet_data_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_enabled" rank="0"]
+     
 cluster_Top_SoundTopLevel_io_generator_update_packet_data_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_instrument" rank="0"]
      
 cluster_Top_SoundTopLevel_io_generator_update_packet_data_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_note_index" rank="0"]
@@ -48,6 +50,14 @@ cluster_Top_SoundTopLevel_io_generator_update_packet_data_velocity [shape = "rec
 cluster_Top_SoundTopLevel_io_global_update_packet_valid [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_valid" rank="0"]
      
 cluster_Top_SoundTopLevel_io_global_update_packet_data_volume [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_volume" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_attack" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_decay" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_sustain" rank="0"]
+     
+cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_release" rank="0"]
      
 cluster_Top_SoundTopLevel_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
@@ -71,6 +81,65 @@ subgraph cluster_Top_SoundTopLevel_Generator {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -83,6 +152,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_1 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_1_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_1_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_1_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_1_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_1_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -95,6 +223,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_2 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_2_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_2_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_2_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_2_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_2_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -107,6 +294,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_3 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_3_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_3_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_3_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_3_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_3_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -119,6 +365,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_4 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_4_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_4_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_4_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_4_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_4_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -131,6 +436,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_5 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_5_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_5_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_5_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_5_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_5_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -143,6 +507,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_6 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_6_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_6_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_6_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_6_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_6_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -155,6 +578,65 @@ subgraph cluster_Top_SoundTopLevel_Generator_7 {
   URL="Generator.dot.svg"
   bgcolor="#FFB6C1"
   
+subgraph cluster_Top_SoundTopLevel_Generator_7_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_7_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_7_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_7_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_Top_SoundTopLevel_Generator_7_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFF8DC"
+  
+
+  
+  
+  
+}
+     
 
   
   
@@ -267,7 +749,7 @@ struct_cluster_Top_value [shape="plaintext" label=<
   </TR>
 </TABLE>>];
 
-op_and_185 [shape = "plaintext" label=<
+op_and_317 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -280,7 +762,7 @@ op_and_185 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_186 [shape = "plaintext" label=<
+op_bits_318 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -293,7 +775,7 @@ op_bits_186 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_187 [shape = "plaintext" label=<
+op_and_319 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -306,7 +788,7 @@ op_and_187 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_188 [shape = "plaintext" label=<
+op_bits_320 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -319,7 +801,7 @@ op_bits_188 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_189 [shape = "plaintext" label=<
+op_and_321 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -332,7 +814,7 @@ op_and_189 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_496150690 [shape = "plaintext" label=<
+mux_956842067 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -345,7 +827,7 @@ mux_496150690 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_190 [shape = "plaintext" label=<
+op_eq_322 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">0</TD>
@@ -358,7 +840,7 @@ op_eq_190 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1556367501 [shape = "plaintext" label=<
+mux_632388676 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -371,7 +853,7 @@ mux_1556367501 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_191 [shape = "plaintext" label=<
+op_eq_323 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">1</TD>
@@ -384,7 +866,7 @@ op_eq_191 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_192 [shape = "plaintext" label=<
+op_eq_324 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">2</TD>
@@ -397,7 +879,7 @@ op_eq_192 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_193 [shape = "plaintext" label=<
+op_bits_325 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -410,7 +892,7 @@ op_bits_193 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_or_194 [shape = "plaintext" label=<
+op_or_326 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -423,7 +905,7 @@ op_or_194 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_195 [shape = "plaintext" label=<
+op_pad_327 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -433,7 +915,7 @@ op_pad_195 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_196 [shape = "plaintext" label=<
+op_shl_328 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -446,7 +928,7 @@ op_shl_196 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_197 [shape = "plaintext" label=<
+op_bits_329 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -459,7 +941,7 @@ op_bits_197 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_198 [shape = "plaintext" label=<
+op_bits_330 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -472,7 +954,7 @@ op_bits_198 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_199 [shape = "plaintext" label=<
+op_bits_331 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -485,7 +967,7 @@ op_bits_199 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_200 [shape = "plaintext" label=<
+op_pad_332 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -495,7 +977,7 @@ op_pad_200 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_201 [shape = "plaintext" label=<
+op_bits_333 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -508,7 +990,7 @@ op_bits_201 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_202 [shape = "plaintext" label=<
+op_bits_334 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -521,7 +1003,7 @@ op_bits_202 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_203 [shape = "plaintext" label=<
+op_bits_335 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -534,7 +1016,7 @@ op_bits_203 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_204 [shape = "plaintext" label=<
+op_bits_336 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -547,7 +1029,7 @@ op_bits_204 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_205 [shape = "plaintext" label=<
+op_bits_337 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -560,7 +1042,33 @@ op_bits_205 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_206 [shape = "plaintext" label=<
+op_bits_338 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(56, 56)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_339 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(95, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_340 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -573,7 +1081,7 @@ op_bits_206 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_or_207 [shape = "plaintext" label=<
+op_or_341 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -586,7 +1094,7 @@ op_or_207 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_or_208 [shape = "plaintext" label=<
+op_or_342 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -599,7 +1107,7 @@ op_or_208 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_or_209 [shape = "plaintext" label=<
+op_or_343 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -612,7 +1120,7 @@ op_or_209 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_210 [shape = "plaintext" label=<
+op_pad_344 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -622,7 +1130,7 @@ op_pad_210 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_211 [shape = "plaintext" label=<
+op_shl_345 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -635,7 +1143,7 @@ op_shl_211 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_212 [shape = "plaintext" label=<
+op_bits_346 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -648,7 +1156,7 @@ op_bits_212 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_213 [shape = "plaintext" label=<
+op_bits_347 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -661,7 +1169,7 @@ op_bits_213 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_214 [shape = "plaintext" label=<
+op_bits_348 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -674,7 +1182,7 @@ op_bits_214 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_215 [shape = "plaintext" label=<
+op_pad_349 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -684,7 +1192,7 @@ op_pad_215 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_216 [shape = "plaintext" label=<
+op_shl_350 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -697,7 +1205,7 @@ op_shl_216 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_217 [shape = "plaintext" label=<
+op_bits_351 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -710,7 +1218,7 @@ op_bits_217 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_218 [shape = "plaintext" label=<
+op_bits_352 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -723,7 +1231,7 @@ op_bits_218 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_219 [shape = "plaintext" label=<
+op_bits_353 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -736,7 +1244,7 @@ op_bits_219 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_220 [shape = "plaintext" label=<
+op_pad_354 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -746,7 +1254,7 @@ op_pad_220 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_221 [shape = "plaintext" label=<
+op_pad_355 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -756,7 +1264,7 @@ op_pad_221 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_222 [shape = "plaintext" label=<
+op_shl_356 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -769,7 +1277,7 @@ op_shl_222 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_223 [shape = "plaintext" label=<
+op_bits_357 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -782,7 +1290,7 @@ op_bits_223 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_224 [shape = "plaintext" label=<
+op_bits_358 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -795,7 +1303,7 @@ op_bits_224 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_225 [shape = "plaintext" label=<
+op_bits_359 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -808,7 +1316,7 @@ op_bits_225 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_226 [shape = "plaintext" label=<
+op_pad_360 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -818,7 +1326,7 @@ op_pad_226 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_227 [shape = "plaintext" label=<
+op_bits_361 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -831,7 +1339,7 @@ op_bits_227 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_228 [shape = "plaintext" label=<
+op_bits_362 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -844,7 +1352,7 @@ op_bits_228 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_229 [shape = "plaintext" label=<
+op_bits_363 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -857,7 +1365,7 @@ op_bits_229 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_230 [shape = "plaintext" label=<
+op_bits_364 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -870,7 +1378,7 @@ op_bits_230 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_231 [shape = "plaintext" label=<
+op_bits_365 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -883,7 +1391,7 @@ op_bits_231 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_232 [shape = "plaintext" label=<
+op_bits_366 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -896,7 +1404,7 @@ op_bits_232 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_233 [shape = "plaintext" label=<
+op_bits_367 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -909,7 +1417,7 @@ op_bits_233 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_234 [shape = "plaintext" label=<
+op_and_368 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -922,7 +1430,7 @@ op_and_234 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_497241315 [shape = "plaintext" label=<
+mux_1223697912 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -935,7 +1443,7 @@ mux_497241315 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_235 [shape = "plaintext" label=<
+op_eq_369 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">0</TD>
@@ -948,7 +1456,7 @@ op_eq_235 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_236 [shape = "plaintext" label=<
+op_eq_370 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">1</TD>
@@ -961,7 +1469,7 @@ op_eq_236 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_237 [shape = "plaintext" label=<
+op_bits_371 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -974,7 +1482,7 @@ op_bits_237 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_238 [shape = "plaintext" label=<
+op_bits_372 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -987,7 +1495,444 @@ op_bits_238 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_239 [shape = "plaintext" label=<
+op_bits_373 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_374 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_375 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_shl_376 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_377 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_378 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(183, 168)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_379 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_380 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_381 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 8)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_382 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(183, 168)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_383 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_384 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_385 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_386 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_shl_387 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_388 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_389 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(167, 152)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_390 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_391 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_392 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 8)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_393 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(167, 152)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_394 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_395 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(151, 144)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_396 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_397 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_or_398 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > or </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_399 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_shl_400 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > shl </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>8</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_401 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(7, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_402 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(143, 128)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_403 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_404 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD > pad </TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_405 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(15, 8)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_406 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(143, 128)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_bits_407 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" > bits </TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD>(199, 0)</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_eq_408 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1000,7 +1945,7 @@ op_eq_239 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_2025095639 [shape = "plaintext" label=<
+mux_827712618 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1013,7 +1958,7 @@ mux_2025095639 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1192622225 [shape = "plaintext" label=<
+mux_2092792307 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1026,7 +1971,7 @@ mux_1192622225 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_240 [shape = "plaintext" label=<
+op_eq_409 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1039,7 +1984,7 @@ op_eq_240 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_2027078114 [shape = "plaintext" label=<
+mux_1566001382 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1052,7 +1997,7 @@ mux_2027078114 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_1205904927 [shape = "plaintext" label=<
+mux_1728872842 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -1065,7 +2010,7 @@ mux_1205904927 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_241 [shape = "plaintext" label=<
+op_eq_410 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1078,7 +2023,7 @@ op_eq_241 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_242 [shape = "plaintext" label=<
+op_tail_411 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1091,7 +2036,7 @@ op_tail_242 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_243 [shape = "plaintext" label=<
+op_add_412 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1104,7 +2049,7 @@ op_add_243 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_244 [shape = "plaintext" label=<
+op_bits_413 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1117,7 +2062,7 @@ op_bits_244 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_513817369 [shape = "plaintext" label=<
+mux_1288528353 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1130,7 +2075,7 @@ mux_513817369 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_245 [shape = "plaintext" label=<
+op_bits_414 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1143,7 +2088,7 @@ op_bits_245 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_246 [shape = "plaintext" label=<
+op_asUInt_415 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1153,7 +2098,7 @@ op_asUInt_246 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asSInt_247 [shape = "plaintext" label=<
+op_asSInt_416 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1163,7 +2108,7 @@ op_asSInt_247 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_248 [shape = "plaintext" label=<
+op_tail_417 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1176,7 +2121,7 @@ op_tail_248 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_249 [shape = "plaintext" label=<
+op_add_418 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1189,7 +2134,7 @@ op_add_249 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_250 [shape = "plaintext" label=<
+op_pad_419 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1199,7 +2144,7 @@ op_pad_250 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_251 [shape = "plaintext" label=<
+op_shl_420 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1212,7 +2157,7 @@ op_shl_251 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_426113556 [shape = "plaintext" label=<
+mux_554087806 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1225,7 +2170,7 @@ mux_426113556 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_bits_252 [shape = "plaintext" label=<
+op_bits_421 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1238,7 +2183,7 @@ op_bits_252 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_253 [shape = "plaintext" label=<
+op_asUInt_422 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1248,7 +2193,7 @@ op_asUInt_253 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asSInt_254 [shape = "plaintext" label=<
+op_asSInt_423 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1258,7 +2203,7 @@ op_asSInt_254 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_255 [shape = "plaintext" label=<
+op_tail_424 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1271,7 +2216,7 @@ op_tail_255 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_256 [shape = "plaintext" label=<
+op_add_425 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1284,7 +2229,7 @@ op_add_256 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_257 [shape = "plaintext" label=<
+op_pad_426 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1294,7 +2239,7 @@ op_pad_257 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_258 [shape = "plaintext" label=<
+op_shl_427 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1307,7 +2252,7 @@ op_shl_258 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_259 [shape = "plaintext" label=<
+op_pad_428 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1317,7 +2262,7 @@ op_pad_259 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_260 [shape = "plaintext" label=<
+op_asUInt_429 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1327,7 +2272,7 @@ op_asUInt_260 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asSInt_261 [shape = "plaintext" label=<
+op_asSInt_430 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1337,7 +2282,7 @@ op_asSInt_261 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_262 [shape = "plaintext" label=<
+op_tail_431 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1350,7 +2295,7 @@ op_tail_262 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_263 [shape = "plaintext" label=<
+op_add_432 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1363,7 +2308,7 @@ op_add_263 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_264 [shape = "plaintext" label=<
+op_pad_433 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1373,143 +2318,188 @@ op_pad_264 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  op_tail_248:out -> op_asSInt_247:in1
-  struct_cluster_Top_saved_sample:out -> op_shl_258:in1
-  struct_cluster_Top_value:out -> op_eq_239:in1
-  op_bits_199:out -> op_bits_198:in1
-  op_bits_233:out -> op_bits_232:in1
+  op_asSInt_423:out -> op_asUInt_422:in1
+  cluster_Top_reset -> mux_1566001382:select
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_403:in1
+  op_add_418:out -> op_tail_417:in1
   cluster_Top_SPISlave_io_RX_data_valid -> cluster_Top_SPIInputHandler_io_RX_data_valid
-  mux_1192622225:out -> mux_2025095639:in2
-  op_asSInt_247:out -> op_asUInt_246:in1
-  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_191:in2
-  op_eq_239:out -> cluster_Top_SoundTopLevel_io_step_sample
-  op_bits_228:out -> op_bits_227:in1
-  op_bits_232:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_velocity
-  cluster_Top_PWM_io_high -> op_and_187:in2
-  mux_2025095639:out -> struct_cluster_Top_saved_sample:in
-  op_bits_230:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_note_index
-  op_shl_222:out -> op_pad_221:in1
-  op_pad_264:out -> op_add_263:in1
+  cluster_Top_io_sw -> op_bits_320:in1
+  op_pad_355:out -> op_pad_354:in1
+  op_eq_408:out -> cluster_Top_SoundTopLevel_io_step_sample
+  op_bits_392:out -> op_pad_391:in1
+  op_tail_424:out -> op_asSInt_423:in1
+  op_or_385:out -> op_bits_384:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_337:in1
+  cluster_Top_SPIInputHandler_io_packet_valid -> op_and_321:in1
+  op_asUInt_422:out -> mux_554087806:in1
+  op_bits_353:out -> op_bits_352:in1
+  op_bits_366:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_velocity
+  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_369:in2
+  op_pad_380:out -> op_or_374:in2
+  mux_827712618:out -> struct_cluster_Top_saved_sample:in
+  op_bits_329:out -> op_shl_328:in1
+  op_bits_364:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_note_index
+  op_bits_388:out -> op_shl_387:in1
+  op_bits_389:out -> op_bits_388:in1
   cluster_Top_reset -> cluster_Top_PWM_reset
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_214:in1
   cluster_Top_io_spi_clk -> cluster_Top_SPISlave_io_spi_clk
-  op_asUInt_246:out -> mux_513817369:in1
-  mux_2027078114:out -> struct_cluster_Top_value:in
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_233:in1
-  op_bits_202:out -> op_bits_201:in1
-  op_eq_190:out -> mux_496150690:select
-  op_shl_258:out -> op_pad_257:in1
-  struct_cluster_Top_saved_sample:out -> mux_1192622225:in2
-  op_add_263:out -> op_tail_262:in1
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_199:in1
-  op_bits_219:out -> op_bits_218:in1
-  op_or_208:out -> op_or_207:in1
-  op_bits_188:out -> op_and_187:in1
-  struct_cluster_Top_saved_sample:out -> op_shl_251:in1
+  op_bits_394:out -> op_bits_393:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_407:in1
+  op_bits_372:out -> op_bits_371:in1
+  mux_1566001382:out -> struct_cluster_Top_value:in
+  cluster_Top_PWM_io_high -> op_and_317:in2
+  struct_cluster_Top_saved_sample:out -> op_pad_433:in1
+  op_shl_400:out -> op_pad_399:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_390:in1
+  op_eq_324:out -> mux_632388676:in2
+  op_bits_339:out -> op_bits_338:in1
+  op_pad_349:out -> op_or_343:in2
+  op_bits_361:out -> op_pad_360:in1
+  op_or_398:out -> op_bits_397:in1
+  mux_1288528353:out -> op_bits_413:in1
+  op_bits_357:out -> op_shl_356:in1
+  op_bits_363:out -> op_bits_362:in1
+  cluster_Top_reset -> mux_827712618:select
+  op_eq_370:out -> mux_1223697912:in2
   cluster_Top_io_spi_mosi -> cluster_Top_SPISlave_io_spi_mosi
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_205:in1
-  op_bits_238:out -> op_bits_237:in1
-  cluster_Top_io_sw -> op_bits_186:in1
-  struct_cluster_Top_value:out -> op_eq_241:in1
-  op_bits_225:out -> op_bits_224:in1
-  mux_1205904927:out -> mux_2027078114:in2
+  op_shl_387:out -> op_pad_386:in1
+  op_or_326:out -> op_bits_325:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_394:in1
+  op_bits_348:out -> op_bits_347:in1
+  mux_1223697912:out -> op_and_368:in2
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_379:in1
+  op_shl_350:out -> op_pad_349:in1
+  op_bits_333:out -> op_pad_332:in1
+  op_bits_331:out -> op_bits_330:in1
+  op_or_343:out -> op_or_342:in1
+  op_asUInt_415:out -> mux_1288528353:in1
+  op_bits_367:out -> op_bits_366:in1
+  op_bits_335:out -> op_bits_334:in1
   cluster_Top_SPISlave_io_RX_data -> cluster_Top_SPIInputHandler_io_RX_data
-  op_tail_242:out -> mux_1205904927:in2
-  op_pad_215:out -> op_or_209:in2
-  op_eq_240:out -> mux_1192622225:select
-  op_bits_227:out -> op_pad_226:in1
-  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_192:in2
-  op_or_209:out -> op_or_208:in1
-  op_pad_195:out -> op_or_194:in1
-  cluster_Top_SPIInputHandler_io_packet_valid -> op_and_234:in1
-  op_bits_229:out -> op_bits_228:in1
-  op_bits_244:out -> cluster_Top_PWM_io_target
-  op_shl_251:out -> op_pad_250:in1
-  op_bits_193:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_generator_index
-  op_bits_201:out -> op_pad_200:in1
-  cluster_Top_PWM_io_high -> op_and_185:in2
-  op_bits_231:out -> op_bits_230:in1
-  cluster_Top_io_sw -> op_bits_252:in1
-  op_pad_250:out -> op_add_249:in1
-  op_eq_192:out -> mux_1556367501:in2
-  op_asSInt_254:out -> op_asUInt_253:in1
-  op_add_249:out -> op_tail_248:in1
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_219:in1
-  op_tail_255:out -> op_asSInt_254:in1
-  op_bits_245:out -> mux_513817369:select
+  struct_cluster_Top_value:out -> op_add_412:in1
+  op_bits_382:out -> op_bits_381:in1
+  op_eq_369:out -> mux_1223697912:select
+  op_bits_330:out -> op_bits_329:in1
+  op_eq_322:out -> mux_956842067:select
+  struct_cluster_Top_saved_sample:out -> mux_2092792307:in2
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_331:in1
+  op_asUInt_429:out -> op_pad_428:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_353:in1
+  op_shl_356:out -> op_pad_355:in1
+  op_bits_413:out -> cluster_Top_PWM_io_target
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_348:in1
+  op_bits_318:out -> op_and_317:in1
+  op_shl_328:out -> op_pad_327:in1
+  op_bits_390:out -> op_bits_389:in1
+  op_bits_325:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_generator_index
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_335:in1
+  op_bits_421:out -> mux_554087806:select
+  op_eq_410:out -> mux_1728872842:select
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_372:in1
+  op_or_341:out -> op_bits_340:in1
+  op_pad_375:out -> op_or_374:in1
+  op_bits_401:out -> op_shl_400:in1
+  op_bits_358:out -> op_bits_357:in1
+  op_pad_426:out -> op_add_425:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_339:in1
+  op_pad_404:out -> op_or_398:in2
   cluster_Top_SPISlave_io_spi_miso -> cluster_Top_io_spi_miso
-  op_bits_212:out -> op_shl_211:in1
-  op_bits_203:out -> op_bits_202:in1
-  mux_496150690:out -> op_and_189:in2
-  op_eq_241:out -> mux_1205904927:select
-  op_pad_259:out -> mux_426113556:in2
+  op_bits_384:out -> cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_decay
+  op_bits_414:out -> mux_1288528353:select
+  op_shl_420:out -> op_pad_419:in1
+  mux_1728872842:out -> mux_1566001382:in2
+  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_322:in2
+  op_add_425:out -> op_tail_424:in1
+  op_tail_431:out -> op_asSInt_430:in1
   cluster_Top_reset -> cluster_Top_SPIInputHandler_reset
   cluster_Top_reset -> cluster_Top_SPISlave_reset
-  op_bits_197:out -> op_shl_196:in1
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_238:in1
-  cluster_Top_SoundTopLevel_io_sample_out -> mux_1192622225:in1
-  op_or_207:out -> op_bits_206:in1
-  cluster_Top_reset -> mux_2027078114:select
-  op_shl_211:out -> op_pad_210:in1
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_203:in1
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_225:in1
-  op_bits_204:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_reset_note
+  op_bits_381:out -> op_pad_380:in1
+  op_bits_338:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_enabled
+  op_bits_351:out -> op_shl_350:in1
+  cluster_Top_io_sw -> op_bits_414:in1
+  op_bits_397:out -> cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_release
+  op_pad_391:out -> op_or_385:in2
+  cluster_Top_SoundTopLevel_io_sample_out -> mux_2092792307:in1
+  op_bits_396:out -> op_bits_395:in1
+  op_pad_344:out -> op_or_343:in1
+  op_bits_359:out -> op_bits_358:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_363:in1
+  op_add_412:out -> op_tail_411:in1
+  op_pad_332:out -> op_or_326:in2
+  op_bits_377:out -> op_shl_376:in1
+  op_bits_402:out -> op_bits_401:in1
+  op_tail_417:out -> op_asSInt_416:in1
+  mux_632388676:out -> mux_956842067:in2
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_367:in1
+  op_bits_336:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_reset_note
+  op_bits_383:out -> op_bits_382:in1
+  struct_cluster_Top_saved_sample:out -> op_shl_427:in1
+  cluster_Top_SPIInputHandler_io_packet_valid -> op_and_368:in1
   cluster_Top_io_spi_cs_n -> cluster_Top_SPISlave_io_spi_cs_n
-  op_eq_191:out -> mux_1556367501:select
-  op_eq_235:out -> mux_497241315:select
-  struct_cluster_Top_saved_sample:out -> op_pad_264:in1
-  op_pad_210:out -> op_or_209:in1
-  op_bits_213:out -> op_bits_212:in1
+  op_asSInt_416:out -> op_asUInt_415:in1
+  cluster_Top_PWM_io_high -> op_and_319:in2
+  op_pad_428:out -> mux_554087806:in2
+  op_bits_406:out -> op_bits_405:in1
+  mux_956842067:out -> op_and_321:in2
+  op_bits_365:out -> op_bits_364:in1
+  op_pad_433:out -> op_add_432:in1
   cluster_Top_clock -> cluster_Top_SoundTopLevel_clock
-  mux_513817369:out -> op_bits_244:in1
-  op_or_194:out -> op_bits_193:in1
-  op_eq_236:out -> mux_497241315:in2
-  op_pad_257:out -> op_add_256:in1
-  op_shl_196:out -> op_pad_195:in1
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_229:in1
-  op_bits_198:out -> op_bits_197:in1
-  op_and_189:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_valid
-  struct_cluster_Top_value:out -> op_add_243:in1
-  mux_426113556:out -> mux_513817369:in2
-  op_bits_237:out -> cluster_Top_SoundTopLevel_io_global_update_packet_data_volume
-  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_231:in1
-  op_asSInt_261:out -> op_asUInt_260:in1
-  op_bits_214:out -> op_bits_213:in1
-  op_bits_186:out -> op_and_185:in1
-  op_asUInt_260:out -> op_pad_259:in1
+  op_bits_352:out -> op_bits_351:in1
+  op_and_321:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_valid
+  op_pad_386:out -> op_or_385:in1
+  op_shl_376:out -> op_pad_375:in1
+  op_shl_427:out -> op_pad_426:in1
+  op_bits_346:out -> op_shl_345:in1
+  op_bits_371:out -> cluster_Top_SoundTopLevel_io_global_update_packet_data_volume
+  op_or_374:out -> op_bits_373:in1
+  op_bits_337:out -> op_bits_336:in1
+  op_pad_360:out -> op_or_341:in2
   cluster_Top_clock -> cluster_Top_PWM_clock
-  op_and_185:out -> cluster_Top_io_pwm_out_l
-  mux_1556367501:out -> mux_496150690:in2
-  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_235:in2
-  op_pad_221:out -> op_pad_220:in1
-  op_asUInt_253:out -> mux_426113556:in1
-  op_bits_252:out -> mux_426113556:select
-  cluster_Top_SPIInputHandler_io_packet_valid -> op_and_189:in1
-  op_bits_217:out -> op_shl_216:in1
-  cluster_Top_io_sw -> op_bits_188:in1
-  op_bits_218:out -> op_bits_217:in1
-  op_pad_226:out -> op_or_207:in2
-  op_bits_206:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_instrument
-  op_and_234:out -> cluster_Top_SoundTopLevel_io_global_update_packet_valid
-  op_and_187:out -> cluster_Top_io_pwm_out_r
-  op_tail_262:out -> op_asSInt_261:in1
-  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_190:in2
-  op_add_256:out -> op_tail_255:in1
-  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_236:in2
-  op_bits_205:out -> op_bits_204:in1
-  mux_497241315:out -> op_and_234:in2
+  op_and_317:out -> cluster_Top_io_pwm_out_l
+  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_370:in2
+  struct_cluster_Top_value:out -> op_eq_408:in1
+  struct_cluster_Top_saved_sample:out -> op_shl_420:in1
+  op_eq_409:out -> mux_2092792307:select
+  op_eq_323:out -> mux_632388676:select
+  op_bits_393:out -> op_bits_392:in1
+  op_bits_378:out -> op_bits_377:in1
+  op_bits_407:out -> op_bits_406:in1
+  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_323:in2
+  op_pad_399:out -> op_or_398:in1
+  op_pad_354:out -> op_or_342:in2
+  struct_cluster_Top_value:out -> op_eq_410:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_359:in1
+  op_tail_411:out -> mux_1728872842:in2
+  op_bits_340:out -> cluster_Top_SoundTopLevel_io_generator_update_packet_data_instrument
+  op_and_368:out -> cluster_Top_SoundTopLevel_io_global_update_packet_valid
+  op_asSInt_430:out -> op_asUInt_429:in1
+  op_shl_345:out -> op_pad_344:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_396:in1
+  op_and_319:out -> cluster_Top_io_pwm_out_r
+  op_bits_405:out -> op_pad_404:in1
+  op_pad_327:out -> op_or_326:in1
+  op_or_342:out -> op_or_341:in1
+  cluster_Top_SPIInputHandler_io_packet_magic -> op_eq_324:in2
+  op_bits_379:out -> op_bits_378:in1
+  struct_cluster_Top_value:out -> op_eq_409:in1
+  op_bits_347:out -> op_bits_346:in1
+  op_bits_403:out -> op_bits_402:in1
+  mux_554087806:out -> mux_1288528353:in2
+  op_bits_373:out -> cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_attack
+  op_bits_362:out -> op_bits_361:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_383:in1
+  op_add_432:out -> op_tail_431:in1
+  mux_2092792307:out -> mux_827712618:in2
+  op_pad_419:out -> op_add_418:in1
   cluster_Top_clock -> cluster_Top_SPIInputHandler_clock
   cluster_Top_clock -> cluster_Top_SPISlave_clock
+  cluster_Top_io_sw -> op_bits_318:in1
   cluster_Top_reset -> cluster_Top_SoundTopLevel_reset
-  cluster_Top_reset -> mux_2025095639:select
-  struct_cluster_Top_value:out -> op_eq_240:in1
-  op_add_243:out -> op_tail_242:in1
-  op_bits_224:out -> op_bits_223:in1
-  op_pad_200:out -> op_or_194:in2
-  op_shl_216:out -> op_pad_215:in1
-  cluster_Top_io_sw -> op_bits_245:in1
-  op_bits_223:out -> op_shl_222:in1
-  op_pad_220:out -> op_or_208:in2
+  op_bits_320:out -> op_and_319:in1
+  cluster_Top_io_sw -> op_bits_421:in1
+  op_bits_395:out -> cluster_Top_SoundTopLevel_io_global_update_packet_data_envelope_sustain
+  op_bits_334:out -> op_bits_333:in1
+  cluster_Top_SPIInputHandler_io_packet_data -> op_bits_365:in1
   
   
 }

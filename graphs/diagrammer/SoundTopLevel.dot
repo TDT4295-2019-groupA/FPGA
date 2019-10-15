@@ -16,6 +16,8 @@ cluster_SoundTopLevel_io_generator_update_packet_generator_index [shape = "recta
      
 cluster_SoundTopLevel_io_generator_update_packet_data_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_reset_note" rank="0"]
      
+cluster_SoundTopLevel_io_generator_update_packet_data_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_enabled" rank="0"]
+     
 cluster_SoundTopLevel_io_generator_update_packet_data_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_instrument" rank="0"]
      
 cluster_SoundTopLevel_io_generator_update_packet_data_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_packet_data_note_index" rank="0"]
@@ -25,6 +27,14 @@ cluster_SoundTopLevel_io_generator_update_packet_data_velocity [shape = "rectang
 cluster_SoundTopLevel_io_global_update_packet_valid [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_valid" rank="0"]
      
 cluster_SoundTopLevel_io_global_update_packet_data_volume [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_volume" rank="0"]
+     
+cluster_SoundTopLevel_io_global_update_packet_data_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_io_global_update_packet_data_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_io_global_update_packet_data_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_io_global_update_packet_data_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_update_packet_data_envelope_release" rank="0"]
      
 cluster_SoundTopLevel_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
@@ -74,15 +84,85 @@ cluster_SoundTopLevel_Generator_io_generator_update_valid [shape = "rectangle" s
      
 cluster_SoundTopLevel_Generator_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -103,15 +183,85 @@ cluster_SoundTopLevel_Generator_1_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_1_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_1_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_1_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_1_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_1_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_1_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_1_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_1_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_1_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_1_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_1_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_1_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_1_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_1_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_1_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_1_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -132,15 +282,85 @@ cluster_SoundTopLevel_Generator_2_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_2_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_2_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_2_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_2_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_2_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_2_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_2_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_2_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_2_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_2_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_2_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_2_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_2_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_2_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_2_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_2_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -161,15 +381,85 @@ cluster_SoundTopLevel_Generator_3_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_3_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_3_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_3_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_3_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_3_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_3_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_3_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_3_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_3_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_3_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_3_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_3_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_3_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_3_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_3_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_3_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -190,15 +480,85 @@ cluster_SoundTopLevel_Generator_4_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_4_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_4_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_4_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_4_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_4_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_4_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_4_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_4_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_4_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_4_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_4_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_4_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_4_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_4_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_4_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_4_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -219,15 +579,85 @@ cluster_SoundTopLevel_Generator_5_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_5_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_5_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_5_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_5_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_5_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_5_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_5_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_5_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_5_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_5_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_5_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_5_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_5_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_5_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_5_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_5_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -248,15 +678,85 @@ cluster_SoundTopLevel_Generator_6_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_6_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_6_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_6_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_6_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_6_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_6_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_6_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_6_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_6_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_6_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_6_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_6_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_6_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_6_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_6_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_6_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -277,15 +777,85 @@ cluster_SoundTopLevel_Generator_7_io_generator_update_valid [shape = "rectangle"
      
 cluster_SoundTopLevel_Generator_7_io_generator_update_reset_note [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_reset_note" rank="0"]
      
+cluster_SoundTopLevel_Generator_7_io_generator_update_enabled [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_enabled" rank="0"]
+     
 cluster_SoundTopLevel_Generator_7_io_generator_update_instrument [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_instrument" rank="0"]
      
 cluster_SoundTopLevel_Generator_7_io_generator_update_note_index [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_note_index" rank="0"]
      
 cluster_SoundTopLevel_Generator_7_io_generator_update_velocity [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_generator_update_velocity" rank="0"]
      
+cluster_SoundTopLevel_Generator_7_io_global_config_envelope_attack [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_attack" rank="0"]
+     
+cluster_SoundTopLevel_Generator_7_io_global_config_envelope_decay [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_decay" rank="0"]
+     
+cluster_SoundTopLevel_Generator_7_io_global_config_envelope_sustain [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_sustain" rank="0"]
+     
+cluster_SoundTopLevel_Generator_7_io_global_config_envelope_release [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_global_config_envelope_release" rank="0"]
+     
 cluster_SoundTopLevel_Generator_7_io_step_sample [shape = "rectangle" style="filled" fillcolor="#CCCCCC" label="io_step_sample" rank="0"]
      
 cluster_SoundTopLevel_Generator_7_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E0FFFF" label="io_sample_out" rank="1000"]
+     
+
+subgraph cluster_SoundTopLevel_Generator_7_Square {
+  label="Square"
+  URL="Square.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_7_Triangle {
+  label="Triangle"
+  URL="Triangle.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_7_Sawtooth {
+  label="Sawtooth"
+  URL="Sawtooth.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_7_Sine {
+  label="Sine"
+  URL="Sine.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
+     
+
+subgraph cluster_SoundTopLevel_Generator_7_EnvelopeImpl {
+  label="EnvelopeImpl"
+  URL="EnvelopeImpl.dot.svg"
+  bgcolor="#FFB6C1"
+  
+
+  
+  
+  
+}
      
 
   
@@ -301,8 +871,40 @@ struct_cluster_SoundTopLevel_global_config_volume [shape="plaintext" label=<
     <TD PORT="out">&#x25cf;</TD>
   </TR>
 </TABLE>>];
+struct_cluster_SoundTopLevel_global_config_envelope_attack [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>global_config_envelope_attack</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+struct_cluster_SoundTopLevel_global_config_envelope_decay [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>global_config_envelope_decay</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+struct_cluster_SoundTopLevel_global_config_envelope_sustain [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>global_config_envelope_sustain</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+struct_cluster_SoundTopLevel_global_config_envelope_release [shape="plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#FFE4B5">
+  <TR>
+    <TD PORT="in">&#x25cf;</TD>
+    <TD>global_config_envelope_release</TD>
+    <TD PORT="out">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
 
-mux_850282509 [shape = "plaintext" label=<
+mux_766547911 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -315,7 +917,59 @@ mux_850282509 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_115 [shape = "plaintext" label=<
+mux_625226145 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1132303051 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1662754261 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+mux_1004367734 [shape = "plaintext" label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
+  <TR>
+    <TD PORT="in1">&#x25cf;</TD>
+    <TD ROWSPAN="2" PORT="select">a?</TD>
+    <TD ROWSPAN="2" PORT="out">&#x25cf;</TD>
+  </TR>
+  <TR>
+    <TD PORT="in2">&#x25cf;</TD>
+  </TR>
+</TABLE>>];
+       
+
+op_pad_204 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -325,7 +979,7 @@ op_pad_115 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_116 [shape = "plaintext" label=<
+op_and_205 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -338,7 +992,7 @@ op_and_116 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_117 [shape = "plaintext" label=<
+op_eq_206 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -351,7 +1005,7 @@ op_eq_117 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_118 [shape = "plaintext" label=<
+op_and_207 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -364,7 +1018,7 @@ op_and_118 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_119 [shape = "plaintext" label=<
+op_eq_208 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -377,7 +1031,7 @@ op_eq_119 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_120 [shape = "plaintext" label=<
+op_and_209 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -390,7 +1044,7 @@ op_and_120 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_121 [shape = "plaintext" label=<
+op_eq_210 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -403,7 +1057,7 @@ op_eq_121 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_122 [shape = "plaintext" label=<
+op_and_211 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -416,7 +1070,7 @@ op_and_122 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_123 [shape = "plaintext" label=<
+op_eq_212 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -429,7 +1083,7 @@ op_eq_123 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_124 [shape = "plaintext" label=<
+op_and_213 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -442,7 +1096,7 @@ op_and_124 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_125 [shape = "plaintext" label=<
+op_eq_214 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -455,7 +1109,7 @@ op_eq_125 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_126 [shape = "plaintext" label=<
+op_and_215 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -468,7 +1122,7 @@ op_and_126 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_127 [shape = "plaintext" label=<
+op_eq_216 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -481,7 +1135,7 @@ op_eq_127 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_128 [shape = "plaintext" label=<
+op_and_217 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -494,7 +1148,7 @@ op_and_128 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_129 [shape = "plaintext" label=<
+op_eq_218 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -507,7 +1161,7 @@ op_eq_129 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_130 [shape = "plaintext" label=<
+op_and_219 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -520,7 +1174,7 @@ op_and_130 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_131 [shape = "plaintext" label=<
+op_eq_220 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -533,109 +1187,165 @@ op_eq_131 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_118:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_io_generator_update_note_index
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_3_io_generator_update_instrument
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_6_io_generator_update_note_index
-  struct_cluster_SoundTopLevel_global_config_volume:out -> mux_850282509:in2
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_119:in1
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_clock
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_sustain
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_4_io_step_sample
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_121:in1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_120:in2
+  op_eq_216:out -> op_and_215:in1
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_5_io_generator_update_enabled
+  op_eq_206:out -> op_and_205:in1
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_4_io_generator_update_reset_note
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_io_generator_update_velocity
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_7_io_generator_update_instrument
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_3_clock
+  op_eq_220:out -> op_and_219:in1
   cluster_SoundTopLevel_Generator_3_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_3
-  op_and_130:out -> cluster_SoundTopLevel_Generator_7_io_generator_update_valid
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_release
+  op_and_219:out -> cluster_SoundTopLevel_Generator_7_io_generator_update_valid
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_7_io_step_sample
-  struct_cluster_SoundTopLevel_global_config_volume:out -> op_pad_115:in1
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_125:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_207:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_sustain
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_1_reset
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_124:in2
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_6_clock
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_4_reset
-  op_eq_119:out -> op_and_118:in1
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_2_io_generator_update_velocity
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_128:in2
-  mux_850282509:out -> struct_cluster_SoundTopLevel_global_config_volume:in
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_attack
   cluster_SoundTopLevel_Generator_6_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_6
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_129:in1
+  mux_766547911:out -> struct_cluster_SoundTopLevel_global_config_volume:in
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_decay
+  op_eq_212:out -> op_and_211:in1
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_2_io_generator_update_enabled
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_attack
+  op_and_217:out -> cluster_SoundTopLevel_Generator_6_io_generator_update_valid
   cluster_SoundTopLevel_Generator_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_0
-  op_and_128:out -> cluster_SoundTopLevel_Generator_6_io_generator_update_valid
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_7_reset
-  op_eq_121:out -> op_and_120:in1
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_131:in1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_130:in2
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_213:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_1_io_generator_update_velocity
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_3_io_generator_update_note_index
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_4_io_generator_update_instrument
-  op_pad_115:out -> cluster_SoundTopLevel_Adder_io_volume
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_7_io_generator_update_enabled
+  op_pad_204:out -> cluster_SoundTopLevel_Adder_io_volume
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_io_generator_update_enabled
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_208:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_217:in2
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_1_io_generator_update_reset_note
-  op_eq_125:out -> op_and_124:in1
+  mux_1662754261:out -> struct_cluster_SoundTopLevel_global_config_envelope_sustain:in
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_3_io_generator_update_velocity
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_7_io_generator_update_note_index
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_4_io_generator_update_note_index
-  cluster_SoundTopLevel_io_global_update_packet_data_volume -> mux_850282509:in1
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_sustain
+  cluster_SoundTopLevel_io_global_update_packet_valid -> mux_1662754261:select
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_3_io_step_sample
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_5_io_generator_update_reset_note
-  op_and_126:out -> cluster_SoundTopLevel_Generator_5_io_generator_update_valid
-  op_eq_129:out -> op_and_128:in1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_116:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> mux_1004367734:in2
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_210:in1
+  op_and_215:out -> cluster_SoundTopLevel_Generator_5_io_generator_update_valid
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_attack
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_1_io_generator_update_instrument
-  op_eq_131:out -> op_and_130:in1
-  cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_2_io_generator_update_reset_note
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_decay
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_2_clock
+  cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_2_io_generator_update_reset_note
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_6_io_step_sample
+  struct_cluster_SoundTopLevel_global_config_volume:out -> op_pad_204:in1
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_5_io_generator_update_instrument
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_4_io_generator_update_velocity
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_4_io_generator_update_enabled
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_214:in1
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> mux_1132303051:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_io_step_sample
+  op_eq_208:out -> op_and_207:in1
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_218:in1
+  mux_1004367734:out -> struct_cluster_SoundTopLevel_global_config_envelope_release:in
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_attack
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_6_io_generator_update_reset_note
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_122:in2
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_5_clock
-  op_and_124:out -> cluster_SoundTopLevel_Generator_4_io_generator_update_valid
+  op_and_213:out -> cluster_SoundTopLevel_Generator_4_io_generator_update_valid
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_sustain
   cluster_SoundTopLevel_Generator_2_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_2
   cluster_SoundTopLevel_Generator_5_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_5
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_220:in1
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_1_io_generator_update_enabled
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_sustain
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_5_io_generator_update_velocity
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_decay
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_3_reset
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> mux_625226145:in2
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_reset
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_117:in1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_126:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> mux_1662754261:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_sustain
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_6_reset
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_1_io_generator_update_note_index
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_attack
+  op_eq_214:out -> op_and_213:in1
+  struct_cluster_SoundTopLevel_global_config_volume:out -> mux_766547911:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_decay
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_1_clock
-  op_and_122:out -> cluster_SoundTopLevel_Generator_3_io_generator_update_valid
+  op_and_211:out -> cluster_SoundTopLevel_Generator_3_io_generator_update_valid
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_io_generator_update_reset_note
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_123:in1
+  cluster_SoundTopLevel_io_global_update_packet_valid -> mux_766547911:select
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_6_io_generator_update_enabled
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_release
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_4_clock
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_2_io_step_sample
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_5_io_generator_update_note_index
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_206:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_205:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_attack
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_sustain
+  cluster_SoundTopLevel_io_global_update_packet_valid -> mux_625226145:select
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_2_io_generator_update_instrument
+  mux_1132303051:out -> struct_cluster_SoundTopLevel_global_config_envelope_decay:in
+  cluster_SoundTopLevel_io_global_update_packet_valid -> mux_1132303051:select
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_6_io_generator_update_velocity
-  op_and_120:out -> cluster_SoundTopLevel_Generator_2_io_generator_update_valid
+  op_eq_218:out -> op_and_217:in1
+  op_and_209:out -> cluster_SoundTopLevel_Generator_2_io_generator_update_valid
+  struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_release
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_2_reset
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_3_io_generator_update_reset_note
-  op_eq_117:out -> op_and_116:in1
+  cluster_SoundTopLevel_io_global_update_packet_data_envelope_release -> mux_1004367734:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_6_io_generator_update_instrument
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_127:in1
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_5_io_step_sample
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_209:in2
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_io_generator_update_instrument
+  cluster_SoundTopLevel_io_global_update_packet_data_envelope_attack -> mux_625226145:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_7_io_generator_update_reset_note
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_7_io_generator_update_velocity
+  cluster_SoundTopLevel_io_global_update_packet_data_envelope_decay -> mux_1132303051:in1
+  struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_sustain
+  struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_decay
+  cluster_SoundTopLevel_io_global_update_packet_data_volume -> mux_766547911:in1
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_1_io_step_sample
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_5_reset
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_212:in1
+  cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_3_io_generator_update_enabled
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_211:in2
   cluster_SoundTopLevel_Generator_7_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_7
-  op_and_116:out -> cluster_SoundTopLevel_Generator_io_generator_update_valid
+  op_and_205:out -> cluster_SoundTopLevel_Generator_io_generator_update_valid
   cluster_SoundTopLevel_Generator_1_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_1
-  op_and_118:out -> cluster_SoundTopLevel_Generator_1_io_generator_update_valid
-  cluster_SoundTopLevel_io_global_update_packet_valid -> mux_850282509:select
-  op_eq_123:out -> op_and_122:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_215:in2
+  op_and_207:out -> cluster_SoundTopLevel_Generator_1_io_generator_update_valid
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_216:in1
+  cluster_SoundTopLevel_io_global_update_packet_data_envelope_sustain -> mux_1662754261:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_2_io_generator_update_note_index
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_7_clock
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_attack
   cluster_SoundTopLevel_Generator_4_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_4
   cluster_SoundTopLevel_Adder_io_sample_out -> cluster_SoundTopLevel_io_sample_out
-  op_eq_127:out -> op_and_126:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_219:in2
+  struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_attack
+  op_eq_210:out -> op_and_209:in1
+  cluster_SoundTopLevel_io_global_update_packet_valid -> mux_1004367734:select
+  mux_625226145:out -> struct_cluster_SoundTopLevel_global_config_envelope_attack:in
   
   
 }
