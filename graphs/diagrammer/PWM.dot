@@ -23,7 +23,7 @@ struct_cluster_PWM_counter [shape="plaintext" label=<
   </TR>
 </TABLE>>];
 
-mux_457861333 [shape = "plaintext" label=<
+mux_659478800 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -49,7 +49,7 @@ op_gt_130 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-mux_412402672 [shape = "plaintext" label=<
+mux_807391045 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#AFEEEE">
   <TR>
     <TD PORT="in1">0</TD>
@@ -88,15 +88,15 @@ op_add_132 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  op_gt_130:out -> mux_457861333:select
-  op_tail_131:out -> mux_412402672:in2
+  op_tail_131:out -> mux_807391045:in2
   cluster_PWM_io_target -> op_gt_130:in2
   struct_cluster_PWM_counter:out -> op_add_132:in1
-  mux_412402672:out -> struct_cluster_PWM_counter:in
+  op_gt_130:out -> mux_659478800:select
+  mux_807391045:out -> struct_cluster_PWM_counter:in
   op_add_132:out -> op_tail_131:in1
-  mux_457861333:out -> cluster_PWM_io_high
+  mux_659478800:out -> cluster_PWM_io_high
   struct_cluster_PWM_counter:out -> op_gt_130:in1
-  cluster_PWM_reset -> mux_412402672:select
+  cluster_PWM_reset -> mux_807391045:select
   
   
 }
