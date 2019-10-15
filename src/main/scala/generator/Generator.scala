@@ -49,46 +49,10 @@ class Generator extends MultiIOModule{
   note_divide := generator_config.note_index / 12.U
   wavelength_base := 0.U
 
-  for (i <- 0 until 12) {
-    lookup_value_array(i) = i.U -> freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.U
-  }
-
-  switch(note_remainder) {
-    is (0.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (1.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (2.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (3.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (4.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (5.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (6.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (7.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (8.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (9.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (10.U) {
-      wavelength_base := lookup_value_array(0)._2
-    }
-    is (11.U) {
-      wavelength_base := lookup_value_array(0)._2
+  wavelength_base := DontCare
+  for (i <- 0 until 11) {
+    when (note_remainder === i.U) {
+      wavelength_base := freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.U
     }
   }
 
