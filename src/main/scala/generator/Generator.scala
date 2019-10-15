@@ -43,15 +43,56 @@ class Generator extends MultiIOModule{
   val lookup_value_array = new Array[(UInt, UInt)](12)
   val note_remainder: UInt = Wire(UInt())
   val note_divide: UInt = Wire(UInt())
+  val wavelength_base: UInt = Wire(UInt())
 
   note_remainder := generator_config.note_index % 12.U
   note_divide := generator_config.note_index / 12.U
+  wavelength_base := 0.U
 
   for (i <- 0 until 12) {
     lookup_value_array(i) = i.U -> freq_to_wavelength_in_samples(fpga_note_index_to_freq(i)).toInt.U
   }
 
-  val wavelength = (MuxLookup(note_remainder, 0.U (32.W), lookup_value_array) >> note_divide).asUInt()
+  switch(note_remainder) {
+    is (0.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (1.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (2.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (3.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (4.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (5.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (6.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (7.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (8.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (9.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (10.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+    is (11.U) {
+      wavelength_base := lookup_value_array(0)._2
+    }
+  }
+
+  val wavelength = wavelength_base >> note_divide //(MuxLookup(1.U, 0.U (32.W), lookup_value_array) >> note_divide).asUInt()
 
   // handle input
   when (io.generator_update_valid) {

@@ -969,7 +969,7 @@ mux_1004367734 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_204 [shape = "plaintext" label=<
+op_pad_169 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -979,7 +979,7 @@ op_pad_204 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_205 [shape = "plaintext" label=<
+op_and_170 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -992,7 +992,7 @@ op_and_205 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_206 [shape = "plaintext" label=<
+op_eq_171 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1005,7 +1005,7 @@ op_eq_206 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_207 [shape = "plaintext" label=<
+op_and_172 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1018,7 +1018,7 @@ op_and_207 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_208 [shape = "plaintext" label=<
+op_eq_173 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1031,7 +1031,7 @@ op_eq_208 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_209 [shape = "plaintext" label=<
+op_and_174 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1044,7 +1044,7 @@ op_and_209 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_210 [shape = "plaintext" label=<
+op_eq_175 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1057,7 +1057,7 @@ op_eq_210 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_211 [shape = "plaintext" label=<
+op_and_176 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1070,7 +1070,7 @@ op_and_211 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_212 [shape = "plaintext" label=<
+op_eq_177 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1083,7 +1083,7 @@ op_eq_212 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_213 [shape = "plaintext" label=<
+op_and_178 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1096,7 +1096,7 @@ op_and_213 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_214 [shape = "plaintext" label=<
+op_eq_179 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1109,7 +1109,7 @@ op_eq_214 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_215 [shape = "plaintext" label=<
+op_and_180 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1122,7 +1122,7 @@ op_and_215 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_216 [shape = "plaintext" label=<
+op_eq_181 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1135,7 +1135,7 @@ op_eq_216 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_217 [shape = "plaintext" label=<
+op_and_182 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1148,7 +1148,7 @@ op_and_217 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_218 [shape = "plaintext" label=<
+op_eq_183 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1161,7 +1161,7 @@ op_eq_218 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_and_219 [shape = "plaintext" label=<
+op_and_184 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1174,7 +1174,7 @@ op_and_219 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_220 [shape = "plaintext" label=<
+op_eq_185 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -1189,52 +1189,56 @@ op_eq_220 [shape = "plaintext" label=<
 
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_io_generator_update_note_index
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_171:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_3_io_generator_update_instrument
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_6_io_generator_update_note_index
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_180:in2
+  op_eq_183:out -> op_and_182:in1
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_clock
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_sustain
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_4_io_step_sample
-  op_eq_216:out -> op_and_215:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_5_io_generator_update_enabled
-  op_eq_206:out -> op_and_205:in1
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_4_io_generator_update_reset_note
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_io_generator_update_velocity
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_7_io_generator_update_instrument
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_175:in1
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_3_clock
-  op_eq_220:out -> op_and_219:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_184:in2
+  struct_cluster_SoundTopLevel_global_config_volume:out -> op_pad_169:in1
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_179:in1
   cluster_SoundTopLevel_Generator_3_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_3
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_release
-  op_and_219:out -> cluster_SoundTopLevel_Generator_7_io_generator_update_valid
+  op_and_184:out -> cluster_SoundTopLevel_Generator_7_io_generator_update_valid
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_7_io_step_sample
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_207:in2
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_sustain
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_1_reset
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_6_clock
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_4_reset
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_181:in1
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_2_io_generator_update_velocity
+  op_eq_171:out -> op_and_170:in1
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_attack
   cluster_SoundTopLevel_Generator_6_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_6
   mux_766547911:out -> struct_cluster_SoundTopLevel_global_config_volume:in
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_decay
-  op_eq_212:out -> op_and_211:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_2_io_generator_update_enabled
+  op_eq_175:out -> op_and_174:in1
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_attack
-  op_and_217:out -> cluster_SoundTopLevel_Generator_6_io_generator_update_valid
+  op_and_182:out -> cluster_SoundTopLevel_Generator_6_io_generator_update_valid
   cluster_SoundTopLevel_Generator_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_0
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_7_reset
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_213:in2
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_release
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_185:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_1_io_generator_update_velocity
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_3_io_generator_update_note_index
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_4_io_generator_update_instrument
+  op_eq_179:out -> op_and_178:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_7_io_generator_update_enabled
-  op_pad_204:out -> cluster_SoundTopLevel_Adder_io_volume
+  op_pad_169:out -> cluster_SoundTopLevel_Adder_io_volume
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_io_generator_update_enabled
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_208:in1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_217:in2
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_1_io_generator_update_reset_note
   mux_1662754261:out -> struct_cluster_SoundTopLevel_global_config_envelope_sustain:in
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_3_io_generator_update_velocity
@@ -1245,8 +1249,8 @@ op_eq_220 [shape = "plaintext" label=<
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_3_io_step_sample
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_5_io_generator_update_reset_note
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> mux_1004367734:in2
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_210:in1
-  op_and_215:out -> cluster_SoundTopLevel_Generator_5_io_generator_update_valid
+  op_eq_181:out -> op_and_180:in1
+  op_and_180:out -> cluster_SoundTopLevel_Generator_5_io_generator_update_valid
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_attack
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_1_io_generator_update_instrument
@@ -1254,26 +1258,24 @@ op_eq_220 [shape = "plaintext" label=<
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_2_clock
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_2_io_generator_update_reset_note
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_6_io_step_sample
-  struct_cluster_SoundTopLevel_global_config_volume:out -> op_pad_204:in1
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_172:in2
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_release
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_5_io_generator_update_instrument
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_4_io_generator_update_velocity
+  op_eq_185:out -> op_and_184:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_4_io_generator_update_enabled
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_214:in1
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> mux_1132303051:in2
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_io_step_sample
-  op_eq_208:out -> op_and_207:in1
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_218:in1
   mux_1004367734:out -> struct_cluster_SoundTopLevel_global_config_envelope_release:in
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_attack
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_6_io_generator_update_reset_note
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_5_clock
-  op_and_213:out -> cluster_SoundTopLevel_Generator_4_io_generator_update_valid
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_176:in2
+  op_and_178:out -> cluster_SoundTopLevel_Generator_4_io_generator_update_valid
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_sustain
   cluster_SoundTopLevel_Generator_2_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_2
   cluster_SoundTopLevel_Generator_5_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_5
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_220:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_1_io_generator_update_enabled
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_1_io_global_config_envelope_sustain
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_5_io_generator_update_velocity
@@ -1284,13 +1286,14 @@ op_eq_220 [shape = "plaintext" label=<
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> mux_1662754261:in2
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_6_io_global_config_envelope_sustain
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_6_reset
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_182:in2
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_1_io_generator_update_note_index
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_attack
-  op_eq_214:out -> op_and_213:in1
   struct_cluster_SoundTopLevel_global_config_volume:out -> mux_766547911:in2
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_173:in1
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_decay
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_1_clock
-  op_and_211:out -> cluster_SoundTopLevel_Generator_3_io_generator_update_valid
+  op_and_176:out -> cluster_SoundTopLevel_Generator_3_io_generator_update_valid
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_io_generator_update_reset_note
   cluster_SoundTopLevel_io_global_update_packet_valid -> mux_766547911:select
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_6_io_generator_update_enabled
@@ -1298,52 +1301,49 @@ op_eq_220 [shape = "plaintext" label=<
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_4_clock
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_2_io_step_sample
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_5_io_generator_update_note_index
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_206:in1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_205:in2
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_attack
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_7_io_global_config_envelope_sustain
   cluster_SoundTopLevel_io_global_update_packet_valid -> mux_625226145:select
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_2_io_generator_update_instrument
   mux_1132303051:out -> struct_cluster_SoundTopLevel_global_config_envelope_decay:in
   cluster_SoundTopLevel_io_global_update_packet_valid -> mux_1132303051:select
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_177:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_6_io_generator_update_velocity
-  op_eq_218:out -> op_and_217:in1
-  op_and_209:out -> cluster_SoundTopLevel_Generator_2_io_generator_update_valid
+  op_and_174:out -> cluster_SoundTopLevel_Generator_2_io_generator_update_valid
   struct_cluster_SoundTopLevel_global_config_envelope_release:out -> cluster_SoundTopLevel_Generator_5_io_global_config_envelope_release
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_2_reset
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_3_io_generator_update_reset_note
   cluster_SoundTopLevel_io_global_update_packet_data_envelope_release -> mux_1004367734:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_6_io_generator_update_instrument
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_5_io_step_sample
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_209:in2
   cluster_SoundTopLevel_io_generator_update_packet_data_instrument -> cluster_SoundTopLevel_Generator_io_generator_update_instrument
   cluster_SoundTopLevel_io_global_update_packet_data_envelope_attack -> mux_625226145:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_reset_note -> cluster_SoundTopLevel_Generator_7_io_generator_update_reset_note
   cluster_SoundTopLevel_io_generator_update_packet_data_velocity -> cluster_SoundTopLevel_Generator_7_io_generator_update_velocity
   cluster_SoundTopLevel_io_global_update_packet_data_envelope_decay -> mux_1132303051:in1
+  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_183:in1
   struct_cluster_SoundTopLevel_global_config_envelope_sustain:out -> cluster_SoundTopLevel_Generator_2_io_global_config_envelope_sustain
   struct_cluster_SoundTopLevel_global_config_envelope_decay:out -> cluster_SoundTopLevel_Generator_3_io_global_config_envelope_decay
   cluster_SoundTopLevel_io_global_update_packet_data_volume -> mux_766547911:in1
   cluster_SoundTopLevel_io_step_sample -> cluster_SoundTopLevel_Generator_1_io_step_sample
   cluster_SoundTopLevel_reset -> cluster_SoundTopLevel_Generator_5_reset
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_212:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_enabled -> cluster_SoundTopLevel_Generator_3_io_generator_update_enabled
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_211:in2
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_170:in2
+  op_eq_173:out -> op_and_172:in1
   cluster_SoundTopLevel_Generator_7_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_7
-  op_and_205:out -> cluster_SoundTopLevel_Generator_io_generator_update_valid
+  op_and_170:out -> cluster_SoundTopLevel_Generator_io_generator_update_valid
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_174:in2
   cluster_SoundTopLevel_Generator_1_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_1
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_215:in2
-  op_and_207:out -> cluster_SoundTopLevel_Generator_1_io_generator_update_valid
-  cluster_SoundTopLevel_io_generator_update_packet_generator_index -> op_eq_216:in1
+  op_and_172:out -> cluster_SoundTopLevel_Generator_1_io_generator_update_valid
+  op_eq_177:out -> op_and_176:in1
   cluster_SoundTopLevel_io_global_update_packet_data_envelope_sustain -> mux_1662754261:in1
   cluster_SoundTopLevel_io_generator_update_packet_data_note_index -> cluster_SoundTopLevel_Generator_2_io_generator_update_note_index
   cluster_SoundTopLevel_clock -> cluster_SoundTopLevel_Generator_7_clock
+  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_178:in2
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_io_global_config_envelope_attack
   cluster_SoundTopLevel_Generator_4_io_sample_out -> cluster_SoundTopLevel_Adder_io_samples_in_4
   cluster_SoundTopLevel_Adder_io_sample_out -> cluster_SoundTopLevel_io_sample_out
-  cluster_SoundTopLevel_io_generator_update_packet_valid -> op_and_219:in2
   struct_cluster_SoundTopLevel_global_config_envelope_attack:out -> cluster_SoundTopLevel_Generator_4_io_global_config_envelope_attack
-  op_eq_210:out -> op_and_209:in1
   cluster_SoundTopLevel_io_global_update_packet_valid -> mux_1004367734:select
   mux_625226145:out -> struct_cluster_SoundTopLevel_global_config_envelope_attack:in
   

@@ -54,7 +54,7 @@ cluster_SPISlave_spi_o_SPI_MISO [shape = "rectangle" style="filled" fillcolor="#
 }
      
 
-op_eq_170 [shape = "plaintext" label=<
+op_eq_135 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -66,12 +66,12 @@ op_eq_170 [shape = "plaintext" label=<
   </TR>
 </TABLE>>];
        
-cluster_SPISlave_lit171 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+cluster_SPISlave_lit136 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
      
-cluster_SPISlave_lit172 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
+cluster_SPISlave_lit137 [shape="circle" style="filled" BGCOLOR="#C0C0C0" label="0"]
      
 
-op_eq_173 [shape = "plaintext" label=<
+op_eq_138 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -84,14 +84,14 @@ op_eq_173 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  cluster_SPISlave_lit172 -> cluster_SPISlave_spi_i_TX_Byte
-  op_eq_173:out -> cluster_SPISlave_spi_i_SPI_CS_n
+  cluster_SPISlave_io_spi_cs_n -> op_eq_138:in1
+  cluster_SPISlave_reset -> op_eq_135:in1
+  cluster_SPISlave_lit137 -> cluster_SPISlave_spi_i_TX_Byte
+  op_eq_138:out -> cluster_SPISlave_spi_i_SPI_CS_n
   cluster_SPISlave_io_spi_mosi -> cluster_SPISlave_spi_i_SPI_MOSI
-  cluster_SPISlave_lit171 -> cluster_SPISlave_spi_i_TX_DV
-  cluster_SPISlave_io_spi_cs_n -> op_eq_173:in1
+  cluster_SPISlave_lit136 -> cluster_SPISlave_spi_i_TX_DV
   cluster_SPISlave_clock -> cluster_SPISlave_spi_i_Clk
-  op_eq_170:out -> cluster_SPISlave_spi_i_Rst_L
-  cluster_SPISlave_reset -> op_eq_170:in1
+  op_eq_135:out -> cluster_SPISlave_spi_i_Rst_L
   cluster_SPISlave_spi_o_SPI_MISO -> cluster_SPISlave_io_spi_miso
   cluster_SPISlave_io_spi_clk -> cluster_SPISlave_spi_i_SPI_Clk
   cluster_SPISlave_spi_o_RX_Byte -> cluster_SPISlave_io_RX_data
