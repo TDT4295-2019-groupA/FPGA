@@ -48,7 +48,7 @@ class GlobalUpdatePacket extends Bundle {
 class GlobalUpdate extends Bundle {
   val volume          = UInt(8.W)
   val envelope        = new Envelope()
-  val pitchwheels     = Vec(UInt(8.W), config.N_MIDI_CHANNELS)
+  val pitchwheels     = Vec(SInt(8.W), config.N_MIDI_CHANNELS)
 
   def withEndianSwapped() : GlobalUpdate = {
     val w = Wire(new GlobalUpdate)
