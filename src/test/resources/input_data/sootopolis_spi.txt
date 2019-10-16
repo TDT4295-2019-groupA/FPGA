@@ -17,19 +17,6 @@ SPI: 01 7F 00 00 00 00 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 SPI: 01 7F 00 00 00 00 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 SPI: 01 7F 00 00 00 00 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 SPI: 01 7F 00 00 00 00 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-Step: 6485 samples
-Step: 6485 samples
-Step: 6485 samples
-Step: 6486 samples
-Step: 6485 samples
-Step: 6485 samples
-Step: 6486 samples
-Step: 6485 samples
-Step: 6485 samples
-Step: 6485 samples
-Step: 6486 samples
-Step: 6485 samples
-Step: 6485 samples
 SPI: 02 00 00 01 01 00 00 00 00 3C 04 3C
 SPI: 02 01 00 01 01 00 00 00 00 46 05 3C
 Step: 3243 samples
