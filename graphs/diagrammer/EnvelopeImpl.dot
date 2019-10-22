@@ -24,7 +24,7 @@ cluster_EnvelopeImpl_io_envelope_effect [shape = "rectangle" style="filled" fill
      
 cluster_EnvelopeImpl_life [label = "life" shape="rectangle"]; 
 
-op_div_184 [shape = "plaintext" label=<
+op_div_241 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -38,7 +38,7 @@ op_div_184 [shape = "plaintext" label=<
        
 cluster_EnvelopeImpl_scaled_sustain [label = "scaled_sustain" shape="rectangle"]; 
 
-op_or_185 [shape = "plaintext" label=<
+op_or_242 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -51,7 +51,7 @@ op_or_185 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_shl_186 [shape = "plaintext" label=<
+op_shl_243 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -64,7 +64,7 @@ op_shl_186 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_187 [shape = "plaintext" label=<
+op_pad_244 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -87,7 +87,7 @@ mux_1825025868 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_eq_188 [shape = "plaintext" label=<
+op_eq_245 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -113,7 +113,7 @@ mux_732930139 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_lt_189 [shape = "plaintext" label=<
+op_lt_246 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -126,7 +126,7 @@ op_lt_189 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_190 [shape = "plaintext" label=<
+op_pad_247 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -136,7 +136,7 @@ op_pad_190 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_div_191 [shape = "plaintext" label=<
+op_div_248 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -149,7 +149,7 @@ op_div_191 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_mul_192 [shape = "plaintext" label=<
+op_mul_249 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -162,7 +162,7 @@ op_mul_192 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_193 [shape = "plaintext" label=<
+op_pad_250 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -172,7 +172,7 @@ op_pad_193 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_194 [shape = "plaintext" label=<
+op_tail_251 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -185,7 +185,7 @@ op_tail_194 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_195 [shape = "plaintext" label=<
+op_asUInt_252 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -195,7 +195,7 @@ op_asUInt_195 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_196 [shape = "plaintext" label=<
+op_sub_253 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -208,7 +208,7 @@ op_sub_196 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_197 [shape = "plaintext" label=<
+op_pad_254 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -218,7 +218,7 @@ op_pad_197 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_198 [shape = "plaintext" label=<
+op_pad_255 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -241,7 +241,7 @@ mux_2027996737 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_lt_199 [shape = "plaintext" label=<
+op_lt_256 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -254,7 +254,7 @@ op_lt_199 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_200 [shape = "plaintext" label=<
+op_pad_257 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -264,7 +264,7 @@ op_pad_200 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_div_201 [shape = "plaintext" label=<
+op_div_258 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -277,7 +277,7 @@ op_div_201 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_mul_202 [shape = "plaintext" label=<
+op_mul_259 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">65535</TD>
@@ -290,7 +290,7 @@ op_mul_202 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_203 [shape = "plaintext" label=<
+op_pad_260 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -313,7 +313,7 @@ mux_1039884579 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_lt_204 [shape = "plaintext" label=<
+op_lt_261 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -326,7 +326,7 @@ op_lt_204 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_205 [shape = "plaintext" label=<
+op_pad_262 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -336,7 +336,7 @@ op_pad_205 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_206 [shape = "plaintext" label=<
+op_tail_263 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -349,7 +349,7 @@ op_tail_206 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_207 [shape = "plaintext" label=<
+op_add_264 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -362,7 +362,7 @@ op_add_207 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_208 [shape = "plaintext" label=<
+op_tail_265 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -375,7 +375,7 @@ op_tail_208 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_209 [shape = "plaintext" label=<
+op_add_266 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -388,7 +388,7 @@ op_add_209 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_div_210 [shape = "plaintext" label=<
+op_div_267 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -401,7 +401,7 @@ op_div_210 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_mul_211 [shape = "plaintext" label=<
+op_mul_268 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -414,7 +414,7 @@ op_mul_211 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_212 [shape = "plaintext" label=<
+op_tail_269 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -427,7 +427,7 @@ op_tail_212 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_213 [shape = "plaintext" label=<
+op_asUInt_270 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -437,7 +437,7 @@ op_asUInt_213 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_214 [shape = "plaintext" label=<
+op_sub_271 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -450,7 +450,7 @@ op_sub_214 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_215 [shape = "plaintext" label=<
+op_pad_272 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -460,7 +460,7 @@ op_pad_215 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_216 [shape = "plaintext" label=<
+op_tail_273 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -473,7 +473,7 @@ op_tail_216 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_217 [shape = "plaintext" label=<
+op_asUInt_274 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -483,7 +483,7 @@ op_asUInt_217 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_218 [shape = "plaintext" label=<
+op_sub_275 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -496,7 +496,7 @@ op_sub_218 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_219 [shape = "plaintext" label=<
+op_pad_276 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -506,7 +506,7 @@ op_pad_219 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_220 [shape = "plaintext" label=<
+op_pad_277 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -516,7 +516,7 @@ op_pad_220 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_221 [shape = "plaintext" label=<
+op_tail_278 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -529,7 +529,7 @@ op_tail_221 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_222 [shape = "plaintext" label=<
+op_asUInt_279 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -539,7 +539,7 @@ op_asUInt_222 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_223 [shape = "plaintext" label=<
+op_sub_280 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">65535</TD>
@@ -552,7 +552,7 @@ op_sub_223 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_224 [shape = "plaintext" label=<
+op_pad_281 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -562,7 +562,7 @@ op_pad_224 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_225 [shape = "plaintext" label=<
+op_pad_282 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -572,7 +572,7 @@ op_pad_225 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_226 [shape = "plaintext" label=<
+op_pad_283 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -582,77 +582,77 @@ op_pad_226 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  cluster_EnvelopeImpl_io_envelope_attack -> op_pad_219:in1
-  cluster_EnvelopeImpl_life -> op_mul_202:in2
-  cluster_EnvelopeImpl_io_envelope_attack -> op_add_207:in1
-  op_sub_196:out -> op_asUInt_195:in1
-  cluster_EnvelopeImpl_io_enabled -> op_eq_188:in1
-  cluster_EnvelopeImpl_life -> op_lt_204:in1
-  op_pad_220:out -> op_mul_211:in2
-  op_pad_200:out -> op_lt_199:in2
-  cluster_EnvelopeImpl_io_envelope_sustain -> op_pad_187:in1
-  op_tail_194:out -> op_mul_192:in2
-  op_pad_187:out -> op_or_185:in2
-  cluster_EnvelopeImpl_life -> op_lt_189:in1
-  cluster_EnvelopeImpl_io_envelope_attack -> op_pad_203:in1
-  cluster_EnvelopeImpl_scaled_sustain -> op_pad_225:in1
-  op_pad_197:out -> op_sub_196:in1
-  op_eq_188:out -> mux_1825025868:select
-  cluster_EnvelopeImpl_io_last_active_envelope_effect -> op_pad_193:in1
-  op_or_185:out -> cluster_EnvelopeImpl_scaled_sustain
-  op_tail_212:out -> op_mul_211:in1
-  cluster_EnvelopeImpl_io_envelope_release -> op_pad_197:in1
-  op_add_207:out -> op_tail_206:in1
-  op_pad_225:out -> op_add_209:in2
-  op_pad_193:out -> op_mul_192:in1
-  cluster_EnvelopeImpl_life -> op_lt_199:in1
-  op_asUInt_222:out -> op_tail_221:in1
-  cluster_EnvelopeImpl_scaled_sustain -> op_pad_226:in1
-  op_shl_186:out -> op_or_185:in1
-  cluster_EnvelopeImpl_io_envelope_release -> op_pad_190:in1
-  op_tail_208:out -> mux_1039884579:in1
-  cluster_EnvelopeImpl_scaled_sustain -> op_sub_223:in2
-  op_div_201:out -> mux_2027996737:in1
-  cluster_EnvelopeImpl_io_envelope_sustain -> op_shl_186:in1
-  cluster_EnvelopeImpl_io_envelope_release -> op_pad_198:in1
-  cluster_EnvelopeImpl_io_note_life -> op_div_184:in1
-  cluster_EnvelopeImpl_io_envelope_attack -> op_pad_200:in1
+  op_pad_247:out -> op_lt_246:in2
+  op_tail_269:out -> op_mul_268:in1
+  op_pad_262:out -> op_lt_261:in2
+  op_asUInt_279:out -> op_tail_278:in1
+  cluster_EnvelopeImpl_io_envelope_decay -> op_add_264:in2
+  op_pad_272:out -> op_sub_271:in1
+  op_add_266:out -> op_tail_265:in1
+  cluster_EnvelopeImpl_life -> op_sub_275:in1
+  op_pad_260:out -> op_div_258:in2
+  cluster_EnvelopeImpl_io_envelope_attack -> op_pad_257:in1
+  cluster_EnvelopeImpl_io_envelope_decay -> op_pad_272:in1
+  op_asUInt_270:out -> op_tail_269:in1
+  op_eq_245:out -> mux_1825025868:select
+  op_sub_253:out -> op_asUInt_252:in1
+  cluster_EnvelopeImpl_io_envelope_sustain -> op_pad_244:in1
+  cluster_EnvelopeImpl_io_envelope_decay -> op_pad_281:in1
+  op_pad_244:out -> op_or_242:in2
+  op_or_242:out -> cluster_EnvelopeImpl_scaled_sustain
+  cluster_EnvelopeImpl_io_envelope_attack -> op_pad_276:in1
+  op_pad_281:out -> op_div_267:in2
+  op_pad_257:out -> op_lt_256:in2
+  op_pad_254:out -> op_sub_253:in1
+  op_tail_265:out -> mux_1039884579:in1
+  cluster_EnvelopeImpl_scaled_sustain -> op_pad_282:in1
+  cluster_EnvelopeImpl_io_enabled -> op_eq_245:in1
+  op_sub_280:out -> op_asUInt_279:in1
+  op_mul_249:out -> op_div_248:in1
+  cluster_EnvelopeImpl_io_last_active_envelope_effect -> op_pad_250:in1
+  op_div_258:out -> mux_2027996737:in1
+  cluster_EnvelopeImpl_io_envelope_release -> op_pad_254:in1
+  cluster_EnvelopeImpl_io_envelope_attack -> op_add_264:in1
+  op_mul_268:out -> op_div_267:in1
+  cluster_EnvelopeImpl_life -> op_lt_246:in1
   mux_2027996737:out -> mux_1825025868:in2
-  op_pad_203:out -> op_div_201:in2
-  op_asUInt_213:out -> op_tail_212:in1
-  op_pad_224:out -> op_div_210:in2
-  op_pad_198:out -> op_div_191:in2
-  op_div_184:out -> cluster_EnvelopeImpl_life
-  op_tail_216:out -> op_sub_214:in2
-  op_asUInt_217:out -> op_tail_216:in1
-  op_pad_219:out -> op_sub_218:in2
-  op_lt_189:out -> mux_732930139:select
-  op_sub_223:out -> op_asUInt_222:in1
-  op_lt_204:out -> mux_1039884579:select
-  op_pad_205:out -> op_lt_204:in2
-  op_div_191:out -> mux_732930139:in1
-  op_mul_192:out -> op_div_191:in1
-  op_div_210:out -> op_add_209:in1
-  op_mul_211:out -> op_div_210:in1
-  op_asUInt_195:out -> op_tail_194:in1
-  op_sub_214:out -> op_asUInt_213:in1
-  op_add_209:out -> op_tail_208:in1
-  cluster_EnvelopeImpl_life -> op_sub_196:in2
-  op_tail_206:out -> op_pad_205:in1
-  op_lt_199:out -> mux_2027996737:select
+  cluster_EnvelopeImpl_life -> op_lt_261:in1
+  op_add_264:out -> op_tail_263:in1
+  op_div_241:out -> cluster_EnvelopeImpl_life
+  cluster_EnvelopeImpl_io_envelope_sustain -> op_shl_243:in1
+  op_mul_259:out -> op_div_258:in1
+  cluster_EnvelopeImpl_io_envelope_attack -> op_pad_260:in1
+  op_tail_278:out -> op_pad_277:in1
+  cluster_EnvelopeImpl_io_note_life -> op_div_241:in1
+  op_tail_251:out -> op_mul_249:in2
+  cluster_EnvelopeImpl_life -> op_lt_256:in1
+  op_lt_246:out -> mux_732930139:select
+  op_lt_261:out -> mux_1039884579:select
+  op_shl_243:out -> op_or_242:in1
+  op_asUInt_274:out -> op_tail_273:in1
+  op_div_248:out -> mux_732930139:in1
+  op_pad_282:out -> op_add_266:in2
+  cluster_EnvelopeImpl_scaled_sustain -> op_pad_283:in1
+  cluster_EnvelopeImpl_scaled_sustain -> op_sub_280:in2
+  cluster_EnvelopeImpl_io_envelope_release -> op_pad_255:in1
+  op_lt_256:out -> mux_2027996737:select
   mux_732930139:out -> mux_1825025868:in1
-  op_mul_202:out -> op_div_201:in1
+  cluster_EnvelopeImpl_life -> op_mul_259:in2
   mux_1825025868:out -> cluster_EnvelopeImpl_io_envelope_effect
-  op_tail_221:out -> op_pad_220:in1
-  op_sub_218:out -> op_asUInt_217:in1
-  cluster_EnvelopeImpl_io_envelope_decay -> op_add_207:in2
-  cluster_EnvelopeImpl_io_envelope_decay -> op_pad_224:in1
-  op_pad_215:out -> op_sub_214:in1
-  cluster_EnvelopeImpl_life -> op_sub_218:in1
-  op_pad_190:out -> op_lt_189:in2
-  op_pad_226:out -> mux_1039884579:in2
-  cluster_EnvelopeImpl_io_envelope_decay -> op_pad_215:in1
+  op_pad_277:out -> op_mul_268:in2
+  op_asUInt_252:out -> op_tail_251:in1
+  op_div_267:out -> op_add_266:in1
+  op_tail_273:out -> op_sub_271:in2
+  cluster_EnvelopeImpl_life -> op_sub_253:in2
+  op_sub_271:out -> op_asUInt_270:in1
+  op_pad_276:out -> op_sub_275:in2
+  op_pad_283:out -> mux_1039884579:in2
+  cluster_EnvelopeImpl_io_envelope_release -> op_pad_247:in1
+  op_pad_255:out -> op_div_248:in2
+  op_tail_263:out -> op_pad_262:in1
+  op_sub_275:out -> op_asUInt_274:in1
   mux_1039884579:out -> mux_2027996737:in2
+  op_pad_250:out -> op_mul_249:in1
   
   
 }
