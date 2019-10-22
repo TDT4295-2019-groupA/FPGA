@@ -13,9 +13,10 @@ class Generator extends MultiIOModule{
     new Bundle {
       val generator_update_valid = Input(Bool()) // pulsed for one cycle
       val generator_update       = Input(new GeneratorUpdate)
+      val generator_num          = Input(UInt())
       val global_config          = Input(new GlobalUpdate) // assumed always valid
       val step_sample            = Input(Bool()) // pulsed for one cycle
-      val sample_out             = Output(SInt(16.W))
+      val sample_out             = Output(SInt(32.W))
     }
   )
 
@@ -47,14 +48,12 @@ class Generator extends MultiIOModule{
   val lookup_value_array = new Array[(UInt, UInt)](12)
   val note_remainder: UInt = Wire(UInt(16.W))
   val note_divide: UInt = Wire(UInt(16.W))
-  val wavelength_base: UInt = Wire(UInt(16.W))
   val freq: UInt = Wire(UInt(32.W))
   val freq_base: UInt = Wire(UInt(32.W))
   val freq_coeff: UInt = Wire(UInt(32.W))
 
   note_remainder := generator_config.note_index % 12.U
   note_divide := generator_config.note_index / 12.U
-  wavelength_base := 0.U
 
 
   freq_base := DontCare
@@ -68,7 +67,9 @@ class Generator extends MultiIOModule{
   val magic_linear_scale = 59.S //((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
   val magic_linear_offset = 65536.S //(1 << 16)
 
-  freq_coeff := ((io.global_config.pitchwheels(generator_config.channel_index) * magic_linear_scale) + magic_linear_offset).asUInt()
+  freq_coeff := ((io.global_config.pitchwheels(generator_config.channel_index)
+    * magic_linear_scale)
+    + magic_linear_offset).asUInt()
 
   freq := ((freq_base * freq_coeff) >> 16).asUInt()
 
@@ -83,15 +84,15 @@ class Generator extends MultiIOModule{
     }
   }
   when (io.step_sample) {
-    note_life      := note_life + 1.U
+    note_life      := note_life + config.NOTE_LIFE_COEFF.U
     when (wavelength_pos >= wavelength) {
       wavelength_pos := 0.U
     } otherwise {
-      wavelength_pos := wavelength_pos + 1.U
+      wavelength_pos := wavelength_pos + config.NOTE_LIFE_COEFF.U
     }
   }
 
-  val current_sample = Wire(SInt(16.W))
+  val current_sample = Wire(SInt(32.W))
   current_sample := 0.S
 
   val square = Module(new Square()).io
@@ -141,6 +142,10 @@ class Generator extends MultiIOModule{
     last_active_envelope_effect := envelope_impl.envelope_effect
   }
 
-  io.sample_out := ((current_sample * envelope_impl.envelope_effect.asSInt()).asSInt() >> 16).asSInt() *  generator_config.velocity.asSInt()
+  io.sample_out := current_sample * generator_config.velocity
+  //io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16).asSInt() *  generator_config.velocity.asSInt()
 
+  printf("Gen %d: wavelength: %d, freq: %d, freq_base %d, freq_coeff: %d, note_life: %d, instrument: %d\n", io.generator_num, wavelength, freq, freq_base, freq_coeff, note_life, generator_config.instrument)
+  printf("Enabled: %d, Current_Sample: %d, Last_Env_Effect: %d, Sample Out: %d, Velocity: %d\n", generator_config.enabled, current_sample, last_active_envelope_effect, io.sample_out, generator_config.velocity)
+  printf("Current_Sample: %d, Envelope_Effect: %d, Velocity: %d, Enabled: %d\n", current_sample, envelope_impl.envelope_effect, generator_config.velocity, generator_config.enabled)
 }

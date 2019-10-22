@@ -38,6 +38,7 @@ class SoundTopLevel() extends MultiIOModule {
     generator.generator_update       := io.generator_update_packet.data
     generator.global_config          := global_config
     generator.step_sample            := io.step_sample
+    generator.generator_num          := i.U
 
     adder.samples_in(i-1) := generator.sample_out
     //printf("sample gen%d: %d\n", (i-1).U, generator.sample_out)
