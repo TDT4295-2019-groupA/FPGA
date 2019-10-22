@@ -11,7 +11,7 @@ class Adder extends MultiIOModule{
   val io = IO(
     new Bundle {
       val volume = Input(UInt(16.W))
-      val samples_in = Input(Vec(config.N_GENERATORS, SInt(16.W)))
+      val samples_in = Input(Vec(config.N_GENERATORS, SInt(32.W)))
       val sample_out = Output(SInt(32.W))
     }
   )

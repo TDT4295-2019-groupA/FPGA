@@ -41,6 +41,16 @@ class EnvelopeImpl extends MultiIOModule{
   }.otherwise{
     io.envelope_effect := scaled_sustain
   }
+/*
+  printf("Envelope: Attack: %d, Decay: %d, Sustain: %d, Release: %d, Last: %d, Life: %d, Scaled: %d\n",
+    envelope.attack,
+    envelope.decay,
+    envelope.sustain,
+    envelope.release,
+    io.last_active_envelope_effect,
+    life,
+    scaled_sustain)
+ */
 
 
 
