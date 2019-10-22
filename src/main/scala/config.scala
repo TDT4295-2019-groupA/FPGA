@@ -4,7 +4,7 @@ import chisel3._
 
 // tweakable constants
 object config {
-  val FREQ_SHIFT      = 12     // scaling factor (bit shifts) when dealing with frequencies
+  val FREQ_SHIFT      = 12     // scaling factor (bit shifts) when dealing with frequencies TODO: Fix this shit
   val NOTE_LIFE_COEFF = 10     // scaling factor when representing noteLife and wavelength as an integer
   val MIDI_A3_FREQ    = 440.0  // i won't listen to your a=432Hz bullshit
   //val MIDI_A3_INDEX   = 45

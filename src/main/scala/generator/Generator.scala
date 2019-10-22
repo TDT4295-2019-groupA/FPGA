@@ -28,8 +28,12 @@ class Generator extends MultiIOModule{
   def fpga_note_index_to_freq(note_index: Int): Double =
     math.round((1 << config.FREQ_SHIFT) * config.MIDI_A3_FREQ * math.pow(2.0, (note_index - config.MIDI_A3_INDEX) / 12.0))
 
-  def freq_to_wavelength_in_samples(freq: UInt): UInt =
-    ((config.SAMPLE_RATE << config.FREQ_SHIFT) * config.NOTE_LIFE_COEFF).asUInt() / freq
+  def freq_to_wavelength_in_samples(freq: UInt): UInt = {
+    val temp_value = config.SAMPLE_RATE << config.FREQ_SHIFT
+    (temp_value * config.NOTE_LIFE_COEFF).asUInt() / freq
+    //We do this because it is currently too big to be an int :( By a very small margin btw
+    //28901376000L.U / freq
+  }
 
 
   /*
@@ -41,13 +45,12 @@ class Generator extends MultiIOModule{
    */
 
   val lookup_value_array = new Array[(UInt, UInt)](12)
-  val note_offset: UInt = Wire(UInt(16.W))
   val note_remainder: UInt = Wire(UInt(16.W))
   val note_divide: UInt = Wire(UInt(16.W))
   val wavelength_base: UInt = Wire(UInt(16.W))
-  val freq: UInt = Wire(UInt(16.W))
-  val freq_base: UInt = Wire(UInt(16.W))
-  val freq_coeff: UInt = Wire(UInt(16.W))
+  val freq: UInt = Wire(UInt(32.W))
+  val freq_base: UInt = Wire(UInt(32.W))
+  val freq_coeff: UInt = Wire(UInt(32.W))
 
   note_remainder := generator_config.note_index % 12.U
   note_divide := generator_config.note_index / 12.U
@@ -56,17 +59,18 @@ class Generator extends MultiIOModule{
 
   freq_base := DontCare
 
-  for (i <- 0 until 11) {
+  for (i <- 0 to 11) {
     when (note_remainder === i.U) {
       freq_base := (fpga_note_index_to_freq(i).toInt.U >> note_divide).asUInt()
     }
   }
 
-  note_offset := (2.U * io.global_config.pitchwheels(generator_config.channel_index)) / 128.U
-  //This is bad and dumb, replace with lookup table
-  freq_coeff := (2.U << (note_offset /12.U)).asUInt() * (1 << config.FREQ_SHIFT).asUInt()
+  val magic_linear_scale = 59.S //((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
+  val magic_linear_offset = 65536.S //(1 << 16)
 
-  freq := (freq_base * freq_coeff) >> config.FREQ_SHIFT
+  freq_coeff := ((io.global_config.pitchwheels(generator_config.channel_index) * magic_linear_scale) + magic_linear_offset).asUInt()
+
+  freq := ((freq_base * freq_coeff) >> 16).asUInt()
 
   val wavelength = freq_to_wavelength_in_samples(freq)
 

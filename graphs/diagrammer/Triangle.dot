@@ -12,7 +12,7 @@ cluster_Triangle_io_sample_out [shape = "rectangle" style="filled" fillcolor="#E
      
 cluster_Triangle_half [label = "half" shape="rectangle"]; 
 
-op_shr_137 [shape = "plaintext" label=<
+op_shr_194 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -26,7 +26,7 @@ op_shr_137 [shape = "plaintext" label=<
        
 cluster_Triangle_quarter [label = "quarter" shape="rectangle"]; 
 
-op_shr_138 [shape = "plaintext" label=<
+op_shr_195 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -53,7 +53,7 @@ mux_1103487145 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_gt_139 [shape = "plaintext" label=<
+op_gt_196 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -66,7 +66,7 @@ op_gt_139 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_140 [shape = "plaintext" label=<
+op_pad_197 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -76,7 +76,7 @@ op_pad_140 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_141 [shape = "plaintext" label=<
+op_tail_198 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -89,7 +89,7 @@ op_tail_141 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_142 [shape = "plaintext" label=<
+op_add_199 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -102,7 +102,7 @@ op_add_142 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_143 [shape = "plaintext" label=<
+op_pad_200 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -112,7 +112,7 @@ op_pad_143 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_144 [shape = "plaintext" label=<
+op_tail_201 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -125,7 +125,7 @@ op_tail_144 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_145 [shape = "plaintext" label=<
+op_asUInt_202 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -135,7 +135,7 @@ op_asUInt_145 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_146 [shape = "plaintext" label=<
+op_sub_203 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -148,7 +148,7 @@ op_sub_146 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_147 [shape = "plaintext" label=<
+op_pad_204 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -158,7 +158,7 @@ op_pad_147 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_148 [shape = "plaintext" label=<
+op_tail_205 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -171,7 +171,7 @@ op_tail_148 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_149 [shape = "plaintext" label=<
+op_add_206 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -184,7 +184,7 @@ op_add_149 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_150 [shape = "plaintext" label=<
+op_pad_207 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -194,7 +194,7 @@ op_pad_150 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_151 [shape = "plaintext" label=<
+op_tail_208 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -207,7 +207,7 @@ op_tail_151 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_add_152 [shape = "plaintext" label=<
+op_add_209 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -220,7 +220,7 @@ op_add_152 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_153 [shape = "plaintext" label=<
+op_pad_210 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -230,7 +230,7 @@ op_pad_153 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_div_154 [shape = "plaintext" label=<
+op_div_211 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -243,7 +243,7 @@ op_div_154 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_mul_155 [shape = "plaintext" label=<
+op_mul_212 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -256,7 +256,7 @@ op_mul_155 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asSInt_156 [shape = "plaintext" label=<
+op_asSInt_213 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -266,7 +266,7 @@ op_asSInt_156 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_157 [shape = "plaintext" label=<
+op_tail_214 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -279,7 +279,7 @@ op_tail_157 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_158 [shape = "plaintext" label=<
+op_asUInt_215 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -289,7 +289,7 @@ op_asUInt_158 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_159 [shape = "plaintext" label=<
+op_sub_216 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -302,7 +302,7 @@ op_sub_159 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_tail_160 [shape = "plaintext" label=<
+op_tail_217 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -315,7 +315,7 @@ op_tail_160 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asUInt_161 [shape = "plaintext" label=<
+op_asUInt_218 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -325,7 +325,7 @@ op_asUInt_161 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_sub_162 [shape = "plaintext" label=<
+op_sub_219 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -338,7 +338,7 @@ op_sub_162 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_163 [shape = "plaintext" label=<
+op_pad_220 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -348,7 +348,7 @@ op_pad_163 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_164 [shape = "plaintext" label=<
+op_pad_221 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -358,7 +358,7 @@ op_pad_164 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_pad_165 [shape = "plaintext" label=<
+op_pad_222 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -368,7 +368,7 @@ op_pad_165 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-op_asSInt_166 [shape = "plaintext" label=<
+op_asSInt_223 [shape = "plaintext" label=<
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" BGCOLOR="#D8BFD8">
   <TR>
     <TD PORT="in1">&#x25cf;</TD>
@@ -378,51 +378,51 @@ op_asSInt_166 [shape = "plaintext" label=<
 </TABLE>>];
        
 
-  op_sub_159:out -> op_asUInt_158:in1
-  op_add_152:out -> op_tail_151:in1
-  op_asSInt_166:out -> op_pad_165:in1
-  op_sub_146:out -> op_asUInt_145:in1
-  op_asUInt_161:out -> op_tail_160:in1
-  cluster_Triangle_io_wavelength_pos -> op_gt_139:in1
-  op_tail_160:out -> op_sub_159:in1
-  op_pad_163:out -> op_sub_162:in2
-  cluster_Triangle_io_wavelength_pos -> op_sub_146:in1
-  op_shr_137:out -> cluster_Triangle_half
-  op_tail_157:out -> op_asSInt_156:in1
-  cluster_Triangle_quarter -> op_pad_143:in1
-  op_gt_139:out -> mux_1103487145:select
-  op_tail_148:out -> op_pad_147:in1
-  op_sub_162:out -> op_asUInt_161:in1
-  op_tail_151:out -> mux_1103487145:in2
-  op_pad_150:out -> op_add_149:in2
-  op_pad_143:out -> op_add_142:in2
-  cluster_Triangle_quarter -> op_asSInt_166:in1
-  op_asSInt_156:out -> op_mul_155:in1
-  cluster_Triangle_io_wavelength_pos -> op_shr_137:in1
-  op_pad_165:out -> op_div_154:in2
-  cluster_Triangle_quarter -> op_pad_153:in1
-  op_div_154:out -> cluster_Triangle_io_sample_out
-  cluster_Triangle_pos -> op_sub_162:in1
-  op_tail_141:out -> op_pad_140:in1
-  cluster_Triangle_half -> op_add_149:in1
-  op_pad_153:out -> op_add_152:in2
-  cluster_Triangle_half -> op_pad_163:in1
-  cluster_Triangle_quarter -> op_pad_150:in1
-  op_asUInt_158:out -> op_tail_157:in1
-  op_pad_140:out -> op_gt_139:in2
-  op_pad_164:out -> op_sub_159:in2
-  cluster_Triangle_io_wavelength_pos -> op_shr_138:in1
-  op_shr_138:out -> cluster_Triangle_quarter
-  op_tail_144:out -> mux_1103487145:in1
-  op_asUInt_145:out -> op_tail_144:in1
-  cluster_Triangle_half -> op_add_142:in1
-  op_add_142:out -> op_tail_141:in1
-  op_add_149:out -> op_tail_148:in1
-  op_mul_155:out -> op_div_154:in1
-  op_pad_147:out -> op_sub_146:in2
-  cluster_Triangle_quarter -> op_pad_164:in1
+  cluster_Triangle_quarter -> op_pad_221:in1
+  op_pad_197:out -> op_gt_196:in2
+  op_pad_221:out -> op_sub_216:in2
+  cluster_Triangle_io_wavelength_pos -> op_shr_195:in1
+  op_sub_216:out -> op_asUInt_215:in1
+  op_pad_200:out -> op_add_199:in2
+  cluster_Triangle_pos -> op_sub_219:in1
+  op_sub_203:out -> op_asUInt_202:in1
+  cluster_Triangle_quarter -> op_pad_207:in1
+  op_tail_198:out -> op_pad_197:in1
+  op_shr_194:out -> cluster_Triangle_half
+  cluster_Triangle_io_wavelength_pos -> op_gt_196:in1
+  op_pad_210:out -> op_add_209:in2
+  op_tail_217:out -> op_sub_216:in1
+  cluster_Triangle_io_wavelength_pos -> op_sub_203:in1
+  op_gt_196:out -> mux_1103487145:select
+  op_asSInt_223:out -> op_pad_222:in1
+  op_tail_208:out -> mux_1103487145:in2
+  op_tail_214:out -> op_asSInt_213:in1
+  cluster_Triangle_quarter -> op_pad_200:in1
+  op_tail_205:out -> op_pad_204:in1
+  cluster_Triangle_half -> op_add_199:in1
+  op_div_211:out -> cluster_Triangle_io_sample_out
+  op_pad_207:out -> op_add_206:in2
+  op_pad_222:out -> op_div_211:in2
+  cluster_Triangle_quarter -> op_asSInt_223:in1
+  cluster_Triangle_quarter -> op_pad_210:in1
+  op_asSInt_213:out -> op_mul_212:in1
+  op_asUInt_218:out -> op_tail_217:in1
+  op_add_199:out -> op_tail_198:in1
+  cluster_Triangle_io_wavelength_pos -> op_add_209:in1
+  op_add_209:out -> op_tail_208:in1
+  op_shr_195:out -> cluster_Triangle_quarter
+  op_tail_201:out -> mux_1103487145:in1
+  cluster_Triangle_half -> op_pad_220:in1
+  op_pad_220:out -> op_sub_219:in2
+  cluster_Triangle_io_wavelength_pos -> op_shr_194:in1
+  op_asUInt_215:out -> op_tail_214:in1
+  op_asUInt_202:out -> op_tail_201:in1
+  cluster_Triangle_half -> op_add_206:in1
+  op_sub_219:out -> op_asUInt_218:in1
   mux_1103487145:out -> cluster_Triangle_pos
-  cluster_Triangle_io_wavelength_pos -> op_add_152:in1
+  op_mul_212:out -> op_div_211:in1
+  op_add_206:out -> op_tail_205:in1
+  op_pad_204:out -> op_sub_203:in2
   
   
 }

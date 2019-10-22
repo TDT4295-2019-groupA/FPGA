@@ -25,11 +25,11 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
   </TR>
         
   <TR>
-    <TD PORT="module_54" BGCOLOR="#FFF8DC" >PWM</TD>
+    <TD PORT="module_4" BGCOLOR="#FFF8DC" >PWM</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_53" BGCOLOR="#FFF8DC" >SPIInputHandler</TD>
+    <TD PORT="module_3" BGCOLOR="#FFF8DC" >SPIInputHandler</TD>
   </TR>
         
   <TR>
@@ -37,12 +37,32 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
   </TR>
         
   <TR>
-    <TD PORT="module_3" BGCOLOR="#FFF8DC" >SoundTopLevel</TD>
+    <TD PORT="module_5" BGCOLOR="#FFF8DC" >SoundTopLevel</TD>
   </TR>
         
 </TABLE>>];
 
-      module_3 [shape= "plaintext" href="SoundTopLevel.dot.svg" label=<
+      module_3 [shape= "plaintext" href="SPIInputHandler.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > SPIInputHandler </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_4 [shape= "plaintext" href="PWM.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > PWM </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_5 [shape= "plaintext" href="SoundTopLevel.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -51,44 +71,44 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
   </TR>
         
   <TR>
-    <TD PORT="module_52" BGCOLOR="#FFF8DC" >Adder</TD>
+    <TD PORT="module_30" BGCOLOR="#FFF8DC" >Adder</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_46" BGCOLOR="#FFF8DC" >Generator</TD>
+    <TD PORT="module_18" BGCOLOR="#FFF8DC" >Generator</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_16" BGCOLOR="#FFF8DC" >Generator_1</TD>
+    <TD PORT="module_49" BGCOLOR="#FFF8DC" >Generator_1</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_4" BGCOLOR="#FFF8DC" >Generator_2</TD>
+    <TD PORT="module_24" BGCOLOR="#FFF8DC" >Generator_2</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_28" BGCOLOR="#FFF8DC" >Generator_3</TD>
+    <TD PORT="module_12" BGCOLOR="#FFF8DC" >Generator_3</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_22" BGCOLOR="#FFF8DC" >Generator_4</TD>
+    <TD PORT="module_6" BGCOLOR="#FFF8DC" >Generator_4</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_34" BGCOLOR="#FFF8DC" >Generator_5</TD>
+    <TD PORT="module_31" BGCOLOR="#FFF8DC" >Generator_5</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_10" BGCOLOR="#FFF8DC" >Generator_6</TD>
+    <TD PORT="module_43" BGCOLOR="#FFF8DC" >Generator_6</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_40" BGCOLOR="#FFF8DC" >Generator_7</TD>
+    <TD PORT="module_37" BGCOLOR="#FFF8DC" >Generator_7</TD>
   </TR>
         
 </TABLE>>];
 
-      module_4 [shape= "plaintext" href="Generator.dot.svg" label=<
+      module_6 [shape= "plaintext" href="Generator.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -97,43 +117,23 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
   </TR>
         
   <TR>
-    <TD PORT="module_6" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+    <TD PORT="module_9" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_9" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+    <TD PORT="module_11" BGCOLOR="#FFF8DC" >Sawtooth</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_8" BGCOLOR="#FFF8DC" >Sine</TD>
+    <TD PORT="module_10" BGCOLOR="#FFF8DC" >Sine</TD>
   </TR>
         
   <TR>
-    <TD PORT="module_5" BGCOLOR="#FFF8DC" >Square</TD>
+    <TD PORT="module_8" BGCOLOR="#FFF8DC" >Square</TD>
   </TR>
         
   <TR>
     <TD PORT="module_7" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_5 [shape= "plaintext" href="Square.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Square </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_6 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
   </TR>
         
 </TABLE>>];
@@ -148,57 +148,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_8 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_9 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_10 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_12" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_15" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_14" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_11" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_13" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_11 [shape= "plaintext" href="Square.dot.svg" label=<
+      module_8 [shape= "plaintext" href="Square.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -208,12 +158,62 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_12 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+      module_9 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
     <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_10 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_11 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_12 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_15" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_17" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_16" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_14" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_13" BGCOLOR="#FFF8DC" >Triangle</TD>
   </TR>
         
 </TABLE>>];
@@ -228,57 +228,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_14 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_15 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_16 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_18" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_21" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_20" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_17" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_19" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_17 [shape= "plaintext" href="Square.dot.svg" label=<
+      module_14 [shape= "plaintext" href="Square.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -288,12 +238,62 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_18 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+      module_15 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
     <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_16 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_17 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_18 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_21" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_23" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_22" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_20" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_19" BGCOLOR="#FFF8DC" >Triangle</TD>
   </TR>
         
 </TABLE>>];
@@ -308,57 +308,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_20 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_21 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_22 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_24" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_27" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_26" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_23" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_25" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_23 [shape= "plaintext" href="Square.dot.svg" label=<
+      module_20 [shape= "plaintext" href="Square.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -368,12 +318,62 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_24 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+      module_21 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
     <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_22 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_23 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_24 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_27" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_29" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_28" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_26" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_25" BGCOLOR="#FFF8DC" >Triangle</TD>
   </TR>
         
 </TABLE>>];
@@ -388,57 +388,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_26 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_27 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_28 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_30" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_33" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_32" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_29" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_31" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_29 [shape= "plaintext" href="Square.dot.svg" label=<
+      module_26 [shape= "plaintext" href="Square.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -448,7 +398,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_30 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+      module_27 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -458,17 +408,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_31 [shape= "plaintext" href="Triangle.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_32 [shape= "plaintext" href="Sine.dot.svg" label=<
+      module_28 [shape= "plaintext" href="Sine.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -478,7 +418,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_33 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+      module_29 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -488,247 +428,7 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_34 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_36" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_39" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_38" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_35" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_37" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_35 [shape= "plaintext" href="Square.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Square </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_36 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_37 [shape= "plaintext" href="Triangle.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_38 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_39 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_40 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_42" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_45" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_44" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_41" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_43" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_41 [shape= "plaintext" href="Square.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Square </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_42 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_43 [shape= "plaintext" href="Triangle.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_44 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_45 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_46 [shape= "plaintext" href="Generator.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Generator </TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_48" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_51" BGCOLOR="#FFF8DC" >Sawtooth</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_50" BGCOLOR="#FFF8DC" >Sine</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_47" BGCOLOR="#FFF8DC" >Square</TD>
-  </TR>
-        
-  <TR>
-    <TD PORT="module_49" BGCOLOR="#FFF8DC" >Triangle</TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_47 [shape= "plaintext" href="Square.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Square </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_48 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_49 [shape= "plaintext" href="Triangle.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_50 [shape= "plaintext" href="Sine.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sine </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_51 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
-
-<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
-      
-  <TR >
-    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
-  </TR>
-        
-</TABLE>>];
-
-      module_52 [shape= "plaintext" href="Adder.dot.svg" label=<
+      module_30 [shape= "plaintext" href="Adder.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
@@ -738,22 +438,322 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_53 [shape= "plaintext" href="SPIInputHandler.dot.svg" label=<
+      module_31 [shape= "plaintext" href="Generator.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
-    <TD BGCOLOR="#FFDEAD" > SPIInputHandler </TD>
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_34" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_36" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_35" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_33" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_32" BGCOLOR="#FFF8DC" >Triangle</TD>
   </TR>
         
 </TABLE>>];
 
-      module_54 [shape= "plaintext" href="PWM.dot.svg" label=<
+      module_32 [shape= "plaintext" href="Triangle.dot.svg" label=<
 
 <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
       
   <TR >
-    <TD BGCOLOR="#FFDEAD" > PWM </TD>
+    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_33 [shape= "plaintext" href="Square.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Square </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_34 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_35 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_36 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_37 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_40" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_42" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_41" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_39" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_38" BGCOLOR="#FFF8DC" >Triangle</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_38 [shape= "plaintext" href="Triangle.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_39 [shape= "plaintext" href="Square.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Square </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_40 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_41 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_42 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_43 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_46" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_48" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_47" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_45" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_44" BGCOLOR="#FFF8DC" >Triangle</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_44 [shape= "plaintext" href="Triangle.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_45 [shape= "plaintext" href="Square.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Square </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_46 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_47 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_48 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_49 [shape= "plaintext" href="Generator.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Generator </TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_52" BGCOLOR="#FFF8DC" >EnvelopeImpl</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_54" BGCOLOR="#FFF8DC" >Sawtooth</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_53" BGCOLOR="#FFF8DC" >Sine</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_51" BGCOLOR="#FFF8DC" >Square</TD>
+  </TR>
+        
+  <TR>
+    <TD PORT="module_50" BGCOLOR="#FFF8DC" >Triangle</TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_50 [shape= "plaintext" href="Triangle.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Triangle </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_51 [shape= "plaintext" href="Square.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Square </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_52 [shape= "plaintext" href="EnvelopeImpl.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > EnvelopeImpl </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_53 [shape= "plaintext" href="Sine.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sine </TD>
+  </TR>
+        
+</TABLE>>];
+
+      module_54 [shape= "plaintext" href="Sawtooth.dot.svg" label=<
+
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4" >
+      
+  <TR >
+    <TD BGCOLOR="#FFDEAD" > Sawtooth </TD>
   </TR>
         
 </TABLE>>];
@@ -782,58 +782,58 @@ module_1 [shape= "plaintext" href="TopModule.dot.svg" label=<
         
 </TABLE>>];
 
-      module_4:module_5 -> module_5
-module_4:module_6 -> module_6
-module_4:module_7 -> module_7
-module_4:module_8 -> module_8
-module_4:module_9 -> module_9
-module_3:module_4 -> module_4
-module_10:module_11 -> module_11
-module_10:module_12 -> module_12
-module_10:module_13 -> module_13
-module_10:module_14 -> module_14
-module_10:module_15 -> module_15
-module_3:module_10 -> module_10
-module_16:module_17 -> module_17
-module_16:module_18 -> module_18
-module_16:module_19 -> module_19
-module_16:module_20 -> module_20
-module_16:module_21 -> module_21
-module_3:module_16 -> module_16
-module_22:module_23 -> module_23
-module_22:module_24 -> module_24
-module_22:module_25 -> module_25
-module_22:module_26 -> module_26
-module_22:module_27 -> module_27
-module_3:module_22 -> module_22
-module_28:module_29 -> module_29
-module_28:module_30 -> module_30
-module_28:module_31 -> module_31
-module_28:module_32 -> module_32
-module_28:module_33 -> module_33
-module_3:module_28 -> module_28
-module_34:module_35 -> module_35
-module_34:module_36 -> module_36
-module_34:module_37 -> module_37
-module_34:module_38 -> module_38
-module_34:module_39 -> module_39
-module_3:module_34 -> module_34
-module_40:module_41 -> module_41
-module_40:module_42 -> module_42
-module_40:module_43 -> module_43
-module_40:module_44 -> module_44
-module_40:module_45 -> module_45
-module_3:module_40 -> module_40
-module_46:module_47 -> module_47
-module_46:module_48 -> module_48
-module_46:module_49 -> module_49
-module_46:module_50 -> module_50
-module_46:module_51 -> module_51
-module_3:module_46 -> module_46
-module_3:module_52 -> module_52
-module_2:module_3 -> module_3
-module_2:module_53 -> module_53
-module_2:module_54 -> module_54
+      module_2:module_3 -> module_3
+module_2:module_4 -> module_4
+module_6:module_7 -> module_7
+module_6:module_8 -> module_8
+module_6:module_9 -> module_9
+module_6:module_10 -> module_10
+module_6:module_11 -> module_11
+module_5:module_6 -> module_6
+module_12:module_13 -> module_13
+module_12:module_14 -> module_14
+module_12:module_15 -> module_15
+module_12:module_16 -> module_16
+module_12:module_17 -> module_17
+module_5:module_12 -> module_12
+module_18:module_19 -> module_19
+module_18:module_20 -> module_20
+module_18:module_21 -> module_21
+module_18:module_22 -> module_22
+module_18:module_23 -> module_23
+module_5:module_18 -> module_18
+module_24:module_25 -> module_25
+module_24:module_26 -> module_26
+module_24:module_27 -> module_27
+module_24:module_28 -> module_28
+module_24:module_29 -> module_29
+module_5:module_24 -> module_24
+module_5:module_30 -> module_30
+module_31:module_32 -> module_32
+module_31:module_33 -> module_33
+module_31:module_34 -> module_34
+module_31:module_35 -> module_35
+module_31:module_36 -> module_36
+module_5:module_31 -> module_31
+module_37:module_38 -> module_38
+module_37:module_39 -> module_39
+module_37:module_40 -> module_40
+module_37:module_41 -> module_41
+module_37:module_42 -> module_42
+module_5:module_37 -> module_37
+module_43:module_44 -> module_44
+module_43:module_45 -> module_45
+module_43:module_46 -> module_46
+module_43:module_47 -> module_47
+module_43:module_48 -> module_48
+module_5:module_43 -> module_43
+module_49:module_50 -> module_50
+module_49:module_51 -> module_51
+module_49:module_52 -> module_52
+module_49:module_53 -> module_53
+module_49:module_54 -> module_54
+module_5:module_49 -> module_49
+module_2:module_5 -> module_5
 module_55:module_56 -> module_56
 module_2:module_55 -> module_55
 module_1:module_2 -> module_2
