@@ -12,27 +12,14 @@ import sadie.toplevel.SoundTopLevel
 class TopBundle extends Bundle {
   val spi = new SPIBus()
   //val i2s = new I2SBus()
-  val pwm_out_l = Output(Bool()) // temporary audio output
-  val pwm_out_r = Output(Bool()) // temporary audio output
-
-  // arty 7 testing
-  val sw       = Input(UInt(4.W))
-  val btn      = Input(UInt(4.W))
-  val led      = Output(UInt(4.W))
-  val rgbled_0 = Output(UInt(3.W))
-  val rgbled_1 = Output(UInt(3.W))
-  val rgbled_2 = Output(UInt(3.W))
-  val rgbled_3 = Output(UInt(3.W))
+  val led_green = Output(UInt(1.W))
+  val gpio = Output(UInt(1.W))
 }
 
 class Top() extends MultiIOModule {
   val io = IO(new TopBundle)
-  io.led := 0.U
-  io.rgbled_0 := 0.U
-  io.rgbled_1 := 0.U
-  io.rgbled_2 := 0.U
-  io.rgbled_3 := 0.U
-
+  io.led_green := 1.U
+  io.gpio := 1.U
   // initalize top-modules
   val sound = Module(new SoundTopLevel).io
   val rx    = Module(new SPISlave()).io
@@ -58,19 +45,6 @@ class Top() extends MultiIOModule {
   }
 
   // output autio as PWM
-  val pwm = Module(new PWM(32, 0x30303030)).io
-  io.pwm_out_l := false.B
-  io.pwm_out_r := false.B
-  when (io.sw(0)) { io.pwm_out_l := pwm.high }
-  when (io.sw(1)) { io.pwm_out_r := pwm.high }
-  pwm.target := (saved_sample + 0x80000000.S(33.W) ).asUInt
-  when (io.sw(2)) {
-    pwm.target := ((saved_sample << 13.U) + 0x80000000.S(33.W) ).asUInt
-  }
-  when (io.sw(3)) {
-    pwm.target := ((saved_sample << 14.U) + 0x80000000.S(33.W) ).asUInt
-  }
-
   // drive the SPISlave
   rx.TX_data_valid := false.B // transmit nothing
   rx.TX_data := 0.U
