@@ -45,6 +45,11 @@ bitfile: $(VHDL_DESTS) $(TOP_MODULE_BITFILE_TARGET)
 upload:
 	cd $(BUILD_DIR); ../scripts/upload_bitfile.sh ../$(TOP_MODULE_BITFILE_TARGET)
 
+.PHONY: flash flash_fpga
+flash: vivado flash_fpga
+flash_fpga:
+	cd $(BUILD_DIR); ../scripts/flash_bitfile.sh ../$(TOP_MODULE_BITFILE_TARGET)
+
 .PHONY: graphs graphs_yosys graphs_diagrammer
 graphs: graphs_yosys graphs_diagrammer
 graphs_yosys: $(TOP_MODULE_VERILOG_TARGET) $(VERILOG_TARGETS) $(VHDL_DESTS)
