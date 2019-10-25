@@ -9,9 +9,11 @@ import sadie.communication._
 import sadie.config.config
 import sadie.toplevel.SoundTopLevel
 
+
+
 class TopBundle extends Bundle {
   val spi = new SPIBus()
-  //val i2s = new I2SBus()
+  val i2s = new I2SBus()
   val led_green = Output(UInt(1.W))
   val gpio = Output(UInt(1.W))
 }
@@ -44,7 +46,13 @@ class Top() extends MultiIOModule {
     saved_sample := sound.sample_out
   }
 
-  // output autio as PWM
+  val i2s = Module(new I2S).io
+  i2s.resetn := false.B
+  // i don't know how this works
+  i2s.wave_left_in := saved_sample.asUInt
+  i2s.wave_right_in := saved_sample.asUInt
+  i2s.i2s <> io.i2s
+
   // drive the SPISlave
   rx.TX_data_valid := false.B // transmit nothing
   rx.TX_data := 0.U
