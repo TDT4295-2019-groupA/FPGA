@@ -25,7 +25,7 @@ class I2S extends MultiIOModule {
   })
 
   val i2s = Module(new i2s_sender)
-  val (clockish, _) = Counter(true.B, 1)
+  val (clockish, _) = Counter(true.B, 2)
   i2s.MCLK_in := clockish
   i2s.resetn := io.resetn
   i2s.wave_left_in := io.wave_left_in
