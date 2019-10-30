@@ -2,6 +2,7 @@ package sadie.toplevel
 
 import chisel3._
 import chisel3.experimental.MultiIOModule
+import generator.MinimalGenerator
 import sadie.common.Adder
 import sadie.communication._
 import sadie.config.config
@@ -33,7 +34,7 @@ class SoundTopLevel() extends MultiIOModule {
 
   // init the generators, and hook outputs to the adder
   for (i <- 1 to config.N_GENERATORS) {
-    val generator = Module(new Generator()).io
+    val generator = if (config.MinimalMode) Module(new MinimalGenerator()).io else Module(new Generator()).io
     generator.generator_update_valid := false.B // overridden below
     generator.generator_update       := io.generator_update_packet.data
     generator.global_config          := global_config
