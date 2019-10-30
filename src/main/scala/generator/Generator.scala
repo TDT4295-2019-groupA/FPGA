@@ -45,7 +45,6 @@ class Generator extends MultiIOModule{
   This increases computational complexity, but hopefully reduces space necessary
    */
 
-  val lookup_value_array = new Array[(UInt, UInt)](12)
   val note_remainder: UInt = Wire(UInt(16.W))
   val note_divide: UInt = Wire(UInt(16.W))
   val freq: UInt = Wire(UInt(32.W))
@@ -55,14 +54,14 @@ class Generator extends MultiIOModule{
   note_remainder := generator_config.note_index % 12.U
   note_divide := generator_config.note_index / 12.U
 
-
   freq_base := DontCare
 
   for (i <- 0 to 11) {
-    when (note_remainder === i.U) {
-      freq_base := (fpga_note_index_to_freq(i).toInt.U >> note_divide).asUInt()
+    when(note_remainder === i.U) {
+      freq_base := fpga_note_index_to_freq(i).toInt.U << note_divide
     }
   }
+
 
   val magic_linear_scale = 59.S //((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
   val magic_linear_offset = 65536.S //(1 << 16)
@@ -142,10 +141,13 @@ class Generator extends MultiIOModule{
     last_active_envelope_effect := envelope_impl.envelope_effect
   }
 
-  io.sample_out := current_sample * generator_config.velocity
-  //io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16).asSInt() *  generator_config.velocity.asSInt()
+  //io.sample_out := current_sample * generator_config.velocity
+  io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16).asSInt() *  generator_config.velocity.asSInt()
 
-  printf("Gen %d: wavelength: %d, freq: %d, freq_base %d, freq_coeff: %d, note_life: %d, instrument: %d\n", io.generator_num, wavelength, freq, freq_base, freq_coeff, note_life, generator_config.instrument)
-  printf("Enabled: %d, Current_Sample: %d, Last_Env_Effect: %d, Sample Out: %d, Velocity: %d\n", generator_config.enabled, current_sample, last_active_envelope_effect, io.sample_out, generator_config.velocity)
-  printf("Current_Sample: %d, Envelope_Effect: %d, Velocity: %d, Enabled: %d\n", current_sample, envelope_impl.envelope_effect, generator_config.velocity, generator_config.enabled)
+  when((io.generator_num === 1.U || io.generator_num === 2.U) && false.B) {
+    printf("Gen %d: wavelength: %d, freq: %d, freq_base %d, freq_coeff: %d, note_life: %d, instrument: %d\n", io.generator_num, wavelength, freq, freq_base, freq_coeff, note_life, generator_config.instrument)
+    printf("Note: %d, Wavelength_pos: %d, note_remainder: %d, note_divide: %d, \n", generator_config.note_index, wavelength_pos, note_remainder, note_divide)
+    printf("Enabled: %d, Current_Sample: %d, Last_Env_Effect: %d, Sample Out: %d, Velocity: %d\n", generator_config.enabled, current_sample, last_active_envelope_effect, io.sample_out, generator_config.velocity)
+    printf("Current_Sample: %d, Envelope_Effect: %d, Velocity: %d, Enabled: %d\n", current_sample, envelope_impl.envelope_effect, generator_config.velocity, generator_config.enabled)
+  }
 }
