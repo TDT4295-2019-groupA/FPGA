@@ -7,6 +7,7 @@ import sadie.blackboxes._
 import sadie.common._
 import sadie.communication._
 import sadie.config.config
+import sadie.i2s
 import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
@@ -14,6 +15,12 @@ class TopBundle extends Bundle {
   //val i2s = new I2SBus()
   val led_green = Output(UInt(1.W))
   val gpio = Output(UInt(1.W))
+
+  val bitClockOut = Output(Bool())
+  val channelOut = Output(UInt())
+  val soundBitOut = Output(UInt())
+  val sckOut = Output(UInt())
+
 }
 
 class Top() extends MultiIOModule {
@@ -24,6 +31,7 @@ class Top() extends MultiIOModule {
   val sound = Module(new SoundTopLevel).io
   val rx    = Module(new SPISlave()).io
   val input = Module(new SPIInputHandler).io
+  val i2s = Module(new i2s).io
 
   // drive SoundTopLevel
   sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
@@ -49,6 +57,24 @@ class Top() extends MultiIOModule {
   rx.TX_data_valid := false.B // transmit nothing
   rx.TX_data := 0.U
   rx.spi <> io.spi // connect spi slave bus to io
+
+  //do this usually
+  //i2s.sound := sound.sample_out
+
+  //do this for a4
+  val (_, flipTime) = Counter(true.B, config.FPGA_CLOCK_SPEED / 440)
+  val a4SampleFlip = RegInit(SInt(32.W), 15727680.S)
+
+  when(flipTime) {
+    a4SampleFlip := (-1.S) * a4SampleFlip
+  }
+
+  i2s.sound := a4SampleFlip
+
+  io.sckOut := i2s.sck
+  io.bitClockOut := i2s.bitClockOut
+  io.channelOut := i2s.channelOut
+  io.soundBitOut := i2s.bitOut
 
   // drive the input handler module
   input.RX_data       := rx.RX_data

@@ -3,7 +3,6 @@ package sadie
 import chisel3._
 import chisel3.experimental.MultiIOModule
 import chisel3.util.Counter
-import sadie.config.config
 
 class i2s() extends MultiIOModule {
 
@@ -31,7 +30,7 @@ class i2s() extends MultiIOModule {
 
   io.bitClockOut := bitClockOut === 1.U
   io.channelOut := channelSelect
-  io.bitOut := io.sound(31.U - (bitCount / 2.U))
+  io.bitOut := Mux(bitCount < 2.U, io.sound(0), io.sound(31.U - ((bitCount - 2.U) / 2.U)))
   io.sck := false.B
 
 
