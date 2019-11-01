@@ -8,16 +8,16 @@ class i2s() extends MultiIOModule {
 
   val io = IO(
     new Bundle {
-      val sound = Input(SInt(32.W))
+      val SampleIn = Input(SInt(32.W))
 
       //always 0 cause we drive this by PLL
-      val sck = Output(Bool())
+      val SystemClock = Output(Bool())
       //send one bit at a time
-      val bitOut = Output(UInt(1.W))
+      val DataBit = Output(UInt(1.W))
       //0 = left, 1 = right, changes 1 before bits
-      val channelOut = Output(UInt(1.W))
+      val LeftRightWordClock = Output(UInt(1.W))
       //32 bit width, 2 channels, 1 tick per bit, both high and low = 2 * 64 * 44100
-      val bitClockOut = Output(Bool())
+      val BitClock = Output(Bool())
     }
   )
 
@@ -27,10 +27,10 @@ class i2s() extends MultiIOModule {
   val (bitCount, bitReset) = Counter(increment, 64)
   val (channelSelect, _) = Counter(bitReset, 2)
 
-  io.bitClockOut := bitClockOut === 1.U
-  io.channelOut := channelSelect
-  io.bitOut := Mux(bitCount < 2.U, io.sound(0), io.sound(31.U - ((bitCount - 2.U) / 2.U)))
-  io.sck := false.B
+  io.BitClock := bitClockOut === 1.U
+  io.LeftRightWordClock := channelSelect
+  io.DataBit := Mux(bitCount < 2.U, io.SampleIn(0), io.SampleIn(31.U - ((bitCount - 2.U) / 2.U)))
+  io.SystemClock := false.B
 
 
 

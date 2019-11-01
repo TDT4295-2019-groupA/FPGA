@@ -16,10 +16,10 @@ class TopBundle extends Bundle {
   val led_green = Output(UInt(1.W))
   val gpio = Output(UInt(1.W))
 
-  val bitClockOut = Output(Bool())
-  val channelOut = Output(UInt())
-  val soundBitOut = Output(UInt())
-  val sckOut = Output(UInt())
+  val BitClock = Output(Bool())
+  val LeftRightWordClock = Output(UInt())
+  val DataBit = Output(UInt())
+  val SystemClock = Output(UInt())
 
 }
 
@@ -62,19 +62,19 @@ class Top() extends MultiIOModule {
   //i2s.sound := sound.sample_out
 
   //do this for a4
-  val (_, flipTime) = Counter(true.B, config.FPGA_CLOCK_SPEED / 440)
+  val (_, flipTime) = Counter(true.B, config.FPGA_CLOCK_SPEED / 880)
   val a4SampleFlip = RegInit(SInt(32.W), 15727680.S)
 
   when(flipTime) {
     a4SampleFlip := (-1.S) * a4SampleFlip
   }
 
-  i2s.sound := a4SampleFlip
+  i2s.SampleIn := a4SampleFlip
 
-  io.sckOut := i2s.sck
-  io.bitClockOut := i2s.bitClockOut
-  io.channelOut := i2s.channelOut
-  io.soundBitOut := i2s.bitOut
+  io.SystemClock := i2s.SystemClock
+  io.BitClock := i2s.BitClock
+  io.LeftRightWordClock := i2s.LeftRightWordClock
+  io.DataBit := i2s.DataBit
 
   // drive the input handler module
   input.RX_data       := rx.RX_data
