@@ -10,8 +10,6 @@ class i2s() extends MultiIOModule {
     new Bundle {
       val sound = Input(SInt(32.W))
 
-      val hard_reset = Input(Bool())
-
       //always 0 cause we drive this by PLL
       val sck = Output(Bool())
       //send one bit at a time
@@ -23,6 +21,7 @@ class i2s() extends MultiIOModule {
     }
   )
 
+  val (_, systemClockPulse) = Counter(true.B, config.config.FPGA_CLOCK_SPEED / 20000000)
   val (_, increment) = Counter(true.B, config.config.FPGA_CLOCK_SPEED / (2 * 64 * 44100))
   val (bitClockOut, _) = Counter(increment, 2)
   val (bitCount, bitReset) = Counter(increment, 64)
