@@ -30,7 +30,7 @@ class i2s() extends MultiIOModule {
   io.BitClock := bitClockOut === 1.U
   io.LeftRightWordClock := channelSelect
   io.DataBit := Mux(bitCount < 2.U, io.SampleIn(0), io.SampleIn(31.U - ((bitCount - 2.U) / 2.U)))
-  io.SystemClock := false.B
+  io.SystemClock := systemClockPulse
 
 
 

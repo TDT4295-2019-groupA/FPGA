@@ -25,7 +25,7 @@ object I2sTests {
   val rand = new scala.util.Random(100)
 
   class MatchingI2sTest(c: i2s) extends PeekPokeTester(c) {
-    poke(c.io.sound, 15727680)
+    poke(c.io.SampleIn, 15727680)
 
     for (i <- )
   }
