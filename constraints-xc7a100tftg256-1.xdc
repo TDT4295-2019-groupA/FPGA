@@ -5,9 +5,10 @@
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
 
+set_property -dict {PACKAGE_PIN N6 IOSTANDARD LVCMOS33} [get_ports { reset }];
 #Clock
 set_property -dict {PACKAGE_PIN N11 IOSTANDARD LVCMOS33} [get_ports { clock }];
-create_clock -add -name sys_clk_pin -period 6.25 \
+create_clock -add -name sys_clk_pin -period 62.5 \
     -waveform {0 5} [get_ports { clock }];
 
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[1] }]; #IO_L10N_T1_D15_14
@@ -18,10 +19,10 @@ set_property DRIVE 8 [get_ports { io_led_green }]
 #set_property -dict { PACKAGE_PIN P13   IOSTANDARD LVCMOS33 } [get_ports { mcu[2] }]; #IO_L11N_T1_SRCC_14
 #
 ## I2S
-#set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { io_dac_data }]; #IO_L4N_T0_D05_14
-#set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { io_dac_word }]; #IO_L4P_T0_D04_14
-#set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { io_dac_clk }]; #IO_L5N_T0_D07_14
-#set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports { io_dac_bclk }]; #IO_L5P_T0_D06_14
+set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports { io_DataBit }]; #IO_L4N_T0_D05_14
+set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { io_LeftRightWordClock }]; #IO_L4P_T0_D04_14
+set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { io_SystemClock }]; #IO_L5N_T0_D07_14
+set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { io_BitClock }]; #IO_L5P_T0_D06_14
 
 # SPI
 set_property -dict {PACKAGE_PIN M16 IOSTANDARD LVCMOS33} [get_ports { io_spi_mosi }];      #IO_L11P_T1_SRCC_15 Sch=jb_p[1]
