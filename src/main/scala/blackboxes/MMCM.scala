@@ -6,24 +6,7 @@ import chisel3.core.{DoubleParam, IntParam, StringParam}
 import chisel3.experimental.MultiIOModule
 import chisel3.experimental.ExtModule
 
-class MMCM extends MultiIOModule {
-  val io = IO(new Bundle{
-    val clk_in = Input(Clock())
-    val clk_out1 = Output(Clock())
-  })
-
-  val mmcm = Module(new MMCM_clk_wiz())
-  mmcm.clk_in := io.clk_in
-  io.clk_out1 := mmcm.clk_out1
-}
-
-// Blackbox for verilog module, along with its shitty names
-class MMCM_clk_wiz extends ExtModule() { // Verilog parameters
-  override def desiredName: String = "MMCM_clk_wiz" // verilog name
-  val clk_in = IO(Input(Clock()))
-  val clk_out1 = IO(Output(Clock()))
-}
-
+//thanks gruppe-b
 case class ClockConfig(divide: Int, duty_cycle: Double, phase: Double)
 
 object ClockConfig {
@@ -73,7 +56,7 @@ class MMCME2(
   val CLKFBIN   = IO(Input(Clock())) //Feedback In
   val CLKFBOUT  = IO(Output(Clock())) //Feedback Out
   val CLKFBOUTB = IO(Output(Clock()))
-  val LOCKED    = IO(Output(Bool())) //wtf is this - status ports? - yes status port
+  val LOCKED    = IO(Output(Bool())) //status ports
   val CLKOUT0   = IO(Output(Clock()))
   val CLKOUT0B  = IO(Output(Clock()))
   val CLKOUT1   = IO(Output(Clock()))
