@@ -17,7 +17,6 @@ class MMCME2(
               period: Double,
               base_mult: Double,
               base_div: Int,
-              clock0_divide: Double,
               clocks: List[ClockConfig],
               clock4_cascade: Boolean
             ) extends ExtModule(Map(

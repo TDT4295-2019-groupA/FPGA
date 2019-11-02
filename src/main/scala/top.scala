@@ -32,13 +32,24 @@ class Top() extends MultiIOModule {
   val input = Module(new SPIInputHandler).io
   val i2s = Module(new i2s).io
   
+  val clockConfigs:List[ClockConfig] = List(
+    ClockConfig.default, 
+    ClockConfig.default, 
+    ClockConfig.default, 
+    ClockConfig.default, 
+    ClockConfig.default, 
+    ClockConfig.default, 
+    ClockConfig.default, 
+  )
   // clocking stuff goes here
-  val pll = Module(new PLL)
-  pll.CLKIN1 := clock
-  pll.RST := false.B
-  pll.PWRDWN := false.B
-  pll.CLKFBIN := pll.CLKFBOUT // feedback clock
-  io.SystemClock := pll.CLKOUT0
+  val mmcm = Module(new MMCME2(62.5, 60, 1, clockConfigs, false))
+  mmcm.CLKIN1 := clock
+  mmcm.CLKFBIN := mmcm.CLKFBOUT
+  mmcm.PWRDWN := false.B
+  mmcm.RST := false.B
+  val SystemClock = mmcm.CLKOUT1
+  io.SystemClock := SystemClock
+  
 
   // drive SoundTopLevel
   sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
