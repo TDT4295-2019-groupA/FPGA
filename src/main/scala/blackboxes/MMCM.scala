@@ -13,6 +13,9 @@ object ClockConfig {
   def default = ClockConfig(1, 0.5, 0.0)
 }
 
+// Thanks gruppe b <33333333
+// Documentation for these parameters: https://www.xilinx.com/support/documentation/sw_manuals/xilinx2012_2/ug953-vivado-7series-libraries.pdf#1023753241
+// I tried using PLL, is simpler but that requires a minimum of 19MHz on primary clock. :(((((
 class MMCME2(
               period: Double,
               base_mult: Double,
