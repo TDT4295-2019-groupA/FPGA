@@ -36,9 +36,9 @@ class Top() extends MultiIOModule {
     ClockConfig.default, 
     ClockConfig.default, 
     ClockConfig.default,
-    ClockConfig(4, 0.5, 0.0), //For SCK
+    ClockConfig(4, 0.5, 0.0), //For BCK
     ClockConfig.default,
-    ClockConfig(240, 0.5, 0.0), //For BCK
+    ClockConfig(60, 0.5, 0.0), //For SCK
   )
   // clocking stuff goes here
   //42.336 = clock speed of 677.376 MHz, divide by 60 to get sck
