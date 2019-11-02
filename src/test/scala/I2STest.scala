@@ -26,7 +26,8 @@ object I2sTests {
 
   class MatchingI2sTest(c: i2s) extends PeekPokeTester(c) {
     poke(c.io.SampleIn, 15727680)
-
-    for (i <- )
+    for (i <- 0 to 44100) {
+      step(1)
+    }
   }
 }
