@@ -19,8 +19,7 @@ class TopBundle extends Bundle {
   val BitClock = Output(Bool())
   val LeftRightWordClock = Output(UInt())
   val DataBit = Output(UInt())
-  val SystemClock = Output(UInt())
-
+  val SystemClock = Output(Clock())
 }
 
 class Top() extends MultiIOModule {
@@ -32,6 +31,14 @@ class Top() extends MultiIOModule {
   val rx    = Module(new SPISlave()).io
   val input = Module(new SPIInputHandler).io
   val i2s = Module(new i2s).io
+  
+  // clocking stuff goes here
+  val pll = Module(new PLL)
+  pll.CLKIN1 := clock
+  pll.RST := false.B
+  pll.PWRDWN := false.B
+  pll.CLKFBIN := pll.CLKFBOUT // feedback clock
+  io.SystemClock := pll.CLKOUT0
 
   // drive SoundTopLevel
   sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
@@ -71,7 +78,6 @@ class Top() extends MultiIOModule {
 
   i2s.SampleIn := a4SampleFlip
 
-  io.SystemClock := i2s.SystemClock
   io.BitClock := i2s.BitClock
   io.LeftRightWordClock := i2s.LeftRightWordClock
   io.DataBit := i2s.DataBit
