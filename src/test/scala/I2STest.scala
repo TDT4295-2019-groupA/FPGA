@@ -25,8 +25,15 @@ object I2sTests {
   val rand = new scala.util.Random(100)
 
   class MatchingI2sTest(c: i2s) extends PeekPokeTester(c) {
-    poke(c.io.SampleIn, 15727680)
+    var sample = 15727680
+    poke(c.io.SampleIn, sample)
 
-    for (i <- )
+    for (i <- 0 until 2 * 64 * 44100) {
+      printf("i2s output: DataBitOut: %d, SystemClock: %d, LeftRightWordClock: %d, BitClock: %d\n", peek(c.io.DataBit), peek(c.io.SystemClock), peek(c.io.LeftRightWordClock), peek(c.io.BitClock))
+      if(i % (440 * 64 * 2) == 0) {
+        sample = - sample
+      }
+      step(34)
+    }
   }
 }

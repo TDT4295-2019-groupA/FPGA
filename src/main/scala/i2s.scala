@@ -21,7 +21,7 @@ class i2s() extends MultiIOModule {
     }
   )
 
-  val (_, systemClockPulse) = Counter(true.B, config.config.FPGA_CLOCK_SPEED / 20000000)
+  val (_, systemClockPulse) = Counter(true.B, 2)
   val (_, increment) = Counter(true.B, config.config.FPGA_CLOCK_SPEED / (2 * 64 * 44100))
   val (bitClockOut, _) = Counter(increment, 2)
   val (bitCount, bitReset) = Counter(increment, 64)
