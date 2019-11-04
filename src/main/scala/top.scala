@@ -68,7 +68,6 @@ class Top() extends MultiIOModule {
     current_bit_index := current_bit_index + 1.U
 
     when(current_bit_index === 31.U) {
-      current_bit_index := 0.U
       left_right_channel_select := !left_right_channel_select
     }
 
@@ -90,11 +89,12 @@ class Top() extends MultiIOModule {
     //i2s.sound := sound.sample_out
 
     //do this for a4
-    val a4SampleFlip = RegInit(SInt(32.W), 2147483647.S) //15727680.S)
+    val a4SampleFlip = RegInit(SInt(32.W),15727680.S) //15727680.S)
     val flip_time = RegInit(UInt(10.W), 0.U)
 
-    when(current_bit_index === 31.U) {
+    when(current_bit_index === 32.U) {
       flip_time := flip_time + 1.U
+      current_bit_index := 0.U
     }
     when(flip_time === 80.U) {
       flip_time := 0.U
@@ -102,7 +102,8 @@ class Top() extends MultiIOModule {
     }
 
     io.LeftRightWordClock := left_right_channel_select
-    io.DataBit := a4SampleFlip(current_bit_index)
+    // we have to send MSB first
+    io.DataBit := a4SampleFlip(31.U-current_bit_index)
 
     // drive the input handler module
     input.RX_data       := rx.RX_data
