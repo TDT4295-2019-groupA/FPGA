@@ -30,7 +30,7 @@ package i2s_types_pkg is
     constant LRCK_FREQ : integer := 44100; -- MCLK/384
     --24 bits per LRCK phase (low = left channel, high = right channel)
 
-    constant SAMPLE_WIDTH : integer := 24;
+    constant SAMPLE_WIDTH : integer := 32;
     subtype sample_t is signed(SAMPLE_WIDTH-1 downto 0);
 
     --exactly 2*24 bits in an LRCK frame

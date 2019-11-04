@@ -19,10 +19,10 @@ set_property DRIVE 8 [get_ports { io_led_green }]
 #set_property -dict { PACKAGE_PIN P13   IOSTANDARD LVCMOS33 } [get_ports { mcu[2] }]; #IO_L11N_T1_SRCC_14
 #
 ## I2S
-set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports { io_DataBit }]; #IO_L4N_T0_D05_14
-set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { io_LeftRightWordClock }]; #IO_L4P_T0_D04_14
-set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { io_SystemClock }]; #IO_L5N_T0_D07_14
-set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { io_BitClock }]; #IO_L5P_T0_D06_14
+set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports { io_i2s_data }]; #IO_L4N_T0_D05_14
+set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { io_i2s_lrck }]; #IO_L4P_T0_D04_14
+set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { io_i2s_sclk }]; #IO_L5N_T0_D07_14
+set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { io_i2s_bclk }]; #IO_L5P_T0_D06_14
 
 # SPI
 set_property -dict {PACKAGE_PIN M16 IOSTANDARD LVCMOS33} [get_ports { io_spi_mosi }];      #IO_L11P_T1_SRCC_15 Sch=jb_p[1]

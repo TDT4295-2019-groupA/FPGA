@@ -8,19 +8,19 @@ import sadie.blackboxes._
 import sadie.common._
 import sadie.communication._
 import sadie.config.config
-import sadie.i2s
+//import sadie.i2s
 import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
   val spi = new SPIBus()
-  //val i2s = new I2SBus()
+  val i2s = new I2SBus()
   val led_green = Output(UInt(1.W))
   val gpio = Output(UInt(1.W))
 
-  val BitClock = Output(Clock())
-  val LeftRightWordClock = Output(Bool())
-  val DataBit = Output(UInt())
-  val SystemClock = Output(Clock())
+//  val BitClock = Output(Clock())
+//  val LeftRightWordClock = Output(Bool())
+//  val DataBit = Output(UInt())
+//  val SystemClock = Output(Clock())
 }
 
 class Top() extends MultiIOModule {
@@ -30,6 +30,7 @@ class Top() extends MultiIOModule {
   // initalize top-modules
   val rx    = Module(new SPISlave()).io
   val input = Module(new SPIInputHandler).io
+  val i2s   = Module(new I2S(32.W))
   
   val clockConfigs:List[ClockConfig] = List(
     ClockConfig.default,
@@ -51,77 +52,70 @@ class Top() extends MultiIOModule {
   val BitClock = mmcm.CLKOUT4
 
 
-  io.SystemClock := SystemClock
-  io.BitClock := BitClock
-
   // output audio as PWM
   // drive the SPISlave
   rx.TX_data_valid := false.B // transmit nothing
   rx.TX_data := 0.U
   rx.spi <> io.spi // connect spi slave bus to io
 
-  withClock(BitClock) {
-    val sound = Module(new SoundTopLevel).io
-    val current_bit_index = RegInit(UInt(8.W), 0.U)
-    val left_right_channel_select = RegInit(Bool(), false.B)
+  //withClock(BitClock) {
+  val sound = Module(new SoundTopLevel).io
 
-    current_bit_index := current_bit_index + 1.U
-
-    when(current_bit_index === 31.U) {
-      current_bit_index := 0.U
-      left_right_channel_select := !left_right_channel_select
-    }
-
-    // drive SoundTopLevel
-    sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
-    sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
-    sound.global_update_packet_valid    := false.B // overridden below
-    sound.generator_update_packet_valid := false.B // overridden below
-    sound.step_sample                   := false.B // overridden below
-    //io.i2c.data := sound.sample_out
+  // drive SoundTopLevel
+  sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
+  sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
+  sound.global_update_packet_valid    := false.B // overridden below
+  sound.generator_update_packet_valid := false.B // overridden below
+  sound.step_sample                   := false.B // overridden below
+  //io.i2c.data := sound.sample_out
 
 
-    // step audio generators at audio sample rate
-    val saved_sample = RegInit(SInt(32.W), 0.S)
-    sound.step_sample := true.B
-    saved_sample := sound.sample_out
+  // step audio generators at audio sample rate
+  val saved_sample = RegInit(SInt(32.W), 0.S)
+  sound.step_sample := true.B
+  saved_sample := sound.sample_out
 
-    //do this usually
-    //i2s.sound := sound.sample_out
+  //do this usually
+  //i2s.sound := sound.sample_out
 
-    //do this for a4
-    val a4SampleFlip = RegInit(SInt(32.W), 15727680.S)
-    val flip_time = RegInit(UInt(10.W), 0.U)
+  //do this for a4
+  val a4SampleFlip = RegInit(SInt(32.W), 15727680.S)
+  val flip_time = RegInit(UInt(10.W), 0.U)
 
-    when(current_bit_index === 31.U) {
-      flip_time := flip_time + 1.U
-    }
-    when(flip_time === 80.U) {
-      flip_time := ! flip_time
-    }
+  flip_time := flip_time + 1.U
+  when(flip_time === 80.U) {
+    flip_time := ! flip_time
+  }
 
-    io.LeftRightWordClock := left_right_channel_select
-    io.DataBit := a4SampleFlip(current_bit_index)
+  i2s.io.MCLK_in := SystemClock
+  i2s.io.resetn := false.B
+  io.i2s <> i2s.io.i2s
+//  io.i2s.sclk := i2s.io.i2s.sclk
+//  io.i2s.bclk := i2s.io.i2s.bclk
+//  io.i2s.lrck := i2s.io.i2s.lrck
+//  io.i2s.data := i2s.io.i2s.data
+  i2s.io.wave_left_in := a4SampleFlip.asUInt()
+  i2s.io.wave_right_in := a4SampleFlip.asUInt()
 
-    // drive the input handler module
-    input.RX_data       := rx.RX_data
-    input.RX_data_valid := rx.RX_data_valid
+  // drive the input handler module
+  input.RX_data       := rx.RX_data
+  input.RX_data_valid := rx.RX_data_valid
 
-    // signal valid SPI packages
-    when (input.packet.valid) {
-      switch (input.packet.magic) {
-        is (config.sReset.U) {
-          // TODO?
-        }
-        is (config.sGlobalUpdate.U) {
-          sound.global_update_packet_valid    := true.B
-        }
-        is (config.sGeneratorUpdate.U) {
-          sound.generator_update_packet_valid := true.B
-        }
+  // signal valid SPI packages
+  when (input.packet.valid) {
+    switch (input.packet.magic) {
+      is (config.sReset.U) {
+        // TODO?
+      }
+      is (config.sGlobalUpdate.U) {
+        sound.global_update_packet_valid    := true.B
+      }
+      is (config.sGeneratorUpdate.U) {
+        sound.generator_update_packet_valid := true.B
       }
     }
-
   }
+
+  //}
 
 }
