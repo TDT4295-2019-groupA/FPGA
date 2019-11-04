@@ -26,10 +26,11 @@ class TopBundle extends Bundle {
 class Top() extends MultiIOModule {
   val io = IO(new TopBundle)
   io.led_green := 1.U
-  io.gpio := 1.U
+  val reggie = RegInit(Bool(), true.B)
+  io.gpio := reggie
+  io.DataBit := 0.U
+  io.LeftRightWordClock := 0.U
   // initalize top-modules
-  val rx    = Module(new SPISlave()).io
-  val input = Module(new SPIInputHandler).io
   
   val clockConfigs:List[ClockConfig] = List(
     ClockConfig.default,
@@ -49,6 +50,7 @@ class Top() extends MultiIOModule {
   mmcm.RST := false.B
   val SystemClock = mmcm.CLKOUT6
   val BitClock = mmcm.CLKOUT4
+  val SPIClock = mmcm.CLKOUT0
 
 
   io.SystemClock := SystemClock
@@ -56,74 +58,79 @@ class Top() extends MultiIOModule {
 
   // output audio as PWM
   // drive the SPISlave
-  rx.TX_data_valid := false.B // transmit nothing
-  rx.TX_data := 0.U
-  rx.spi <> io.spi // connect spi slave bus to io
 
-  withClock(BitClock) {
-    val sound = Module(new SoundTopLevel).io
-    val current_bit_index = RegInit(UInt(8.W), 0.U)
-    val left_right_channel_select = RegInit(Bool(), false.B)
-
-    current_bit_index := current_bit_index + 1.U
-
-    when(current_bit_index === 31.U) {
-      current_bit_index := 0.U
-      left_right_channel_select := !left_right_channel_select
-    }
-
-    // drive SoundTopLevel
-    sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
-    sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
-    sound.global_update_packet_valid    := false.B // overridden below
-    sound.generator_update_packet_valid := false.B // overridden below
-    sound.step_sample                   := false.B // overridden below
-    //io.i2c.data := sound.sample_out
-
-
-    // step audio generators at audio sample rate
-    val saved_sample = RegInit(SInt(32.W), 0.S)
-    sound.step_sample := true.B
-    saved_sample := sound.sample_out
-
-    //do this usually
-    //i2s.sound := sound.sample_out
-
-    //do this for a4
-    val a4SampleFlip = RegInit(SInt(32.W), 2147483647.S) //15727680.S)
-    val flip_time = RegInit(UInt(10.W), 0.U)
-
-    when(current_bit_index === 31.U) {
-      flip_time := flip_time + 1.U
-    }
-    when(flip_time === 80.U) {
-      flip_time := 0.U
-      a4SampleFlip := (-1.S) * a4SampleFlip
-    }
-
-    io.LeftRightWordClock := left_right_channel_select
-    io.DataBit := a4SampleFlip(current_bit_index)
-
-    // drive the input handler module
+  withClock(SPIClock) {
+    val rx    = Module(new SPISlave()).io
+    val input = Module(new SPIInputHandler).io
     input.RX_data       := rx.RX_data
     input.RX_data_valid := rx.RX_data_valid
 
+    rx.TX_data_valid := false.B // transmit nothing
+    rx.TX_data := 0.U
+    rx.spi <> io.spi // connect spi slave bus to io
     // signal valid SPI packages
     when (input.packet.valid) {
+      reggie := true.B
       switch (input.packet.magic) {
         is (config.sReset.U) {
           // TODO?
           // I'd recommend not using this because a package covered in 0s would read as reset but is likely just corrupt
         }
-        is (config.sGlobalUpdate.U) {
-          sound.global_update_packet_valid    := true.B
-        }
-        is (config.sGeneratorUpdate.U) {
-          sound.generator_update_packet_valid := true.B
-        }
+//        is (config.sGlobalUpdate.U) {
+//          sound.global_update_packet_valid    := true.B
+//        }
+//        is (config.sGeneratorUpdate.U) {
+//          sound.generator_update_packet_valid := true.B
+//        }
       }
     }
-
   }
+//  withClock(BitClock) {
+//    val sound = Module(new SoundTopLevel).io
+//    val current_bit_index = RegInit(UInt(8.W), 0.U)
+//    val left_right_channel_select = RegInit(Bool(), false.B)
+//
+//    current_bit_index := current_bit_index + 1.U
+//
+//    when(current_bit_index === 31.U) {
+//      current_bit_index := 0.U
+//      left_right_channel_select := !left_right_channel_select
+//    }
+//
+//    // drive SoundTopLevel
+//    sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
+//    sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
+//    sound.global_update_packet_valid    := false.B // overridden below
+//    sound.generator_update_packet_valid := false.B // overridden below
+//    sound.step_sample                   := false.B // overridden below
+//    //io.i2c.data := sound.sample_out
+//
+//
+//    // step audio generators at audio sample rate
+//    val saved_sample = RegInit(SInt(32.W), 0.S)
+//    sound.step_sample := true.B
+//    saved_sample := sound.sample_out
+//
+//    //do this usually
+//    //i2s.sound := sound.sample_out
+//
+//    //do this for a4
+//    val a4SampleFlip = RegInit(SInt(32.W), 2147483647.S) //15727680.S)
+//    val flip_time = RegInit(UInt(10.W), 0.U)
+//
+//    when(current_bit_index === 31.U) {
+//      flip_time := flip_time + 1.U
+//    }
+//    when(flip_time === 80.U) {
+//      flip_time := 0.U
+//      a4SampleFlip := (-1.S) * a4SampleFlip
+//    }
+//
+//    io.LeftRightWordClock := left_right_channel_select
+//    io.DataBit := a4SampleFlip(current_bit_index)
+//
+//    // drive the input handler module
+//
+//  }
 
 }
