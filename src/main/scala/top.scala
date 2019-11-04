@@ -90,14 +90,15 @@ class Top() extends MultiIOModule {
     //i2s.sound := sound.sample_out
 
     //do this for a4
-    val a4SampleFlip = RegInit(SInt(32.W), 15727680.S)
+    val a4SampleFlip = RegInit(SInt(32.W), 2147483647.S) //15727680.S)
     val flip_time = RegInit(UInt(10.W), 0.U)
 
     when(current_bit_index === 31.U) {
       flip_time := flip_time + 1.U
     }
     when(flip_time === 80.U) {
-      flip_time := ! flip_time
+      flip_time := 0.U
+      a4SampleFlip := (-1.S) * a4SampleFlip
     }
 
     io.LeftRightWordClock := left_right_channel_select
@@ -112,6 +113,7 @@ class Top() extends MultiIOModule {
       switch (input.packet.magic) {
         is (config.sReset.U) {
           // TODO?
+          // I'd recommend not using this because a package covered in 0s would read as reset but is likely just corrupt
         }
         is (config.sGlobalUpdate.U) {
           sound.global_update_packet_valid    := true.B
