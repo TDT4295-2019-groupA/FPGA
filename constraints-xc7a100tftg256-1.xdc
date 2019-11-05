@@ -13,25 +13,25 @@ create_clock -add -name sys_clk_pin -period 62.5 \
 
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[1] }]; #IO_L10N_T1_D15_14
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[0] }]; #IO_L10P_T1_D14_14
-set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { io_led_green }]; #IO_L9N_T1_DQS_D13_14
-set_property DRIVE 8 [get_ports { io_led_green }]
+#set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { io_led_green }]; #IO_L9N_T1_DQS_D13_14
+#set_property DRIVE 8 [get_ports { io_led_green }]
 #set_property -dict { PACKAGE_PIN R15   IOSTANDARD LVCMOS33 } [get_ports { led_red }]; #IO_L9P_T1_DQS_14
 #set_property -dict { PACKAGE_PIN P13   IOSTANDARD LVCMOS33 } [get_ports { mcu[2] }]; #IO_L11N_T1_SRCC_14
 #
 ## I2S
-set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports { io_DataBit }]; #IO_L4N_T0_D05_14
-set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { io_LeftRightWordClock }]; #IO_L4P_T0_D04_14
-set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { io_SystemClock }]; #IO_L5N_T0_D07_14
-set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { io_BitClock }]; #IO_L5P_T0_D06_14
+#set_property -dict { PACKAGE_PIN K13   IOSTANDARD LVCMOS33 } [get_ports { io_DataBit }]; #IO_L4N_T0_D05_14
+#set_property -dict { PACKAGE_PIN L13   IOSTANDARD LVCMOS33 } [get_ports { io_LeftRightWordClock }]; #IO_L4P_T0_D04_14
+#set_property -dict { PACKAGE_PIN L14   IOSTANDARD LVCMOS33 } [get_ports { io_SystemClock }]; #IO_L5N_T0_D07_14
+#set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { io_BitClock }]; #IO_L5P_T0_D06_14
 
 # SPI
-set_property -dict {PACKAGE_PIN M6 IOSTANDARD LVCMOS33} [get_ports { io_spi_mosi }];      #IO_L11P_T1_SRCC_15 Sch=jb_p[1]
-set_property -dict {PACKAGE_PIN R11 IOSTANDARD LVCMOS33} [get_ports { io_spi_miso }];      #IO_L11N_T1_SRCC_15 Sch=jb_n[1]
-set_property -dict {PACKAGE_PIN P8 IOSTANDARD LVCMOS33} [get_ports { io_spi_clk  }];      #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
-set_property -dict {PACKAGE_PIN R10 IOSTANDARD LVCMOS33} [get_ports { io_spi_cs_n }];      #IO_L12N_T1_MRCC_15 Sch=jb_n[2]
+#set_property -dict {PACKAGE_PIN M6 IOSTANDARD LVCMOS33} [get_ports { io_spi_mosi }];      #IO_L11P_T1_SRCC_15 Sch=jb_p[1]
+#set_property -dict {PACKAGE_PIN R11 IOSTANDARD LVCMOS33} [get_ports { io_spi_miso }];      #IO_L11N_T1_SRCC_15 Sch=jb_n[1]
+#set_property -dict {PACKAGE_PIN P8 IOSTANDARD LVCMOS33} [get_ports { io_spi_clk  }];      #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
+#set_property -dict {PACKAGE_PIN R10 IOSTANDARD LVCMOS33} [get_ports { io_spi_cs_n }];      #IO_L12N_T1_MRCC_15 Sch=jb_n[2]
 
 # please don't ask...
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF] 
+#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF] 
 # GPIO
 set_property -dict { PACKAGE_PIN P9   IOSTANDARD LVCMOS33 } [get_ports { io_gpio }]; 
 
