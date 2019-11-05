@@ -82,20 +82,19 @@ class Top() extends MultiIOModule {
   val a4SampleFlip = RegInit(SInt(32.W), 15727680.S)
   val flip_time = RegInit(UInt(10.W), 0.U)
 
-  flip_time := flip_time + 1.U
   when(flip_time === 80.U) {
-    flip_time := ! flip_time
+    flip_time := 0.U
+    a4SampleFlip := (-1.S) * a4SampleFlip // == ~a4SampleFlip + 1
   }
 
   i2s.io.MCLK_in := SystemClock
   i2s.io.resetn := false.B
   io.i2s <> i2s.io.i2s
-//  io.i2s.sclk := i2s.io.i2s.sclk
-//  io.i2s.bclk := i2s.io.i2s.bclk
-//  io.i2s.lrck := i2s.io.i2s.lrck
-//  io.i2s.data := i2s.io.i2s.data
   i2s.io.wave_left_in := a4SampleFlip.asUInt()
   i2s.io.wave_right_in := a4SampleFlip.asUInt()
+  when (i2s.io.i2s.lrck) {
+    flip_time := flip_time + 1.U
+  }
 
   // drive the input handler module
   input.RX_data       := rx.RX_data
