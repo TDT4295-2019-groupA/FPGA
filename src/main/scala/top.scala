@@ -33,7 +33,7 @@ class Top() extends MultiIOModule {
   // initalize top-modules
   
   val clockConfigs:List[ClockConfig] = List(
-    ClockConfig.default,
+    ClockConfig(600, 0.5, 0.0), // For SPI testing, it's a little over 1MHz so a non-CCIO pin should be able to handle it(?)
     ClockConfig.default, 
     ClockConfig.default, 
     ClockConfig.default,
@@ -51,7 +51,6 @@ class Top() extends MultiIOModule {
   val SystemClock = mmcm.CLKOUT6
   val BitClock = mmcm.CLKOUT4
   val SPIClock = mmcm.CLKOUT0
-
 
   io.SystemClock := SystemClock
   io.BitClock := BitClock
