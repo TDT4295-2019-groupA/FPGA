@@ -9,7 +9,7 @@ set_property -dict {PACKAGE_PIN N6 IOSTANDARD LVCMOS33} [get_ports { reset }];
 #Clock
 set_property -dict {PACKAGE_PIN N11 IOSTANDARD LVCMOS33} [get_ports { clock }];
 create_clock -add -name sys_clk_pin -period 62.5 \
-    -waveform {0 5} [get_ports { clock }];
+    -waveform {0 31.25} [get_ports { clock }];
 
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[1] }]; #IO_L10N_T1_D15_14
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[0] }]; #IO_L10P_T1_D14_14
