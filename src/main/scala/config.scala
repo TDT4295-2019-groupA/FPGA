@@ -8,6 +8,7 @@ object config {
   val NOTE_LIFE_COEFF = 10     // scaling factor when representing noteLife and wavelength as an integer
   val MIDI_A3_FREQ    = 440.0  // i won't listen to your a=432Hz bullshit
   //val MIDI_A3_INDEX   = 45
+  val MIDI_INDEX_MAX = 128
   val MIDI_A3_INDEX   = 58     // this sounds better *lenny face*
   val N_GENERATORS    = 8
   val N_MIDI_CHANNELS = 16     // max amount of channels supported by the MIDI standard
