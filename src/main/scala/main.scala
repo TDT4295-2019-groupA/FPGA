@@ -40,8 +40,23 @@ class TopModule extends RawModule {
   val clock = IO(Input(Clock()))
   val reset = IO(Input(Bool()))
   val io = IO(new TopBundle)
-
-  withClockAndReset(clock, reset) {
+  val fake_reset = Wire(Bool())
+  withClockAndReset(clock, false.B) {
+    val hold_reset = RegNext(false.B)
+    val flip_reset = RegNext(false.B)
+    flip_reset := flip_reset
+    hold_reset := hold_reset
+  
+    when (!hold_reset && !flip_reset) {
+      flip_reset := true.B
+      hold_reset := true.B
+    }
+    when (hold_reset && flip_reset) {
+      flip_reset := false.B
+    }
+    fake_reset := flip_reset
+  }
+  withClockAndReset(clock, fake_reset) {
     val top = Module(new Top)
     top.io <> io
   }
