@@ -9,7 +9,7 @@ class TopBundle extends Bundle {
 
 class Top() extends Module {
   val io = IO(new TopBundle)
-  val reggie = RegNext(Bool(), true.B)
+  val reggie = RegInit(Bool(), true.B)
   io.gpio := reggie
   io.gpio2 := 1.U
 }
