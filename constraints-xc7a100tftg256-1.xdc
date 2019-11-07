@@ -34,6 +34,7 @@ create_clock -add -name sys_clk_pin -period 62.5 \
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF] 
 # GPIO
 set_property -dict { PACKAGE_PIN P9   IOSTANDARD LVCMOS33 } [get_ports { io_gpio }]; 
+set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { io_gpio2 }]; 
 
 #set_property --dict { PACKAGE_PIN T9    IOSTANDARD LVCMOS33 } [get_ports { io_l22p_t3_a05_d21_14 }]; #IO_L22P_T3_A05_D21_14
 #set_property --dict { PACKAGE_PIN T8    IOSTANDARD LVCMOS33 } [get_ports { io_l21n_t3_dqs_a06_d22_14 }]; #IO_L21N_T3_DQS_A06_D22_14

@@ -1,309 +1,11 @@
-module SPISlave(
-  input        clock,
-  input        reset,
-  output       io_RX_data_valid,
-  output [7:0] io_RX_data,
-  input        io_spi_mosi,
-  output       io_spi_miso,
-  input        io_spi_clk,
-  input        io_spi_cs_n
-);
-  wire  spi_i_Clk;
-  wire  spi_i_Rst_L;
-  wire  spi_o_RX_DV;
-  wire [7:0] spi_o_RX_Byte;
-  wire  spi_i_TX_DV;
-  wire [7:0] spi_i_TX_Byte;
-  wire  spi_i_SPI_Clk;
-  wire  spi_o_SPI_MISO;
-  wire  spi_i_SPI_MOSI;
-  wire  spi_i_SPI_CS_n;
-  SPI_Slave_nandland #(.SPI_MODE(0)) spi (
-    .i_Clk(spi_i_Clk),
-    .i_Rst_L(spi_i_Rst_L),
-    .o_RX_DV(spi_o_RX_DV),
-    .o_RX_Byte(spi_o_RX_Byte),
-    .i_TX_DV(spi_i_TX_DV),
-    .i_TX_Byte(spi_i_TX_Byte),
-    .i_SPI_Clk(spi_i_SPI_Clk),
-    .o_SPI_MISO(spi_o_SPI_MISO),
-    .i_SPI_MOSI(spi_i_SPI_MOSI),
-    .i_SPI_CS_n(spi_i_SPI_CS_n)
-  );
-  assign io_RX_data_valid = spi_o_RX_DV;
-  assign io_RX_data = spi_o_RX_Byte;
-  assign io_spi_miso = spi_o_SPI_MISO;
-  assign spi_i_Clk = clock;
-  assign spi_i_Rst_L = reset == 1'h0;
-  assign spi_i_TX_DV = 1'h0;
-  assign spi_i_TX_Byte = 8'h0;
-  assign spi_i_SPI_Clk = io_spi_clk;
-  assign spi_i_SPI_MOSI = io_spi_mosi;
-  assign spi_i_SPI_CS_n = io_spi_cs_n == 1'h0;
-endmodule
-module SPIInputHandler(
-  input        clock,
-  input        reset,
-  output       io_packet_valid,
-  input  [7:0] io_RX_data,
-  input        io_RX_data_valid
-);
-  reg [255:0] data;
-  reg [255:0] _RAND_0;
-  reg [7:0] data_len;
-  reg [31:0] _RAND_1;
-  wire [7:0] _T_47;
-  wire [7:0] data_len_set;
-  wire [8:0] _T_35;
-  wire [8:0] _T_36;
-  wire [7:0] _T_37;
-  wire [263:0] _GEN_20;
-  wire [270:0] _T_43;
-  wire [270:0] _GEN_21;
-  wire [270:0] _T_44;
-  wire [270:0] _GEN_15;
-  wire [255:0] data_set;
-  wire [255:0] _T_38;
-  wire [7:0] magic;
-  wire  _T_49;
-  wire  _T_53;
-  wire  _T_55;
-  wire  _T_60;
-  wire  _T_62;
-  wire  _GEN_6;
-  wire  _GEN_9;
-  wire  _GEN_14;
-  assign _T_47 = data_len + 8'h8;
-  assign data_len_set = io_RX_data_valid ? _T_47 : data_len;
-  assign _T_35 = data_len_set - 8'h8;
-  assign _T_36 = $unsigned(_T_35);
-  assign _T_37 = _T_36[7:0];
-  assign _GEN_20 = {data, 8'h0};
-  assign _T_43 = {{7'd0}, _GEN_20};
-  assign _GEN_21 = {{263'd0}, io_RX_data};
-  assign _T_44 = _T_43 | _GEN_21;
-  assign _GEN_15 = io_RX_data_valid ? _T_44 : {{15'd0}, data};
-  assign data_set = _GEN_15[255:0];
-  assign _T_38 = data_set >> _T_37;
-  assign magic = _T_38[7:0];
-  assign _T_49 = 8'h0 == magic;
-  assign _T_53 = 8'h1 == magic;
-  assign _T_55 = data_len_set == 8'hc8;
-  assign _T_60 = 8'h2 == magic;
-  assign _T_62 = data_len_set == 8'h60;
-  assign _GEN_6 = _T_60 & _T_62;
-  assign _GEN_9 = _T_53 ? _T_55 : _GEN_6;
-  assign _GEN_14 = _T_49 ? 1'h0 : _GEN_9;
-  assign io_packet_valid = io_RX_data_valid & _GEN_14;
-`ifdef RANDOMIZE_GARBAGE_ASSIGN
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_INVALID_ASSIGN
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_REG_INIT
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_MEM_INIT
-`define RANDOMIZE
-`endif
-`ifndef RANDOM
-`define RANDOM $random
-`endif
-`ifdef RANDOMIZE_MEM_INIT
-  integer initvar;
-`endif
-initial begin
-  `ifdef RANDOMIZE
-    `ifdef INIT_RANDOM
-      `INIT_RANDOM
-    `endif
-    `ifndef VERILATOR
-      `ifdef RANDOMIZE_DELAY
-        #`RANDOMIZE_DELAY begin end
-      `else
-        #0.002 begin end
-      `endif
-    `endif
-  `ifdef RANDOMIZE_REG_INIT
-  _RAND_0 = {8{`RANDOM}};
-  data = _RAND_0[255:0];
-  `endif // RANDOMIZE_REG_INIT
-  `ifdef RANDOMIZE_REG_INIT
-  _RAND_1 = {1{`RANDOM}};
-  data_len = _RAND_1[7:0];
-  `endif // RANDOMIZE_REG_INIT
-  `endif // RANDOMIZE
-end
-  always @(posedge clock) begin
-    if (reset) begin
-      data <= 256'h0;
-    end else begin
-      if (io_RX_data_valid) begin
-        if (_T_49) begin
-          data <= 256'h0;
-        end else begin
-          if (_T_53) begin
-            if (_T_55) begin
-              data <= 256'h0;
-            end else begin
-              data <= data_set;
-            end
-          end else begin
-            if (_T_60) begin
-              if (_T_62) begin
-                data <= 256'h0;
-              end else begin
-                data <= data_set;
-              end
-            end else begin
-              data <= data_set;
-            end
-          end
-        end
-      end else begin
-        data <= data_set;
-      end
-    end
-    if (reset) begin
-      data_len <= 8'h0;
-    end else begin
-      if (io_RX_data_valid) begin
-        if (_T_49) begin
-          data_len <= 8'h0;
-        end else begin
-          if (_T_53) begin
-            if (_T_55) begin
-              data_len <= 8'h0;
-            end else begin
-              if (io_RX_data_valid) begin
-                data_len <= _T_47;
-              end
-            end
-          end else begin
-            if (_T_60) begin
-              if (_T_62) begin
-                data_len <= 8'h0;
-              end else begin
-                if (io_RX_data_valid) begin
-                  data_len <= _T_47;
-                end
-              end
-            end else begin
-              if (io_RX_data_valid) begin
-                data_len <= _T_47;
-              end
-            end
-          end
-        end
-      end else begin
-        if (io_RX_data_valid) begin
-          data_len <= _T_47;
-        end
-      end
-    end
-  end
-endmodule
 module Top(
   input   clock,
   input   reset,
-  input   io_spi_mosi,
-  output  io_spi_miso,
-  input   io_spi_clk,
-  input   io_spi_cs_n,
-  output  io_gpio,
-  output  io_BitClock,
-  output  io_SystemClock
+  output  io_gpio
 );
-  wire  mmcm_CLKIN1;
-  wire  mmcm_RST;
-  wire  mmcm_PWRDWN;
-  wire  mmcm_CLKFBIN;
-  wire  mmcm_CLKFBOUT;
-  wire  mmcm_CLKFBOUTB;
-  wire  mmcm_LOCKED;
-  wire  mmcm_CLKOUT0;
-  wire  mmcm_CLKOUT0B;
-  wire  mmcm_CLKOUT1;
-  wire  mmcm_CLKOUT1B;
-  wire  mmcm_CLKOUT2;
-  wire  mmcm_CLKOUT2B;
-  wire  mmcm_CLKOUT3;
-  wire  mmcm_CLKOUT3B;
-  wire  mmcm_CLKOUT4;
-  wire  mmcm_CLKOUT5;
-  wire  mmcm_CLKOUT6;
-  wire  SPISlave_clock;
-  wire  SPISlave_reset;
-  wire  SPISlave_io_RX_data_valid;
-  wire [7:0] SPISlave_io_RX_data;
-  wire  SPISlave_io_spi_mosi;
-  wire  SPISlave_io_spi_miso;
-  wire  SPISlave_io_spi_clk;
-  wire  SPISlave_io_spi_cs_n;
-  wire  SPIInputHandler_clock;
-  wire  SPIInputHandler_reset;
-  wire  SPIInputHandler_io_packet_valid;
-  wire [7:0] SPIInputHandler_io_RX_data;
-  wire  SPIInputHandler_io_RX_data_valid;
   reg  reggie;
   reg [31:0] _RAND_0;
-  wire  _GEN_0;
-  MMCME2_BASE #(.CLKOUT5_PHASE(0.0), .CLKOUT5_DIVIDE(1), .CLKOUT3_DIVIDE(1), .CLKIN1_PERIOD(62.5), .CLKOUT2_DIVIDE(1), .CLKOUT0_PHASE(0.0), .CLKFBOUT_MULT_F(42.336), .CLKOUT4_DIVIDE(4), .CLKOUT6_DIVIDE(60), .CLKOUT6_DUTY_CYCLE(0.5), .CLKOUT1_PHASE(0.0), .CLKOUT4_PHASE(0.0), .CLKOUT5_DUTY_CYCLE(0.5), .CLKOUT6_PHASE(0.0), .CLKOUT1_DIVIDE(1), .CLKOUT3_DUTY_CYCLE(0.5), .CLKOUT4_CASCADE("TRUE"), .CLKOUT2_DUTY_CYCLE(0.5), .CLKOUT0_DIVIDE_F(1.0), .CLKOUT1_DUTY_CYCLE(0.5), .CLKOUT3_PHASE(0.0), .CLKOUT0_DUTY_CYCLE(0.5), .CLKOUT2_PHASE(0.0), .DIVCLK_DIVIDE(1), .CLKOUT4_DUTY_CYCLE(0.5)) mmcm (
-    .CLKIN1(mmcm_CLKIN1),
-    .RST(mmcm_RST),
-    .PWRDWN(mmcm_PWRDWN),
-    .CLKFBIN(mmcm_CLKFBIN),
-    .CLKFBOUT(mmcm_CLKFBOUT),
-    .CLKFBOUTB(mmcm_CLKFBOUTB),
-    .LOCKED(mmcm_LOCKED),
-    .CLKOUT0(mmcm_CLKOUT0),
-    .CLKOUT0B(mmcm_CLKOUT0B),
-    .CLKOUT1(mmcm_CLKOUT1),
-    .CLKOUT1B(mmcm_CLKOUT1B),
-    .CLKOUT2(mmcm_CLKOUT2),
-    .CLKOUT2B(mmcm_CLKOUT2B),
-    .CLKOUT3(mmcm_CLKOUT3),
-    .CLKOUT3B(mmcm_CLKOUT3B),
-    .CLKOUT4(mmcm_CLKOUT4),
-    .CLKOUT5(mmcm_CLKOUT5),
-    .CLKOUT6(mmcm_CLKOUT6)
-  );
-  SPISlave SPISlave (
-    .clock(SPISlave_clock),
-    .reset(SPISlave_reset),
-    .io_RX_data_valid(SPISlave_io_RX_data_valid),
-    .io_RX_data(SPISlave_io_RX_data),
-    .io_spi_mosi(SPISlave_io_spi_mosi),
-    .io_spi_miso(SPISlave_io_spi_miso),
-    .io_spi_clk(SPISlave_io_spi_clk),
-    .io_spi_cs_n(SPISlave_io_spi_cs_n)
-  );
-  SPIInputHandler SPIInputHandler (
-    .clock(SPIInputHandler_clock),
-    .reset(SPIInputHandler_reset),
-    .io_packet_valid(SPIInputHandler_io_packet_valid),
-    .io_RX_data(SPIInputHandler_io_RX_data),
-    .io_RX_data_valid(SPIInputHandler_io_RX_data_valid)
-  );
-  assign _GEN_0 = SPIInputHandler_io_packet_valid | reggie;
-  assign io_spi_miso = SPISlave_io_spi_miso;
   assign io_gpio = reggie;
-  assign io_BitClock = mmcm_CLKOUT4;
-  assign io_SystemClock = mmcm_CLKOUT6;
-  assign mmcm_CLKIN1 = clock;
-  assign mmcm_RST = 1'h0;
-  assign mmcm_PWRDWN = 1'h0;
-  assign mmcm_CLKFBIN = mmcm_CLKFBOUT;
-  assign SPISlave_clock = mmcm_CLKOUT0;
-  assign SPISlave_reset = reset;
-  assign SPISlave_io_spi_mosi = io_spi_mosi;
-  assign SPISlave_io_spi_clk = io_spi_clk;
-  assign SPISlave_io_spi_cs_n = io_spi_cs_n;
-  assign SPIInputHandler_clock = mmcm_CLKOUT0;
-  assign SPIInputHandler_reset = reset;
-  assign SPIInputHandler_io_RX_data = SPISlave_io_RX_data;
-  assign SPIInputHandler_io_RX_data_valid = SPISlave_io_RX_data_valid;
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -341,55 +43,27 @@ initial begin
   `endif // RANDOMIZE
 end
   always @(posedge clock) begin
-    reggie <= reset | _GEN_0;
+    reggie <= reset | reggie;
   end
 endmodule
 module TopModule(
   input   clock,
   input   reset,
-  input   io_spi_mosi,
-  output  io_spi_miso,
-  input   io_spi_clk,
-  input   io_spi_cs_n,
-  output  io_led_green,
   output  io_gpio,
-  output  io_BitClock,
-  output  io_LeftRightWordClock,
-  output  io_DataBit,
-  output  io_SystemClock
+  output  io_gpio2
 );
   wire  Top_clock;
   wire  Top_reset;
-  wire  Top_io_spi_mosi;
-  wire  Top_io_spi_miso;
-  wire  Top_io_spi_clk;
-  wire  Top_io_spi_cs_n;
   wire  Top_io_gpio;
-  wire  Top_io_BitClock;
-  wire  Top_io_SystemClock;
   Top Top (
     .clock(Top_clock),
     .reset(Top_reset),
-    .io_spi_mosi(Top_io_spi_mosi),
-    .io_spi_miso(Top_io_spi_miso),
-    .io_spi_clk(Top_io_spi_clk),
-    .io_spi_cs_n(Top_io_spi_cs_n),
-    .io_gpio(Top_io_gpio),
-    .io_BitClock(Top_io_BitClock),
-    .io_SystemClock(Top_io_SystemClock)
+    .io_gpio(Top_io_gpio)
   );
-  assign io_spi_miso = Top_io_spi_miso;
-  assign io_led_green = 1'h1;
   assign io_gpio = Top_io_gpio;
-  assign io_BitClock = Top_io_BitClock;
-  assign io_LeftRightWordClock = 1'h0;
-  assign io_DataBit = 1'h0;
-  assign io_SystemClock = Top_io_SystemClock;
+  assign io_gpio2 = 1'h1;
   assign Top_clock = clock;
-  assign Top_reset = reset == 1'h0;
-  assign Top_io_spi_mosi = io_spi_mosi;
-  assign Top_io_spi_clk = io_spi_clk;
-  assign Top_io_spi_cs_n = io_spi_cs_n;
+  assign Top_reset = reset;
 endmodule
 // Copied from https://raw.githubusercontent.com/nandland/spi-slave/master/Verilog/source/SPI_Slave.v
 // with modifications by pbsds
@@ -1072,7 +746,7 @@ force -freeze sim:/SPI_slave/sck 1 0
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Mon Nov  4 12:16:48 2019
+// Date        : Tue Nov  5 09:25:58 2019
 // Host        : sdhgsdfg-X556URK running 64-bit Ubuntu 18.04.3 LTS
 // Command     : write_verilog -force ../synthesize/include/i2s_sender.v
 // Design      : i2s_sender
