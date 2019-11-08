@@ -5,7 +5,7 @@
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
 
-set_property -dict {PACKAGE_PIN N6 IOSTANDARD LVCMOS33} [get_ports { reset }];
+set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports { reset }];
 #Clock
 set_property -dict {PACKAGE_PIN N11 IOSTANDARD LVCMOS33} [get_ports { clock }];
 create_clock -add -name sys_clk_pin -period 62.5 \
