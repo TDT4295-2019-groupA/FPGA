@@ -59,9 +59,8 @@ class Top extends Module {
 
   val codec = withClock(comClock){Module(new Codec).io}
 
-  io.DataBit := codec.dac_out.asBool()
   withClock(comClock) {
-    
+
     val notAnIndex = RegNext(0.U(16.W))
     notAnIndex := notAnIndex + 1.U
 
@@ -70,6 +69,8 @@ class Top extends Module {
 
     val notASample = RegNext(16383.S(16.W))
     notASample := notASample
+
+    io.DataBit := (notASample(notAnIndex / 2.U)).asBool()
 
     when(notACounter >= 1603.U) {
       notACounter := 0.U
