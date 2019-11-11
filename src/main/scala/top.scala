@@ -10,7 +10,7 @@ class TopBundle extends Bundle {
   val SystemClock    = Output(Clock())
   val BitClock    = Output(Bool())
   val LeftRightWordClock = Output(Bool())
-  val DataBit     = Output(UInt(1.W))
+  val DataBit     = Output(Bool())
 }
 
 /**
@@ -59,12 +59,16 @@ class Top extends Module {
 
   val codec = withClock(comClock){Module(new Codec).io}
 
+  io.DataBit := codec.dac_out.asBool()
   withClock(comClock) {
+    
+    val notAnIndex = RegNext(0.U(16.W))
+    notAnIndex := notAnIndex + 1.U
 
     val notACounter = RegNext(0.U(32.W))
     notACounter := notACounter + 1.U
 
-    val notASample = RegNext(8192.S(16.W))
+    val notASample = RegNext(16383.S(16.W))
     notASample := notASample
 
     when(notACounter >= 1603.U) {
@@ -72,8 +76,13 @@ class Top extends Module {
       notASample := - notASample
     }
 
+    when(notAnIndex >= 64.U) {
+      notAnIndex := 0.U
+    }
+
     codec.dac_in := notASample.asUInt()
-    io.DataBit := codec.dac_out
+    //io.DataBit := notASample(notAnIndex / 2.U)
+    //io.DataBit := codec.dac_out.asBool()
 
     // Clock outputs to codec
     io.LeftRightWordClock := codec.LRCLK
