@@ -7,7 +7,7 @@ import chisel3.internal.firrtl.Width
 import chisel3.util.MuxLookup
 
 class TopBundle extends Bundle {
-  val SystemClock    = Output(Bool())//Output(Clock())
+  val SystemClock    = Output(Clock())
   val BitClock    = Output(Bool())
   val LeftRightWordClock = Output(Bool())
   val DataBit     = Output(UInt(1.W))
@@ -47,7 +47,7 @@ class Top extends Module {
   mmcm.PWRDWN   := false.B
   mmcm.CLKFBIN  := mmcm.CLKFBOUT
 
-  val sysClock = Bool(false)//mmcm.CLKOUT6
+  val sysClock = mmcm.CLKOUT6
   val comClock = mmcm.CLKOUT4
 
   io.SystemClock := sysClock
