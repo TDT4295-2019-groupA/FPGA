@@ -5,12 +5,14 @@ import chisel3.core.withClock
 import blackboxes.{MMCME2, ClockConfig}
 import chisel3.internal.firrtl.Width
 import chisel3.util.MuxLookup
+import chisel3.util.Counter
 
 class TopBundle extends Bundle {
   val SystemClock    = Output(Clock())
   val BitClock    = Output(Bool())
   val LeftRightWordClock = Output(Bool())
   val DataBit     = Output(Bool())
+  val gpio = Output(Bool())
 }
 
 /**
@@ -60,7 +62,11 @@ class Top extends Module {
   val codec = withClock(comClock){Module(new Codec).io}
 
   withClock(comClock) {
-
+    val (c, _) = Counter(true.B, 3000000)
+    io.gpio := 0.U
+    when (c > 1500000.U) {
+      io.gpio := 1.U
+    }
     val notAnIndex = RegNext(0.U(16.W))
     notAnIndex := notAnIndex + 1.U
 
