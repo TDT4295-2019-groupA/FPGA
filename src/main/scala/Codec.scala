@@ -5,7 +5,7 @@ import chisel3._
 class Codec extends Module {
   val io = IO(
     new Bundle {
-      val dac_in  = Input(UInt(16.W))
+      val dac_in  = Input(UInt(32.W))
 
       val BCLK    = Output(Bool())
       val LRCLK   = Output(Bool())
@@ -17,7 +17,7 @@ class Codec extends Module {
   val LRCLK = RegNext(true.B)
 
   // Bør være 4.W, men whatever, tør ikke endre uten å teste
-  val bit_count = RegNext(0.U(4.W))   // Every other clock cycle = bit index in sample from MSB
+  val bit_count = RegNext(0.U(6.W))   // Every other clock cycle = bit index in sample from MSB
   
   BCLK := !BCLK
   LRCLK := LRCLK
@@ -25,7 +25,7 @@ class Codec extends Module {
   
   when(BCLK) {
     bit_count := bit_count + 1.U
-    when(bit_count === 15.U) {
+    when(bit_count === 31.U) {
       LRCLK := !LRCLK
       bit_count := 0.U
     }
