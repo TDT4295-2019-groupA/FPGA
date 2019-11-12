@@ -98,7 +98,7 @@ object SoundTopLevelTests {
         poke(c.io.step_sample, true)
         step(1)
         poke(c.io.step_sample, false)
-        step(2)
+        while (peek(c.io.sample_out_valid) == 0) step(1)
         if (expect_samples) {
           expect(c.io.sample_out, expected_sample)
           //printf("diff: %d\n", peek(c.io.sample_out) - expected_sample)

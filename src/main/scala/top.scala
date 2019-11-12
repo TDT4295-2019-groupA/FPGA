@@ -53,7 +53,7 @@ class Top() extends MultiIOModule {
     sound.step_sample := true.B
     //saved_sample := sound.sample_out
   }
-  when (sample_rate_counter === 1.U) {
+  when (sound.sample_out_valid) {
     saved_sample := sound.sample_out
   }
 

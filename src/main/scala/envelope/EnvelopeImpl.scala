@@ -9,10 +9,10 @@ class EnvelopeImpl extends MultiIOModule{
 
   val io = IO(
     new Bundle {
-      val note_life = Input(UInt())
-      val envelope = Input(new Envelope())
+      val note_life                   = Input(UInt())
+      val envelope                    = Input(new Envelope())
       val last_active_envelope_effect = Input(UInt())
-      val enabled = Input(Bool())
+      val enabled                     = Input(Bool())
 
       val envelope_effect = Output(UInt())
     }
