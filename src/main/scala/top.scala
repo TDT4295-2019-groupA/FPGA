@@ -39,7 +39,7 @@ class Top extends Module {
     ClockConfig.default,
     ClockConfig.default,
     ClockConfig.default,
-    ClockConfig(4, 0.5, 0.0),  // comClock, divided from the system clock
+    ClockConfig(2, 0.5, 0.0),  // comClock, divided from the system clock
     ClockConfig.default,
     ClockConfig(60, 0.5, 0.0) // System clock
   )
@@ -73,7 +73,7 @@ class Top extends Module {
     val notAnIndex = RegNext(0.U(16.W))
       notAnIndex := notAnIndex + 1.U
 
-    val notASample = RegInit(SInt(16.W), 13193.S)
+    val notASample = RegInit(SInt(32.W), 858993459.S)
 
     //io.DataBit := (notASample(notAnIndex / 2.U))
 
@@ -83,7 +83,7 @@ class Top extends Module {
 
     val notACounter = RegNext(0.U(32.W))
     notACounter := notACounter + 1.U
-    when(notACounter >= 1603.U) {
+    when(notACounter >= 3207.U) {
       notACounter := 0.U
       notASample := - notASample
     }
