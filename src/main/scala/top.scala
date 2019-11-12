@@ -10,8 +10,11 @@ import chisel3.util.Counter
 class TopBundle extends Bundle {
   val SystemClock    = Output(Clock())
   val BitClock    = Output(Bool())
+  val BitClockDebug    = Output(Bool())
   val LeftRightWordClock = Output(Bool())
+  val LeftRightWordClockDebug = Output(Bool())
   val DataBit     = Output(Bool())
+  val DataBitDebug     = Output(Bool())
   val gpio = Output(Bool())
 }
 
@@ -62,38 +65,38 @@ class Top extends Module {
   val codec = withClock(comClock){Module(new Codec).io}
 
   withClock(comClock) {
-    val (c, _) = Counter(true.B, 3000000)
+    val (c, _) = Counter(true.B, 4)
     io.gpio := 0.U
-    when (c > 1500000.U) {
+    when (c >= 2.U) {
       io.gpio := 1.U
     }
     val notAnIndex = RegNext(0.U(16.W))
-    notAnIndex := notAnIndex + 1.U
+      notAnIndex := notAnIndex + 1.U
 
-    val notACounter = RegNext(0.U(32.W))
-    notACounter := notACounter + 1.U
+    val notASample = RegInit(SInt(16.W), 13193.S)
 
-    val notASample = RegNext(16383.S(16.W))
-    notASample := notASample
-
-    io.DataBit := (notASample(notAnIndex / 2.U)).asBool()
-
-    when(notACounter >= 1603.U) {
-      notACounter := 0.U
-      notASample := - notASample
-    }
+    //io.DataBit := (notASample(notAnIndex / 2.U))
 
     when(notAnIndex >= 64.U) {
       notAnIndex := 0.U
     }
 
+    val notACounter = RegNext(0.U(32.W))
+    notACounter := notACounter + 1.U
+    when(notACounter >= 1603.U) {
+      notACounter := 0.U
+      notASample := - notASample
+    }
     codec.dac_in := notASample.asUInt()
     //io.DataBit := notASample(notAnIndex / 2.U)
-    //io.DataBit := codec.dac_out.asBool()
+    io.DataBit := codec.dac_out
+    io.DataBitDebug := codec.dac_out
 
     // Clock outputs to codec
     io.LeftRightWordClock := codec.LRCLK
+    io.LeftRightWordClockDebug := codec.LRCLK
     io.BitClock := codec.BCLK
+    io.BitClockDebug := codec.BCLK
 
   }
 
