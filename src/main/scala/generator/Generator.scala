@@ -85,8 +85,8 @@ class Generator extends MultiIOModule{
   }
   when (io.step_sample) {
     note_life      := note_life + config.NOTE_LIFE_COEFF.U
-    when (wavelength_pos >= wavelength) {
-      wavelength_pos := 0.U
+    when (wavelength_pos + 1.U >= wavelength) {
+      wavelength_pos := wavelength_pos + config.NOTE_LIFE_COEFF.U - wavelength
     } otherwise {
       wavelength_pos := wavelength_pos + config.NOTE_LIFE_COEFF.U
     }
