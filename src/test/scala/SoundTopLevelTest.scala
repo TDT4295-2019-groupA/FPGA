@@ -84,6 +84,11 @@ object SoundTopLevelTests {
   class TestSPIEventsFromFile(c: SoundTopLevelPeekPokeWrapper, filename:String, val expect_samples:Boolean) extends PeekPokeTester(c) {
     println(new File(filename).getAbsolutePath)
 
+    poke(c.io.generator_update_packet_valid, false)
+    poke(c.io.global_update_packet_valid,    false)
+    poke(c.io.packet_data,                   0)
+    poke(c.io.step_sample,                   false)
+
     var samples_made:Int = 0
     for (line <- Source.fromFile(filename).getLines().map(_.stripLineEnd)) {
 
