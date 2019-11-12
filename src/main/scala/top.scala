@@ -57,7 +57,7 @@ class Top() extends MultiIOModule {
     saved_sample := sound.sample_out
   }
 
-  // output autio as PWM
+  // output audio as PWM
   val pwm = Module(new PWM(32, 0x30303030)).io
   io.pwm_out_l := false.B
   io.pwm_out_r := false.B

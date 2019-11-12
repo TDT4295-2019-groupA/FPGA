@@ -21,8 +21,8 @@ class Generator extends MultiIOModule{
   )
 
   // Generator State
-  val note_life       = RegInit(UInt(32.W), 0.U) // time passed since start of note counted in samples
-  val wavelength_pos  = RegInit(UInt(32.W), 0.U) // time passed since start of note counted in samples, mod wavelength
+  val note_life        = RegInit(UInt(32.W), 0.U) // time passed since start of note counted in samples
+  val wavelength_pos   = RegInit(UInt(32.W), 0.U) // time passed since start of note counted in samples, mod wavelength
   val generator_config = RegInit(new GeneratorUpdate, 0.U.asTypeOf(new GeneratorUpdate))
 
   // LUTs
@@ -46,13 +46,13 @@ class Generator extends MultiIOModule{
    */
 
   val note_remainder: UInt = Wire(UInt(16.W))
-  val note_divide: UInt = Wire(UInt(16.W))
-  val freq: UInt = Wire(UInt(32.W))
-  val freq_base: UInt = Wire(UInt(32.W))
-  val freq_coeff: UInt = Wire(UInt(32.W))
+  val note_divide   : UInt = Wire(UInt(16.W))
+  val freq          : UInt = Wire(UInt(32.W))
+  val freq_base     : UInt = Wire(UInt(32.W))
+  val freq_coeff    : UInt = Wire(UInt(32.W))
 
   note_remainder := generator_config.note_index % 12.U
-  note_divide := generator_config.note_index / 12.U
+  note_divide    := generator_config.note_index / 12.U
 
   freq_base := DontCare
 
@@ -96,24 +96,24 @@ class Generator extends MultiIOModule{
   current_sample := 0.S
 
   val square = Module(new Square()).io
-  square.wavelength := wavelength
-  square.wavelength_pos := wavelength_pos
-  square.note_life := note_life
+  square.wavelength       := wavelength
+  square.wavelength_pos   := wavelength_pos
+  square.note_life        := note_life
 
   val triangle = Module(new Triangle()).io
-  triangle.wavelength := wavelength
+  triangle.wavelength     := wavelength
   triangle.wavelength_pos := wavelength_pos
-  triangle.note_life := note_life
+  triangle.note_life      := note_life
 
   val sawtooth = Module(new Sawtooth()).io
-  sawtooth.wavelength := wavelength
+  sawtooth.wavelength     := wavelength
   sawtooth.wavelength_pos := wavelength_pos
-  sawtooth.note_life := note_life
+  sawtooth.note_life      := note_life
 
   val sine = Module(new Sine()).io
-  sine.wavelength := wavelength
-  sine.wavelength_pos := wavelength_pos
-  sine.note_life := note_life
+  sine.wavelength         := wavelength
+  sine.wavelength_pos     := wavelength_pos
+  sine.note_life          := note_life
 
   switch (generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE) {
@@ -133,22 +133,24 @@ class Generator extends MultiIOModule{
   val last_active_envelope_effect = RegInit(UInt(16.W), 0.U)
   val envelope_impl = Module(new EnvelopeImpl()).io
 
-  envelope_impl.note_life := note_life
-  envelope_impl.envelope := io.global_config.envelope
+  envelope_impl.note_life                   := note_life
+  envelope_impl.envelope                    := io.global_config.envelope
   envelope_impl.last_active_envelope_effect := last_active_envelope_effect
-  envelope_impl.enabled := generator_config.enabled
+  envelope_impl.enabled                     := generator_config.enabled
 
   when(generator_config.enabled){
     last_active_envelope_effect := envelope_impl.envelope_effect
   }
 
   //io.sample_out := current_sample * generator_config.velocity
-  io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16).asSInt() *  generator_config.velocity.asSInt()
+  io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16.U) *  generator_config.velocity.asSInt()
 
-  when((io.generator_num === 1.U || io.generator_num === 2.U) && false.B) {
-    printf("Gen %d: wavelength: %d, freq: %d, freq_base %d, freq_coeff: %d, note_life: %d, instrument: %d\n", io.generator_num, wavelength, freq, freq_base, freq_coeff, note_life, generator_config.instrument)
-    printf("Note: %d, Wavelength_pos: %d, note_remainder: %d, note_divide: %d, \n", generator_config.note_index, wavelength_pos, note_remainder, note_divide)
-    printf("Enabled: %d, Current_Sample: %d, Last_Env_Effect: %d, Sample Out: %d, Velocity: %d\n", generator_config.enabled, current_sample, last_active_envelope_effect, io.sample_out, generator_config.velocity)
-    printf("Current_Sample: %d, Envelope_Effect: %d, Velocity: %d, Enabled: %d\n", current_sample, envelope_impl.envelope_effect, generator_config.velocity, generator_config.enabled)
+  if (false) {
+    when((io.generator_num === 1.U || io.generator_num === 2.U) && false.B) {
+      printf("Gen %d: wavelength: %d, freq: %d, freq_base %d, freq_coeff: %d, note_life: %d, instrument: %d\n", io.generator_num, wavelength, freq, freq_base, freq_coeff, note_life, generator_config.instrument)
+      printf("Note: %d, Wavelength_pos: %d, note_remainder: %d, note_divide: %d, \n", generator_config.note_index, wavelength_pos, note_remainder, note_divide)
+      printf("Enabled: %d, Current_Sample: %d, Last_Env_Effect: %d, Sample Out: %d, Velocity: %d\n", generator_config.enabled, current_sample, last_active_envelope_effect, io.sample_out, generator_config.velocity)
+      printf("Current_Sample: %d, Envelope_Effect: %d, Velocity: %d, Enabled: %d\n", current_sample, envelope_impl.envelope_effect, generator_config.velocity, generator_config.enabled)
+    }
   }
 }
