@@ -58,14 +58,15 @@ class Generator extends MultiIOModule{
 
   for (i <- 0 to 11) {
     when(note_remainder === i.U) {
-      freq_base := fpga_note_index_to_freq(i).toInt.U << note_divide
+      // we go up 16 octaves to avoid rounding errors
+      freq_base := BigDecimal(fpga_note_index_to_freq(i + 12*16)).toBigInt().U << note_divide >> 16.U
+      //freq_base := (fpga_note_index_to_freq(i + 12*16)).toInt.U << note_divide >> 16.U
     }
   }
 
 
   val magic_linear_scale = 59.S //((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
   val magic_linear_offset = 65536.S //(1 << 16)
-
   freq_coeff := ((io.global_config.pitchwheels(generator_config.channel_index)
     * magic_linear_scale)
     + magic_linear_offset).asUInt()
