@@ -79,7 +79,7 @@ class GeneratorUpdate extends Bundle {
   val reset_note      = Bool()
   val unused2         = UInt(7.W)
   val enabled         = Bool()
-  val instrument      = UInt(32.W)
+  val instrument      = UInt(8.W)
   val note_index      = UInt(8.W)
   val channel_index   = UInt(8.W)
   val velocity        = UInt(8.W)
