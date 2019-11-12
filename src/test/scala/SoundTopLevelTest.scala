@@ -100,6 +100,7 @@ object SoundTopLevelTests {
         step(2)
         if (expect_samples) {
           expect(c.io.sample_out, expected_sample)
+          //printf("diff: %d\n", peek(c.io.sample_out) - expected_sample)
         }
         else {
           printf("sample_out#%d: %d\n", samples_made, peek(c.io.sample_out))
