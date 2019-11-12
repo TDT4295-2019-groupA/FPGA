@@ -15,11 +15,12 @@ object main {
       val out_path = args(1)
       val f = new File(out_path)
       chisel3.Driver.dumpFirrtl(args(0) match {
-        case "SoundTopLevel"   => chisel3.Driver.elaborate(() => new SoundTopLevel)
-        case "VivadoTest"      => chisel3.Driver.elaborate(() => new VivadoTest)
-        case "TopModule"       => chisel3.Driver.elaborate(() => new TopModule)
-        case "SPIInputHandler" => chisel3.Driver.elaborate(() => new SPIInputHandler)
-        case "TestA"           => chisel3.Driver.elaborate(() => new TestA)
+        case "SoundTopLevel"       => chisel3.Driver.elaborate(() => new SoundTopLevel)
+        case "VivadoTest"          => chisel3.Driver.elaborate(() => new VivadoTest)
+        case "TopWithResetFlipped" => chisel3.Driver.elaborate(() => new TopWithResetFlipped)
+        case "Top"                 => chisel3.Driver.elaborate(() => new Top)
+        case "SPIInputHandler"     => chisel3.Driver.elaborate(() => new SPIInputHandler)
+        case "TestA"               => chisel3.Driver.elaborate(() => new TestA)
       }, Option(f))
       println("Results written to " + out_path)
     } else {
@@ -36,7 +37,7 @@ object main {
 }
 
 // Here we instantiate Top with the reset button flipped
-class TopModule extends RawModule {
+class TopWithResetFlipped extends RawModule {
   val clock = IO(Input(Clock()))
   val reset = IO(Input(Bool()))
   val io = IO(new TopBundle)
