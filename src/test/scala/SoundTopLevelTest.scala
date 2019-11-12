@@ -87,20 +87,16 @@ object SoundTopLevelTests {
     var samples_made:Int = 0
     for (line <- Source.fromFile(filename).getLines().map(_.stripLineEnd)) {
 
-      if(line.startsWith("Sample:") && expect_samples) {
+      if(line.startsWith("Sample:")) {
         val expected_sample = line.split(" ")(1).toInt
         poke(c.io.step_sample, true)
         step(1)
         poke(c.io.step_sample, false)
-        expect(c.io.sample_out, expected_sample)
-      }
-      else if(line.startsWith("Step:") && !expect_samples) {
-        val n_samples = line.split(" ")(1).toInt
-        printf("Step: %d\n", n_samples)
-        for (i <- 1 to n_samples) {
-          poke(c.io.step_sample, true)
-          step(1)
-          poke(c.io.step_sample, false)
+        step(2)
+        if (expect_samples) {
+          expect(c.io.sample_out, expected_sample)
+        }
+        else {
           printf("sample_out#%d: %d\n", samples_made, peek(c.io.sample_out))
           samples_made += 1
         }
