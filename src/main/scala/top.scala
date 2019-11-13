@@ -61,15 +61,15 @@ class Top extends Module {
     * Clock domain comClock = 2 x bitClock
     */
 
+  val (c, _) = Counter(true.B, 16000000)
+  io.gpio := 1.U
+  when (c >= 8000000.U) {
+    io.gpio := 0.U
+  }
 
   val codec = withClock(comClock){Module(new Codec).io}
 
   withClock(comClock) {
-    val (c, _) = Counter(true.B, 4000000)
-    io.gpio := 0.U
-    when (c >= 2000000.U) {
-      io.gpio := 1.U
-    }
     val notAnIndex = RegNext(0.U(16.W))
       notAnIndex := notAnIndex + 1.U
 
