@@ -15,7 +15,7 @@ class SoundTopLevel() extends MultiIOModule {
       val generator_update_packet       = Input(new GeneratorUpdatePacket)
       val global_update_packet_valid    = Input(Bool()) // pulsed for one cycle
       val global_update_packet          = Input(new GlobalUpdatePacket)
-      val step_sample                   = Input(Bool()) // pulsed for one cycle
+      val step_sample                   = Input(Bool()) // pulsed for one cycle, preferred pulse only while sample_out_valid is high
       val sample_out                    = Output(SInt(32.W)) // TODO: define when this is valid
       val sample_out_valid              = Output(Bool())
     }
@@ -23,7 +23,7 @@ class SoundTopLevel() extends MultiIOModule {
 
   // global generator state
   val global_config = Reg(new GlobalUpdate)
-  when (io.global_update_packet_valid) {
+  when (io.global_update_packet_valid) { // read when valid
     global_config := io.global_update_packet.data
   }
 
@@ -35,7 +35,6 @@ class SoundTopLevel() extends MultiIOModule {
 */
   val sample_out = RegInit(SInt(32.W), 0.S)
   io.sample_out := ((sample_out / config.VELOCITY_MAX.S) * global_config.volume) << 4.U
-
 
   io.sample_out_valid := false.B
   val selected_gen = Counter(config.N_GENERATORS + 1)
@@ -56,11 +55,11 @@ class SoundTopLevel() extends MultiIOModule {
   for (i <- 1 to config.N_GENERATORS) {
     val generator_state_handler = Module(new GeneratorStateHandler).io
     generator_state_handler.generator_update_valid := false.B // overridden below
+    generator_state_handler.envelope_effect_valid  := false.B // overridden below
     generator_state_handler.generator_update       := io.generator_update_packet.data
     generator_state_handler.global_config          := global_config
     generator_state_handler.step_sample            := io.step_sample
     generator_state_handler.envelope_effect        := generator_sample_computer.envelope_effect
-    generator_state_handler.envelope_effect_valid  := false.B // overridden below
 
     when(io.generator_update_packet.generator_index === (i-1).U) {
       generator_state_handler.generator_update_valid := io.generator_update_packet_valid

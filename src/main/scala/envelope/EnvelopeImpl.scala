@@ -52,6 +52,4 @@ class EnvelopeImpl extends MultiIOModule{
     scaled_sustain)
  */
 
-
-
 }

@@ -36,6 +36,7 @@ class GeneratorStateHandler extends MultiIOModule {
 
   when(io.envelope_effect_valid && state.generator_config.enabled) {
     state.last_active_envelope_effect := io.envelope_effect
+    // todo: verify that the envelope release works
   }
 
 
@@ -44,8 +45,8 @@ class GeneratorStateHandler extends MultiIOModule {
     math.round((1 << config.FREQ_SHIFT) * config.MIDI_A3_FREQ * math.pow(2.0, (note_index - config.MIDI_A3_INDEX) / 12.0))
 
   def freq_to_wavelength_in_samples(freq: UInt): UInt = {
-    val temp_value = config.SAMPLE_RATE << config.FREQ_SHIFT
-    (temp_value * config.NOTE_LIFE_COEFF).asUInt() / freq
+    val temp_value = BigInt(config.SAMPLE_RATE) << config.FREQ_SHIFT
+    (temp_value * config.NOTE_LIFE_COEFF).U / freq
     //We do this because it is currently too big to be an int :( By a very small margin btw
     //28901376000L.U / freq
   }
@@ -76,8 +77,8 @@ class GeneratorStateHandler extends MultiIOModule {
     }
   }
 
-  val magic_linear_scale = 59.S //((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
-  val magic_linear_offset = 65536.S //(1 << 16)
+  val magic_linear_scale = 59.S // ((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
+  val magic_linear_offset = (1 << 16).S
   freq_coeff := ((io.global_config.pitchwheels(state.generator_config.channel_index)
     * magic_linear_scale)
     + magic_linear_offset).asUInt()
@@ -138,7 +139,6 @@ class GeneratorSampleComputer extends MultiIOModule {
   envelope_impl.envelope                    := io.global_config.envelope
   envelope_impl.last_active_envelope_effect := io.state.last_active_envelope_effect
   envelope_impl.enabled                     := io.state.generator_config.enabled
-
   io.envelope_effect := envelope_impl.envelope_effect
 
   io.sample_out := 0.S
