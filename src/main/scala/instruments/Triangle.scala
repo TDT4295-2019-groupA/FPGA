@@ -12,7 +12,7 @@ class Triangle extends MultiIOModule{
       val wavelength_pos = Input(UInt())
       val note_life = Input(UInt())
 
-      val sample_out = Output(SInt())
+      val sample_out = Output(SInt(16.W))
     }
   )
 
