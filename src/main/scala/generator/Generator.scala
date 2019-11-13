@@ -106,7 +106,7 @@ class GeneratorStateHandler extends MultiIOModule {
   }
   when (io.step_sample) {
     state.note_life := state.note_life + config.NOTE_LIFE_COEFF.U
-    when (state.wavelength_pos + 1.U >= state.wavelength) {
+    when (state.wavelength_pos + config.NOTE_LIFE_COEFF.U >= state.wavelength) {
       if (config.MinimalMode) {
         state.wavelength_pos := 0.U
       } else {
