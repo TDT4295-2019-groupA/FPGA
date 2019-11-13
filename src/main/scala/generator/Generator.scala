@@ -71,14 +71,16 @@ class GeneratorStateHandler extends MultiIOModule {
   //val pitchwheel = Mux1H(UIntToOH(state.generator_config.channel_index), io.global_config.pitchwheels)
   val pitchwheel = (io.global_config.pitchwheels.asUInt() >> (state.generator_config.channel_index * 8.U))(7, 0).asSInt()
 
-  freq_base := DontCare
+  val freq_base_lut = Wire(UInt())
+  freq_base_lut := 0.U
   for (i <- 0 to 11) {
     when(note_remainder === i.U) {
       // we go up 16 octaves to avoid rounding errors
-      freq_base := BigDecimal(fpga_note_index_to_freq(i + 12*16)).toBigInt().U << note_divide >> 16.U
-      //freq_base := (fpga_note_index_to_freq(i + 12*16)).toInt.U << note_divide >> 16.U
+      freq_base_lut := BigDecimal(fpga_note_index_to_freq(i + 12*16)).toBigInt().U(34.W)
     }
   }
+  freq_base := freq_base_lut << note_divide >> 16.U
+
 
   val magic_linear_scale = 59.S // ((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
   val magic_linear_offset = (1 << 16).S
