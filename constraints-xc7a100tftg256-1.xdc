@@ -7,10 +7,10 @@ set_property CFGBVS VCCO [current_design]
 
 set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports { reset }];
 #Clock
-set_property -dict {PACKAGE_PIN N11 IOSTANDARD LVCMOS33} [get_ports { clock }];
+set_property -dict {PACKAGE_PIN T13 IOSTANDARD LVCMOS33} [get_ports { clock }];
 create_clock -add -name sys_clk_pin -period 62.5 \
     -waveform {0 31.25} [get_ports { clock }];
-
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clock_IBUF]
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[1] }]; #IO_L10N_T1_D15_14
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[0] }]; #IO_L10P_T1_D14_14
 #set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { io_led_green }]; #IO_L9N_T1_DQS_D13_14
@@ -34,8 +34,8 @@ create_clock -add -name sys_clk_pin -period 62.5 \
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF] 
 # GPIO
 set_property -dict { PACKAGE_PIN P9   IOSTANDARD LVCMOS33 } [get_ports { io_gpio }]; 
-set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { io_gpio2 }]; 
-set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { io_gpio3 }]; 
+#set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { io_gpio2 }]; 
+#set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { io_gpio3 }]; 
 
 #set_property --dict { PACKAGE_PIN T9    IOSTANDARD LVCMOS33 } [get_ports { io_l22p_t3_a05_d21_14 }]; #IO_L22P_T3_A05_D21_14
 #set_property --dict { PACKAGE_PIN T8    IOSTANDARD LVCMOS33 } [get_ports { io_l21n_t3_dqs_a06_d22_14 }]; #IO_L21N_T3_DQS_A06_D22_14
