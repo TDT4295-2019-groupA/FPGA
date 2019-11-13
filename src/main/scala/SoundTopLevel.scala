@@ -68,11 +68,13 @@ class SoundTopLevel() extends MultiIOModule {
     when(selected_gen.value === i.U) {
       generator_sample_computer.state := generator_state_handler.state
       generator_state_handler.envelope_effect_valid := true.B
-      // TODO: do we need to wait some ticks?
-      sample_out := sample_out + generator_sample_computer.sample_out
-      selected_gen.inc()
     }
   }
+  when (selected_gen.value != 0.U) {
+    sample_out := sample_out + generator_sample_computer.sample_out
+    selected_gen.inc()
+  }
+
 }
 
 // we are unable to assign BigInts to Bundles in PeekPokeTester,
