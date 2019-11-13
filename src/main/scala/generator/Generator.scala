@@ -59,8 +59,8 @@ class GeneratorStateHandler extends MultiIOModule {
   This increases computational complexity, but hopefully reduces space necessary
    */
 
-  val note_remainder: UInt = Wire(UInt(16.W))
-  val note_divide   : UInt = Wire(UInt(16.W))
+  val note_remainder: UInt = Wire(UInt(4.W))
+  val note_divide   : UInt = Wire(UInt(4.W))
   val freq          : UInt = Wire(UInt(32.W))
   val freq_base     : UInt = Wire(UInt(32.W))
   val freq_coeff    : UInt = Wire(UInt(32.W))
