@@ -67,6 +67,9 @@ class GeneratorStateHandler extends MultiIOModule {
 
   note_remainder := state.generator_config.note_index % 12.U
   note_divide    := state.generator_config.note_index / 12.U
+  //val pitchwheel = io.global_config.pitchwheels(state.generator_config.channel_index)
+  //val pitchwheel = Mux1H(UIntToOH(state.generator_config.channel_index), io.global_config.pitchwheels)
+  val pitchwheel = (io.global_config.pitchwheels.asUInt() >> (state.generator_config.channel_index * 8.U))(7, 0).asSInt()
 
   freq_base := DontCare
   for (i <- 0 to 11) {
@@ -79,7 +82,7 @@ class GeneratorStateHandler extends MultiIOModule {
 
   val magic_linear_scale = 59.S // ((math.pow(2.0, 2.0 / 12.0) - math.pow(2.0, -2.0 / 12.0)) * (1 << 8)).toInt = 59.2802
   val magic_linear_offset = (1 << 16).S
-  freq_coeff := ((io.global_config.pitchwheels(state.generator_config.channel_index)
+  freq_coeff := ((pitchwheel
     * magic_linear_scale)
     + magic_linear_offset).asUInt()
 
