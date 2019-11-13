@@ -1,11 +1,118 @@
-module Top(
-  input   clock,
-  input   reset,
-  output  io_gpio
+module DACInterface(
+  input         clock,
+  input         io_BCLK,
+  input         io_enable,
+  input  [31:0] io_sample,
+  output        io_bit
 );
-  reg  reggie;
+  reg [32:0] sample_reg;
+  reg [63:0] _RAND_0;
+  reg  prev_bit;
+  reg [31:0] _RAND_1;
+  wire  _T_20;
+  wire  _T_21;
+  wire [33:0] _T_24;
+  wire  _T_26;
+  wire [32:0] _T_27;
+  wire  _GEN_1;
+  wire [31:0] _T_23;
+  assign _T_20 = io_BCLK == 1'h0;
+  assign _T_21 = sample_reg[31];
+  assign _T_24 = {sample_reg, 1'h0};
+  assign _T_26 = io_sample[31];
+  assign _T_27 = {io_sample, 1'h0};
+  assign _GEN_1 = io_enable ? _T_26 : _T_21;
+  assign _T_23 = _T_24[31:0];
+  assign io_bit = _T_20 ? _GEN_1 : prev_bit;
+`ifdef RANDOMIZE_GARBAGE_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_INVALID_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_REG_INIT
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+`define RANDOMIZE
+`endif
+`ifndef RANDOM
+`define RANDOM $random
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+  integer initvar;
+`endif
+initial begin
+  `ifdef RANDOMIZE
+    `ifdef INIT_RANDOM
+      `INIT_RANDOM
+    `endif
+    `ifndef VERILATOR
+      `ifdef RANDOMIZE_DELAY
+        #`RANDOMIZE_DELAY begin end
+      `else
+        #0.002 begin end
+      `endif
+    `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_0 = {2{`RANDOM}};
+  sample_reg = _RAND_0[32:0];
+  `endif // RANDOMIZE_REG_INIT
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_1 = {1{`RANDOM}};
+  prev_bit = _RAND_1[0:0];
+  `endif // RANDOMIZE_REG_INIT
+  `endif // RANDOMIZE
+end
+  always @(posedge clock) begin
+    if (_T_20) begin
+      if (io_enable) begin
+        sample_reg <= _T_27;
+      end else begin
+        sample_reg <= {{1'd0}, _T_23};
+      end
+    end
+    prev_bit <= io_bit;
+  end
+endmodule
+module Codec(
+  input         clock,
+  input  [31:0] io_dac_in,
+  output        io_BCLK,
+  output        io_LRCLK,
+  output        io_dac_out
+);
+  wire  DACInterface_clock;
+  wire  DACInterface_io_BCLK;
+  wire  DACInterface_io_enable;
+  wire [31:0] DACInterface_io_sample;
+  wire  DACInterface_io_bit;
+  reg  BCLK;
   reg [31:0] _RAND_0;
-  assign io_gpio = reggie;
+  reg  LRCLK;
+  reg [31:0] _RAND_1;
+  reg [5:0] bit_count;
+  reg [31:0] _RAND_2;
+  wire [5:0] _T_23;
+  wire  _T_25;
+  wire  _T_27;
+  DACInterface DACInterface (
+    .clock(DACInterface_clock),
+    .io_BCLK(DACInterface_io_BCLK),
+    .io_enable(DACInterface_io_enable),
+    .io_sample(DACInterface_io_sample),
+    .io_bit(DACInterface_io_bit)
+  );
+  assign _T_23 = bit_count + 6'h1;
+  assign _T_25 = bit_count == 6'h1f;
+  assign _T_27 = LRCLK == 1'h0;
+  assign io_BCLK = BCLK;
+  assign io_LRCLK = LRCLK;
+  assign io_dac_out = DACInterface_io_bit;
+  assign DACInterface_clock = clock;
+  assign DACInterface_io_BCLK = BCLK;
+  assign DACInterface_io_enable = bit_count == 6'h0;
+  assign DACInterface_io_sample = io_dac_in;
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -38,30 +145,238 @@ initial begin
     `endif
   `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  reggie = _RAND_0[0:0];
+  BCLK = _RAND_0[0:0];
+  `endif // RANDOMIZE_REG_INIT
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_1 = {1{`RANDOM}};
+  LRCLK = _RAND_1[0:0];
+  `endif // RANDOMIZE_REG_INIT
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_2 = {1{`RANDOM}};
+  bit_count = _RAND_2[5:0];
   `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end
   always @(posedge clock) begin
-    reggie <= reset | reggie;
+    BCLK <= BCLK == 1'h0;
+    if (BCLK) begin
+      if (_T_25) begin
+        LRCLK <= _T_27;
+      end
+    end
+    if (BCLK) begin
+      if (_T_25) begin
+        bit_count <= 6'h0;
+      end else begin
+        bit_count <= _T_23;
+      end
+    end
+  end
+endmodule
+module Top(
+  input   clock,
+  input   reset,
+  output  io_SystemClock,
+  output  io_BitClock,
+  output  io_BitClockDebug,
+  output  io_LeftRightWordClock,
+  output  io_LeftRightWordClockDebug,
+  output  io_DataBit,
+  output  io_DataBitDebug,
+  output  io_gpio
+);
+  wire  mmcm_CLKIN1;
+  wire  mmcm_RST;
+  wire  mmcm_PWRDWN;
+  wire  mmcm_CLKFBIN;
+  wire  mmcm_CLKFBOUT;
+  wire  mmcm_CLKFBOUTB;
+  wire  mmcm_LOCKED;
+  wire  mmcm_CLKOUT0;
+  wire  mmcm_CLKOUT0B;
+  wire  mmcm_CLKOUT1;
+  wire  mmcm_CLKOUT1B;
+  wire  mmcm_CLKOUT2;
+  wire  mmcm_CLKOUT2B;
+  wire  mmcm_CLKOUT3;
+  wire  mmcm_CLKOUT3B;
+  wire  mmcm_CLKOUT4;
+  wire  mmcm_CLKOUT5;
+  wire  mmcm_CLKOUT6;
+  wire  Codec_clock;
+  wire [31:0] Codec_io_dac_in;
+  wire  Codec_io_BCLK;
+  wire  Codec_io_LRCLK;
+  wire  Codec_io_dac_out;
+  reg [21:0] value;
+  reg [31:0] _RAND_0;
+  wire  _T_27;
+  wire [21:0] _T_30;
+  reg [31:0] _T_45;
+  reg [31:0] _RAND_1;
+  reg [31:0] _T_51;
+  reg [31:0] _RAND_2;
+  wire [31:0] _T_54;
+  wire  _T_56;
+  wire [31:0] _T_60;
+  wire [31:0] _T_61;
+  MMCME2_BASE #(.CLKOUT5_PHASE(0.0), .CLKOUT5_DIVIDE(1), .CLKOUT3_DIVIDE(1), .CLKIN1_PERIOD(62.5), .CLKOUT2_DIVIDE(1), .CLKOUT0_PHASE(0.0), .CLKFBOUT_MULT_F(42.336), .CLKOUT4_DIVIDE(2), .CLKOUT6_DIVIDE(60), .CLKOUT6_DUTY_CYCLE(0.5), .CLKOUT1_PHASE(0.0), .CLKOUT4_PHASE(0.0), .CLKOUT5_DUTY_CYCLE(0.5), .CLKOUT6_PHASE(0.0), .CLKOUT1_DIVIDE(1), .CLKOUT3_DUTY_CYCLE(0.5), .CLKOUT4_CASCADE("TRUE"), .CLKOUT2_DUTY_CYCLE(0.5), .CLKOUT0_DIVIDE_F(1.0), .CLKOUT1_DUTY_CYCLE(0.5), .CLKOUT3_PHASE(0.0), .CLKOUT0_DUTY_CYCLE(0.5), .CLKOUT2_PHASE(0.0), .DIVCLK_DIVIDE(1), .CLKOUT4_DUTY_CYCLE(0.5)) mmcm (
+    .CLKIN1(mmcm_CLKIN1),
+    .RST(mmcm_RST),
+    .PWRDWN(mmcm_PWRDWN),
+    .CLKFBIN(mmcm_CLKFBIN),
+    .CLKFBOUT(mmcm_CLKFBOUT),
+    .CLKFBOUTB(mmcm_CLKFBOUTB),
+    .LOCKED(mmcm_LOCKED),
+    .CLKOUT0(mmcm_CLKOUT0),
+    .CLKOUT0B(mmcm_CLKOUT0B),
+    .CLKOUT1(mmcm_CLKOUT1),
+    .CLKOUT1B(mmcm_CLKOUT1B),
+    .CLKOUT2(mmcm_CLKOUT2),
+    .CLKOUT2B(mmcm_CLKOUT2B),
+    .CLKOUT3(mmcm_CLKOUT3),
+    .CLKOUT3B(mmcm_CLKOUT3B),
+    .CLKOUT4(mmcm_CLKOUT4),
+    .CLKOUT5(mmcm_CLKOUT5),
+    .CLKOUT6(mmcm_CLKOUT6)
+  );
+  Codec Codec (
+    .clock(Codec_clock),
+    .io_dac_in(Codec_io_dac_in),
+    .io_BCLK(Codec_io_BCLK),
+    .io_LRCLK(Codec_io_LRCLK),
+    .io_dac_out(Codec_io_dac_out)
+  );
+  assign _T_27 = value == 22'h3d08ff;
+  assign _T_30 = value + 22'h1;
+  assign _T_54 = _T_51 + 32'h1;
+  assign _T_56 = _T_51 >= 32'hc87;
+  assign _T_60 = $signed(32'sh0) - $signed(_T_45);
+  assign _T_61 = $signed(_T_60);
+  assign io_SystemClock = mmcm_CLKOUT6;
+  assign io_BitClock = Codec_io_BCLK;
+  assign io_BitClockDebug = Codec_io_BCLK;
+  assign io_LeftRightWordClock = Codec_io_LRCLK;
+  assign io_LeftRightWordClockDebug = Codec_io_LRCLK;
+  assign io_DataBit = Codec_io_dac_out;
+  assign io_DataBitDebug = Codec_io_dac_out;
+  assign io_gpio = value >= 22'h1e8480;
+  assign mmcm_CLKIN1 = clock;
+  assign mmcm_RST = 1'h0;
+  assign mmcm_PWRDWN = 1'h0;
+  assign mmcm_CLKFBIN = mmcm_CLKFBOUT;
+  assign Codec_clock = mmcm_CLKOUT4;
+  assign Codec_io_dac_in = $unsigned(_T_45);
+`ifdef RANDOMIZE_GARBAGE_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_INVALID_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_REG_INIT
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+`define RANDOMIZE
+`endif
+`ifndef RANDOM
+`define RANDOM $random
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+  integer initvar;
+`endif
+initial begin
+  `ifdef RANDOMIZE
+    `ifdef INIT_RANDOM
+      `INIT_RANDOM
+    `endif
+    `ifndef VERILATOR
+      `ifdef RANDOMIZE_DELAY
+        #`RANDOMIZE_DELAY begin end
+      `else
+        #0.002 begin end
+      `endif
+    `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_0 = {1{`RANDOM}};
+  value = _RAND_0[21:0];
+  `endif // RANDOMIZE_REG_INIT
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_1 = {1{`RANDOM}};
+  _T_45 = _RAND_1[31:0];
+  `endif // RANDOMIZE_REG_INIT
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_2 = {1{`RANDOM}};
+  _T_51 = _RAND_2[31:0];
+  `endif // RANDOMIZE_REG_INIT
+  `endif // RANDOMIZE
+end
+  always @(posedge mmcm_CLKOUT4) begin
+    if (reset) begin
+      value <= 22'h0;
+    end else begin
+      if (_T_27) begin
+        value <= 22'h0;
+      end else begin
+        value <= _T_30;
+      end
+    end
+    if (reset) begin
+      _T_45 <= 32'sh33333333;
+    end else begin
+      if (_T_56) begin
+        _T_45 <= _T_61;
+      end
+    end
+    if (_T_56) begin
+      _T_51 <= 32'h0;
+    end else begin
+      _T_51 <= _T_54;
+    end
   end
 endmodule
 module TopModule(
   input   clock,
   input   reset,
-  output  io_gpio,
-  output  io_gpio2
+  output  io_SystemClock,
+  output  io_BitClock,
+  output  io_BitClockDebug,
+  output  io_LeftRightWordClock,
+  output  io_LeftRightWordClockDebug,
+  output  io_DataBit,
+  output  io_DataBitDebug,
+  output  io_gpio
 );
   wire  Top_clock;
   wire  Top_reset;
+  wire  Top_io_SystemClock;
+  wire  Top_io_BitClock;
+  wire  Top_io_BitClockDebug;
+  wire  Top_io_LeftRightWordClock;
+  wire  Top_io_LeftRightWordClockDebug;
+  wire  Top_io_DataBit;
+  wire  Top_io_DataBitDebug;
   wire  Top_io_gpio;
   Top Top (
     .clock(Top_clock),
     .reset(Top_reset),
+    .io_SystemClock(Top_io_SystemClock),
+    .io_BitClock(Top_io_BitClock),
+    .io_BitClockDebug(Top_io_BitClockDebug),
+    .io_LeftRightWordClock(Top_io_LeftRightWordClock),
+    .io_LeftRightWordClockDebug(Top_io_LeftRightWordClockDebug),
+    .io_DataBit(Top_io_DataBit),
+    .io_DataBitDebug(Top_io_DataBitDebug),
     .io_gpio(Top_io_gpio)
   );
+  assign io_SystemClock = Top_io_SystemClock;
+  assign io_BitClock = Top_io_BitClock;
+  assign io_BitClockDebug = Top_io_BitClockDebug;
+  assign io_LeftRightWordClock = Top_io_LeftRightWordClock;
+  assign io_LeftRightWordClockDebug = Top_io_LeftRightWordClockDebug;
+  assign io_DataBit = Top_io_DataBit;
+  assign io_DataBitDebug = Top_io_DataBitDebug;
   assign io_gpio = Top_io_gpio;
-  assign io_gpio2 = 1'h1;
   assign Top_clock = clock;
   assign Top_reset = reset;
 endmodule
@@ -746,7 +1061,7 @@ force -freeze sim:/SPI_slave/sck 1 0
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Tue Nov  5 09:25:58 2019
+// Date        : Tue Nov 12 11:09:14 2019
 // Host        : sdhgsdfg-X556URK running 64-bit Ubuntu 18.04.3 LTS
 // Command     : write_verilog -force ../synthesize/include/i2s_sender.v
 // Design      : i2s_sender
