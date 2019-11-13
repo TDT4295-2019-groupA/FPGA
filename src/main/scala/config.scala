@@ -26,6 +26,9 @@ object config {
   val GlobalUpdateLength    = 25 // bytes
   val GeneratorUpdateLength = 12 // bytes
 
+  //Minimal mode
+  val MinimalMode = false
+
   object InstrumentEnum extends Enumeration {
     type InstrumentEnum = UInt
     val SQUARE: UInt = 0.U

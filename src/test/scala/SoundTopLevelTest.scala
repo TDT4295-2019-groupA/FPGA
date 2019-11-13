@@ -84,6 +84,7 @@ object SoundTopLevelTests {
   }
   class TestSPIEventsFromFile(c: SoundTopLevelPeekPokeWrapper, filename:String, val expect_samples:Boolean) extends PeekPokeTester(c) {
     println(new File(filename).getAbsolutePath)
+    assertResult(false, "config.minimal_generators") { config.MinimalMode }
 
     poke(c.io.generator_update_packet_valid, false)
     poke(c.io.global_update_packet_valid,    false)

@@ -83,7 +83,12 @@ class GeneratorStateHandler extends MultiIOModule {
     * magic_linear_scale)
     + magic_linear_offset).asUInt()
 
-  freq := ((freq_base * freq_coeff) >> 16).asUInt()
+  if (!config.MinimalMode) {
+    freq := (freq_base * freq_coeff) >> 16.U
+  } else {
+    freq := freq_base
+  }
+
   state.wavelength := freq_to_wavelength_in_samples(freq)
 
   // handle input
@@ -97,7 +102,11 @@ class GeneratorStateHandler extends MultiIOModule {
   when (io.step_sample) {
     state.note_life := state.note_life + config.NOTE_LIFE_COEFF.U
     when (state.wavelength_pos + 1.U >= state.wavelength) {
-      state.wavelength_pos := state.wavelength_pos + config.NOTE_LIFE_COEFF.U - state.wavelength
+      if (config.MinimalMode) {
+        state.wavelength_pos := 0.U
+      } else {
+        state.wavelength_pos := state.wavelength_pos + config.NOTE_LIFE_COEFF.U - state.wavelength
+      }
     } otherwise {
       state.wavelength_pos := state.wavelength_pos + config.NOTE_LIFE_COEFF.U
     }
@@ -114,6 +123,11 @@ class GeneratorSampleComputer extends MultiIOModule {
       val envelope_effect = Output(UInt(16.W))
     }
   )
+
+  io.sample_out := 0.S
+
+  if (!config.MinimalMode) {
+  // === NON-MINIMAL VERSION BEGIN ===
 
   val square   = Module(new Square()).io
   val triangle = Module(new Triangle()).io
@@ -139,11 +153,27 @@ class GeneratorSampleComputer extends MultiIOModule {
   envelope_impl.envelope                    := io.global_config.envelope
   envelope_impl.last_active_envelope_effect := io.state.last_active_envelope_effect
   envelope_impl.enabled                     := io.state.generator_config.enabled
-  io.envelope_effect := envelope_impl.envelope_effect
 
-  io.sample_out := 0.S
+  io.envelope_effect := envelope_impl.envelope_effect
   when (io.state.generator_config.enabled) {
     io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16.U) * io.state.generator_config.velocity.asSInt()
   }
 
+
+  // === NON-MINIMAL VERSION END ===
+  } else {
+  // === MINIMAL VERSION BEGIN ===
+
+
+  io.envelope_effect := 0xffff.U // gets optimized away by dead code elimination, but must be driven to compile
+
+  val square   = Module(new Square()).io
+  square.wavelength     := io.state.wavelength
+  square.wavelength_pos := io.state.wavelength_pos
+  square.note_life      := io.state.note_life
+  when (io.state.generator_config.enabled) {
+    io.sample_out := square.sample_out * io.state.generator_config.velocity.asSInt()
+  }
+
+  } // === MINIMAL VERSION END ===
 }
