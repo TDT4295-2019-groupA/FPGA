@@ -23,10 +23,11 @@ class Sine extends MultiIOModule{
   io.sample_out := config.SAMPLE_MAX.asSInt() * ((4.S * angleValue * (180.S - angleValue)) / (40500.S - angleValue * (180.S - angleValue))).asSInt()
 */
 
-  val angleValue = Wire(SInt(16.W))
+  val angleValue = Wire(SInt(12.W))
   angleValue := ((2 * 314).U * io.wavelength_pos / io.wavelength).asSInt()
 
-  val part1 = Wire(SInt(32.W))
+  val part1 = Wire(SInt(24.W))
+  //val part1 = Reg(SInt(24.W)) // pipelining
   part1 := angleValue * (180.S - angleValue)
 
   io.sample_out := config.SAMPLE_MAX.S * (
