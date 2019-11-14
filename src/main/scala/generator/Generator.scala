@@ -59,11 +59,11 @@ class GeneratorStateHandler extends MultiIOModule {
   This increases computational complexity, but hopefully reduces space necessary
    */
 
-  val note_remainder: UInt = Wire(UInt(4.W))
-  val note_divide   : UInt = Wire(UInt(4.W))
-  val freq          : UInt = Wire(UInt(32.W))
-  val freq_base     : UInt = Wire(UInt(32.W))
-  val freq_coeff    : UInt = Wire(UInt(32.W))
+  val note_remainder = Reg(UInt(4.W)) //Wire(UInt(4.W))   // pipelining
+  val note_divide    = Reg(UInt(4.W)) //Wire(UInt(4.W))   // pipelining
+  val freq           = Reg(UInt(32.W)) //Wire(UInt(32.W)) // pipelining
+  val freq_base      = Reg(UInt(32.W)) //Wire(UInt(32.W)) // pipelining
+  val freq_coeff     = Reg(UInt(32.W)) //Wire(UInt(32.W)) // pipelining
 
   note_remainder := state.generator_config.note_index % 12.U
   note_divide    := state.generator_config.note_index / 12.U
@@ -129,6 +129,10 @@ class GeneratorSampleComputer extends MultiIOModule {
     }
   )
 
+  // pipelining
+  val state = Reg(new GeneratorStateBundle)
+  state := io.state
+
   io.sample_out := 0.S
 
   if (!config.MinimalMode) {
@@ -139,14 +143,15 @@ class GeneratorSampleComputer extends MultiIOModule {
   val sawtooth = Module(new Sawtooth()).io
   val sine     = Module(new Sine()).io
   for (i <- Array(square, triangle, sawtooth, sine)) {
-    i.wavelength     := io.state.wavelength
-    i.wavelength_pos := io.state.wavelength_pos
-    i.note_life      := io.state.note_life
+    i.wavelength     := state.wavelength
+    i.wavelength_pos := state.wavelength_pos
+    i.note_life      := state.note_life
   }
 
-  val current_sample = Wire(SInt(32.W))
+  //val current_sample = Wire(SInt(16.W))
+  val current_sample = RegInit(SInt(16.W), 0.S) // pipelining
   current_sample := 0.S
-  switch (io.state.generator_config.instrument) {
+  switch (state.generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE)   { current_sample := square.sample_out }
     is (config.InstrumentEnum.TRIANGLE) { current_sample := triangle.sample_out }
     is (config.InstrumentEnum.SAWTOOTH) { current_sample := sawtooth.sample_out }
@@ -154,14 +159,14 @@ class GeneratorSampleComputer extends MultiIOModule {
   }
 
   val envelope_impl = Module(new EnvelopeImpl()).io
-  envelope_impl.note_life                   := io.state.note_life
+  envelope_impl.note_life                   := state.note_life
   envelope_impl.envelope                    := io.global_config.envelope
-  envelope_impl.last_active_envelope_effect := io.state.last_active_envelope_effect
-  envelope_impl.enabled                     := io.state.generator_config.enabled
-
+  envelope_impl.last_active_envelope_effect := state.last_active_envelope_effect
+  envelope_impl.enabled                     := state.generator_config.enabled
   io.envelope_effect := envelope_impl.envelope_effect
-  when (io.state.generator_config.enabled) {
-    io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16.U) * io.state.generator_config.velocity.asSInt()
+
+  when (state.generator_config.enabled || envelope_impl.is_in_release) {
+    io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16.U) * state.generator_config.velocity.asSInt()
   }
 
 
@@ -173,11 +178,11 @@ class GeneratorSampleComputer extends MultiIOModule {
   io.envelope_effect := 0xffff.U // gets optimized away by dead code elimination, but must be driven to compile
 
   val square   = Module(new Square()).io
-  square.wavelength     := io.state.wavelength
-  square.wavelength_pos := io.state.wavelength_pos
-  square.note_life      := io.state.note_life
-  when (io.state.generator_config.enabled) {
-    io.sample_out := square.sample_out * io.state.generator_config.velocity.asSInt()
+  square.wavelength     := state.wavelength
+  square.wavelength_pos := state.wavelength_pos
+  square.note_life      := state.note_life
+  when (state.generator_config.enabled) {
+    io.sample_out := square.sample_out * state.generator_config.velocity.asSInt()
   }
 
   } // === MINIMAL VERSION END ===

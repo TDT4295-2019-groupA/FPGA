@@ -22,7 +22,7 @@ class SoundTopLevel() extends MultiIOModule {
   )
 
   // global generator state
-  val global_config = Reg(new GlobalUpdate)
+  val global_config = RegInit(new GlobalUpdate, 0.U.asTypeOf(new GlobalUpdate))
   when (io.global_update_packet_valid) { // read when valid
     global_config := io.global_update_packet.data
   }
@@ -70,9 +70,12 @@ class SoundTopLevel() extends MultiIOModule {
       generator_state_handler.envelope_effect_valid := true.B
     }
   }
+  val compute_sample_counter = Counter(4) // to account for all the pipelining
   when (selected_gen.value != 0.U) {
-    sample_out := sample_out + generator_sample_computer.sample_out
-    selected_gen.inc()
+    when(compute_sample_counter.inc()) {
+      sample_out := sample_out + generator_sample_computer.sample_out
+      selected_gen.inc()
+    }
   }
 
 }
