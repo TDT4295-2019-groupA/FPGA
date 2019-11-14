@@ -16,7 +16,7 @@ class Square extends MultiIOModule {
     }
   )
 
-  when ((io.wavelength_pos << 1.U) > io.wavelength) {
+  when (io.wavelength_pos > (io.wavelength >> 1.U)) {
     io.sample_out := (-config.SAMPLE_MAX).S
   } otherwise {
     io.sample_out := config.SAMPLE_MAX.S
