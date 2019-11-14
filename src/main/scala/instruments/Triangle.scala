@@ -16,18 +16,20 @@ class Triangle extends MultiIOModule{
     }
   )
 
-  val half = Wire(UInt())
-  val quarter = Wire(UInt())
-  val pos = Wire(UInt())
+  val half          = Wire(UInt())
+  val quarter       = Wire(UInt())
+  val three_quarter = Wire(UInt())
+  val pos           = Wire(UInt())
 
-  half := io.wavelength_pos >>1
-  quarter := io.wavelength_pos >>2
+  half          := io.wavelength_pos >> 1.U
+  quarter       := io.wavelength_pos >> 2.U
+  three_quarter := half + quarter
 
-  when(io.wavelength_pos > (half + quarter)) {
-    pos := io.wavelength_pos - (half + quarter)
+  when(io.wavelength_pos > three_quarter) {
+    pos := io.wavelength_pos - three_quarter
   }.otherwise {
     pos := io.wavelength_pos + quarter
   }
-  io.sample_out := ((pos - half).asUInt() - quarter).asSInt() * config.SAMPLE_MAX.asSInt() / quarter.asSInt()
+  io.sample_out := (pos - three_quarter).asSInt() * config.SAMPLE_MAX.S / quarter.asSInt()
 
 }

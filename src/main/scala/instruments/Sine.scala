@@ -4,7 +4,7 @@ import chisel3._
 import chisel3.experimental.MultiIOModule
 import sadie.config.config
 
-class Sine extends MultiIOModule{
+class Sine extends MultiIOModule {
 
   val io = IO(
     new Bundle {
