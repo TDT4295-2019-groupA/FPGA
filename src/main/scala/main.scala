@@ -41,7 +41,7 @@ class TopModule extends RawModule {
   val reset = IO(Input(Bool()))
   val io = IO(new TopBundle)
 
-  withClockAndReset(clock, !reset) {
+  withClockAndReset(clock, reset) {
     val top = Module(new Top)
     top.io <> io
   }
