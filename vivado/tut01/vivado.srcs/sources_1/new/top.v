@@ -11,18 +11,24 @@ module DACInterface(
   reg [31:0] _RAND_1;
   wire  _T_20;
   wire  _T_21;
+  wire [33:0] _GEN_6;
   wire [33:0] _T_24;
   wire  _T_26;
+  wire [32:0] _GEN_7;
   wire [32:0] _T_27;
   wire  _GEN_1;
   wire [31:0] _T_23;
+  wire [32:0] _GEN_2;
   assign _T_20 = io_BCLK == 1'h0;
   assign _T_21 = sample_reg[31];
-  assign _T_24 = {sample_reg, 1'h0};
+  assign _GEN_6 = {{1'd0}, sample_reg};
+  assign _T_24 = _GEN_6 << 1;
   assign _T_26 = io_sample[31];
-  assign _T_27 = {io_sample, 1'h0};
+  assign _GEN_7 = {{1'd0}, io_sample};
+  assign _T_27 = _GEN_7 << 1;
   assign _GEN_1 = io_enable ? _T_26 : _T_21;
   assign _T_23 = _T_24[31:0];
+  assign _GEN_2 = io_enable ? _T_27 : {{1'd0}, _T_23};
   assign io_bit = _T_20 ? _GEN_1 : prev_bit;
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
@@ -39,20 +45,14 @@ module DACInterface(
 `ifndef RANDOM
 `define RANDOM $random
 `endif
-`ifdef RANDOMIZE_MEM_INIT
+`ifdef RANDOMIZE
   integer initvar;
-`endif
-initial begin
-  `ifdef RANDOMIZE
+  initial begin
     `ifdef INIT_RANDOM
       `INIT_RANDOM
     `endif
     `ifndef VERILATOR
-      `ifdef RANDOMIZE_DELAY
-        #`RANDOMIZE_DELAY begin end
-      `else
-        #0.002 begin end
-      `endif
+      #0.002 begin end
     `endif
   `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {2{`RANDOM}};
@@ -62,8 +62,8 @@ initial begin
   _RAND_1 = {1{`RANDOM}};
   prev_bit = _RAND_1[0:0];
   `endif // RANDOMIZE_REG_INIT
-  `endif // RANDOMIZE
-end
+  end
+`endif // RANDOMIZE
   always @(posedge clock) begin
     if (_T_20) begin
       if (io_enable) begin
@@ -93,9 +93,12 @@ module Codec(
   reg [31:0] _RAND_1;
   reg [5:0] bit_count;
   reg [31:0] _RAND_2;
+  wire [6:0] _T_22;
   wire [5:0] _T_23;
   wire  _T_25;
   wire  _T_27;
+  wire  _GEN_0;
+  wire [5:0] _GEN_1;
   DACInterface DACInterface (
     .clock(DACInterface_clock),
     .io_BCLK(DACInterface_io_BCLK),
@@ -103,9 +106,12 @@ module Codec(
     .io_sample(DACInterface_io_sample),
     .io_bit(DACInterface_io_bit)
   );
+  assign _T_22 = bit_count + 6'h1;
   assign _T_23 = bit_count + 6'h1;
   assign _T_25 = bit_count == 6'h1f;
   assign _T_27 = LRCLK == 1'h0;
+  assign _GEN_0 = _T_25 ? _T_27 : LRCLK;
+  assign _GEN_1 = _T_25 ? 6'h0 : _T_23;
   assign io_BCLK = BCLK;
   assign io_LRCLK = LRCLK;
   assign io_dac_out = DACInterface_io_bit;
@@ -128,20 +134,14 @@ module Codec(
 `ifndef RANDOM
 `define RANDOM $random
 `endif
-`ifdef RANDOMIZE_MEM_INIT
+`ifdef RANDOMIZE
   integer initvar;
-`endif
-initial begin
-  `ifdef RANDOMIZE
+  initial begin
     `ifdef INIT_RANDOM
       `INIT_RANDOM
     `endif
     `ifndef VERILATOR
-      `ifdef RANDOMIZE_DELAY
-        #`RANDOMIZE_DELAY begin end
-      `else
-        #0.002 begin end
-      `endif
+      #0.002 begin end
     `endif
   `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
@@ -155,8 +155,8 @@ initial begin
   _RAND_2 = {1{`RANDOM}};
   bit_count = _RAND_2[5:0];
   `endif // RANDOMIZE_REG_INIT
-  `endif // RANDOMIZE
-end
+  end
+`endif // RANDOMIZE
   always @(posedge clock) begin
     BCLK <= BCLK == 1'h0;
     if (BCLK) begin
@@ -208,18 +208,24 @@ module Top(
   wire  Codec_io_BCLK;
   wire  Codec_io_LRCLK;
   wire  Codec_io_dac_out;
-  reg [21:0] value;
+  reg [23:0] value;
   reg [31:0] _RAND_0;
   wire  _T_27;
-  wire [21:0] _T_30;
+  wire [24:0] _T_29;
+  wire [23:0] _T_30;
+  wire [23:0] _GEN_0;
+  wire  _T_35;
   reg [31:0] _T_45;
   reg [31:0] _RAND_1;
   reg [31:0] _T_51;
   reg [31:0] _RAND_2;
+  wire [32:0] _T_53;
   wire [31:0] _T_54;
   wire  _T_56;
+  wire [32:0] _T_59;
   wire [31:0] _T_60;
   wire [31:0] _T_61;
+  wire [31:0] _GEN_5;
   MMCME2_BASE #(.CLKOUT5_PHASE(0.0), .CLKOUT5_DIVIDE(1), .CLKOUT3_DIVIDE(1), .CLKIN1_PERIOD(62.5), .CLKOUT2_DIVIDE(1), .CLKOUT0_PHASE(0.0), .CLKFBOUT_MULT_F(42.336), .CLKOUT4_DIVIDE(2), .CLKOUT6_DIVIDE(60), .CLKOUT6_DUTY_CYCLE(0.5), .CLKOUT1_PHASE(0.0), .CLKOUT4_PHASE(0.0), .CLKOUT5_DUTY_CYCLE(0.5), .CLKOUT6_PHASE(0.0), .CLKOUT1_DIVIDE(1), .CLKOUT3_DUTY_CYCLE(0.5), .CLKOUT4_CASCADE("TRUE"), .CLKOUT2_DUTY_CYCLE(0.5), .CLKOUT0_DIVIDE_F(1.0), .CLKOUT1_DUTY_CYCLE(0.5), .CLKOUT3_PHASE(0.0), .CLKOUT0_DUTY_CYCLE(0.5), .CLKOUT2_PHASE(0.0), .DIVCLK_DIVIDE(1), .CLKOUT4_DUTY_CYCLE(0.5)) mmcm (
     .CLKIN1(mmcm_CLKIN1),
     .RST(mmcm_RST),
@@ -247,12 +253,18 @@ module Top(
     .io_LRCLK(Codec_io_LRCLK),
     .io_dac_out(Codec_io_dac_out)
   );
-  assign _T_27 = value == 22'h3d08ff;
-  assign _T_30 = value + 22'h1;
+  assign _T_27 = value == 24'hf423ff;
+  assign _T_29 = value + 24'h1;
+  assign _T_30 = value + 24'h1;
+  assign _GEN_0 = _T_27 ? 24'h0 : _T_30;
+  assign _T_35 = value >= 24'h7a1200;
+  assign _T_53 = _T_51 + 32'h1;
   assign _T_54 = _T_51 + 32'h1;
   assign _T_56 = _T_51 >= 32'hc87;
+  assign _T_59 = $signed(32'sh0) - $signed(_T_45);
   assign _T_60 = $signed(32'sh0) - $signed(_T_45);
   assign _T_61 = $signed(_T_60);
+  assign _GEN_5 = _T_56 ? $signed(_T_61) : $signed(_T_45);
   assign io_SystemClock = mmcm_CLKOUT6;
   assign io_BitClock = Codec_io_BCLK;
   assign io_BitClockDebug = Codec_io_BCLK;
@@ -260,7 +272,7 @@ module Top(
   assign io_LeftRightWordClockDebug = Codec_io_LRCLK;
   assign io_DataBit = Codec_io_dac_out;
   assign io_DataBitDebug = Codec_io_dac_out;
-  assign io_gpio = value >= 22'h1e8480;
+  assign io_gpio = _T_35 ? 1'h0 : 1'h1;
   assign mmcm_CLKIN1 = clock;
   assign mmcm_RST = 1'h0;
   assign mmcm_PWRDWN = 1'h0;
@@ -282,24 +294,18 @@ module Top(
 `ifndef RANDOM
 `define RANDOM $random
 `endif
-`ifdef RANDOMIZE_MEM_INIT
+`ifdef RANDOMIZE
   integer initvar;
-`endif
-initial begin
-  `ifdef RANDOMIZE
+  initial begin
     `ifdef INIT_RANDOM
       `INIT_RANDOM
     `endif
     `ifndef VERILATOR
-      `ifdef RANDOMIZE_DELAY
-        #`RANDOMIZE_DELAY begin end
-      `else
-        #0.002 begin end
-      `endif
+      #0.002 begin end
     `endif
   `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  value = _RAND_0[21:0];
+  value = _RAND_0[23:0];
   `endif // RANDOMIZE_REG_INIT
   `ifdef RANDOMIZE_REG_INIT
   _RAND_1 = {1{`RANDOM}};
@@ -309,18 +315,20 @@ initial begin
   _RAND_2 = {1{`RANDOM}};
   _T_51 = _RAND_2[31:0];
   `endif // RANDOMIZE_REG_INIT
-  `endif // RANDOMIZE
-end
-  always @(posedge mmcm_CLKOUT4) begin
+  end
+`endif // RANDOMIZE
+  always @(posedge clock) begin
     if (reset) begin
-      value <= 22'h0;
+      value <= 24'h0;
     end else begin
       if (_T_27) begin
-        value <= 22'h0;
+        value <= 24'h0;
       end else begin
         value <= _T_30;
       end
     end
+  end
+  always @(posedge mmcm_CLKOUT4) begin
     if (reset) begin
       _T_45 <= 32'sh33333333;
     end else begin
@@ -379,6 +387,479 @@ module TopModule(
   assign io_gpio = Top_io_gpio;
   assign Top_clock = clock;
   assign Top_reset = reset;
+endmodule
+////////////////////////////////////////////////////////////////////////////////
+////                                                                        ////
+//// Project Name: SPI (Verilog)                                            ////
+////                                                                        ////
+//// Module Name: spi_slave                                                 ////
+////                                                                        ////
+////                                                                        ////
+////  This file is part of the Ethernet IP core project                     ////
+////  https://opencores.org/projects/spi_verilog_master_slave               ////
+////                                                                        ////
+////  Author(s):                                                            ////
+////      Santhosh G (santhg@opencores.org)                                 ////
+////                                                                        ////
+////  Refer to Readme.txt for more information                              ////
+////                                                                        ////
+////////////////////////////////////////////////////////////////////////////////
+////                                                                        ////
+//// Copyright (C) 2014, 2015 Authors                                       ////
+////                                                                        ////
+//// This source file may be used and distributed without                   ////
+//// restriction provided that this copyright statement is not              ////
+//// removed from the file and that any derivative work contains            ////
+//// the original copyright notice and the associated disclaimer.           ////
+////                                                                        ////
+//// This source file is free software; you can redistribute it             ////
+//// and/or modify it under the terms of the GNU Lesser General             ////
+//// Public License as published by the Free Software Foundation;           ////
+//// either version 2.1 of the License, or (at your option) any             ////
+//// later version.                                                         ////
+////                                                                        ////
+//// This source is distributed in the hope that it will be                 ////
+//// useful, but WITHOUT ANY WARRANTY; without even the implied             ////
+//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR                ////
+//// PURPOSE.  See the GNU Lesser General Public License for more           ////
+//// details.                                                               ////
+////                                                                        ////
+//// You should have received a copy of the GNU Lesser General              ////
+//// Public License along with this source; if not, download it             ////
+//// from http://www.opencores.org/lgpl.shtml                               ////
+////                                                                        ////
+////////////////////////////////////////////////////////////////////////////////
+/* SPI MODE 3
+		CHANGE DATA (sdout) @ NEGEDGE SCK
+		read data (sdin) @posedge SCK
+*/		
+module spi_slave (rstb,ten,tdata,mlb,ss,sck,sdin, sdout,done,rdata);
+  input rstb,ss,sck,sdin,ten,mlb;
+  input [7:0] tdata;
+  output sdout;           //slave out   master in 
+  output reg done;
+  output reg [7:0] rdata;
+ 
+  reg [7:0] treg,rreg;
+  reg [3:0] nb;
+  wire sout;
+ 
+  assign sout=mlb?treg[7]:treg[0];
+  assign sdout=( (!ss)&&ten )?sout:1'bz; //if 1=> send data  else TRI-STATE sdout
+ 
+ 
+//read from  sdout
+always @(posedge sck or negedge rstb)
+  begin
+    if (rstb==0)
+		begin rreg = 8'h00;  rdata = 8'h00; done = 0; nb = 0; end   //
+	else if (!ss) begin 
+			if(mlb==0)  //LSB first, in@msb -> right shift
+				begin rreg ={sdin,rreg[7:1]}; end
+			else     //MSB first, in@lsb -> left shift
+				begin rreg ={rreg[6:0],sdin}; end  
+		//increment bit count
+			nb=nb+1;
+			if(nb!=8) done=0;
+			else  begin rdata=rreg; done=1; nb=0; end
+		end	 //if(!ss)_END  if(nb==8)
+  end
+ 
+//send to  sdout
+always @(negedge sck or negedge rstb)
+  begin
+	if (rstb==0)
+		begin treg = 8'hFF; end
+	else begin
+		if(!ss) begin			
+			if(nb==0) treg=tdata;
+			else begin
+			   if(mlb==0)  //LSB first, out=lsb -> right shift
+					begin treg = {1'b1,treg[7:1]}; end
+			   else     //MSB first, out=msb -> left shift
+					begin treg = {treg[6:0],1'b1}; end			
+			end
+		end //!ss
+	 end //rstb	
+  end //always
+ 
+endmodule
+ 
+/*
+			if(mlb==0)  //LSB first, out=lsb -> right shift
+					begin treg = {treg[7],treg[7:1]}; end
+			else     //MSB first, out=msb -> left shift
+					begin treg = {treg[6:0],treg[0]}; end	
+*/
+ 
+ 
+/*
+force -freeze sim:/SPI_slave/sck 0 0, 1 {25 ns} -r 50 -can 410
+run 405ns
+noforce sim:/SPI_slave/sck
+force -freeze sim:/SPI_slave/sck 1 0
+*/
+////////////////////////////////////////////////////////////////////////////////
+////                                                                        ////
+//// Project Name: SPI (Verilog)                                            ////
+////                                                                        ////
+//// Module Name: spi_master                                                ////
+////                                                                        ////
+////                                                                        ////
+////  This file is part of the Ethernet IP core project                     ////
+////  http://opencores.com/project,spi_verilog_master_slave                 ////
+////                                                                        ////
+////  Author(s):                                                            ////
+////      Santhosh G (santhg@opencores.org)                                 ////
+////                                                                        ////
+////  Refer to Readme.txt for more information                              ////
+////                                                                        ////
+////////////////////////////////////////////////////////////////////////////////
+////                                                                        ////
+//// Copyright (C) 2014, 2015 Authors                                       ////
+////                                                                        ////
+//// This source file may be used and distributed without                   ////
+//// restriction provided that this copyright statement is not              ////
+//// removed from the file and that any derivative work contains            ////
+//// the original copyright notice and the associated disclaimer.           ////
+////                                                                        ////
+//// This source file is free software; you can redistribute it             ////
+//// and/or modify it under the terms of the GNU Lesser General             ////
+//// Public License as published by the Free Software Foundation;           ////
+//// either version 2.1 of the License, or (at your option) any             ////
+//// later version.                                                         ////
+////                                                                        ////
+//// This source is distributed in the hope that it will be                 ////
+//// useful, but WITHOUT ANY WARRANTY; without even the implied             ////
+//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR                ////
+//// PURPOSE.  See the GNU Lesser General Public License for more           ////
+//// details.                                                               ////
+////                                                                        ////
+//// You should have received a copy of the GNU Lesser General              ////
+//// Public License along with this source; if not, download it             ////
+//// from http://www.opencores.org/lgpl.shtml                               ////
+////                                                                        ////
+////////////////////////////////////////////////////////////////////////////////
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  SPI MODE 3
+		CHANGE DATA @ NEGEDGE
+		read data @posedge
+ 
+ RSTB-active low asyn reset, CLK-clock, T_RB=0-rx  1-TX, mlb=0-LSB 1st 1-msb 1st
+ START=1- starts data transmission cdiv 0=clk/4 1=/8   2=/16  3=/32
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+module spi_master(rstb,clk,mlb,start,tdat,cdiv,din, ss,sck,dout,done,rdata);
+    input rstb,clk,mlb,start;
+    input [7:0] tdat;  //transmit data
+    input [1:0] cdiv;  //clock divider
+	input din;
+	output reg ss; 
+	output reg sck; 
+	output reg dout; 
+    output reg done;
+	output reg [7:0] rdata; //received data
+ 
+parameter idle=2'b00;		
+parameter send=2'b10; 
+parameter finish=2'b11; 
+reg [1:0] cur,nxt;
+ 
+	reg [7:0] treg,rreg;
+	reg [3:0] nbit;
+	reg [4:0] mid,cnt;
+	reg shift,clr;
+ 
+//FSM i/o
+always @(start or cur or nbit or cdiv or rreg) begin
+		 nxt=cur;
+		 clr=0;  
+		 shift=0;//ss=0;
+		 case(cur)
+			idle:begin
+				if(start==1)
+		               begin 
+							 case (cdiv)
+								2'b00: mid=2;
+								2'b01: mid=4;
+								2'b10: mid=8;
+								2'b11: mid=16;
+ 							 endcase
+						shift=1;
+						done=1'b0;
+						nxt=send;	 
+						end
+		        end //idle
+			send:begin
+				ss=0;
+				if(nbit!=8)
+					begin shift=1; end
+				else begin
+						rdata=rreg;done=1'b1;
+						nxt=finish;
+					end
+				end//send
+			finish:begin
+					shift=0;
+					ss=1;
+					clr=1;
+					nxt=idle;
+				 end
+			default: nxt=finish;
+      endcase
+    end//always
+ 
+//state transistion
+always@(negedge clk or negedge rstb) begin
+ if(rstb==0) 
+   cur<=finish;
+ else 
+   cur<=nxt;
+ end
+ 
+//setup falling edge (shift dout) sample rising edge (read din)
+always@(negedge clk or posedge clr) begin
+  if(clr==1) 
+		begin cnt=0; sck=1; end
+  else begin
+	if(shift==1) begin
+		cnt=cnt+1; 
+	  if(cnt==mid) begin
+	  	sck=~sck;
+		cnt=0;
+		end //mid
+	end //shift
+ end //rst
+end //always
+ 
+//sample @ rising edge (read din)
+always@(posedge sck or posedge clr ) begin // or negedge rstb
+ if(clr==1)  begin
+			nbit=0;  rreg=8'hFF;  end
+    else begin 
+		  if(mlb==0) //LSB first, din@msb -> right shift
+			begin  rreg={din,rreg[7:1]};  end 
+		  else  //MSB first, din@lsb -> left shift
+			begin  rreg={rreg[6:0],din};  end
+		  nbit=nbit+1;
+ end //rst
+end //always
+ 
+always@(negedge sck or posedge clr) begin
+ if(clr==1) begin
+	  treg=8'hFF;  dout=1;  
+  end  
+ else begin
+		if(nbit==0) begin //load data into TREG
+			treg=tdat; dout=mlb?treg[7]:treg[0];
+		end //nbit_if
+		else begin
+			if(mlb==0) //LSB first, shift right
+				begin treg={1'b1,treg[7:1]}; dout=treg[0]; end
+			else//MSB first shift LEFT
+				begin treg={treg[6:0],1'b1}; dout=treg[7]; end
+		end
+ end //rst
+end //always
+ 
+ 
+endmodule
+
+// file: MMCM.v
+// 
+// (c) Copyright 2008 - 2013 Xilinx, Inc. All rights reserved.
+// 
+// This file contains confidential and proprietary information
+// of Xilinx, Inc. and is protected under U.S. and
+// international copyright and other intellectual property
+// laws.
+// 
+// DISCLAIMER
+// This disclaimer is not a license and does not grant any
+// rights to the materials distributed herewith. Except as
+// otherwise provided in a valid license issued to you by
+// Xilinx, and to the maximum extent permitted by applicable
+// law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+// AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+// BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+// INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+// (2) Xilinx shall not be liable (whether in contract or tort,
+// including negligence, or under any other theory of
+// liability) for any loss or damage of any kind or nature
+// related to, arising under or in connection with these
+// materials, including for any direct, or any indirect,
+// special, incidental, or consequential loss or damage
+// (including loss of data, profits, goodwill, or any type of
+// loss or damage suffered as a result of any action brought
+// by a third party) even if such damage or loss was
+// reasonably foreseeable or Xilinx had been advised of the
+// possibility of the same.
+// 
+// CRITICAL APPLICATIONS
+// Xilinx products are not designed or intended to be fail-
+// safe, or for use in any application requiring fail-safe
+// performance, such as life-support or safety devices or
+// systems, Class III medical devices, nuclear facilities,
+// applications related to the deployment of airbags, or any
+// other applications that could lead to death, personal
+// injury, or severe property or environmental damage
+// (individually and collectively, "Critical
+// Applications"). Customer assumes the sole risk and
+// liability of any use of Xilinx products in Critical
+// Applications, subject only to applicable laws and
+// regulations governing limitations on product liability.
+// 
+// THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+// PART OF THIS FILE AT ALL TIMES.
+// 
+//----------------------------------------------------------------------------
+// User entered comments
+//----------------------------------------------------------------------------
+// None
+//
+//----------------------------------------------------------------------------
+//  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
+//   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
+//----------------------------------------------------------------------------
+// clk_out1___200.000______0.000______50.0______276.741____432.554
+//
+//----------------------------------------------------------------------------
+// Input Clock   Freq (MHz)    Input Jitter (UI)
+//----------------------------------------------------------------------------
+// __primary__________16.000____________0.010
+
+`timescale 1ps/1ps
+
+module MMCM_clk_wiz 
+
+ (// Clock in ports
+  // Clock out ports
+  output        clk_out1,
+  input         clk_in
+ );
+  // Input buffering
+  //------------------------------------
+wire clk_in_MMCM;
+wire clk_in2_MMCM;
+  IBUF clkin1_ibufg
+   (.O (clk_in_MMCM),
+    .I (clk_in));
+
+
+
+
+  // Clocking PRIMITIVE
+  //------------------------------------
+
+  // Instantiation of the MMCM PRIMITIVE
+  //    * Unused inputs are tied off
+  //    * Unused outputs are labeled unused
+
+  wire        clk_out1_MMCM;
+  wire        clk_out2_MMCM;
+  wire        clk_out3_MMCM;
+  wire        clk_out4_MMCM;
+  wire        clk_out5_MMCM;
+  wire        clk_out6_MMCM;
+  wire        clk_out7_MMCM;
+
+  wire [15:0] do_unused;
+  wire        drdy_unused;
+  wire        psdone_unused;
+  wire        locked_int;
+  wire        clkfbout_MMCM;
+  wire        clkfbout_buf_MMCM;
+  wire        clkfboutb_unused;
+    wire clkout0b_unused;
+   wire clkout1_unused;
+   wire clkout1b_unused;
+   wire clkout2_unused;
+   wire clkout2b_unused;
+   wire clkout3_unused;
+   wire clkout3b_unused;
+   wire clkout4_unused;
+  wire        clkout5_unused;
+  wire        clkout6_unused;
+  wire        clkfbstopped_unused;
+  wire        clkinstopped_unused;
+
+  MMCME2_ADV
+  #(.BANDWIDTH            ("OPTIMIZED"),
+    .CLKOUT4_CASCADE      ("FALSE"),
+    .COMPENSATION         ("ZHOLD"),
+    .STARTUP_WAIT         ("FALSE"),
+    .DIVCLK_DIVIDE        (1),
+    .CLKFBOUT_MULT_F      (62.500),
+    .CLKFBOUT_PHASE       (0.000),
+    .CLKFBOUT_USE_FINE_PS ("FALSE"),
+    .CLKOUT0_DIVIDE_F     (5.000),
+    .CLKOUT0_PHASE        (0.000),
+    .CLKOUT0_DUTY_CYCLE   (0.500),
+    .CLKOUT0_USE_FINE_PS  ("FALSE"),
+    .CLKIN1_PERIOD        (62.500))
+  mmcm_adv_inst
+    // Output clocks
+   (
+    .CLKFBOUT            (clkfbout_MMCM),
+    .CLKFBOUTB           (clkfboutb_unused),
+    .CLKOUT0             (clk_out1_MMCM),
+    .CLKOUT0B            (clkout0b_unused),
+    .CLKOUT1             (clkout1_unused),
+    .CLKOUT1B            (clkout1b_unused),
+    .CLKOUT2             (clkout2_unused),
+    .CLKOUT2B            (clkout2b_unused),
+    .CLKOUT3             (clkout3_unused),
+    .CLKOUT3B            (clkout3b_unused),
+    .CLKOUT4             (clkout4_unused),
+    .CLKOUT5             (clkout5_unused),
+    .CLKOUT6             (clkout6_unused),
+     // Input clock control
+    .CLKFBIN             (clkfbout_buf_MMCM),
+    .CLKIN1              (clk_in_MMCM),
+    .CLKIN2              (1'b0),
+     // Tied to always select the primary input clock
+    .CLKINSEL            (1'b1),
+    // Ports for dynamic reconfiguration
+    .DADDR               (7'h0),
+    .DCLK                (1'b0),
+    .DEN                 (1'b0),
+    .DI                  (16'h0),
+    .DO                  (do_unused),
+    .DRDY                (drdy_unused),
+    .DWE                 (1'b0),
+    // Ports for dynamic phase shift
+    .PSCLK               (1'b0),
+    .PSEN                (1'b0),
+    .PSINCDEC            (1'b0),
+    .PSDONE              (psdone_unused),
+    // Other control and status signals
+    .LOCKED              (locked_int),
+    .CLKINSTOPPED        (clkinstopped_unused),
+    .CLKFBSTOPPED        (clkfbstopped_unused),
+    .PWRDWN              (1'b0),
+    .RST                 (1'b0));
+
+// Clock Monitor clock assigning
+//--------------------------------------
+ // Output buffering
+  //-----------------------------------
+
+  BUFG clkf_buf
+   (.O (clkfbout_buf_MMCM),
+    .I (clkfbout_MMCM));
+
+
+
+
+
+
+  BUFG clkout1_buf
+   (.O   (clk_out1),
+    .I   (clk_out1_MMCM));
+
+
+
+
 endmodule
 // Copied from https://raw.githubusercontent.com/nandland/spi-slave/master/Verilog/source/SPI_Slave.v
 // with modifications by pbsds
@@ -585,484 +1066,11 @@ module SPI_Slave_nandland
   end
 
 endmodule // SPI_Slave
-
-// file: MMCM.v
-// 
-// (c) Copyright 2008 - 2013 Xilinx, Inc. All rights reserved.
-// 
-// This file contains confidential and proprietary information
-// of Xilinx, Inc. and is protected under U.S. and
-// international copyright and other intellectual property
-// laws.
-// 
-// DISCLAIMER
-// This disclaimer is not a license and does not grant any
-// rights to the materials distributed herewith. Except as
-// otherwise provided in a valid license issued to you by
-// Xilinx, and to the maximum extent permitted by applicable
-// law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
-// AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
-// BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
-// INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
-// (2) Xilinx shall not be liable (whether in contract or tort,
-// including negligence, or under any other theory of
-// liability) for any loss or damage of any kind or nature
-// related to, arising under or in connection with these
-// materials, including for any direct, or any indirect,
-// special, incidental, or consequential loss or damage
-// (including loss of data, profits, goodwill, or any type of
-// loss or damage suffered as a result of any action brought
-// by a third party) even if such damage or loss was
-// reasonably foreseeable or Xilinx had been advised of the
-// possibility of the same.
-// 
-// CRITICAL APPLICATIONS
-// Xilinx products are not designed or intended to be fail-
-// safe, or for use in any application requiring fail-safe
-// performance, such as life-support or safety devices or
-// systems, Class III medical devices, nuclear facilities,
-// applications related to the deployment of airbags, or any
-// other applications that could lead to death, personal
-// injury, or severe property or environmental damage
-// (individually and collectively, "Critical
-// Applications"). Customer assumes the sole risk and
-// liability of any use of Xilinx products in Critical
-// Applications, subject only to applicable laws and
-// regulations governing limitations on product liability.
-// 
-// THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
-// PART OF THIS FILE AT ALL TIMES.
-// 
-//----------------------------------------------------------------------------
-// User entered comments
-//----------------------------------------------------------------------------
-// None
-//
-//----------------------------------------------------------------------------
-//  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
-//   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
-//----------------------------------------------------------------------------
-// clk_out1___200.000______0.000______50.0______276.741____432.554
-//
-//----------------------------------------------------------------------------
-// Input Clock   Freq (MHz)    Input Jitter (UI)
-//----------------------------------------------------------------------------
-// __primary__________16.000____________0.010
-
-`timescale 1ps/1ps
-
-module MMCM_clk_wiz 
-
- (// Clock in ports
-  // Clock out ports
-  output        clk_out1,
-  input         clk_in
- );
-  // Input buffering
-  //------------------------------------
-wire clk_in_MMCM;
-wire clk_in2_MMCM;
-  IBUF clkin1_ibufg
-   (.O (clk_in_MMCM),
-    .I (clk_in));
-
-
-
-
-  // Clocking PRIMITIVE
-  //------------------------------------
-
-  // Instantiation of the MMCM PRIMITIVE
-  //    * Unused inputs are tied off
-  //    * Unused outputs are labeled unused
-
-  wire        clk_out1_MMCM;
-  wire        clk_out2_MMCM;
-  wire        clk_out3_MMCM;
-  wire        clk_out4_MMCM;
-  wire        clk_out5_MMCM;
-  wire        clk_out6_MMCM;
-  wire        clk_out7_MMCM;
-
-  wire [15:0] do_unused;
-  wire        drdy_unused;
-  wire        psdone_unused;
-  wire        locked_int;
-  wire        clkfbout_MMCM;
-  wire        clkfbout_buf_MMCM;
-  wire        clkfboutb_unused;
-    wire clkout0b_unused;
-   wire clkout1_unused;
-   wire clkout1b_unused;
-   wire clkout2_unused;
-   wire clkout2b_unused;
-   wire clkout3_unused;
-   wire clkout3b_unused;
-   wire clkout4_unused;
-  wire        clkout5_unused;
-  wire        clkout6_unused;
-  wire        clkfbstopped_unused;
-  wire        clkinstopped_unused;
-
-  MMCME2_ADV
-  #(.BANDWIDTH            ("OPTIMIZED"),
-    .CLKOUT4_CASCADE      ("FALSE"),
-    .COMPENSATION         ("ZHOLD"),
-    .STARTUP_WAIT         ("FALSE"),
-    .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (62.500),
-    .CLKFBOUT_PHASE       (0.000),
-    .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (5.000),
-    .CLKOUT0_PHASE        (0.000),
-    .CLKOUT0_DUTY_CYCLE   (0.500),
-    .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKIN1_PERIOD        (62.500))
-  mmcm_adv_inst
-    // Output clocks
-   (
-    .CLKFBOUT            (clkfbout_MMCM),
-    .CLKFBOUTB           (clkfboutb_unused),
-    .CLKOUT0             (clk_out1_MMCM),
-    .CLKOUT0B            (clkout0b_unused),
-    .CLKOUT1             (clkout1_unused),
-    .CLKOUT1B            (clkout1b_unused),
-    .CLKOUT2             (clkout2_unused),
-    .CLKOUT2B            (clkout2b_unused),
-    .CLKOUT3             (clkout3_unused),
-    .CLKOUT3B            (clkout3b_unused),
-    .CLKOUT4             (clkout4_unused),
-    .CLKOUT5             (clkout5_unused),
-    .CLKOUT6             (clkout6_unused),
-     // Input clock control
-    .CLKFBIN             (clkfbout_buf_MMCM),
-    .CLKIN1              (clk_in_MMCM),
-    .CLKIN2              (1'b0),
-     // Tied to always select the primary input clock
-    .CLKINSEL            (1'b1),
-    // Ports for dynamic reconfiguration
-    .DADDR               (7'h0),
-    .DCLK                (1'b0),
-    .DEN                 (1'b0),
-    .DI                  (16'h0),
-    .DO                  (do_unused),
-    .DRDY                (drdy_unused),
-    .DWE                 (1'b0),
-    // Ports for dynamic phase shift
-    .PSCLK               (1'b0),
-    .PSEN                (1'b0),
-    .PSINCDEC            (1'b0),
-    .PSDONE              (psdone_unused),
-    // Other control and status signals
-    .LOCKED              (locked_int),
-    .CLKINSTOPPED        (clkinstopped_unused),
-    .CLKFBSTOPPED        (clkfbstopped_unused),
-    .PWRDWN              (1'b0),
-    .RST                 (1'b0));
-
-// Clock Monitor clock assigning
-//--------------------------------------
- // Output buffering
-  //-----------------------------------
-
-  BUFG clkf_buf
-   (.O (clkfbout_buf_MMCM),
-    .I (clkfbout_MMCM));
-
-
-
-
-
-
-  BUFG clkout1_buf
-   (.O   (clk_out1),
-    .I   (clk_out1_MMCM));
-
-
-
-
-endmodule
-////////////////////////////////////////////////////////////////////////////////
-////                                                                        ////
-//// Project Name: SPI (Verilog)                                            ////
-////                                                                        ////
-//// Module Name: spi_master                                                ////
-////                                                                        ////
-////                                                                        ////
-////  This file is part of the Ethernet IP core project                     ////
-////  http://opencores.com/project,spi_verilog_master_slave                 ////
-////                                                                        ////
-////  Author(s):                                                            ////
-////      Santhosh G (santhg@opencores.org)                                 ////
-////                                                                        ////
-////  Refer to Readme.txt for more information                              ////
-////                                                                        ////
-////////////////////////////////////////////////////////////////////////////////
-////                                                                        ////
-//// Copyright (C) 2014, 2015 Authors                                       ////
-////                                                                        ////
-//// This source file may be used and distributed without                   ////
-//// restriction provided that this copyright statement is not              ////
-//// removed from the file and that any derivative work contains            ////
-//// the original copyright notice and the associated disclaimer.           ////
-////                                                                        ////
-//// This source file is free software; you can redistribute it             ////
-//// and/or modify it under the terms of the GNU Lesser General             ////
-//// Public License as published by the Free Software Foundation;           ////
-//// either version 2.1 of the License, or (at your option) any             ////
-//// later version.                                                         ////
-////                                                                        ////
-//// This source is distributed in the hope that it will be                 ////
-//// useful, but WITHOUT ANY WARRANTY; without even the implied             ////
-//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR                ////
-//// PURPOSE.  See the GNU Lesser General Public License for more           ////
-//// details.                                                               ////
-////                                                                        ////
-//// You should have received a copy of the GNU Lesser General              ////
-//// Public License along with this source; if not, download it             ////
-//// from http://www.opencores.org/lgpl.shtml                               ////
-////                                                                        ////
-////////////////////////////////////////////////////////////////////////////////
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  SPI MODE 3
-		CHANGE DATA @ NEGEDGE
-		read data @posedge
- 
- RSTB-active low asyn reset, CLK-clock, T_RB=0-rx  1-TX, mlb=0-LSB 1st 1-msb 1st
- START=1- starts data transmission cdiv 0=clk/4 1=/8   2=/16  3=/32
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-module spi_master(rstb,clk,mlb,start,tdat,cdiv,din, ss,sck,dout,done,rdata);
-    input rstb,clk,mlb,start;
-    input [7:0] tdat;  //transmit data
-    input [1:0] cdiv;  //clock divider
-	input din;
-	output reg ss; 
-	output reg sck; 
-	output reg dout; 
-    output reg done;
-	output reg [7:0] rdata; //received data
- 
-parameter idle=2'b00;		
-parameter send=2'b10; 
-parameter finish=2'b11; 
-reg [1:0] cur,nxt;
- 
-	reg [7:0] treg,rreg;
-	reg [3:0] nbit;
-	reg [4:0] mid,cnt;
-	reg shift,clr;
- 
-//FSM i/o
-always @(start or cur or nbit or cdiv or rreg) begin
-		 nxt=cur;
-		 clr=0;  
-		 shift=0;//ss=0;
-		 case(cur)
-			idle:begin
-				if(start==1)
-		               begin 
-							 case (cdiv)
-								2'b00: mid=2;
-								2'b01: mid=4;
-								2'b10: mid=8;
-								2'b11: mid=16;
- 							 endcase
-						shift=1;
-						done=1'b0;
-						nxt=send;	 
-						end
-		        end //idle
-			send:begin
-				ss=0;
-				if(nbit!=8)
-					begin shift=1; end
-				else begin
-						rdata=rreg;done=1'b1;
-						nxt=finish;
-					end
-				end//send
-			finish:begin
-					shift=0;
-					ss=1;
-					clr=1;
-					nxt=idle;
-				 end
-			default: nxt=finish;
-      endcase
-    end//always
- 
-//state transistion
-always@(negedge clk or negedge rstb) begin
- if(rstb==0) 
-   cur<=finish;
- else 
-   cur<=nxt;
- end
- 
-//setup falling edge (shift dout) sample rising edge (read din)
-always@(negedge clk or posedge clr) begin
-  if(clr==1) 
-		begin cnt=0; sck=1; end
-  else begin
-	if(shift==1) begin
-		cnt=cnt+1; 
-	  if(cnt==mid) begin
-	  	sck=~sck;
-		cnt=0;
-		end //mid
-	end //shift
- end //rst
-end //always
- 
-//sample @ rising edge (read din)
-always@(posedge sck or posedge clr ) begin // or negedge rstb
- if(clr==1)  begin
-			nbit=0;  rreg=8'hFF;  end
-    else begin 
-		  if(mlb==0) //LSB first, din@msb -> right shift
-			begin  rreg={din,rreg[7:1]};  end 
-		  else  //MSB first, din@lsb -> left shift
-			begin  rreg={rreg[6:0],din};  end
-		  nbit=nbit+1;
- end //rst
-end //always
- 
-always@(negedge sck or posedge clr) begin
- if(clr==1) begin
-	  treg=8'hFF;  dout=1;  
-  end  
- else begin
-		if(nbit==0) begin //load data into TREG
-			treg=tdat; dout=mlb?treg[7]:treg[0];
-		end //nbit_if
-		else begin
-			if(mlb==0) //LSB first, shift right
-				begin treg={1'b1,treg[7:1]}; dout=treg[0]; end
-			else//MSB first shift LEFT
-				begin treg={treg[6:0],1'b1}; dout=treg[7]; end
-		end
- end //rst
-end //always
- 
- 
-endmodule
-////////////////////////////////////////////////////////////////////////////////
-////                                                                        ////
-//// Project Name: SPI (Verilog)                                            ////
-////                                                                        ////
-//// Module Name: spi_slave                                                 ////
-////                                                                        ////
-////                                                                        ////
-////  This file is part of the Ethernet IP core project                     ////
-////  https://opencores.org/projects/spi_verilog_master_slave               ////
-////                                                                        ////
-////  Author(s):                                                            ////
-////      Santhosh G (santhg@opencores.org)                                 ////
-////                                                                        ////
-////  Refer to Readme.txt for more information                              ////
-////                                                                        ////
-////////////////////////////////////////////////////////////////////////////////
-////                                                                        ////
-//// Copyright (C) 2014, 2015 Authors                                       ////
-////                                                                        ////
-//// This source file may be used and distributed without                   ////
-//// restriction provided that this copyright statement is not              ////
-//// removed from the file and that any derivative work contains            ////
-//// the original copyright notice and the associated disclaimer.           ////
-////                                                                        ////
-//// This source file is free software; you can redistribute it             ////
-//// and/or modify it under the terms of the GNU Lesser General             ////
-//// Public License as published by the Free Software Foundation;           ////
-//// either version 2.1 of the License, or (at your option) any             ////
-//// later version.                                                         ////
-////                                                                        ////
-//// This source is distributed in the hope that it will be                 ////
-//// useful, but WITHOUT ANY WARRANTY; without even the implied             ////
-//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR                ////
-//// PURPOSE.  See the GNU Lesser General Public License for more           ////
-//// details.                                                               ////
-////                                                                        ////
-//// You should have received a copy of the GNU Lesser General              ////
-//// Public License along with this source; if not, download it             ////
-//// from http://www.opencores.org/lgpl.shtml                               ////
-////                                                                        ////
-////////////////////////////////////////////////////////////////////////////////
-/* SPI MODE 3
-		CHANGE DATA (sdout) @ NEGEDGE SCK
-		read data (sdin) @posedge SCK
-*/		
-module spi_slave (rstb,ten,tdata,mlb,ss,sck,sdin, sdout,done,rdata);
-  input rstb,ss,sck,sdin,ten,mlb;
-  input [7:0] tdata;
-  output sdout;           //slave out   master in 
-  output reg done;
-  output reg [7:0] rdata;
- 
-  reg [7:0] treg,rreg;
-  reg [3:0] nb;
-  wire sout;
- 
-  assign sout=mlb?treg[7]:treg[0];
-  assign sdout=( (!ss)&&ten )?sout:1'bz; //if 1=> send data  else TRI-STATE sdout
- 
- 
-//read from  sdout
-always @(posedge sck or negedge rstb)
-  begin
-    if (rstb==0)
-		begin rreg = 8'h00;  rdata = 8'h00; done = 0; nb = 0; end   //
-	else if (!ss) begin 
-			if(mlb==0)  //LSB first, in@msb -> right shift
-				begin rreg ={sdin,rreg[7:1]}; end
-			else     //MSB first, in@lsb -> left shift
-				begin rreg ={rreg[6:0],sdin}; end  
-		//increment bit count
-			nb=nb+1;
-			if(nb!=8) done=0;
-			else  begin rdata=rreg; done=1; nb=0; end
-		end	 //if(!ss)_END  if(nb==8)
-  end
- 
-//send to  sdout
-always @(negedge sck or negedge rstb)
-  begin
-	if (rstb==0)
-		begin treg = 8'hFF; end
-	else begin
-		if(!ss) begin			
-			if(nb==0) treg=tdata;
-			else begin
-			   if(mlb==0)  //LSB first, out=lsb -> right shift
-					begin treg = {1'b1,treg[7:1]}; end
-			   else     //MSB first, out=msb -> left shift
-					begin treg = {treg[6:0],1'b1}; end			
-			end
-		end //!ss
-	 end //rstb	
-  end //always
- 
-endmodule
- 
-/*
-			if(mlb==0)  //LSB first, out=lsb -> right shift
-					begin treg = {treg[7],treg[7:1]}; end
-			else     //MSB first, out=msb -> left shift
-					begin treg = {treg[6:0],treg[0]}; end	
-*/
- 
- 
-/*
-force -freeze sim:/SPI_slave/sck 0 0, 1 {25 ns} -r 50 -can 410
-run 405ns
-noforce sim:/SPI_slave/sck
-force -freeze sim:/SPI_slave/sck 1 0
-*/
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Tue Nov 12 11:09:14 2019
-// Host        : sdhgsdfg-X556URK running 64-bit Ubuntu 18.04.3 LTS
+// Date        : Thu Nov  7 14:57:02 2019
+// Host        : sadie-pc running 64-bit Manjaro Linux
 // Command     : write_verilog -force ../synthesize/include/i2s_sender.v
 // Design      : i2s_sender
 // Purpose     : This is a Verilog netlist of the current design or from a specific cell of the design. The output is an

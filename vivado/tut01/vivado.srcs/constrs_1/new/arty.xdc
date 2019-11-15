@@ -7,10 +7,9 @@ set_property CFGBVS VCCO [current_design]
 
 set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports { reset }];
 #Clock
-set_property -dict {PACKAGE_PIN N11 IOSTANDARD LVCMOS33} [get_ports { clock }];
+set_property -dict {PACKAGE_PIN T13 IOSTANDARD LVCMOS33} [get_ports { clock }];
 create_clock -add -name sys_clk_pin -period 62.5 \
     -waveform {0 31.25} [get_ports { clock }];
-
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[1] }]; #IO_L10N_T1_D15_14
 #set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS33 } [get_ports { mcu[0] }]; #IO_L10P_T1_D14_14
 #set_property -dict { PACKAGE_PIN R16   IOSTANDARD LVCMOS33 } [get_ports { io_led_green }]; #IO_L9N_T1_DQS_D13_14
@@ -33,6 +32,7 @@ set_property -dict { PACKAGE_PIN P8   IOSTANDARD LVCMOS33 } [get_ports { io_BitC
 #set_property -dict {PACKAGE_PIN P8 IOSTANDARD LVCMOS33} [get_ports { io_spi_clk  }];      #IO_L12P_T1_MRCC_15 Sch=jb_p[2]
 #set_property -dict {PACKAGE_PIN R10 IOSTANDARD LVCMOS33} [get_ports { io_spi_cs_n }];      #IO_L12N_T1_MRCC_15 Sch=jb_n[2]
 
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clock_IBUF] 
 # please don't ask...
 #set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF] 
 # GPIO
