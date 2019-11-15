@@ -13,8 +13,11 @@ import sadie.toplevel.SoundTopLevel
 class TopBundle extends Bundle {
   val spi = new SPIBus()
   //val i2s = new I2SBus()
-  val led_green = Output(UInt(1.W))
+  //val led_green = Output(UInt(1.W))
   val gpio = Output(UInt(1.W))
+  //val gpio2 = Output(UInt(1.W))
+  //val gpio3 = Output(UInt(1.W))
+  val gpio4 = Output(UInt(1.W))
 
   val BitClock = Output(Bool())
   val LeftRightWordClock = Output(UInt())
@@ -25,13 +28,17 @@ class TopBundle extends Bundle {
 
 class Top() extends MultiIOModule {
   val io = IO(new TopBundle)
-  io.led_green := 1.U
-  io.gpio := 1.U
+  // io.led_green := 1.U
+  io.gpio4 := 1.U
   // initalize top-modules
   val sound = Module(new SoundTopLevel).io
   val rx    = Module(new SPISlave()).io
   val input = Module(new SPIInputHandler).io
   val i2s = Module(new i2s).io
+
+  // debug
+  val received_generator_update = RegInit(UInt(1.W), 0.U)
+  io.gpio := received_generator_update
 
   // drive SoundTopLevel
   sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
@@ -82,6 +89,7 @@ class Top() extends MultiIOModule {
 
   // signal valid SPI packages
   when (input.packet.valid) {
+    received_generator_update := 1.U
     switch (input.packet.magic) {
       is (config.sReset.U) {
         // TODO?
