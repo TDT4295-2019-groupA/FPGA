@@ -15,12 +15,11 @@ class TopBundle extends Bundle {
   //val i2s = new I2SBus()
   //val led_green = Output(UInt(1.W))
   val gpio0 = Output(UInt(1.W))
-  val gpio1 = Output(UInt(1.W))
+  //val gpio1 = Output(UInt(1.W))
   val gpio2 = Output(UInt(1.W))
   val gpio3 = Output(UInt(1.W))
 
   val spi_mosi = Input(UInt(1.W))
-  val spi_miso = Input(UInt(1.W))
   val spi_clk = Input(UInt(1.W))
   val spi_cs_n = Input(UInt(1.W))
 
@@ -66,7 +65,6 @@ class Top() extends MultiIOModule {
   //rx.TX_data := 0.U
   //rx.spi <> io.spi // connect spi slave bus to io
   io.gpio0 := io.spi_mosi
-  io.gpio1 := io.spi_miso
   io.gpio2 := io.spi_clk
   io.gpio3 := io.spi_cs_n
 
