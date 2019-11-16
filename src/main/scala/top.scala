@@ -11,13 +11,18 @@ import sadie.i2s
 import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
-  val spi = new SPIBus()
+  //val spi = new SPIBus()
   //val i2s = new I2SBus()
   //val led_green = Output(UInt(1.W))
-  val gpio = Output(UInt(1.W))
-  //val gpio2 = Output(UInt(1.W))
-  //val gpio3 = Output(UInt(1.W))
-  val gpio4 = Output(UInt(1.W))
+  val gpio0 = Output(UInt(1.W))
+  val gpio1 = Output(UInt(1.W))
+  val gpio2 = Output(UInt(1.W))
+  val gpio3 = Output(UInt(1.W))
+
+  val spi_mosi = Input(UInt(1.W))
+  val spi_miso = Input(UInt(1.W))
+  val spi_clk = Input(UInt(1.W))
+  val spi_cs_n = Input(UInt(1.W))
 
   val BitClock = Output(Bool())
   val LeftRightWordClock = Output(UInt())
@@ -29,41 +34,41 @@ class TopBundle extends Bundle {
 class Top() extends MultiIOModule {
   val io = IO(new TopBundle)
   // io.led_green := 1.U
-  io.gpio4 := 1.U
   // initalize top-modules
-  val sound = Module(new SoundTopLevel).io
-  val rx    = Module(new SPISlave()).io
-  val input = Module(new SPIInputHandler).io
+  //val sound = Module(new SoundTopLevel).io
+  //val rx    = Module(new SPISlave()).io
+  //val input = Module(new SPIInputHandler).io
   val i2s = Module(new i2s).io
 
-  // debug
-  val received_generator_update = RegInit(UInt(1.W), 0.U)
-  io.gpio := received_generator_update
 
   // drive SoundTopLevel
-  sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
-  sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
-  sound.global_update_packet_valid    := false.B // overridden below
-  sound.generator_update_packet_valid := false.B // overridden below
-  sound.step_sample                   := false.B // overridden below
+//  sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
+//  sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
+//  sound.global_update_packet_valid    := false.B // overridden below
+//  sound.generator_update_packet_valid := false.B // overridden below
+//  sound.step_sample                   := false.B // overridden below
   //io.i2c.data := sound.sample_out
 
   // step audio generators at audio sample rate
-  val saved_sample = RegInit(SInt(32.W), 0.S)
-  val (sample_rate_counter, _) = Counter(true.B, config.FPGA_CLOCK_SPEED / config.SAMPLE_RATE)
-  when (sample_rate_counter === 0.U) {
-    sound.step_sample := true.B
-    //saved_sample := sound.sample_out
-  }
-  when (sample_rate_counter === 1.U) {
-    saved_sample := sound.sample_out
-  }
+//  val saved_sample = RegInit(SInt(32.W), 0.S)
+//  val (sample_rate_counter, _) = Counter(true.B, config.FPGA_CLOCK_SPEED / config.SAMPLE_RATE)
+//  when (sample_rate_counter === 0.U) {
+//    sound.step_sample := true.B
+//    //saved_sample := sound.sample_out
+//  }
+//  when (sample_rate_counter === 1.U) {
+//    saved_sample := sound.sample_out
+//  }
 
   // output autio as PWM
   // drive the SPISlave
-  rx.TX_data_valid := false.B // transmit nothing
-  rx.TX_data := 0.U
-  rx.spi <> io.spi // connect spi slave bus to io
+  //rx.TX_data_valid := false.B // transmit nothing
+  //rx.TX_data := 0.U
+  //rx.spi <> io.spi // connect spi slave bus to io
+  io.gpio0 := io.spi_mosi
+  io.gpio1 := io.spi_miso
+  io.gpio2 := io.spi_clk
+  io.gpio3 := io.spi_cs_n
 
   //do this usually
   //i2s.sound := sound.sample_out
@@ -84,23 +89,22 @@ class Top() extends MultiIOModule {
   io.DataBit := i2s.DataBit
 
   // drive the input handler module
-  input.RX_data       := rx.RX_data
-  input.RX_data_valid := rx.RX_data_valid
+  // input.RX_data       := rx.RX_data
+  // input.RX_data_valid := rx.RX_data_valid
 
   // signal valid SPI packages
-  when (input.packet.valid) {
-    received_generator_update := 1.U
-    switch (input.packet.magic) {
-      is (config.sReset.U) {
-        // TODO?
-      }
-      is (config.sGlobalUpdate.U) {
-        sound.global_update_packet_valid    := true.B
-      }
-      is (config.sGeneratorUpdate.U) {
-        sound.generator_update_packet_valid := true.B
-      }
-    }
-  }
+//  when (input.packet.valid) {
+//    switch (input.packet.magic) {
+//      is (config.sReset.U) {
+//        // TODO?
+//      }
+//      is (config.sGlobalUpdate.U) {
+//        sound.global_update_packet_valid    := true.B
+//      }
+//      is (config.sGeneratorUpdate.U) {
+//        sound.generator_update_packet_valid := true.B
+//      }
+//    }
+//  }
 
 }

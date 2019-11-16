@@ -32,10 +32,10 @@ set_property -dict {PACKAGE_PIN P16 IOSTANDARD LVCMOS33} [get_ports { io_spi_cs_
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF]
 
 # GPIO
-set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { io_gpio }];
-set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { io_gpio2 }]; #IO_L4N_T0_D05_14
-set_property -dict { PACKAGE_PIN N9   IOSTANDARD LVCMOS33 } [get_ports { io_gpio3 }]; #IO_L4P_T0_D04_14
-set_property -dict { PACKAGE_PIN P8   IOSTANDARD LVCMOS33 } [get_ports { io_gpio4 }]; #IO_L5P_T0_D06_14
+set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { io_gpio0 }];
+set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { io_gpio1 }]; #IO_L4N_T0_D05_14
+set_property -dict { PACKAGE_PIN N9   IOSTANDARD LVCMOS33 } [get_ports { io_gpio2 }]; #IO_L4P_T0_D04_14
+set_property -dict { PACKAGE_PIN P8   IOSTANDARD LVCMOS33 } [get_ports { io_gpio3 }]; #IO_L5P_T0_D06_14
 
 #set_property --dict { PACKAGE_PIN T9    IOSTANDARD LVCMOS33 } [get_ports { io_l22p_t3_a05_d21_14 }]; #IO_L22P_T3_A05_D21_14
 #set_property --dict { PACKAGE_PIN T8    IOSTANDARD LVCMOS33 } [get_ports { io_l21n_t3_dqs_a06_d22_14 }]; #IO_L21N_T3_DQS_A06_D22_14
