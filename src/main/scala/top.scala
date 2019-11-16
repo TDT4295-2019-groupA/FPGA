@@ -15,83 +15,45 @@ import sadie.toplevel.SoundTopLevel
 class TopBundle extends Bundle {
   val spi = new SPIBus()
   //val i2s = new I2SBus()
-  val led_green = Output(UInt(1.W))
-  val gpio = Output(UInt(1.W))
-  val spidebug = Flipped(new SPIBus())
-  val SPIClock = Output(Clock())
-
-  val BitClock = Output(Clock())
-  val LeftRightWordClock = Output(Bool())
-  val DataBit = Output(UInt())
-  val SystemClock = Output(Clock())
+  //val led_green = Output(UInt(1.W))
+  val gpio0 = Output(UInt(1.W))
+  val gpio1 = Output(UInt(1.W))
+  val gpio3 = Output(UInt(1.W))
 }
 
 class Top() extends MultiIOModule {
   val io = IO(new TopBundle)
-  io.led_green := 1.U
-  val reggie = RegInit(Bool(), false.B)
-  io.gpio := reggie
-  io.DataBit := 0.U
-  io.LeftRightWordClock := 0.U
   // initalize top-modules
-  
-  val clockConfigs:List[ClockConfig] = List(
-    ClockConfig(600, 0.5, 0.0), // For SPI testing, it's a little over 1MHz so a non-CCIO pin should be able to handle it(?)
-    ClockConfig.default, 
-    ClockConfig.default, 
-    ClockConfig.default,
-    ClockConfig(4, 0.5, 0.0), //For BCK
-    ClockConfig.default,
-    ClockConfig(60, 0.5, 0.0), //For SCK
-  )
-  // clocking stuff goes here
-  //42.336 = clock speed of 677.376 MHz, divide by 60 to get sck
-  val mmcm = Module(new MMCME2(62.5, 42.336, 1, clockConfigs, true))
-  mmcm.CLKIN1 := clock
-  mmcm.CLKFBIN := mmcm.CLKFBOUT
-  mmcm.PWRDWN := false.B
-  mmcm.RST := false.B
-  val SystemClock = mmcm.CLKOUT6
-  val BitClock = mmcm.CLKOUT4
-  val SPIClock = mmcm.CLKOUT0
-
-  io.SystemClock := SystemClock
-  io.BitClock := BitClock
-  io.SPIClock := SPIClock
-
   // output audio as PWM
   // drive the SPISlave
 
-  withClock(SPIClock) {
-    val rx    = Module(new SPISlave()).io
-    val input = Module(new SPIInputHandler).io
-    input.RX_data       := rx.RX_data
-    input.RX_data_valid := rx.RX_data_valid
+  val rx    = Module(new SPISlave()).io
+  val input = Module(new SPIInputHandler).io
+  input.RX_data       := rx.RX_data
+  input.RX_data_valid := rx.RX_data_valid
 
-    rx.TX_data_valid := false.B // transmit nothing
-    rx.TX_data := 0.U
-    rx.spi <> io.spi // connect spi slave bus to io
-    when (rx.RX_data > 0.U) {
-      reggie := true.B
-    }
+  rx.TX_data_valid := false.B // transmit nothing
+  rx.TX_data := 0.U
+  rx.spi <> io.spi // connect spi slave bus to io
+  io.gpio1 := io.spi.mosi
+  io.gpio0 := rx.RX_data
+  io.gpio3 := io.spi.clk
 
-    io.spidebug.clk := rx.spi.clk
-    io.spidebug.cs_n := rx.spi.cs_n
-    io.spidebug.mosi := rx.spi.mosi
-    // signal valid SPI packages
-    when (input.packet.valid) {
-      switch (input.packet.magic) {
-        is (config.sReset.U) {
-          // TODO?
-          // I'd recommend not using this because a package covered in 0s would read as reset but is likely just corrupt
-        }
+
+  // signal valid SPI packages
+  when (input.packet.valid) {
+
+    switch (input.packet.magic) {
+      is (config.sReset.U) {
+        // TODO?
+        // I'd recommend not using this because a package covered in 0s would read as reset but is likely just corrupt
+      }
 //        is (config.sGlobalUpdate.U) {
 //          sound.global_update_packet_valid    := true.B
 //        }
-//        is (config.sGeneratorUpdate.U) {
-//          sound.generator_update_packet_valid := true.B
-//        }
-      }
+    //        is (config.sGeneratorUpdate.U) {
+    //          sound.generator_update_packet_valid := true.B
+    //        }
     }
   }
 //  withClock(BitClock) {
