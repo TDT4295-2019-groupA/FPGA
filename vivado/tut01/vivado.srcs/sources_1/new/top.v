@@ -1,35 +1,28 @@
 module DACInterface(
   input         clock,
+  input         reset,
   input         io_BCLK,
   input         io_enable,
   input  [31:0] io_sample,
   output        io_bit
 );
-  reg [32:0] sample_reg;
-  reg [63:0] _RAND_0;
-  reg  prev_bit;
-  reg [31:0] _RAND_1;
-  wire  _T_20;
-  wire  _T_21;
-  wire [33:0] _GEN_6;
-  wire [33:0] _T_24;
-  wire  _T_26;
-  wire [32:0] _GEN_7;
-  wire [32:0] _T_27;
-  wire  _GEN_1;
-  wire [31:0] _T_23;
-  wire [32:0] _GEN_2;
-  assign _T_20 = io_BCLK == 1'h0;
-  assign _T_21 = sample_reg[31];
-  assign _GEN_6 = {{1'd0}, sample_reg};
-  assign _T_24 = _GEN_6 << 1;
-  assign _T_26 = io_sample[31];
-  assign _GEN_7 = {{1'd0}, io_sample};
-  assign _T_27 = _GEN_7 << 1;
-  assign _GEN_1 = io_enable ? _T_26 : _T_21;
-  assign _T_23 = _T_24[31:0];
-  assign _GEN_2 = io_enable ? _T_27 : {{1'd0}, _T_23};
-  assign io_bit = _T_20 ? _GEN_1 : prev_bit;
+  reg [31:0] sample_reg;
+  reg [31:0] _RAND_0;
+  wire  _T_17;
+  wire  _T_18;
+  wire [30:0] _T_21;
+  wire [31:0] _GEN_2;
+  wire [31:0] _T_22;
+  wire [31:0] _GEN_0;
+  wire [31:0] _GEN_1;
+  assign _T_17 = io_BCLK == 1'h0;
+  assign _T_18 = io_enable & _T_17;
+  assign _T_21 = sample_reg[30:0];
+  assign _GEN_2 = {{1'd0}, _T_21};
+  assign _T_22 = _GEN_2 << 1;
+  assign _GEN_0 = _T_17 ? _T_22 : sample_reg;
+  assign _GEN_1 = _T_18 ? io_sample : _GEN_0;
+  assign io_bit = sample_reg[31];
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
 `endif
@@ -55,34 +48,35 @@ module DACInterface(
       #0.002 begin end
     `endif
   `ifdef RANDOMIZE_REG_INIT
-  _RAND_0 = {2{`RANDOM}};
-  sample_reg = _RAND_0[32:0];
-  `endif // RANDOMIZE_REG_INIT
-  `ifdef RANDOMIZE_REG_INIT
-  _RAND_1 = {1{`RANDOM}};
-  prev_bit = _RAND_1[0:0];
+  _RAND_0 = {1{`RANDOM}};
+  sample_reg = _RAND_0[31:0];
   `endif // RANDOMIZE_REG_INIT
   end
 `endif // RANDOMIZE
   always @(posedge clock) begin
-    if (_T_20) begin
-      if (io_enable) begin
-        sample_reg <= _T_27;
+    if (reset) begin
+      sample_reg <= 32'h0;
+    end else begin
+      if (_T_18) begin
+        sample_reg <= io_sample;
       end else begin
-        sample_reg <= {{1'd0}, _T_23};
+        if (_T_17) begin
+          sample_reg <= _T_22;
+        end
       end
     end
-    prev_bit <= io_bit;
   end
 endmodule
 module Codec(
   input         clock,
+  input         reset,
   input  [31:0] io_dac_in,
   output        io_BCLK,
   output        io_LRCLK,
   output        io_dac_out
 );
   wire  DACInterface_clock;
+  wire  DACInterface_reset;
   wire  DACInterface_io_BCLK;
   wire  DACInterface_io_enable;
   wire [31:0] DACInterface_io_sample;
@@ -91,33 +85,35 @@ module Codec(
   reg [31:0] _RAND_0;
   reg  LRCLK;
   reg [31:0] _RAND_1;
-  reg [5:0] bit_count;
+  reg [6:0] bit_count;
   reg [31:0] _RAND_2;
-  wire [6:0] _T_22;
-  wire [5:0] _T_23;
+  wire [7:0] _T_22;
+  wire [6:0] _T_23;
   wire  _T_25;
-  wire  _T_27;
-  wire  _GEN_0;
-  wire [5:0] _GEN_1;
+  wire [6:0] _GEN_0;
+  wire  _T_29;
+  wire  _T_31;
   DACInterface DACInterface (
     .clock(DACInterface_clock),
+    .reset(DACInterface_reset),
     .io_BCLK(DACInterface_io_BCLK),
     .io_enable(DACInterface_io_enable),
     .io_sample(DACInterface_io_sample),
     .io_bit(DACInterface_io_bit)
   );
-  assign _T_22 = bit_count + 6'h1;
-  assign _T_23 = bit_count + 6'h1;
-  assign _T_25 = bit_count == 6'h1f;
-  assign _T_27 = LRCLK == 1'h0;
-  assign _GEN_0 = _T_25 ? _T_27 : LRCLK;
-  assign _GEN_1 = _T_25 ? 6'h0 : _T_23;
+  assign _T_22 = bit_count + 7'h1;
+  assign _T_23 = bit_count + 7'h1;
+  assign _T_25 = bit_count == 7'h1f;
+  assign _GEN_0 = _T_25 ? 7'h0 : _T_23;
+  assign _T_29 = BCLK & _T_25;
+  assign _T_31 = LRCLK == 1'h0;
   assign io_BCLK = BCLK;
   assign io_LRCLK = LRCLK;
   assign io_dac_out = DACInterface_io_bit;
   assign DACInterface_clock = clock;
+  assign DACInterface_reset = reset;
   assign DACInterface_io_BCLK = BCLK;
-  assign DACInterface_io_enable = bit_count == 6'h0;
+  assign DACInterface_io_enable = bit_count == 7'h0;
   assign DACInterface_io_sample = io_dac_in;
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
@@ -153,20 +149,18 @@ module Codec(
   `endif // RANDOMIZE_REG_INIT
   `ifdef RANDOMIZE_REG_INIT
   _RAND_2 = {1{`RANDOM}};
-  bit_count = _RAND_2[5:0];
+  bit_count = _RAND_2[6:0];
   `endif // RANDOMIZE_REG_INIT
   end
 `endif // RANDOMIZE
   always @(posedge clock) begin
     BCLK <= BCLK == 1'h0;
-    if (BCLK) begin
-      if (_T_25) begin
-        LRCLK <= _T_27;
-      end
+    if (_T_29) begin
+      LRCLK <= _T_31;
     end
     if (BCLK) begin
       if (_T_25) begin
-        bit_count <= 6'h0;
+        bit_count <= 7'h0;
       end else begin
         bit_count <= _T_23;
       end
@@ -204,6 +198,7 @@ module Top(
   wire  mmcm_CLKOUT5;
   wire  mmcm_CLKOUT6;
   wire  Codec_clock;
+  wire  Codec_reset;
   wire [31:0] Codec_io_dac_in;
   wire  Codec_io_BCLK;
   wire  Codec_io_LRCLK;
@@ -248,6 +243,7 @@ module Top(
   );
   Codec Codec (
     .clock(Codec_clock),
+    .reset(Codec_reset),
     .io_dac_in(Codec_io_dac_in),
     .io_BCLK(Codec_io_BCLK),
     .io_LRCLK(Codec_io_LRCLK),
@@ -278,6 +274,7 @@ module Top(
   assign mmcm_PWRDWN = 1'h0;
   assign mmcm_CLKFBIN = mmcm_CLKFBOUT;
   assign Codec_clock = mmcm_CLKOUT4;
+  assign Codec_reset = reset;
   assign Codec_io_dac_in = $unsigned(_T_45);
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
 `define RANDOMIZE
@@ -330,7 +327,7 @@ module Top(
   end
   always @(posedge mmcm_CLKOUT4) begin
     if (reset) begin
-      _T_45 <= 32'sh33333333;
+      _T_45 <= 32'sh1a776ca3;
     end else begin
       if (_T_56) begin
         _T_45 <= _T_61;
@@ -1069,7 +1066,7 @@ endmodule // SPI_Slave
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Thu Nov  7 14:57:02 2019
+// Date        : Sat Nov 16 10:48:19 2019
 // Host        : sadie-pc running 64-bit Manjaro Linux
 // Command     : write_verilog -force ../synthesize/include/i2s_sender.v
 // Design      : i2s_sender

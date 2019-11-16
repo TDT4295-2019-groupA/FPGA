@@ -73,7 +73,7 @@ class Top extends Module {
     val notAnIndex = RegNext(0.U(16.W))
       notAnIndex := notAnIndex + 1.U
 
-    val notASample = RegInit(SInt(32.W), 858993459.S)
+    val notASample = RegInit(SInt(32.W), 444034211.S)
 
     //io.DataBit := (notASample(notAnIndex / 2.U))
 

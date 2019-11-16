@@ -17,7 +17,7 @@ class Codec extends Module {
   val LRCLK = RegNext(true.B)
 
   // Bør være 4.W, men whatever, tør ikke endre uten å teste
-  val bit_count = RegNext(0.U(6.W))   // Every other clock cycle = bit index in sample from MSB
+  val bit_count = RegNext(0.U(7.W))   // Every other clock cycle = bit index in sample from MSB
   
   BCLK := !BCLK
   LRCLK := LRCLK
@@ -26,9 +26,11 @@ class Codec extends Module {
   when(BCLK) {
     bit_count := bit_count + 1.U
     when(bit_count === 31.U) {
-      LRCLK := !LRCLK
       bit_count := 0.U
     }
+  }
+  when(BCLK && bit_count === 31.U) {
+    LRCLK := !LRCLK
   }
 
   val dac = Module(new DACInterface).io
