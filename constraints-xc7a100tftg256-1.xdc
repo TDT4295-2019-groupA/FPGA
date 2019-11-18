@@ -25,6 +25,3 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF]
 #set_property -dict { PACKAGE_PIN R10   IOSTANDARD LVCMOS33 } [get_ports { io_gpio0 }];
 #set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { io_gpio1 }];
 #set_property -dict { PACKAGE_PIN N9   IOSTANDARD LVCMOS33 } [get_ports { io_gpio2 }];
-
-set_property -dict {PACKAGE_PIN N9 IOSTANDARD LVCMOS33} [get_ports { io_pwm_out_l }];        #IO_L20P_T3_A08_D24_14 Sch=jc_p[1]
-set_property -dict {PACKAGE_PIN R11 IOSTANDARD LVCMOS33} [get_ports { io_pwm_out_r }];        #IO_L20N_T3_A07_D23_14 Sch=jc_n[1]

@@ -6,7 +6,6 @@ import chisel3.experimental.MultiIOModule
 class SPI_Master extends MultiIOModule {
   val io = IO(
     new Bundle {
-      val transmit = Input(Bool())
       val load_sample = Input(Bool())
       val sample_in = Input(SInt(16.W))
 
@@ -16,21 +15,24 @@ class SPI_Master extends MultiIOModule {
     }
   )
 
-  val sample_store = RegInit(UInt(16.W), 0.U)
+  val sample_store = RegInit(SInt(16.W), 0.S)
   val clock_edge = RegInit(Bool(), false.B)
+  val bit_count = RegInit(UInt(32.W), 0.U)
+  clock_edge := !clock_edge
 
   when(io.load_sample) {
     sample_store := io.sample_in
-    clock_edge := true.B
-  }.elsewhen(io.transmit) {
-    when(!clock_edge) {
+    clock_edge := false.B
+    bit_count := 0.U
+  }.otherwise{
+    when(clock_edge) {
       sample_store := sample_store << 1
+      bit_count := bit_count + 1.U
     }
-    clock_edge := ! clock_edge
   }
 
 
   io.spi_clock_out := clock_edge
-  io.spi_slave_select := !io.transmit && sample_store =/= 0.U
-  io.spi_bit_out := Mux(io.transmit, sample_store(15), 0.U)
+  io.spi_slave_select := bit_count >= 16.U
+  io.spi_bit_out := sample_store(15)
 }
