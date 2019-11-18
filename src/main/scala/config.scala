@@ -25,8 +25,7 @@ object config {
 
   // SPI packet lengths
   val GlobalUpdateLength    = 25 // bytes
-  val GeneratorUpdateLength = 9 // bytes
-  // TODO: make these depend on the bundle definitions, or assert that they indeed match
+  val GeneratorUpdateLength = 12 // bytes
 
   //Minimal mode
   val MinimalMode = true

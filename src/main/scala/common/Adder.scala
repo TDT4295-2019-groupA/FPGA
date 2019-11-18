@@ -6,6 +6,8 @@ import sadie.config.config
 
 class Adder extends MultiIOModule{
 
+  val VELOCITY_MAX: SInt = 0x7f.S
+
   val io = IO(
     new Bundle {
       val volume = Input(UInt(16.W))
@@ -13,7 +15,7 @@ class Adder extends MultiIOModule{
       val sample_out = Output(SInt(32.W))
     }
   )
-  io.sample_out := ((sumVec(io.samples_in) / config.VELOCITY_MAX.S) * io.volume) << 4.U
+  io.sample_out := ((sumVec(io.samples_in) / VELOCITY_MAX) * io.volume) << 4.U
 
   //def sumVec(v : Vec[SInt]): SInt = Vec(sumAll(v.toList))(0)
   def sumVec(v : Vec[SInt]): SInt = sumAll(v.toList.map(_.asTypeOf(SInt(32.W))))

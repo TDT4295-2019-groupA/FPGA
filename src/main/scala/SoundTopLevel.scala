@@ -17,7 +17,6 @@ class SoundTopLevel() extends MultiIOModule {
       val global_update_packet          = Input(new GlobalUpdatePacket)
       val step_sample                   = Input(Bool()) // pulsed for one cycle
       val sample_out                    = Output(SInt(32.W)) // TODO: define when this is valid
-      val sample_out_valid = Output(Bool())
     }
   )
 
@@ -31,7 +30,6 @@ class SoundTopLevel() extends MultiIOModule {
   val adder = Module(new Adder()).io
   adder.volume := global_config.volume
   io.sample_out := adder.sample_out
-  io.sample_out_valid := true.B
 
 
   // init the generators, and hook outputs to the adder

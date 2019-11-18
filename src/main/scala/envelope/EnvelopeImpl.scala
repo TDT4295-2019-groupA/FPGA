@@ -9,20 +9,20 @@ class EnvelopeImpl extends MultiIOModule{
 
   val io = IO(
     new Bundle {
-      val note_life                   = Input(UInt())
-      val envelope                    = Input(new Envelope())
-      val last_active_envelope_effect = Input(UInt(16.W))
-      val enabled                     = Input(Bool())
+      val note_life = Input(UInt())
+      val envelope = Input(new Envelope())
+      val last_active_envelope_effect = Input(UInt())
+      val enabled = Input(Bool())
 
-      val envelope_effect = Output(UInt(16.W))
+      val envelope_effect = Output(UInt())
     }
   )
 
   /*
   Here is the envelope implementation. It is taken pretty directly from the reference implementation
    */
-  val envelope       = io.envelope
-  val life           = Wire(UInt(32.W))
+  val envelope = io.envelope
+  val life = Wire(UInt(32.W))
   val scaled_sustain = Wire(UInt(16.W))
 
   life := io.note_life / config.NOTE_LIFE_COEFF.U
@@ -51,5 +51,7 @@ class EnvelopeImpl extends MultiIOModule{
     life,
     scaled_sustain)
  */
+
+
 
 }

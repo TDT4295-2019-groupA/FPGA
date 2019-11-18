@@ -7,7 +7,7 @@ class SPI_Master extends MultiIOModule {
   val io = IO(
     new Bundle {
       val load_sample = Input(Bool())
-      val sample_in = Input(SInt(16.W))
+      val sample_in = Input(SInt(100.W))
 
       val spi_clock_out = Output(Bool())
       val spi_slave_select = Output(Bool())
@@ -15,7 +15,7 @@ class SPI_Master extends MultiIOModule {
     }
   )
 
-  val sample_store = RegInit(SInt(16.W), 0.S)
+  val sample_store = RegInit(SInt(100.W), 0.S)
   val clock_edge = RegInit(Bool(), false.B)
   val bit_count = RegInit(UInt(32.W), 0.U)
   clock_edge := !clock_edge
@@ -31,8 +31,7 @@ class SPI_Master extends MultiIOModule {
     }
   }
 
-
   io.spi_clock_out := clock_edge
-  io.spi_slave_select := bit_count >= 16.U
-  io.spi_bit_out := sample_store(15)
+  io.spi_slave_select := bit_count >= 100.U
+  io.spi_bit_out := sample_store(99)
 }

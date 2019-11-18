@@ -12,11 +12,11 @@ class Square extends MultiIOModule {
       val wavelength_pos = Input(UInt())
       val note_life = Input(UInt())
 
-      val sample_out = Output(SInt(16.W))
+      val sample_out = Output(SInt())
     }
   )
 
-  when ((io.wavelength_pos << 1.U) > io.wavelength) {
+  when ((io.wavelength_pos << 1).asUInt() > io.wavelength) {
     io.sample_out := (-config.SAMPLE_MAX).S
   } otherwise {
     io.sample_out := config.SAMPLE_MAX.S

@@ -7,7 +7,6 @@ import chisel3.experimental.ExtModule
 
 class SPIBus extends Bundle{
   val mosi = Input(Bool())  // SPI Master out slave in
-  val miso = Output(Bool()) // SPI Master in slave out
   val clk  = Input(Bool())  // SPI clock
   val cs_n = Input(Bool())  // SPI chip select
 }
@@ -33,7 +32,6 @@ class SPISlave extends MultiIOModule {
   spi.i_TX_Byte    := io.TX_data
 
   spi.i_SPI_Clk    := io.spi.clk
-  io.spi.miso      := spi.o_SPI_MISO
   spi.i_SPI_MOSI   := io.spi.mosi
   spi.i_SPI_CS_n   := !io.spi.cs_n
 

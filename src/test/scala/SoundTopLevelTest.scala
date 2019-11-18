@@ -39,7 +39,7 @@ class SoundTopLevelTest extends FlatSpec with Matchers {
   it should "Match reference implementation data" in {
     wrapTester(
       chisel3.iotesters.Driver(() => new SoundTopLevelPeekPokeWrapper()) { c =>
-        new SoundTopLevelTests.TestSPIEventsFromFile(c, "src/test/resources/input_data/onlya4.txt", true)
+        new SoundTopLevelTests.TestSPIEventsFromFile(c, "src/test/resources/input_data/sootopolis_spi.txt", true)
       } should be(true)
     )
   }
