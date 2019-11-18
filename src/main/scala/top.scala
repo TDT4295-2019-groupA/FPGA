@@ -58,17 +58,17 @@ class Top() extends MultiIOModule {
 
     spi_master.io.transmit := true.B
     spi_master.io.load_sample := false.B
+    spi_master.io.sample_in := ((sound.sample_out * 65536.S) / 2147483647.S)
 
     val saved_sample = RegInit(SInt(32.W), 0.S)
     val (sample_rate_counter, _) = Counter(true.B, 1600000 / config.SAMPLE_RATE)
     when (sample_rate_counter === 0.U) {
       sound.step_sample := true.B
       saved_sample := sound.sample_out
+      spi_master.io.load_sample := true.B
     }
     when (sound.sample_out_valid) {
       saved_sample := sound.sample_out
-      spi_master.io.sample_in := ((sound.sample_out * 65536.S) / 2147483647.S)
-      spi_master.io.load_sample := true.B
     }
 
 

@@ -70,7 +70,7 @@ class SoundTopLevel() extends MultiIOModule {
       generator_state_handler.envelope_effect_valid := true.B
     }
   }
-  when (selected_gen.value != 0.U) {
+  when (selected_gen.value =/= 0.U) {
     sample_out := sample_out + generator_sample_computer.sample_out
     selected_gen.inc()
   }
