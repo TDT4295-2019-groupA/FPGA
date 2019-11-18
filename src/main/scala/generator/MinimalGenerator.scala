@@ -27,7 +27,7 @@ class MinimalGenerator extends MultiIOModule{
 
   // LUTs
   def fpga_note_index_to_freq(note_index: Int): Double =
-    math.round((1 << config.FREQ_SHIFT) * config.MIDI_A3_FREQ * math.pow(2.0, (note_index - config.MIDI_A3_INDEX) / 12.0))
+    math.round((1 << config.FREQ_SHIFT) * config.MIDI_A3_FREQ * math.pow(2.0, ((config.MIDI_INDEX_MAX - note_index) - config.MIDI_A3_INDEX) / 12.0))
 
   def freq_to_wavelength_in_samples(freq: UInt): UInt = {
     val temp_value = config.SAMPLE_RATE << config.FREQ_SHIFT
@@ -52,13 +52,13 @@ class MinimalGenerator extends MultiIOModule{
   val freq_coeff: UInt = Wire(UInt(32.W))
 
   note_remainder := generator_config.note_index % 12.U
-  note_divide := generator_config.note_index / 12.U
+  note_divide := (config.MIDI_INDEX_MAX.U - generator_config.note_index) / 12.U
 
   freq_base := DontCare
 
   for (i <- 0 to 11) {
     when(note_remainder === i.U) {
-      freq_base := fpga_note_index_to_freq(i).toInt.U << note_divide
+      freq_base := fpga_note_index_to_freq(i).toInt.U >> note_divide
     }
   }
 
@@ -103,7 +103,7 @@ class MinimalGenerator extends MultiIOModule{
 
   //io.sample_out := current_sample * generator_config.velocity
   when(generator_config.enabled) {
-    io.sample_out := (current_sample  *  generator_config.velocity.asSInt()) >> 1
+    io.sample_out := (current_sample  *  generator_config.velocity.asSInt())
   }.otherwise {
     io.sample_out := 0.S
   }
