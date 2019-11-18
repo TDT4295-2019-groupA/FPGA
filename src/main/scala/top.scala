@@ -51,7 +51,7 @@ class Top() extends MultiIOModule {
     sound.step_sample                   := false.B // overridden below
     //io.i2c.data := sound.sample_out
     val saved_sample = RegInit(SInt(32.W), 0.S)
-    val (sample_rate_counter, _) = Counter(true.B, 160000000 / config.SAMPLE_RATE)
+    val (sample_rate_counter, _) = Counter(true.B, 50000000 / config.SAMPLE_RATE)
     when (sample_rate_counter === 0.U) {
       sound.step_sample := true.B
       //saved_sample := sound.sample_out

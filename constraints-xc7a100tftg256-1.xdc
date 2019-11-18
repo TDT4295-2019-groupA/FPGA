@@ -4,7 +4,6 @@
 #Copied from the arty one lol
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property CFGBVS VCCO [current_design]
- set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_gpio3_OBUF]
 set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports { reset }];
 #Clock
 set_property -dict {PACKAGE_PIN T13 IOSTANDARD LVCMOS33} [get_ports { clock }];

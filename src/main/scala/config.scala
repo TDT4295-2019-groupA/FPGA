@@ -15,7 +15,7 @@ object config {
   val SAMPLE_MAX      = 0x7FFF // max output from a single generator
   val SAMPLE_RATE     = 44100  // target samplerate, we control the clock though
   val VELOCITY_MAX    = 0x7f   // max velocity supported by the MIDI standard
-  val FPGA_CLOCK_SPEED = 100000000 // 100MHz
+  val FPGA_CLOCK_SPEED = 16000000 // 100MHz
 
   // MAGIC identifier for SPI packets
   val sReset           = 0
