@@ -59,6 +59,16 @@ class GlobalUpdate extends Bundle {
   }
 }
 
+object GlobalUpdate {
+  def DEFAULT: GlobalUpdate = {
+    val w = Wire(new GlobalUpdate)
+    w.volume := 64.U
+    w.envelope := Envelope.DEFAULT
+    w.pitchwheels := Vec.fill(config.N_MIDI_CHANNELS)(64.S(8.W))
+    w
+  }
+}
+
 
 class GeneratorUpdatePacket extends Bundle {
   val magic           = UInt(8.W) // === config.sGeneratorUpdate.U
@@ -97,3 +107,4 @@ class GeneratorUpdate extends Bundle {
     return w
   }
 }
+
