@@ -1,4 +1,4 @@
-package sadie.generator
+package generator
 
 import chisel3._
 import chisel3.util._
@@ -8,7 +8,7 @@ import instruments.{Sawtooth, Sine, Square, Triangle}
 import sadie.communication._
 import sadie.config.config
 
-class Generator extends MultiIOModule{
+class MinimalGenerator extends MultiIOModule{
   val io = IO(
     new Bundle {
       val generator_update_valid = Input(Bool()) // pulsed for one cycle
@@ -27,7 +27,7 @@ class Generator extends MultiIOModule{
 
   // LUTs
   def fpga_note_index_to_freq(note_index: Int): Double =
-    math.round((1 << config.FREQ_SHIFT) * config.MIDI_A3_FREQ * math.pow(2.0, (note_index - config.MIDI_A3_INDEX) / 12.0))
+    math.round((1 << config.FREQ_SHIFT) * config.MIDI_A3_FREQ * math.pow(2.0, ((config.MIDI_INDEX_MAX - note_index) - config.MIDI_A3_INDEX) / 12.0))
 
   def freq_to_wavelength_in_samples(freq: UInt): UInt = {
     val temp_value = config.SAMPLE_RATE << config.FREQ_SHIFT
@@ -52,13 +52,13 @@ class Generator extends MultiIOModule{
   val freq_coeff: UInt = Wire(UInt(32.W))
 
   note_remainder := generator_config.note_index % 12.U
-  note_divide := generator_config.note_index / 12.U
+  note_divide := (config.MIDI_INDEX_MAX.U - generator_config.note_index) / 12.U
 
   freq_base := DontCare
 
   for (i <- 0 to 11) {
     when(note_remainder === i.U) {
-      freq_base := fpga_note_index_to_freq(i).toInt.U << note_divide
+      freq_base := fpga_note_index_to_freq(i).toInt.U >> note_divide
     }
   }
 
@@ -99,55 +99,13 @@ class Generator extends MultiIOModule{
   square.wavelength_pos := wavelength_pos
   square.note_life := note_life
 
-  val triangle = Module(new Triangle()).io
-  triangle.wavelength := wavelength
-  triangle.wavelength_pos := wavelength_pos
-  triangle.note_life := note_life
-
-  val sawtooth = Module(new Sawtooth()).io
-  sawtooth.wavelength := wavelength
-  sawtooth.wavelength_pos := wavelength_pos
-  sawtooth.note_life := note_life
-
-  val sine = Module(new Sine()).io
-  sine.wavelength := wavelength
-  sine.wavelength_pos := wavelength_pos
-  sine.note_life := note_life
-
-  switch (generator_config.instrument) {
-    is (config.InstrumentEnum.SQUARE) {
-      current_sample := square.sample_out
-    }
-    is (config.InstrumentEnum.TRIANGLE) {
-      current_sample := triangle.sample_out
-    }
-    is (config.InstrumentEnum.SAWTOOTH) {
-      current_sample := sawtooth.sample_out
-    }
-    is (config.InstrumentEnum.SINE) {
-      current_sample := sine.sample_out
-    }
-  }
-
-  val last_active_envelope_effect = RegInit(UInt(16.W), 0.U)
-  val envelope_impl = Module(new EnvelopeImpl()).io
-
-  envelope_impl.note_life := note_life
-  envelope_impl.envelope := io.global_config.envelope
-  envelope_impl.last_active_envelope_effect := last_active_envelope_effect
-  envelope_impl.enabled := generator_config.enabled
-
-  when(generator_config.enabled){
-    last_active_envelope_effect := envelope_impl.envelope_effect
-  }
+  current_sample := square.sample_out
 
   //io.sample_out := current_sample * generator_config.velocity
-  io.sample_out := ((current_sample * envelope_impl.envelope_effect) >> 16).asSInt() *  generator_config.velocity.asSInt()
-
-  when((io.generator_num === 1.U || io.generator_num === 2.U) && false.B) {
-    printf("Gen %d: wavelength: %d, freq: %d, freq_base %d, freq_coeff: %d, note_life: %d, instrument: %d\n", io.generator_num, wavelength, freq, freq_base, freq_coeff, note_life, generator_config.instrument)
-    printf("Note: %d, Wavelength_pos: %d, note_remainder: %d, note_divide: %d, \n", generator_config.note_index, wavelength_pos, note_remainder, note_divide)
-    printf("Enabled: %d, Current_Sample: %d, Last_Env_Effect: %d, Sample Out: %d, Velocity: %d\n", generator_config.enabled, current_sample, last_active_envelope_effect, io.sample_out, generator_config.velocity)
-    printf("Current_Sample: %d, Envelope_Effect: %d, Velocity: %d, Enabled: %d\n", current_sample, envelope_impl.envelope_effect, generator_config.velocity, generator_config.enabled)
+  when(generator_config.enabled) {
+    io.sample_out := (current_sample  *  generator_config.velocity.asSInt())
+  }.otherwise {
+    io.sample_out := 0.S
   }
+
 }

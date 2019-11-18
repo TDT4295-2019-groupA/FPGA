@@ -39,8 +39,7 @@ class SoundTopLevelTest extends FlatSpec with Matchers {
   it should "Match reference implementation data" in {
     wrapTester(
       chisel3.iotesters.Driver(() => new SoundTopLevelPeekPokeWrapper()) { c =>
-        //new SoundTopLevelTests.TestSPIEventsFromFile(c, "src/test/resources/input_data/sootopolis_spi.txt", true)
-        new SoundTopLevelTests.TestSPIEventsFromFile(c, "src/test/resources/input_data/hhy_pitchwheel_spi.txt", true)
+        new SoundTopLevelTests.TestSPIEventsFromFile(c, "src/test/resources/input_data/onlya4.txt", true)
       } should be(true)
     )
   }
@@ -84,27 +83,24 @@ object SoundTopLevelTests {
   }
   class TestSPIEventsFromFile(c: SoundTopLevelPeekPokeWrapper, filename:String, val expect_samples:Boolean) extends PeekPokeTester(c) {
     println(new File(filename).getAbsolutePath)
-    assertResult(false, "config.minimal_generators") { config.MinimalMode }
-
-    poke(c.io.generator_update_packet_valid, false)
-    poke(c.io.global_update_packet_valid,    false)
-    poke(c.io.packet_data,                   0)
-    poke(c.io.step_sample,                   false)
 
     var samples_made:Int = 0
     for (line <- Source.fromFile(filename).getLines().map(_.stripLineEnd)) {
 
-      if(line.startsWith("Sample:")) {
+      if(line.startsWith("Sample:") && expect_samples) {
         val expected_sample = line.split(" ")(1).toInt
         poke(c.io.step_sample, true)
         step(1)
         poke(c.io.step_sample, false)
-        while (peek(c.io.sample_out_valid) == 0) step(1)
-        if (expect_samples) {
-          expect(c.io.sample_out, expected_sample)
-          //printf("diff: %d\n", peek(c.io.sample_out) - expected_sample)
-        }
-        else {
+        expect(c.io.sample_out, expected_sample)
+      }
+      else if(line.startsWith("Step:") && !expect_samples) {
+        val n_samples = line.split(" ")(1).toInt
+        printf("Step: %d\n", n_samples)
+        for (i <- 1 to n_samples) {
+          poke(c.io.step_sample, true)
+          step(1)
+          poke(c.io.step_sample, false)
           printf("sample_out#%d: %d\n", samples_made, peek(c.io.sample_out))
           samples_made += 1
         }

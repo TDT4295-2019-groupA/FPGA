@@ -23,11 +23,11 @@ use ieee.math_real.all;
 
 package i2s_types_pkg is
     --see datasheet https://statics.cirrus.com/pubs/proDatasheet/CS4344-45-48_F2.pdf
-    constant MCLK_FREQ : integer := 18432000; -- Hz
+    constant MCLK_FREQ : integer := 11289600; -- Hz
     constant MCLK_BITS : natural := integer(ceil(log2(real(MCLK_FREQ))));
 
     -- 48Khz sample rate
-    constant LRCK_FREQ : integer := 48000; -- MCLK/384
+    constant LRCK_FREQ : integer := 44100; -- MCLK/384
     --24 bits per LRCK phase (low = left channel, high = right channel)
 
     constant SAMPLE_WIDTH : integer := 24;

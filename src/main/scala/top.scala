@@ -12,7 +12,6 @@ import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
   val spi = new SPIBus()
-  //val i2s = new I2SBus()
   val spi_clock = Output(Bool())
   val spi_data_bit = Output(UInt(1.W))
   val spi_slave_select = Output(Bool())
@@ -23,8 +22,8 @@ class Top() extends MultiIOModule {
 
   val clockConfigs:List[ClockConfig] = List(
     ClockConfig.default,
-    ClockConfig.default, 
-    ClockConfig.default, 
+    ClockConfig.default,
+    ClockConfig.default,
     ClockConfig.default,
     ClockConfig(3, 0.5, 0.0), //For BCK
     ClockConfig.default,
@@ -44,13 +43,31 @@ class Top() extends MultiIOModule {
 
   withClock(SPIClock) {
     // initalize top-modules
+    val sound = Module(new SoundTopLevel()).io
     val rx    = Module(new SPISlave()).io
     val input = Module(new SPIInputHandler).io
 
-    spi_master.io.load_sample := false.B
-    spi_master.io.sample_in := 43201.S
+    // drive SoundTopLevel
+    sound.global_update_packet          := input.packet.data.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
+    sound.generator_update_packet       := input.packet.data.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
+    sound.global_update_packet_valid    := false.B // overridden below
+    sound.generator_update_packet_valid := false.B // overridden below
+    sound.step_sample                   := false.B // overridden below
 
-    val (sample_rate_counter, _) = Counter(true.B, 1600000 / config.SAMPLE_RATE)
+
+    val (sample_rate_counter, _) = Counter(true.B, 2000000 / config.SAMPLE_RATE)
+    val saved_sample = RegInit(SInt(32.W), 0.S)
+
+    spi_master.io.load_sample := false.B
+    spi_master.io.sample_in := saved_sample
+
+    when (sample_rate_counter === 0.U) {
+      sound.step_sample := true.B
+      //saved_sample := sound.sample_out
+    }
+    when (sound.sample_out_valid) {
+      saved_sample := sound.sample_out
+    }
 
     val (dumb_ass_counter, _) = Counter(true.B, 60)
 
@@ -66,9 +83,24 @@ class Top() extends MultiIOModule {
     rx.TX_data_valid := false.B // transmit nothing
     rx.TX_data := 0.U
     rx.spi <> io.spi // connect spi slave bus to io
-  
+
     // drive the input handler module
     input.RX_data       := rx.RX_data
     input.RX_data_valid := rx.RX_data_valid
+
+    // signal valid SPI packages
+    when (input.packet.valid) {
+      switch (input.packet.magic) {
+        is (config.sReset.U) {
+          // TODO?
+        }
+        is (config.sGlobalUpdate.U) {
+          sound.global_update_packet_valid    := true.B
+        }
+        is (config.sGeneratorUpdate.U) {
+          sound.generator_update_packet_valid := true.B
+        }
+      }
+    }
   }
 }
