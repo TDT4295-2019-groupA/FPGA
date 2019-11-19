@@ -58,6 +58,15 @@ class GlobalUpdate extends Bundle {
     return w
   }
 }
+object GlobalUpdate { // TODO, get rid of this?
+  def DEFAULT: GlobalUpdate = {
+    val w = Wire(new GlobalUpdate)
+    w.volume      := 0x7F.U
+    w.envelope    := Envelope.DEFAULT
+    w.pitchwheels := 0.U.asTypeOf(Vec(SInt(8.W), config.N_MIDI_CHANNELS))
+    return w
+  }
+}
 
 
 class GeneratorUpdatePacket extends Bundle {

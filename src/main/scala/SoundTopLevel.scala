@@ -22,7 +22,7 @@ class SoundTopLevel() extends MultiIOModule {
   )
 
   // global generator state
-  val global_config = RegInit(new GlobalUpdate, 0.U.asTypeOf(new GlobalUpdate))
+  val global_config = RegInit(new GlobalUpdate, GlobalUpdate.DEFAULT)
   when (io.global_update_packet_valid) { // read when valid
     global_config := io.global_update_packet.data
   }
