@@ -29,7 +29,7 @@ object Envelope { // TODO, get rid of this?
     w.decay   := 0x0000.U
     w.sustain := 0xFF.U
     w.release := 0x0000.U
-    return w
+    w
   }
 }
 
@@ -41,7 +41,7 @@ class GlobalUpdatePacket extends Bundle {
     val w = Wire(new GlobalUpdatePacket)
     w.magic       := magic
     w.data        := data.withEndianSwapped
-    return w
+    w
   }
 }
 
