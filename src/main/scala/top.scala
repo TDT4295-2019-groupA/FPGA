@@ -40,32 +40,33 @@ class Top() extends MultiIOModule {
   mmcm.PWRDWN := false.B
   mmcm.RST := false.B
   val SystemClock = mmcm.CLKOUT4
+  val SPIRetrieveClock = mmcm.CLKOUT6
 
   val spi_master = withClock(SystemClock) { Module(new SPI_Master()).io }
-  val spi_chisel = withClock(SystemClock) {Module(new SpiChisel()).io}
+  val spi_chisel = withClock(SPIRetrieveClock) {Module(new SpiChisel()).io}
   val sound = withClock(SystemClock) {Module(new SoundTopLevel()).io}
-  val spi_ever_valid = RegInit(Bool(), false.B)
+  val spi_debug = RegInit(Bool(), false.B)
 
-  spi_chisel.spi_clock := io.spi.clk
-  spi_chisel.spi_databit_in := io.spi.mosi
-  spi_chisel.spi_slave_select := io.spi.cs_n
-
-  // drive SoundTopLevel
-  sound.global_update_packet          := spi_chisel.spi_package_out.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
-  sound.generator_update_packet       := spi_chisel.spi_package_out.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
-  sound.global_update_packet_valid    := spi_chisel.spi_package_type === 1.U && spi_chisel.spi_package_ready
-  sound.generator_update_packet_valid := spi_chisel.spi_package_type === 2.U && spi_chisel.spi_package_ready
-
-
-  io.spi_debug := spi_ever_valid
-
-  spi_master.load_sample := false.B
-  spi_master.sample_in := (sound.sample_out >> 16.U).asUInt()
-
-  sound.step_sample := false.B
+  withClock(SPIRetrieveClock) {
+    spi_chisel.spi_clock := io.spi.clk
+    spi_chisel.spi_databit_in := io.spi.mosi
+    spi_chisel.spi_slave_select := io.spi.cs_n
+  }
 
   withClock(SystemClock) {
-    val step = RegInit(UInt(12.W), 0.U)
+    // drive SoundTopLevel
+    sound.global_update_packet          := spi_chisel.spi_package_out.asTypeOf(new GlobalUpdatePacket).withEndianSwapped()
+    sound.generator_update_packet       := spi_chisel.spi_package_out.asTypeOf(new GeneratorUpdatePacket).withEndianSwapped()
+    sound.global_update_packet_valid    := spi_chisel.spi_package_type === 1.U && spi_chisel.spi_package_ready
+    sound.generator_update_packet_valid := spi_chisel.spi_package_type === 2.U && spi_chisel.spi_package_ready
+
+    io.spi_debug := spi_debug
+
+    spi_master.load_sample := false.B
+    spi_master.sample_in := (sound.sample_out >> 14.U).asUInt() //why AHSIODASHDGASFXC I1? Ask Peder
+
+    sound.step_sample := false.B
+    val step = RegInit(UInt(16.W), 0.U)
     step := step + 1.U
     when(step === 0.U) {
       spi_master.load_sample := true.B
@@ -74,12 +75,12 @@ class Top() extends MultiIOModule {
       sound.step_sample := true.B
     }
     when(spi_chisel.spi_package_type === 2.U && spi_chisel.spi_package_ready) {
-      spi_ever_valid := true.B
+      spi_debug := true.B
     }
+    io.spi_clock := spi_master.spi_clock_out
+    io.spi_slave_select := spi_master.spi_slave_select
+    io.spi_data_bit := spi_master.spi_bit_out
   }
 
-  io.spi_clock := spi_master.spi_clock_out
-  io.spi_slave_select := spi_master.spi_slave_select
-  io.spi_data_bit := spi_master.spi_bit_out
 
 }

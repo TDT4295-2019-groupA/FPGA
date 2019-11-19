@@ -11,7 +11,7 @@ class SpiChisel extends MultiIOModule {
       val spi_databit_in = Input(UInt(1.W))
       val spi_slave_select = Input(Bool())
 
-      val spi_package_out = Output(UInt())
+      val spi_package_out = Output(UInt(256.W))
       val spi_package_ready = Output(Bool())
       val spi_package_type = Output(UInt(2.W))
     }
@@ -22,8 +22,8 @@ class SpiChisel extends MultiIOModule {
   val wasActive = RegInit(Bool(), false.B)
 
   val packet_map = Array(
-    (dataStore(207, 200) === 1.U) -> 1.U,
-    (dataStore(71, 62) === 2.U) -> 2.U
+    (dataStore(199, 192) === 1.U) -> 1.U,
+    (dataStore(71, 64) === 2.U) -> 2.U
   )
 
   io.spi_package_out := dataStore
