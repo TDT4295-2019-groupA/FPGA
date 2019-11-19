@@ -17,22 +17,11 @@ class TopBundle extends Bundle {
   val pwm_out_r = Output(Bool()) // temporary audio output
 
   // arty 7 testing
-  val sw       = Input(UInt(4.W))
-  val btn      = Input(UInt(4.W))
-  val led      = Output(UInt(4.W))
-  val rgbled_0 = Output(UInt(3.W))
-  val rgbled_1 = Output(UInt(3.W))
-  val rgbled_2 = Output(UInt(3.W))
-  val rgbled_3 = Output(UInt(3.W))
+  val sw        = Input(UInt(4.W))
 }
 
 class Top() extends MultiIOModule {
   val io = IO(new TopBundle)
-  io.led := 0.U
-  io.rgbled_0 := 0.U
-  io.rgbled_1 := 0.U
-  io.rgbled_2 := 0.U
-  io.rgbled_3 := 0.U
 
   // initalize top-modules
   val sound = Module(new SoundTopLevel).io
