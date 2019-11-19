@@ -13,7 +13,7 @@ class MinimalGenerator extends MultiIOModule{
     new Bundle {
       val generator_update_valid = Input(Bool()) // pulsed for one cycle
       val generator_update       = Input(new GeneratorUpdate)
-      val generator_num          = Input(UInt())
+      val generator_num          = Input(UInt(12.W))
       val global_config          = Input(new GlobalUpdate) // assumed always valid
       val step_sample            = Input(Bool()) // pulsed for one cycle
       val sample_out             = Output(SInt(32.W))

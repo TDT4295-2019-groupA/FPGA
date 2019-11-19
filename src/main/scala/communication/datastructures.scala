@@ -18,7 +18,7 @@ class Envelope extends Bundle {
     w.decay   := swapEndian(decay)
     w.sustain := sustain
     w.release := swapEndian(release)
-    return w
+    w
   }
 }
 
@@ -54,17 +54,17 @@ class GlobalUpdate extends Bundle {
     val w = Wire(new GlobalUpdate)
     w.volume      := volume
     w.envelope    := envelope.withEndianSwapped
-    w.pitchwheels := Vec(pitchwheels.toList.reverse)
-    return w
+    w.pitchwheels := 0.U.asTypeOf(Vec(SInt(8.W), config.N_MIDI_CHANNELS))
+    w
   }
 }
 
 object GlobalUpdate {
   def DEFAULT: GlobalUpdate = {
     val w = Wire(new GlobalUpdate)
-    w.volume := 64.U
+    w.volume := 0xff.U
     w.envelope := Envelope.DEFAULT
-    w.pitchwheels := Vec.fill(config.N_MIDI_CHANNELS)(64.S(8.W))
+    w.pitchwheels := Vec.fill(config.N_MIDI_CHANNELS)(0.S(8.W))
     w
   }
 }
@@ -80,7 +80,7 @@ class GeneratorUpdatePacket extends Bundle {
     w.magic           := magic
     w.generator_index := swapEndian(generator_index)
     w.data            := data.withEndianSwapped
-    return w
+    w
   }
 }
 
@@ -104,7 +104,21 @@ class GeneratorUpdate extends Bundle {
     w.note_index    := note_index
     w.channel_index := channel_index
     w.velocity      := velocity
-    return w
+    w
+  }
+}
+
+object GeneratorUpdate {
+  def DEFAULT: GeneratorUpdate = {
+    val w = Wire(new GeneratorUpdate())
+    w.unused := 0.U
+    w.reset_note := false.B
+    w.unused2 := 0.U
+    w.enabled := true.B
+    w.instrument := 0.U
+    w.note_index := 64.U
+    w.velocity := 127.U
+    w
   }
 }
 

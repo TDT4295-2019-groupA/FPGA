@@ -4,6 +4,7 @@ import java.io.File
 import java.nio.ByteBuffer
 
 import Ex0.TestUtils._
+import chisel3.{Bool, Input, Output, SInt, UInt}
 import chisel3.iotesters.PeekPokeTester
 import chisel3.iotesters._
 import chisel3.util.BitPat
@@ -83,6 +84,12 @@ object SoundTopLevelTests {
   }
   class TestSPIEventsFromFile(c: SoundTopLevelPeekPokeWrapper, filename:String, val expect_samples:Boolean) extends PeekPokeTester(c) {
     println(new File(filename).getAbsolutePath)
+
+    poke(c.io.step_sample, false)
+    poke(c.io.generator_update_packet_valid, false)
+    poke(c.io.global_update_packet_valid, false)
+    poke(c.io.packet_data, false)
+
 
     var samples_made:Int = 0
     for (line <- Source.fromFile(filename).getLines().map(_.stripLineEnd)) {

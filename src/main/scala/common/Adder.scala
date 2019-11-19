@@ -10,12 +10,12 @@ class Adder extends MultiIOModule{
 
   val io = IO(
     new Bundle {
-      val volume = Input(UInt(16.W))
+      val volume = Input(UInt(8.W))
       val samples_in = Input(Vec(config.N_GENERATORS, SInt(32.W)))
       val sample_out = Output(SInt(32.W))
     }
   )
-  io.sample_out := ((sumVec(io.samples_in) / VELOCITY_MAX) * io.volume) << 4.U
+  io.sample_out := ((sumVec(io.samples_in) * io.volume)/ VELOCITY_MAX) << 4.U
 
   //def sumVec(v : Vec[SInt]): SInt = Vec(sumAll(v.toList))(0)
   def sumVec(v : Vec[SInt]): SInt = sumAll(v.toList.map(_.asTypeOf(SInt(32.W))))
