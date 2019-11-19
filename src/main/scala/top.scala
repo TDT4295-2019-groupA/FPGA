@@ -10,7 +10,8 @@ import sadie.config.config
 import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
-  val spi = new SPIBus()
+  val spi  = new SPIBus()
+  val spi2 = new SPIBus()
   //val i2s = new I2SBus()
   val pwm_out_l = Output(Bool()) // temporary audio output
   val pwm_out_r = Output(Bool()) // temporary audio output
@@ -64,17 +65,19 @@ class Top() extends MultiIOModule {
   when (io.sw(0)) { io.pwm_out_l := pwm.high }
   when (io.sw(1)) { io.pwm_out_r := pwm.high }
   pwm.target := (saved_sample + 0x80000000.S(33.W) ).asUInt
-  when (io.sw(2)) {
-    pwm.target := ((saved_sample << 13.U) + 0x80000000.S(33.W) ).asUInt
-  }
-  when (io.sw(3)) {
-    pwm.target := ((saved_sample << 14.U) + 0x80000000.S(33.W) ).asUInt
-  }
+
 
   // drive the SPISlave
   rx.TX_data_valid := false.B // transmit nothing
   rx.TX_data := 0.U
-  rx.spi <> io.spi // connect spi slave bus to io
+  // connect spi slave bus to io
+  rx.spi <> io.spi
+  when (io.sw(2)) {
+    rx.spi.mosi := io.spi2.mosi
+    rx.spi.clk  := io.spi2.clk
+    rx.spi.cs_n := io.spi2.cs_n
+  }
+  io.spi2.miso := false.B
 
   // drive the input handler module
   input.RX_data       := rx.RX_data
