@@ -56,7 +56,7 @@ object SoundTopLevelTests {
     poke(c.io.global_update_packet.data.envelope.decay,   0x0000)
     poke(c.io.global_update_packet.data.envelope.sustain, 0xff)
     poke(c.io.global_update_packet.data.envelope.release, 0x0000)
-    for (i <- 0 to 15) poke(c.io.global_update_packet.data.pitchwheels(i), 0)
+    for (i <- 0 to 15) poke(c.io.global_update_packet.data.pitchwheels(i), 60)
     poke(c.io.global_update_packet_valid, true)
     step(1)
     poke(c.io.global_update_packet_valid, false)

@@ -57,7 +57,7 @@ class Top() extends MultiIOModule {
   sound.generator_update_packet_valid := spi_chisel.spi_package_type === 2.U && spi_chisel.spi_package_ready
 
 
-  when(spi_chisel.spi_package_ready && spi_chisel.spi_package_type =/= 0.U) {
+  when(spi_chisel.spi_package_ready && spi_chisel.spi_package_type === 2.U) {
     spi_ever_valid := true.B
   }
 
