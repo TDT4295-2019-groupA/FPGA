@@ -8,6 +8,8 @@ vivado.runs
 synthesize/include
 synthesize/*.v
 synthesize/*.sv
+synthesize/*.mcs
+synthesize/*.prm
 .Xil
 *.edif
 *.jou
