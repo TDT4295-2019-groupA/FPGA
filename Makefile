@@ -39,6 +39,12 @@ vivado: all.v $(CONSTRAINTS_FILE)
 	cp -v $(CONSTRAINTS_FILE) vivado/tut01/vivado.srcs/constrs_1/new/arty.xdc
 	@echo Updated the vivado project named tut01 in vivado/tut01!
 
+.PHONY: chisel
+chisel: $(TOP_MODULE_VERILOG_TARGET)
+	@echo Results are available in:
+	@echo " " $(TOP_MODULE_FIRRTL_TARGET)
+	@echo " " $(TOP_MODULE_VERILOG_TARGET)
+
 .PHONY: bitfile
 bitfile: $(VHDL_DESTS) $(TOP_MODULE_BITFILE_TARGET)
 
