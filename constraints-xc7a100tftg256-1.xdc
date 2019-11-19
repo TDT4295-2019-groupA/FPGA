@@ -18,7 +18,7 @@ set_property -dict {PACKAGE_PIN P8 IOSTANDARD LVCMOS33} [get_ports { io_spi_cs_n
 set_property -dict {PACKAGE_PIN R11 IOSTANDARD LVCMOS33} [get_ports { io_spi_clock }];
 set_property -dict {PACKAGE_PIN N9 IOSTANDARD LVCMOS33} [get_ports { io_spi_slave_select }];
 set_property -dict {PACKAGE_PIN R10 IOSTANDARD LVCMOS33} [get_ports { io_spi_data_bit }];
-set_property -dict {PACKAGE_PIN P9 IOSTANDARD LVCMOS33} [get_ports { io_spi_debug }];      #IO_L11N_T1_SRCC_15 Sch=jb_n[1]
+set_property -dict {PACKAGE_PIN P9 IOSTANDARD LVCMOS33} [get_ports { io_spi_debug }];
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets io_spi_clk_IBUF]
 
 # GPIO
