@@ -35,7 +35,8 @@ class SPISlave extends MultiIOModule {
   spi.i_SPI_Clk    := io.spi.clk
   io.spi.miso      := spi.o_SPI_MISO
   spi.i_SPI_MOSI   := io.spi.mosi
-  spi.i_SPI_CS_n   := !io.spi.cs_n
+  //spi.i_SPI_CS_n   := /io.spi.cs_n
+  spi.i_SPI_CS_n   := io.spi.cs_n
 
 /*
   val spi = Module(new SPI_Slave_opencores())
