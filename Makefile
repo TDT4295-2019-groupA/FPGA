@@ -1,7 +1,7 @@
-TOP_MODULE  := TopWithResetFlipped# Use this for the arty 7
-#TOP_MODULE  := Top# Use this for the pcb thingy
-XILINX_PART := xc7a35ticsg324-1L# the arty 7 dev kit
-#XILINX_PART := xc7a100tftg256-1#the artix on our pcb
+#TOP_MODULE  := TopWithResetFlipped# Use this for the arty 7
+TOP_MODULE  := Top# Use this for the pcb thingy
+#XILINX_PART := xc7a35ticsg324-1L# the arty 7 dev kit
+XILINX_PART := xc7a100tftg256-1#the artix on our pcb
 BUILD_DIR   := synthesize
 SCALA_TARGETS    := $(shell find src/main/scala/             -type f -name '*.scala')
 VERILOG_TARGETS  := $(shell find src/main/resources/verilog/ -type f -name '*.v')

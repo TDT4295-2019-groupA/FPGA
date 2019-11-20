@@ -12,13 +12,9 @@ import sadie.toplevel.SoundTopLevel
 
 class TopBundle extends Bundle {
   val spi       = new SPIBus()
-  val spi2      = new SPIBus()
   //val i2s     = new I2SBus()
   val pwm_out_l = Output(Bool()) // temporary audio output
   val pwm_out_r = Output(Bool()) // temporary audio output
-
-  // arty 7 testing
-  val sw        = Input(UInt(4.W))
 }
 
 class Top() extends MultiIOModule {
@@ -31,9 +27,9 @@ class Top() extends MultiIOModule {
     ClockConfig.default,
     ClockConfig(10, 0.5, 0.0), //For rest
     ClockConfig.default,
-    ClockConfig(1, 0.5, 0.0), //For pwm
+    ClockConfig(3, 0.5, 0.0), //For pwm
   )
-  val mmcm = Module(new MMCME2(10.0, 6, 1, clockConfigs, true))
+  val mmcm = Module(new MMCME2(62.5, 37.5, 1, clockConfigs, true))
   mmcm.CLKIN1 := clock
   mmcm.CLKFBIN := mmcm.CLKFBOUT
   mmcm.PWRDWN := false.B
@@ -71,10 +67,8 @@ class Top() extends MultiIOModule {
     withClock(clock_pwm) {
       //val pwm = Module(new PWM(32, 0x06060606)).io
       val pwm = Module(new PWM(32, 0x03030303)).io
-      io.pwm_out_l := false.B
-      io.pwm_out_r := false.B
-      when (io.sw(0)) { io.pwm_out_l := pwm.high }
-      when (io.sw(1)) { io.pwm_out_r := pwm.high }
+      io.pwm_out_l := pwm.high
+      io.pwm_out_r := pwm.high
       pwm.target := (saved_sample + 0x80000000.S(33.W) ).asUInt
     }
 
@@ -83,12 +77,6 @@ class Top() extends MultiIOModule {
     rx.TX_data := 0.U
     // connect spi slave bus to io
     rx.spi <> io.spi
-    when (io.sw(2)) {
-      rx.spi.mosi := io.spi2.mosi
-      rx.spi.clk  := io.spi2.clk
-      rx.spi.cs_n := io.spi2.cs_n
-    }
-    io.spi2.miso := false.B
 
     // drive the input handler module
     input.RX_data       := rx.RX_data

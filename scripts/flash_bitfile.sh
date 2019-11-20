@@ -4,11 +4,11 @@ source $(dirname $0)/common.sh
 BITFILE="$1"; shift
 MCS="$(dirname $BITFILE)/main.mcs"
 PRM="$(dirname $BITFILE)/main.prm"
-CFGMEM_PART="s25fl128sxxxxxx0-spi-x1_x2_x4"
 CFGMEM_PART="mt25qu128-spi-x1_x2_x4"
 CFGMEM_PART="mt25ql128"
 CFGMEM_PART="mt25ql128-spi-x1_x2_x4"
 
+CFGMEM_PART="s25fl128sxxxxxx0-spi-x1_x2_x4"
 
 if ! test -f "$BITFILE"; then
 	echo "ERROR: No bitfile to flash!"

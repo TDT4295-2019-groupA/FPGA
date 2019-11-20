@@ -18,7 +18,7 @@ colorize tee "$TMP" <<- EOT
 
 	# Connect to the FPGA on localhost:3121
 	connect_hw_server -url localhost:3121
-	current_hw_target [get_hw_targets */xilinx_tcf/Digilent/*]
+	current_hw_target [get_hw_targets */xilinx_tcf/*]
 	open_hw_target
 
 	# Program and Refresh the device

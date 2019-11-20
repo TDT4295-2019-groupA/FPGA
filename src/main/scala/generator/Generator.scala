@@ -153,9 +153,9 @@ class GeneratorSampleComputer extends MultiIOModule {
   current_sample := 0.S
   switch (state.generator_config.instrument) {
     is (config.InstrumentEnum.SQUARE)   { current_sample := square.sample_out }
-    is (config.InstrumentEnum.TRIANGLE) { current_sample := triangle.sample_out }
-    is (config.InstrumentEnum.SAWTOOTH) { current_sample := sawtooth.sample_out }
-    is (config.InstrumentEnum.SINE)     { current_sample := sine.sample_out }
+    //is (config.InstrumentEnum.TRIANGLE) { current_sample := triangle.sample_out }
+    //is (config.InstrumentEnum.SAWTOOTH) { current_sample := sawtooth.sample_out }
+    //is (config.InstrumentEnum.SINE)     { current_sample := sine.sample_out }
   }
 
   val envelope_impl = Module(new EnvelopeImpl()).io

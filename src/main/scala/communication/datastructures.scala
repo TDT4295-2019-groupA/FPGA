@@ -25,10 +25,10 @@ class Envelope extends Bundle {
 object Envelope { // TODO, get rid of this?
   def DEFAULT: Envelope = {
     val w = Wire(new Envelope)
-    w.attack  := 0x0000.U
-    w.decay   := 0x0000.U
-    w.sustain := 0xFF.U
-    w.release := 0x0000.U
+    w.attack  := 1102.U
+    w.decay   := 1102.U
+    w.sustain := 153.U
+    w.release := 2205.U
     return w
   }
 }
